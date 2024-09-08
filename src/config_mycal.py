@@ -25,13 +25,13 @@ class color:
 class MyConfig():
 
     def __init__(self,config_file):
-        """ config_file contains all the infor for speedtest program"""
+        """ config_file contains all the infor for calory program"""
 
  
        
         
         # Open config file
-        print('Directory Name:     ', os.path.dirname(__file__))
+        print('Directory Name:     ', os.path.dirname(config_file))
        
 
         if os.path.exists(config_file) :
