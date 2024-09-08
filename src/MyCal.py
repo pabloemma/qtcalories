@@ -12,7 +12,7 @@ from PySide6.QtCore import QSize, Qt
 from PySide6.QtGui import QAction
 from PySide6.QtWidgets import QVBoxLayout , QGridLayout 
 from PySide6.QtWidgets import QWidget 
-from PySide6.QtSql import QSqlDatabase 
+from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel
 
 
 
@@ -37,6 +37,8 @@ QApplication,
     QSlider,
     QSpinBox,
     QTimeEdit,
+    QTableView,
+    QMenuBar,
 )
 
 
@@ -53,11 +55,12 @@ class MainWindow(QMainWindow):
  
 
         # some constants for json file
-        self.log_level = 'INFO'
-
+ 
 
         # the logging system
         self.SetupLogger()
+        self.log_level = self.CM.log_level
+
 
         # first get the password
         self.GetPwd()
@@ -108,17 +111,21 @@ class MainWindow(QMainWindow):
        
     def AddMyMenu(self):   
         '''Now we add a menu'''
-        #menubar = QMenuBar()
+        #menubar = QMenuBar(None)
         menubar = self.menuBar()
+ 
         file_menu = menubar.addMenu("File")
-        #No menu will show without an action defined
+        db_menu = menubar.addMenu("Database")
+
+        # database handling:
+         #No menu will show without an action defined
         #Also Quit does not show up since this is already in the intrinsic Python menu.
         # Same for exit
 
     # here come a few actions, which will be called from the button qwidget
     # When you press a button, it will trigger one or everal events through slots
     # one thing which is important to note ist that one click on a button can have many different meanings
-
+    # DON"T FORGET TO PUT, self IN QACTION
 
         #here we define the actions: File open section
         file_action = QAction("Open", self)
@@ -126,7 +133,7 @@ class MainWindow(QMainWindow):
         file_action.triggered.connect(self.OpenFile)
         file_menu.addAction(file_action)
 
-
+     
         #file_menu.addAction("Quit")
    
     
@@ -139,22 +146,20 @@ class MainWindow(QMainWindow):
         save_action.triggered.connect(self.SaveFile)
         file_menu.addAction(save_action)
 
+        db_action_1 = QAction("List Table",self)
+        db_action_1.setStatusTip('List database tables')
+        db_action_1.triggered.connect(self.ShowTables)
+        db_menu.addAction(db_action_1)
+        db_action_2 = QAction("save",self)
+        db_action_2.setStatusTip('List database tables')
+        db_action_2.triggered.connect(self.ShowTables)
+        db_menu.addAction(db_action_2)
+
 
         file_menu.addAction("MyExit")
         file_menu.addAction("None")
         
 
-    def OpenFile(self):
-        ''' Open file dialog'''
-
-        self.FileName = QFileDialog.getOpenFileName(self)
-
-    def SaveFile(self):
-        name = QFileDialog.getSaveFileName(self,'Save File')
-        myfile = open(name,'w')
-        text = self.textEdit.toPlainText()
-        myfile.write(text)
-        myfile.close()
 
 
     def ConnectDataBase(self):
@@ -174,14 +179,32 @@ class MainWindow(QMainWindow):
             # will be needed when we want to close the connection
             self.connection_name = self.mycal_db.connectionName()
             logger.info(' database connection name %s' % self.connection_name)
+            #self.ShowTables()
         else:
             logger.error('connection failed, exciting')
             sys.exit(0)
 
     def GetPwd(self):
  
-        with open('/Users/klein/git/qt_exercises/src/pw.txt', 'r') as file:
+        with open(self.CM.srcdir+self.CM.cryptofile, 'r') as file:
             self.password = file.read().rstrip()
+
+
+
+    def OpenFile(self):
+        ''' Open file dialog'''
+
+        self.FileName = QFileDialog.getOpenFileName(self)
+
+    def SaveFile(self):
+        name = QFileDialog.getSaveFileName(self,'Save File')
+        myfile = open(name,'w')
+        text = self.textEdit.toPlainText()
+        myfile.write(text)
+        myfile.close()
+
+
+
 
  
     def SetupConfig(self):
@@ -196,9 +219,10 @@ class MainWindow(QMainWindow):
             sys.exit(0)
         config_file = conf_dir + 'config_mycal.json'
 
-        CM = config_mycal.MyConfig(config_file)
+        self.CM = CM = config_mycal.MyConfig(config_file)
         self.log_level = CM.log_level
         self.log_output = CM.log_output
+        
 
 
 
@@ -225,6 +249,25 @@ class MainWindow(QMainWindow):
         logger.level("DEBUG",color = '<blue>')
  
         return
+    
+    def ShowTables(self):
+        '''prints all the tables in the databe'''
+        self.table_list = self.mycal_db.tables(type=QSql.Tables)
+        for k in range(0,len(self.table_list)):
+            print(self.table_list[k])
+                       
+            
+
+    def ViewTable(self,table):
+
+        model = QSqlTableModel(db = self.mycal_db) 
+        model.setTable(table)
+        model.select()
+
+        table = QTableView()
+        table.setModel(model)
+        #self.setCentralWidget(table)
+
 
 app = QApplication(sys.argv) 
 window = MainWindow(Title = "GridLayout")
@@ -238,6 +281,6 @@ window.setStyleSheet("background-color: white;")
 
 window.show()
 #window.ConnectDataBase()
-
+#window.ViewTable('Recipes')
 # now run the app
 app.exec()

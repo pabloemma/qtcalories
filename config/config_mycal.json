@@ -22,7 +22,7 @@
      },
 
      "logging" : {
-        "loglevel" : "info",
+        "loglevel" : "INFO",
         "output"   : "info.log",
         "log_conf_file" : "logger.json"
         }
