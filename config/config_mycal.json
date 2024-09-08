@@ -1,0 +1,30 @@
+
+{
+
+    "Linux" : {
+        "srcdir" : "/home/klein/git/qt_exercises/src/",
+        "datadir" : "/home/klein/qt_exercises/data/",
+        "logdir" : "/home/klein/git/qt_exercises/log/",
+        "conf_dir" : "/home/klein/git/qt_exercises/config/",
+        "doc_dir"     : "/home/klein/git/qt_exercises/doc/"
+
+    },
+    "Darwin" : {
+        "srcdir" : "/Users/klein/git/qt_exercises/src/",
+        "datadir" : "/Users/klein/qt_exercises/data/",
+        "logdir" : "/Users/klein/git/qt_exercises/log/",
+        "conf_dir" : "/Users/klein/git/qt_exercises/config/",
+        "doc_dir"     : "/Users/klein/git/qt_exercises/doc/"
+    },
+    "Control" : {
+         "debug"   : false,
+        "cryptofile" : "pw.txt"
+     },
+
+     "logging" : {
+        "loglevel" : "info",
+        "output"   : "info.log",
+        "log_conf_file" : "logger.json"
+        }
+}
+
