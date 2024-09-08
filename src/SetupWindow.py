@@ -123,6 +123,7 @@ class MainWindow(QMainWindow):
 
     def SaveFile(self):
         name = QFileDialog.getSaveFileName(self,'Save File')
+        
         myfile = open(name,'w')
         text = self.textEdit.toPlainText()
         myfile.write(text)
