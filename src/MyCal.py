@@ -1,6 +1,11 @@
-# with this class I am trying to set up the first qt window
+# Program to calculate calories and other information for 
+# recipes. 
 import sys
+import platform
+from loguru import logger
 
+
+import config_mycal
 
 
 from PySide6.QtCore import QSize, Qt 
@@ -42,8 +47,23 @@ class MainWindow(QMainWindow):
         #with self and using QMainWindow, we can now acces everything through self
         # first we give it the Title
 
+
+        # Read in the configuration
+        self.SetupConfig()
+ 
+
+        # some constants for json file
+        self.log_level = 'INFO'
+
+
+        # the logging system
+        self.SetupLogger()
+
         # first get the password
         self.GetPwd()
+
+        # connect to database
+        self.ConnectDataBase()
  
         if Title != None:
             self.setWindowTitle(Title)
@@ -140,28 +160,71 @@ class MainWindow(QMainWindow):
     def ConnectDataBase(self):
         ''' establish contact to database'''
         #instantiate the connection
-        mydb = QSqlDatabase.addDatabase("QPSQL")
-        mydb.setHostName("localhost")
-        mydb.setDatabaseName("newtest.sql")
-        mydb.setUserName("klein")
+        self.mycal_db  = QSqlDatabase.addDatabase("QPSQL")
+        self.mycal_db.setHostName("localhost")
+        self.mycal_db.setDatabaseName("newtest.sql")
+        self.mycal_db.setUserName("klein")
         self.password = self.password.replace("\n","")
-        mydb.setPassword(self.password)
+        self.mycal_db.setPassword(self.password)
 
-        result = mydb.open()
+        result = self.mycal_db.open()
         if(result):
-            print('connection succsessful')
+            logger.info('connection succsessful')
+            # here we get the connection name
+            # will be needed when we want to close the connection
+            self.connection_name = self.mycal_db.connectionName()
+            logger.info(' database connection name %s' % self.connection_name)
         else:
-            print('connection failed')
+            logger.error('connection failed, exciting')
+            sys.exit(0)
 
     def GetPwd(self):
-        #for line in open('/Users/klein/git/qt_exercises/src/pw.txt',encoding="utf8"):
-        #for line in open('/Users/klein/git/qt_exercises/src/pw.txt'):
-        #    print(line)
-        #    self.password = line
-
+ 
         with open('/Users/klein/git/qt_exercises/src/pw.txt', 'r') as file:
             self.password = file.read().rstrip()
 
+ 
+    def SetupConfig(self):
+        mysystem = platform.system()
+
+        if mysystem == 'Darwin':
+            conf_dir = '/Users/klein/git/qt_exercises/config/'
+        elif mysystem == 'Linux':
+            conf_dir = '/home/klein/git/qt_exercises/config/'
+        else:
+            print(' This os is not supported %s' % mysystem)
+            sys.exit(0)
+        config_file = conf_dir + 'config_mycal.json'
+
+        CM = config_mycal.MyConfig(config_file)
+        self.log_level = CM.log_level
+        self.log_output = CM.log_output
+
+
+
+
+    def SetupLogger(self):
+
+
+        logger.remove(0)
+        #now we add color to the terminal output
+        logger.add(sys.stdout,
+                colorize = True,format="<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>" ,
+                level = self.log_level)
+
+
+
+        fmt =  "{time} - {name}-   {function} -{line}- {level}    - {message}"
+        logger.add(self.log_output, format = fmt , level = self.log_level,rotation="1 day")
+
+
+        # set the colors of the different levels
+        logger.level("INFO",color ='<black>')
+        logger.level("WARNING",color='<green>')
+        logger.level("ERROR",color='<red>')
+        logger.level("DEBUG",color = '<blue>')
+ 
+        return
 
 app = QApplication(sys.argv) 
 window = MainWindow(Title = "GridLayout")
@@ -174,7 +237,7 @@ window.setStyleSheet("background-color: white;")
 
 
 window.show()
-window.ConnectDataBase()
+#window.ConnectDataBase()
 
 # now run the app
 app.exec()
