@@ -36,12 +36,14 @@ QApplication,
 class MySecondWindow(QWidget):
     """" Create a second window"""
 
-    def __init__(self):
+    def __init__(self,mywidg,title):
         super().__init__()
         layout = QVBoxLayout()
-        mylabel = QLabel("my second window")
+#        mylabel = QLabel("my second window")
+        mylabel = mywidg
         layout.addWidget(mylabel)
         self.setLayout(layout)
+        self.setWindowTitle(title)
 
 
 
@@ -49,6 +51,7 @@ class MainWindow(QMainWindow):
     def __init__(self, Title =  None , pos_x = 100 , pos_y = 500, size_x = 800 , size_y = 600):
         super().__init__()  # this will the allow to use this as a Subclass
 
+        self.w = None #"for later check"
         #with self and using QMainWindow, we can now acces everything through self
         # first we give it the Title
 
@@ -67,11 +70,20 @@ class MainWindow(QMainWindow):
         mywidget = QPushButton("mybox")
         self.setCentralWidget(mywidget)
 
+        # ifrst check if we already have a econd window
+        title = 'llll'
+        if self.w is None:
+           
 
-        self.w = MySecondWindow()
-        self.w.setWindowTitle("test2")
-        self.w.show()
-
+            self.w = MySecondWindow( QLabel("my second window"),title)
+            #self.w.setWindowTitle("test2")
+            self.w.show()
+        else:
+            self.w.close()
+            self.w = MySecondWindow( QLabel("my second window"),title)
+            #self.w.setWindowTitle("test2")
+            self.w.show()
+ 
 
     def SetPosition(self,pos_x,pos_y):
         self.move(pos_x,pos_y)
