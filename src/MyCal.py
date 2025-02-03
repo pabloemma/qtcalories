@@ -1,6 +1,7 @@
 # Program to calculate calories and other information for 
 # recipes. 
 import sys
+import os
 import platform
 from loguru import logger
 
@@ -8,7 +9,7 @@ from loguru import logger
 import config_mycal
 
 
-from PySide6.QtCore import QSize, Qt 
+from PySide6.QtCore import QSize, Qt ,QCoreApplication
 from PySide6.QtGui import QAction
 from PySide6.QtWidgets import QVBoxLayout , QGridLayout 
 from PySide6.QtWidgets import QWidget 
@@ -63,7 +64,7 @@ class MainWindow(QMainWindow):
 
 
         # first get the password
-        self.GetPwd()
+ #       self.GetPwd()
 
         # connect to database
         self.ConnectDataBase()
@@ -164,13 +165,17 @@ class MainWindow(QMainWindow):
 
     def ConnectDataBase(self):
         ''' establish contact to database'''
+
+
         #instantiate the connection
-        self.mycal_db  = QSqlDatabase.addDatabase("QPSQL")
+        self.mycal_db  = QSqlDatabase.addDatabase(self.CM.db_system)
         self.mycal_db.setHostName("localhost")
-        self.mycal_db.setDatabaseName("newtest.sql")
-        self.mycal_db.setUserName("klein")
-        self.password = self.password.replace("\n","")
-        self.mycal_db.setPassword(self.password)
+        self.mycal_db.setDatabaseName(self.CM.db_name)
+        self.mycal_db.setUserName(self.CM.db_user)
+        self.mycal_db.setPassword(self.GetPwd())
+        
+
+ #       self.mycal_db.setPassword(self.CM.pwd)
 
         result = self.mycal_db.open()
         if(result):
@@ -185,11 +190,18 @@ class MainWindow(QMainWindow):
             sys.exit(0)
 
     def GetPwd(self):
- 
-        with open(self.CM.srcdir+self.CM.cryptofile, 'r') as file:
-            self.password = file.read().rstrip()
+        temp = self.CM.cryptofile
+        if os.path.exists(temp):
+            with open(temp, 'r') as file:
+                self.password = password = file.read().rstrip()
+                return password
 
 
+        else:
+            logger.error('crytopfile not found, exciting')   
+            sys.exit(0)
+        
+   
 
     def OpenFile(self):
         ''' Open file dialog'''
@@ -222,6 +234,7 @@ class MainWindow(QMainWindow):
         self.CM = CM = config_mycal.MyConfig(config_file)
         self.log_level = CM.log_level
         self.log_output = CM.log_output
+
         
 
 
@@ -292,7 +305,7 @@ window.setStyleSheet("background-color: white;")
 
 
 window.show()
-#window.ConnectDataBase()
-#window.ViewTable('Recipes')
+window.ConnectDataBase()
+window.ViewTable('Recipes')
 # now run the app
 app.exec()

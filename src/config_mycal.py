@@ -61,9 +61,17 @@ class MyConfig():
         self.datadir = jsondict[mysystem]['datadir']
         self.logdir = jsondict[mysystem]['logdir']
         self.doc_dir =jsondict[mysystem]['doc_dir']
+        self.conf_dir = jsondict[mysystem]['conf_dir']
 
         self.debug = jsondict["Control"]["debug"]
-        self.cryptofile = jsondict["Control"]["cryptofile"]
+        cryptofile = jsondict["Control"]["cryptofile"]
+        #decode cryptofile
+        self.cryptofile = self.conf_dir+cryptofile
+
+        self.db_user = jsondict["Control"]["db_user"]
+        self.db_name = jsondict["Control"]["db_name"]
+        #currently only QPSQL is supported
+        self.db_system = jsondict["Control"]["db_system"]
         # the next two vaiables are only used if we run in "both" mode
             #test if first key is working
  

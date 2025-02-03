@@ -1,0 +1,13 @@
+2025-02-02T14:17:40.311690-0700 - __main__-   ConnectDataBase -182- INFO    - connection succsessful
+2025-02-02T14:17:40.312810-0700 - __main__-   ConnectDataBase -186- INFO    -  database connection name qt_sql_default_connection
+2025-02-02T14:17:45.424828-0700 - __main__-   ConnectDataBase -182- INFO    - connection succsessful
+2025-02-02T14:17:45.425126-0700 - __main__-   ConnectDataBase -186- INFO    -  database connection name qt_sql_default_connection
+2025-02-03T07:04:24.798396-0700 - __main__-   ConnectDataBase -189- ERROR    - connection failed, exciting
+2025-02-03T07:39:47.753150-0700 - __main__-   GetPwd -203- ERROR    - crytopfile not found, exciting
+2025-02-03T07:40:55.866272-0700 - __main__-   GetPwd -203- ERROR    - crytopfile not found, exciting
+2025-02-03T07:42:53.471510-0700 - __main__-   ConnectDataBase -191- ERROR    - connection failed, exciting
+2025-02-03T07:47:52.788455-0700 - __main__-   ConnectDataBase -191- ERROR    - connection failed, exciting
+2025-02-03T07:50:36.972484-0700 - __main__-   ConnectDataBase -183- INFO    - connection succsessful
+2025-02-03T07:50:36.973262-0700 - __main__-   ConnectDataBase -187- INFO    -  database connection name qt_sql_default_connection
+2025-02-03T07:50:42.188114-0700 - __main__-   ConnectDataBase -183- INFO    - connection succsessful
+2025-02-03T07:50:42.188435-0700 - __main__-   ConnectDataBase -187- INFO    -  database connection name qt_sql_default_connection

@@ -1,6 +1,7 @@
 
 import sys
 import os
+import json
 from PySide6 import QtCore, QtGui, QtWidgets
 from PySide6.QtGui import QImage
 from PySide6.QtCore import Qt,QAbstractListModel
@@ -47,16 +48,17 @@ class TodoModel(QAbstractListModel):
 
 class MainWindow(QMainWindow, Ui_MainWindow): 
     def __init__(self):
-          super().__init__()
-          self.setupUi(self)
-          self.model = TodoModel([(False,'Get Paper'),(False,'Breakfast')])
-          self.todoView.setModel(self.model)
+        super().__init__()
+        self.setupUi(self)
+        self.model = TodoModel()
+        self.load()
+        self.todoView.setModel(self.model)
           # nowe the first button, adding todos
-          self.addButton.pressed.connect(self.add)
+        self.addButton.pressed.connect(self.add)
           #
-          self.deleteButton.pressed.connect(self.delete)
+        self.deleteButton.pressed.connect(self.delete)
           #
-          self.completeButton.pressed.connect(self.complete)
+        self.completeButton.pressed.connect(self.complete)
 
 
     def add(self):
@@ -77,6 +79,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.model.layoutChanged.emit()
             # and finally we clear the text buffer
             self.todoEdit.setText("")
+            self.save()
 
     def delete(self):
         """delete an entry"""
@@ -99,7 +102,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.model.layoutChanged.emit()
         #and clear the selection
         self.todoView.clearSelection()
-    
+        self.save()
+
 
 
         
@@ -119,13 +123,25 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.model.dataChanged.emit(myindex, myindex)
         # Clear the selection (as it is no longer valid).
         self.todoView.clearSelection()
+        self.save()
 
-        basedir = os.path.dirname(__file__)
-        #print( 'current directory'  , os.getcwd()) 
-        #print('path relative to', basedir) 
-        #tick = QImage(os.path.join(figdir, "tick-button.png"))
 
+ 
         
+    # tag::loadsave[]
+    def load(self):
+        try:
+            with open("data.json", "r") as f:
+                self.model.todos = json.load(f)
+        except Exception:
+            pass
+
+    def save(self):
+        with open("data.json", "w") as f:
+            data = json.dump(self.model.todos, f)
+
+    # end::loadsave[]
+
 
         
 
