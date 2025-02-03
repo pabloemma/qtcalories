@@ -27,3 +27,8 @@
 2025-02-03T10:55:41.707230-0700 - ControlDB-   ConnectDataBase -70- INFO    -  database connection name qt_sql_default_connection
 2025-02-03T10:55:42.002913-0700 - ControlDB-   ConnectDataBase -66- INFO    - connection succsessful
 2025-02-03T10:55:42.003216-0700 - ControlDB-   ConnectDataBase -70- INFO    -  database connection name qt_sql_default_connection
+2025-02-03T11:45:41.488814-0700 - __main__-   ConnectDataBase -83- ERROR    - connection failed, exciting
+2025-02-03T11:48:10.778694-0700 - __main__-   ConnectDataBase -76- INFO    - connection succsessful
+2025-02-03T11:48:10.779416-0700 - __main__-   ConnectDataBase -80- INFO    -  database connection name qt_sql_default_connection
+2025-02-03T11:48:33.368112-0700 - ControlDB-   ConnectDataBase -76- INFO    - connection succsessful
+2025-02-03T11:48:33.368768-0700 - ControlDB-   ConnectDataBase -80- INFO    -  database connection name qt_sql_default_connection

@@ -38,14 +38,24 @@ QApplication,
     QMenuBar,
 )
 
-class ContrlDB(object):
+class ContrlDB(QMainWindow):
 
-    def __init__(self,db_name=None,db_user=None,db_system=None,db_pwd = None):
+    def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None):
         super().__init__()
         self.db_name = db_name
         self.db_user = db_user
         self.db_system = db_system
-        self.db_pwd = db_pwd
+        if db_pwd == None:
+        
+            temp = '/Users/klein/git/qt_exercises/config/pw.txt'
+            if os.path.exists(temp):
+                with open(temp, 'r') as file:
+                    password = file.read().rstrip()
+                    self.db_pwd = password
+            else:
+                self.db_pwd = db_pwd
+
+        self.SetupLogger()
     
     def ConnectDataBase(self):
         ''' establish contact to database'''
@@ -101,4 +111,54 @@ class ContrlDB(object):
         table.setModel(model)
         #self.setCentralWidget(table)
 
+    def SetupLogger(self):
 
+
+        logger.remove(0)
+        #now we add color to the terminal output
+        logger.add(sys.stdout,
+                colorize = True,format="<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>" ,
+                level = "INFO")
+
+
+
+        fmt =  "{time} - {name}-   {function} -{line}- {level}    - {message}"
+        logger.add('info.log', format = fmt , level = 'INFO',rotation="1 day")
+
+
+        # set the colors of the different levels
+        logger.level("INFO",color ='<black>')
+        logger.level("WARNING",color='<green>')
+        logger.level("ERROR",color='<red>')
+        logger.level("DEBUG",color = '<blue>')
+ 
+        return
+
+
+app = QApplication(sys.argv) 
+
+Title=None
+db_name='recipe_ak'
+db_user='klein'
+db_system='QPSQL'
+db_pwd = None
+
+
+window = ContrlDB(Title = "ControlDB",
+                  db_name=db_name,
+                  db_user=db_user,
+                  db_system=db_system)
+#window.SetSize(800,500)
+#window.SetPosition(100,500)
+
+window.setStyleSheet("background-color: white;")
+#window.CreateCalendar()
+
+
+
+window.show()
+window.ConnectDataBase()
+window.ShowTables()
+window.ViewTable('Recipes')
+# now run the app
+app.exec()
