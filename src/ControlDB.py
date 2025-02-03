@@ -36,6 +36,7 @@ QApplication,
     QTimeEdit,
     QTableView,
     QMenuBar,
+    QAbstractItemView
 )
 
 class ContrlDB(QMainWindow):
@@ -101,14 +102,38 @@ class ContrlDB(QMainWindow):
 
         return
 
-    def ViewTable(self,table):
+    def ViewTable(self,table,suppress_columns=[],editmode=True,columnwidth=[]):
+        self.table_view = QTableView()
 
-        model = QSqlTableModel(db = self.mycal_db) 
-        model.setTable(table)
-        model.select()
+        self.model = QSqlTableModel(db = self.mycal_db) 
 
-        table = QTableView()
-        table.setModel(model)
+ 
+
+        self.table_view.setModel(self.model)
+        #prevent editing
+        if(not editmode):
+            self.table_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
+        self.model.setTable(table)
+
+        # get rid of columns
+        columns_to_remove = suppress_columns
+        for cn in columns_to_remove:
+            idx = self.model.fieldIndex(cn) 
+            self.model.removeColumns(idx, 1)
+
+
+        self.model.select()
+        # change column width
+        for k in range(0,len(columnwidth)):
+            self.table_view.setColumnWidth(k, columnwidth[k])
+ 
+        self.setMinimumSize(QSize(2024, 600)) 
+        
+        self.setCentralWidget(self.table_view)
+
+        self.SetPosition(10,10)
+
         #self.setCentralWidget(table)
 
     def SetupLogger(self):
@@ -134,6 +159,9 @@ class ContrlDB(QMainWindow):
  
         return
 
+    def SetPosition(self,pos_x,pos_y):
+        self.move(pos_x,pos_y)
+
 
 app = QApplication(sys.argv) 
 
@@ -143,6 +171,18 @@ db_user='klein'
 db_system='QPSQL'
 db_pwd = None
 
+suppress_columns = ['Sugar',
+                    'Portions',
+                    'Description',
+                    'Saturated_fat',
+                    'Fiber',
+                    'Salt',
+                    'Sodium',
+                    'Ingredients',
+                    'Time',
+                    'Images',
+                    'vegetarian']
+columnwidth = [40,200,200,200,200,200]
 
 window = ContrlDB(Title = "ControlDB",
                   db_name=db_name,
@@ -159,6 +199,6 @@ window.setStyleSheet("background-color: white;")
 window.show()
 window.ConnectDataBase()
 window.ShowTables()
-window.ViewTable('Recipes')
+window.ViewTable('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
 # now run the app
 app.exec()
