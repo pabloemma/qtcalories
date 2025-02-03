@@ -11,3 +11,7 @@
 2025-02-03T07:50:36.973262-0700 - __main__-   ConnectDataBase -187- INFO    -  database connection name qt_sql_default_connection
 2025-02-03T07:50:42.188114-0700 - __main__-   ConnectDataBase -183- INFO    - connection succsessful
 2025-02-03T07:50:42.188435-0700 - __main__-   ConnectDataBase -187- INFO    -  database connection name qt_sql_default_connection
+2025-02-03T08:33:01.289707-0700 - __main__-   ConnectDataBase -182- INFO    - connection succsessful
+2025-02-03T08:33:01.290634-0700 - __main__-   ConnectDataBase -186- INFO    -  database connection name qt_sql_default_connection
+2025-02-03T08:33:06.208125-0700 - __main__-   ConnectDataBase -182- INFO    - connection succsessful
+2025-02-03T08:33:06.208400-0700 - __main__-   ConnectDataBase -186- INFO    -  database connection name qt_sql_default_connection

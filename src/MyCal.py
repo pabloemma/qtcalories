@@ -306,6 +306,7 @@ window.setStyleSheet("background-color: white;")
 
 window.show()
 window.ConnectDataBase()
+window.ShowTables()
 window.ViewTable('Recipes')
 # now run the app
 app.exec()
