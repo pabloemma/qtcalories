@@ -1,0 +1,1452 @@
+%!PS-Adobe-3.0
+%%Title: shit.py
+%%For: Andi Klein
+%%Creator: a2ps version 4.15.5
+%%CreationDate: Mon Feb  3 10:10:55 2025
+%%BoundingBox: 24 24 588 767
+%%DocumentData: Clean7Bit
+%%Orientation: Landscape
+%%Pages: 6
+%%PageOrder: Ascend
+%%DocumentMedia: Letter 612 791 0 () ()
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-BoldOblique
+%%+ font Courier-Oblique
+%%+ font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Symbol
+%%+ font Times-Bold
+%%+ font Times-Roman
+%%DocumentProcessColors: Black 
+%%DocumentSuppliedResources: procset a2ps-a2ps-hdr
+%%+ procset a2ps-black+white-Prolog
+%%+ encoding ISO-8859-1Encoding
+%%EndComments
+/a2psdict 200 dict def
+a2psdict begin
+%%BeginProlog
+%%Copyright: (c) 1988-2017 Free Software Foundation, Inc.
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+
+% EPSF import as in the Red Book
+/BeginInclude {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack 
+  userdict begin
+    0 setgray 0 setlinecap
+    1 setlinewidth 0 setlinejoin
+    10 setmiterlimit [ ] 0 setdash newpath
+    gs_languagelevel 1 ne {
+      false setstrokeadjust false setoverprint 
+    } if
+} bind def
+
+/EndInclude {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+/BeginEPSF {
+  BeginInclude
+  /showpage { } def
+} bind def
+
+/EndEPSF {
+  EndInclude
+} bind def
+
+% Page prefeed
+/page_prefeed {         % bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} bind def
+
+/deffont {
+  findfont exch scalefont def
+} bind def
+
+/reencode_font {
+  findfont reencode 2 copy definefont pop def
+} bind def
+
+% Function c-show (str => -)
+% centers text only according to x axis.
+/c-show { 
+  dup stringwidth pop
+  2 div neg 0 rmoveto
+  show
+} bind def
+
+% Function l-show (str => -)
+% prints texts so that it ends at currentpoint
+/l-show {
+  dup stringwidth pop neg 
+  0 
+  rmoveto show
+} bind def
+
+% center-fit show (str w => -)
+% show centered, and scale currentfont so that the width is less than w
+/cfshow {
+  exch dup stringwidth pop
+  % If the title is too big, try to make it smaller
+  3 2 roll 2 copy
+  gt
+  { % if, i.e. too big
+    exch div
+    currentfont exch scalefont setfont
+  } { % ifelse
+    pop pop 
+  }
+  ifelse
+  c-show			% center title
+} bind def
+
+% Return the y size of the current font
+% - => fontsize
+/currentfontsize {
+  currentfont /FontType get 0 eq {
+    currentfont /FontMatrix get 3 get
+  }{
+    currentfont /FontMatrix get 3 get 1000 mul
+  } ifelse
+} bind def
+
+% reencode the font
+% <encoding-vector> <fontdict> -> <newfontdict>
+/reencode { %def
+  dup length 5 add dict begin
+    { %forall
+      % <vector> <key> <val>
+      1 index /FID ne 
+      { def }{ pop pop } ifelse
+    } forall
+    /Encoding exch def % -
+
+    % Use the font's bounding box to determine the ascent, descent,
+    % and overall height; don't forget that these values have to be
+    % transformed using the font's matrix.
+    % We use `load' because sometimes BBox is executable, sometimes not.
+    % Since we need 4 numbers an not an array avoid BBox from being executed
+    /FontBBox load aload pop
+    FontMatrix transform /Ascent exch def pop
+    FontMatrix transform /Descent exch def pop
+    /FontHeight Ascent Descent sub def
+
+    % Get the underline position and thickness if they're defined.
+    % Use 1 if they are not defined.
+    currentdict /FontInfo 2 copy known
+    { get
+      /UnderlinePosition 2 copy % <FontInfo> /UP <FontInfo> /UP
+      2 copy known
+      { get }{ pop pop 1 } ifelse
+      0 exch FontMatrix transform exch pop
+      def % <FontInfo>
+
+      /UnderlineThickness 2 copy % <FontInfo> /UT <FontInfo> /UT
+      2 copy known
+      { get }{ pop pop 1 } ifelse
+      0 exch FontMatrix transform exch pop
+      def % <FontInfo>
+      pop % -
+    }{ pop pop
+    } ifelse
+
+    currentdict
+  end 
+} bind def
+
+% composite fonts for ASCII-EUC mixed strings
+% Version 1.2 1/31/1990
+% Original Ken'ichi HANDA (handa@etl.go.jp)
+% Modified Norio Katayama (katayama@rd.nacsis.ac.jp),1998
+% Extend & Fix Koji Nakamaru (maru@on.cs.keio.ac.jp), 1999
+% Anyone can freely copy, modify, distribute this program.
+
+/copyfont {	% font-dic extra-entry-count  copyfont  font-dic
+	1 index maxlength add dict begin
+	{	1 index /FID ne 2 index /UniqueID ne and
+		{def} {pop pop} ifelse
+	} forall
+	currentdict
+	end
+} bind def
+
+/compositefont { % ASCIIFontName EUCFontName RomanScale RomanOffset Rot(T/F) compositefont font
+    /RomanRotation exch def
+    /RomanOffset exch def
+    /RomanScale exch def
+    userdict /fixeucfont_dict known not {
+	userdict begin
+	    /fixeucfont_dict 2 dict begin
+		/UpperByteEncoding [
+		    16#00 1 16#20 { pop 0 } for
+		    16#21 1 16#28 { 16#20 sub } for
+		    16#29 1 16#2F { pop 0 } for
+		    16#30 1 16#74 { 16#27 sub } for
+		    16#75 1 16#FF { pop 0 } for
+		] def
+	        /LowerByteEncoding [
+		    16#00 1 16#A0 { pop /.notdef } for
+		    16#A1 1 16#FE { 16#80 sub 16 2 string cvrs
+				    (cXX) dup 1 4 -1 roll
+				    putinterval cvn } for
+		    /.notdef
+		] def
+		currentdict
+	    end def
+	end
+    } if
+    findfont dup /FontType get 0 eq {
+	14 dict begin
+	    %
+	    % 7+8 bit EUC font
+	    %
+	    12 dict begin
+		/EUCFont exch def
+		/FontInfo (7+8 bit EUC font) readonly def
+		/PaintType 0 def
+		/FontType 0 def
+		/FontMatrix matrix def
+		% /FontName
+		/Encoding fixeucfont_dict /UpperByteEncoding get def
+		/FMapType 2 def
+		EUCFont /WMode known
+		{ EUCFont /WMode get /WMode exch def }
+		{ /WMode 0 def } ifelse
+		/FDepVector [
+		    EUCFont /FDepVector get 0 get
+		    [ 16#21 1 16#28 {} for 16#30 1 16#74 {} for ]
+		    {
+			13 dict begin
+			    /EUCFont EUCFont def
+			    /UpperByte exch 16#80 add def	
+			    % /FontName
+			    /FontInfo (EUC lower byte font) readonly def
+			    /PaintType 0 def
+			    /FontType 3 def
+			    /FontMatrix matrix def
+			    /FontBBox {0 0 0 0} def
+			    /Encoding
+				fixeucfont_dict /LowerByteEncoding get def
+			    % /UniqueID
+			    % /WMode
+			    /BuildChar {
+				gsave
+				exch dup /EUCFont get setfont
+				/UpperByte get
+				2 string
+				dup 0 4 -1 roll put
+				dup 1 4 -1 roll put
+				dup stringwidth setcharwidth
+				0 0 moveto show
+				grestore
+			    } bind def
+			    currentdict
+			end
+			/lowerbytefont exch definefont
+		    } forall
+		] def
+		currentdict
+	    end
+	    /eucfont exch definefont
+	    exch
+	    findfont 1 copyfont dup begin
+		RomanRotation {
+			/FontMatrix FontMatrix
+			[ 0 RomanScale neg RomanScale 0 RomanOffset neg 0 ]
+			matrix concatmatrix def
+		}{
+			/FontMatrix FontMatrix
+			[ RomanScale 0 0 RomanScale 0 RomanOffset ] matrix concatmatrix
+			def
+			/CDevProc
+			    {pop pop pop pop 0 exch -1000 exch 2 div 880} def
+		} ifelse
+	    end
+	    /asciifont exch definefont
+	    exch
+	    /FDepVector [ 4 2 roll ] def
+	    /FontType 0 def
+	    /WMode 0 def
+	    /FMapType 4 def
+	    /FontMatrix matrix def
+	    /Encoding [0 1] def
+	    /FontBBox {0 0 0 0} def
+%	    /FontHeight 1.0 def % XXXX
+	    /FontHeight RomanScale 1.0 ge { RomanScale }{ 1.0 } ifelse def
+	    /Descent -0.3 def   % XXXX
+	    currentdict
+	end
+	/tmpfont exch definefont
+	pop
+	/tmpfont findfont
+    }{
+	pop findfont 0 copyfont
+    } ifelse
+} def	
+
+/slantfont {	% FontName slant-degree  slantfont  font'
+    exch findfont 1 copyfont begin
+    [ 1 0 4 -1 roll 1 0 0 ] FontMatrix exch matrix concatmatrix
+    /FontMatrix exch def
+    currentdict
+    end
+} def
+
+% Function print line number (<string> # -)
+/# {
+  gsave
+    sx cw mul neg 2 div 0 rmoveto
+    f# setfont
+    c-show
+  grestore
+} bind def
+
+% -------- Some routines to enlight plain b/w printings ---------
+
+% Underline
+% width --
+/dounderline {
+  currentpoint
+  gsave
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    0 rlineto
+    stroke
+  grestore
+} bind def
+
+% Underline a string
+% string --
+/dounderlinestring {
+  stringwidth pop
+  dounderline
+} bind def
+
+/UL {
+  /ul exch store
+} bind def
+
+% Draw a box of WIDTH wrt current font
+% width --
+/dobox {
+  currentpoint
+  gsave
+    newpath
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    dup 0 rlineto
+    0 currentfont /FontHeight get currentfontsize mul rlineto
+    neg 0 rlineto
+    closepath
+    stroke
+  grestore
+} bind def
+
+/BX {
+  /bx exch store
+} bind def
+
+% Box a string
+% string --
+/doboxstring {
+  stringwidth pop
+  dobox
+} bind def
+
+%
+% ------------- Color routines ---------------
+%
+/FG /setrgbcolor load def
+
+% Draw the background
+% width --
+/dobackground {
+  currentpoint
+  gsave
+    newpath
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    dup 0 rlineto
+    0 currentfont /FontHeight get currentfontsize mul rlineto
+    neg 0 rlineto
+    closepath
+    bgcolor aload pop setrgbcolor
+    fill
+  grestore
+} bind def
+
+% Draw bg for a string
+% string --
+/dobackgroundstring {
+  stringwidth pop
+  dobackground
+} bind def
+
+
+/BG {
+  dup /bg exch store
+  { mark 4 1 roll ] /bgcolor exch store } if
+} bind def
+
+
+/Show {
+  bg { dup dobackgroundstring } if
+  ul { dup dounderlinestring } if
+  bx { dup doboxstring } if
+  show
+} bind def
+
+% Function T(ab), jumps to the n-th tabulation in the current line
+/T {
+  cw mul x0 add
+  bg { dup currentpoint pop sub dobackground } if
+  ul { dup currentpoint pop sub dounderline } if
+  bx { dup currentpoint pop sub dobox } if
+  y0 moveto
+} bind def
+
+% Function n: move to the next line
+/n {
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+% Function N: show and move to the next line
+/N {
+  Show
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+/S {
+  Show
+} bind def
+
+%%BeginResource: procset a2ps-a2ps-hdr 2.0 2
+%%Copyright: (c) 1988, 89, 90, 91, 92, 93 Miguel Santana
+%%Copyright: (c) 1995, 96, 97, 98 Akim Demaille, Miguel Santana
+% Function title: prints page header.
+% <ct> <rt> <lt> are passed as argument
+/title { 
+  % 1. Draw the background
+  x v get y v get moveto
+  gsave
+    0 th 2 div neg rmoveto 
+    th setlinewidth
+    0.95 setgray
+    pw 0 rlineto stroke
+  grestore
+  % 2. Border it
+  gsave
+    0.7 setlinewidth
+    pw 0 rlineto
+    0 th neg rlineto
+    pw neg 0 rlineto
+    closepath stroke
+  grestore
+  % stk: ct rt lt
+  x v get y v get th sub 1 add moveto
+%%IncludeResource: font Helvetica
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  % 3. The left title
+  gsave
+    dup stringwidth pop fnfs 0.8 mul add exch % leave space took on stack
+    fnfs 0.8 mul hm rmoveto
+    show			% left title
+  grestore
+  exch
+  % stk: ct ltw rt
+  % 4. the right title
+  gsave
+    dup stringwidth pop fnfs 0.8 mul add exch % leave space took on stack
+    dup
+    pw exch stringwidth pop fnfs 0.8 mul add sub
+    hm
+    rmoveto
+    show			% right title
+  grestore
+  % stk: ct ltw rtw
+  % 5. the center title
+  gsave
+    pw 3 1 roll
+    % stk: ct pw ltw rtw
+    3 copy 
+    % Move to the center of the left room
+    sub add 2 div hm rmoveto
+    % What is the available space in here?
+    add sub fnfs 0.8 mul sub fnfs 0.8 mul sub
+    % stk: ct space_left
+%%IncludeResource: font Helvetica-Bold
+  fHelvetica-Bold fnfs scalefont setfont
+    cfshow
+  grestore
+} bind def
+
+% Function border: prints virtual page border
+/border { %def
+  gsave				% print four sides
+    0 setgray
+    x v get y v get moveto
+    0.7 setlinewidth		% of the square
+    pw 0 rlineto
+    0 ph neg rlineto
+    pw neg 0 rlineto
+    closepath stroke
+  grestore
+} bind def
+
+% Function water: prints a water mark in background
+/water { %def
+  gsave
+    scx scy moveto rotate
+%%IncludeResource: font Times-Bold
+  fTimes-Bold 100 scalefont setfont
+    .97 setgray
+    dup stringwidth pop 2 div neg -50 rmoveto
+    show
+  grestore
+} bind def
+
+% Function rhead: prints the right header
+/rhead {  %def
+  lx ly moveto
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  l-show
+} bind def
+
+% Function footer (cf rf lf -> -)
+/footer {
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  dx dy moveto
+  show
+
+  snx sny moveto
+  l-show
+  
+  fnx fny moveto
+  c-show
+} bind def
+%%EndResource
+%%BeginResource: procset a2ps-black+white-Prolog 2.0 1
+
+% Function T(ab), jumps to the n-th tabulation in the current line
+/T { 
+  cw mul x0 add y0 moveto
+} bind def
+
+% Function n: move to the next line
+/n { %def
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+% Function N: show and move to the next line
+/N {
+  Show
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+}  bind def
+
+/S {
+  Show
+} bind def
+
+/p {
+  false UL
+  false BX
+  fCourier bfs scalefont setfont
+  Show
+} bind def
+
+/sy {
+  false UL
+  false BX
+  fSymbol bfs scalefont setfont
+  Show
+} bind def
+
+/k {
+  false UL
+  false BX
+  fCourier-Oblique bfs scalefont setfont
+  Show
+} bind def
+
+/K {
+  false UL
+  false BX
+  fCourier-Bold bfs scalefont setfont
+  Show
+} bind def
+
+/c {
+  false UL
+  false BX
+  fCourier-Oblique bfs scalefont setfont
+  Show
+} bind def
+
+/C {
+  false UL
+  false BX
+  fCourier-BoldOblique bfs scalefont setfont
+  Show 
+} bind def
+
+/l {
+  false UL
+  false BX
+  fHelvetica bfs scalefont setfont
+  Show
+} bind def
+
+/L {
+  false UL
+  false BX
+  fHelvetica-Bold bfs scalefont setfont
+  Show 
+} bind def
+
+/str{
+  false UL
+  false BX
+  fTimes-Roman bfs scalefont setfont
+  Show
+} bind def
+
+/e{
+  false UL
+  true BX
+  fHelvetica-Bold bfs scalefont setfont
+  Show
+} bind def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier
+%%IncludeResource: font Courier-Oblique
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Times-Roman
+%%IncludeResource: font Symbol
+%%IncludeResource: font Courier-BoldOblique
+%%BeginResource: encoding ISO-8859-1Encoding
+/ISO-8859-1Encoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright 
+/parenleft /parenright /asterisk /plus /comma /minus /period /slash 
+/zero /one /two /three /four /five /six /seven 
+/eight /nine /colon /semicolon /less /equal /greater /question 
+/at /A /B /C /D /E /F /G 
+/H /I /J /K /L /M /N /O 
+/P /Q /R /S /T /U /V /W 
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore 
+/quoteleft /a /b /c /d /e /f /g 
+/h /i /j /k /l /m /n /o 
+/p /q /r /s /t /u /v /w 
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section 
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron 
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /bullet 
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown 
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla 
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis 
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply 
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls 
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla 
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis 
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide 
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis 
+] def
+%%EndResource
+% Initialize page description variables.
+/sh 612 def
+/sw 791 def
+/llx 24 def
+/urx 767 def
+/ury 588 def
+/lly 24 def
+/#copies 1 def
+/th 20.000000 def
+/fnfs 15 def
+/bfs 9.000000 def
+/cw 5.400000 def
+
+% Dictionary for ISO-8859-1 support
+/iso1dict 8 dict begin
+  /fCourier ISO-8859-1Encoding /Courier reencode_font
+  /fCourier-Bold ISO-8859-1Encoding /Courier-Bold reencode_font
+  /fCourier-BoldOblique ISO-8859-1Encoding /Courier-BoldOblique reencode_font
+  /fCourier-Oblique ISO-8859-1Encoding /Courier-Oblique reencode_font
+  /fHelvetica ISO-8859-1Encoding /Helvetica reencode_font
+  /fHelvetica-Bold ISO-8859-1Encoding /Helvetica-Bold reencode_font
+  /fTimes-Bold ISO-8859-1Encoding /Times-Bold reencode_font
+  /fTimes-Roman ISO-8859-1Encoding /Times-Roman reencode_font
+currentdict end def
+/bgcolor [ 0 0 0 ] def
+/bg false def
+/ul false def
+/bx false def
+% The font for line numbering
+/f# /Helvetica findfont bfs .6 mul scalefont def
+/fSymbol /Symbol findfont def
+/hm fnfs 0.25 mul def
+/pw
+   cw 137.400000 mul
+def
+/ph
+   519.300000 th add
+def
+/pmw 0 def
+/pmh 0 def
+/v 0 def
+/x [
+  0
+] def
+/y [
+  pmh ph add 0 mul ph add
+] def
+/scx sw 2 div def
+/scy sh 2 div def
+/snx urx def
+/sny lly 2 add def
+/dx llx def
+/dy sny def
+/fnx scx def
+/fny dy def
+/lx snx def
+/ly ury fnfs 0.8 mul sub def
+/sx 5 def
+/tab 8 def
+/x0 0 def
+/y0 0 def
+%%EndSetup
+
+%%Page: (1) 1
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(1) # (# Program to calculate calories and other information for ) c n
+(2) # (# recipes. ) N
+(3) # () S
+(import) K
+( sys) p n
+(4) # () S
+(import) K
+( os) p n
+(5) # () S
+(import) K
+( platform) p n
+(6) # () S
+(from) K
+( loguru ) p
+(import) K
+( logger) p n
+(7) # () N
+(8) # () N
+(9) # () S
+(import) K
+( config_mycal) p n
+(10) # () N
+(11) # () N
+(12) # () S
+(from) K
+( PySide6.QtCore ) p
+(import) K
+( QSize, Qt ,QCoreApplication) p n
+(13) # () S
+(from) K
+( PySide6.QtGui ) p
+(import) K
+( QAction) p n
+(14) # () S
+(from) K
+( PySide6.QtWidgets ) p
+(import) K
+( QVBoxLayout , QGridLayout ) p n
+(15) # () S
+(from) K
+( PySide6.QtWidgets ) p
+(import) K
+( QWidget ) p n
+(16) # () S
+(from) K
+( PySide6.QtSql ) p
+(import) K
+( QSqlDatabase , QSql,QSqlTableModel) p n
+(17) # () N
+(18) # () N
+(19) # () N
+(20) # () N
+(21) # () S
+(from) K
+( PySide6.QtWidgets ) p
+(import) K
+( \() p n
+(22) # (QApplication,) N
+(23) # (    QCheckBox,) N
+(24) # (    QComboBox,) N
+(25) # (    QDateEdit,) N
+(26) # (    QDateTimeEdit,) N
+(27) # (    QDial,) N
+(28) # (    QDoubleSpinBox,) N
+(29) # (    QFileDialog,) N
+(30) # (    QFontComboBox,) N
+(31) # (    QLabel,) N
+(32) # (    QLCDNumber,) N
+(33) # (    QLineEdit,) N
+(34) # (    QMainWindow,) N
+(35) # (    QProgressBar,) N
+(36) # (    QPushButton,) N
+(37) # (    QRadioButton,) N
+(38) # (    QSlider,) N
+(39) # (    QSpinBox,) N
+(40) # (    QTimeEdit,) N
+(41) # (    QTableView,) N
+(42) # (    QMenuBar,) N
+(43) # (\)) N
+(44) # () N
+(45) # () N
+(46) # () S
+(class) K
+( MainWindow\(QMainWindow\):) p n
+(47) # (    ) S
+(def) K
+( __init__\(self, Title =  None , pos_x = 100 , pos_y = 500, size_x = 800 , size_y = 600\):) p n
+(48) # (        super\(\).__init__\(\)  ) S
+(# this will the allow to use this as a Subclass) c n
+(49) # () N
+(50) # () S
+(        ) p
+(#with self and using QMainWindow, we can now acces everything through self) c n
+(51) # () S
+(        ) p
+(# first we give it the Title) c n
+(52) # () N
+(53) # () N
+(54) # () S
+(        ) p
+(# Read in the configuration) c n
+(55) # () S
+(        self.SetupConfig\(\)) p n
+(56) # ( ) N
+(57) # () N
+(shit.py) (Page 1/6) (Feb 03, 2025 10:01) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(shit.py) (1/6) (Monday February 03, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (2) 2
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(58) # (        ) p
+(# some constants for json file) c n
+(59) # () S
+( ) p n
+(60) # () N
+(61) # (        ) S
+(# the logging system) c n
+(62) # () S
+(        self.SetupLogger\(\)) p n
+(63) # (        self.log_level = self.CM.log_level) N
+(64) # () N
+(65) # () N
+(66) # (        ) S
+(# first get the password) c n
+(67) # () S
+( ) p
+(#       self.GetPwd\(\)) c n
+(68) # () N
+(69) # () S
+(        ) p
+(# connect to database) c n
+(70) # () S
+(        self.ConnectDataBase\(\)) p n
+(71) # ( ) N
+(72) # (        ) S
+(if) K
+( Title != None:) p n
+(73) # (            self.setWindowTitle\(Title\)) N
+(74) # (        ) S
+(else) K
+(:) p n
+(75) # (            self.setWindowTitle\(") S
+(QMainWindow) str
+("\)) p n
+(76) # () N
+(77) # (       ) N
+(78) # (        ) S
+(# now we set up geometry) c n
+(79) # () S
+(        self.SetSize\(size_x,size_y\)) p n
+(80) # (        self.SetPosition\(pos_x , pos_y\)) N
+(81) # () N
+(82) # () N
+(83) # (        self.AddMyMenu\(\)) N
+(84) # () N
+(85) # (        ) S
+(# now do the layout) c n
+(86) # () S
+(        self.MyLayout\(\)) p n
+(87) # () N
+(88) # (    ) S
+(def) K
+( MyLayout\(self\):) p n
+(89) # (        ''') S
+(Here I do the layout of the window) str
+(''') p n
+(90) # () N
+(91) # (        ) S
+(# here we create a button widget in the mddle of the mainwindow.) c n
+(92) # () S
+(        mylayout = QGridLayout\(\)) p n
+(93) # (        mylayout.addWidget\(QDoubleSpinBox\(\),0,1\)) N
+(94) # (        mylayout.addWidget\(QComboBox\(\),0,0\)) N
+(95) # (        mylayout.addWidget\(QDial\(\),1,0\)) N
+(96) # (        mylayout.addWidget\(QDateTimeEdit\(\),1,1\)) N
+(97) # () N
+(98) # (        ) S
+(# connect to widget) c n
+(99) # () S
+(        mywidget = QWidget\(\)) p n
+(100) # (        mywidget.setLayout\(mylayout\)) N
+(101) # (        self.setCentralWidget\(mywidget\)) N
+(102) # () N
+(103) # () N
+(104) # (    ) S
+(def) K
+( SetPosition\(self,pos_x,pos_y\):) p n
+(105) # (        self.move\(pos_x,pos_y\)) N
+(106) # () N
+(107) # (    ) S
+(def) K
+( SetSize\(self,size_x,size_y\):) p n
+(108) # (        ) S
+(#self.setBaseSize\(size_x,size_y\) only works on QWidget) c n
+(109) # () S
+(        self.resize\(size_x,size_y\)) p n
+(110) # () N
+(111) # () N
+(112) # (       ) N
+(113) # (    ) S
+(def) K
+( AddMyMenu\(self\):   ) p n
+(114) # (        ''') S
+(Now we add a menu) str
+(''') p n
+(shit.py) (Page 2/6) (Feb 03, 2025 10:01) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(shit.py) (2/6) (Monday February 03, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (3) 3
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(115) # (        ) p
+(#menubar = QMenuBar\(None\)) c n
+(116) # () S
+(        menubar = self.menuBar\(\)) p n
+(117) # ( ) N
+(118) # (        file_menu = menubar.addMenu\(") S
+(File) str
+("\)) p n
+(119) # (        db_menu = menubar.addMenu\(") S
+(Database) str
+("\)) p n
+(120) # () N
+(121) # (        ) S
+(# database handling:) c n
+(122) # () S
+(         ) p
+(#No menu will show without an action defined) c n
+(123) # () S
+(        ) p
+(#Also Quit does not show up since this is already in the intrinsic Python menu.) c n
+(124) # () S
+(        ) p
+(# Same for exit) c n
+(125) # () N
+(126) # () S
+(    ) p
+(# here come a few actions, which will be called from the button qwidget) c n
+(127) # () S
+(    ) p
+(# When you press a button, it will trigger one or everal events through slots) c n
+(128) # () S
+(    ) p
+(# one thing which is important to note ist that one click on a button can have many different meanings) c n
+(129) # () S
+(    ) p
+(# DON"T FORGET TO PUT, self IN QACTION) c n
+(130) # () N
+(131) # () S
+(        ) p
+(#here we define the actions: File open section) c n
+(132) # () S
+(        file_action = QAction\(") p
+(Open) str
+(", self\)) p n
+(133) # (        file_action.setStatusTip\(") S
+(Opens a file) str
+("\)) p n
+(134) # (        file_action.triggered.connect\(self.OpenFile\)) N
+(135) # (        file_menu.addAction\(file_action\)) N
+(136) # () N
+(137) # (     ) N
+(138) # (        ) S
+(#file_menu.addAction\("Quit"\)) c n
+(139) # () S
+(   ) p n
+(140) # (    ) N
+(141) # (    ) N
+(142) # () N
+(143) # (        ) S
+(#saving the file) c n
+(144) # () S
+(        save_action = QAction\(") p
+(Save) str
+(", self\)) p n
+(145) # (        save_action.setShortcut\(") S
+(CMD+S) str
+("\)) p n
+(146) # (        save_action.setStatusTip\(') S
+(save File) str
+('\)) p n
+(147) # (        save_action.triggered.connect\(self.SaveFile\)) N
+(148) # (        file_menu.addAction\(save_action\)) N
+(149) # () N
+(150) # (        db_action_1 = QAction\(") S
+(List Table) str
+(",self\)) p n
+(151) # (        db_action_1.setStatusTip\(') S
+(List database tables) str
+('\)) p n
+(152) # (        db_action_1.triggered.connect\(self.ShowTables\)) N
+(153) # (        db_menu.addAction\(db_action_1\)) N
+(154) # (        db_action_2 = QAction\(") S
+(save) str
+(",self\)) p n
+(155) # (        db_action_2.setStatusTip\(') S
+(List database tables) str
+('\)) p n
+(156) # (        db_action_2.triggered.connect\(self.ShowTables\)) N
+(157) # (        db_menu.addAction\(db_action_2\)) N
+(158) # () N
+(159) # () N
+(160) # (        file_menu.addAction\(") S
+(MyExit) str
+("\)) p n
+(161) # (        file_menu.addAction\(") S
+(None) str
+("\)) p n
+(162) # (        ) N
+(163) # () N
+(164) # () N
+(165) # () N
+(166) # (    ) S
+(def) K
+( ConnectDataBase\(self\):) p n
+(167) # (        ''') S
+( establish contact to database) str
+(''') p n
+(168) # () N
+(169) # () N
+(170) # (        ) S
+(#instantiate the connection) c n
+(171) # () S
+(        self.mycal_db  = QSqlDatabase.addDatabase\(self.CM.db_system\)) p n
+(shit.py) (Page 3/6) (Feb 03, 2025 10:01) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(shit.py) (3/6) (Monday February 03, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (4) 4
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(172) # (        self.mycal_db.setHostName\(") p
+(localhost) str
+("\)) p n
+(173) # (        self.mycal_db.setDatabaseName\(self.CM.db_name\)) N
+(174) # (        self.mycal_db.setUserName\(self.CM.db_user\)) N
+(175) # (        self.mycal_db.setPassword\(self.GetPwd\(\)\)) N
+(176) # (        ) N
+(177) # () N
+(178) # ( ) S
+(#       self.mycal_db.setPassword\(self.CM.pwd\)) c n
+(179) # () N
+(180) # () S
+(        result = self.mycal_db.open\(\)) p n
+(181) # (        ) S
+(if) K
+(\(result\):) p n
+(182) # (            logger.info\(') S
+(connection succsessful) str
+('\)) p n
+(183) # (            ) S
+(# here we get the connection name) c n
+(184) # () S
+(            ) p
+(# will be needed when we want to close the connection) c n
+(185) # () S
+(            self.connection_name = self.mycal_db.connectionName\(\)) p n
+(186) # (            logger.info\(') S
+( database connection name %s) str
+(' % self.connection_name\)) p n
+(187) # (            ) S
+(#self.ShowTables\(\)) c n
+(188) # () S
+(        ) p
+(else) K
+(:) p n
+(189) # (            logger.error\(') S
+(connection failed, exciting) str
+('\)) p n
+(190) # (            sys.exit\(0\)) N
+(191) # () N
+(192) # (    ) S
+(def) K
+( GetPwd\(self\):) p n
+(193) # (        temp = self.CM.cryptofile) N
+(194) # (        ) S
+(if) K
+( os.path.exists\(temp\):) p n
+(195) # (            with open\(temp, ') S
+(r) str
+('\) as file:) p n
+(196) # (                self.password = password = file.read\(\).rstrip\(\)) N
+(197) # (                ) S
+(return) K
+( password) p n
+(198) # () N
+(199) # () N
+(200) # (        ) S
+(else) K
+(:) p n
+(201) # (            logger.error\(') S
+(crytopfile not found, exciting) str
+('\)   ) p n
+(202) # (            sys.exit\(0\)) N
+(203) # (        ) N
+(204) # (   ) N
+(205) # () N
+(206) # (    ) S
+(def) K
+( OpenFile\(self\):) p n
+(207) # (        ''') S
+( Open file dialog) str
+(''') p n
+(208) # () N
+(209) # (        self.FileName = QFileDialog.getOpenFileName\(self\)) N
+(210) # () N
+(211) # (    ) S
+(def) K
+( SaveFile\(self\):) p n
+(212) # (        name = QFileDialog.getSaveFileName\(self,') S
+(Save File) str
+('\)) p n
+(213) # (        myfile = open\(name,') S
+(w) str
+('\)) p n
+(214) # (        text = self.textEdit.toPlainText\(\)) N
+(215) # (        myfile.write\(text\)) N
+(216) # (        myfile.close\(\)) N
+(217) # () N
+(218) # () N
+(219) # () N
+(220) # () N
+(221) # ( ) N
+(222) # (    ) S
+(def) K
+( SetupConfig\(self\):) p n
+(223) # (        mysystem = platform.system\(\)) N
+(224) # () N
+(225) # (        ) S
+(if) K
+( mysystem == ') p
+(Darwin) str
+(':) p n
+(226) # (            conf_dir = ') S
+(/Users/klein/git/qt_exercises/config/) str
+(') p n
+(227) # (        ) S
+(elif) K
+( mysystem == ') p
+(Linux) str
+(':) p n
+(228) # (            conf_dir = ') S
+(/home/klein/git/qt_exercises/config/) str
+(') p n
+(shit.py) (Page 4/6) (Feb 03, 2025 10:01) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(shit.py) (4/6) (Monday February 03, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (5) 5
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(229) # (        ) p
+(else) K
+(:) p n
+(230) # (            ) S
+(print) K
+(\(') p
+( This os is not supported %s) str
+(' % mysystem\)) p n
+(231) # (            sys.exit\(0\)) N
+(232) # (        config_file = conf_dir + ') S
+(config_mycal.json) str
+(') p n
+(233) # () N
+(234) # (        self.CM = CM = config_mycal.MyConfig\(config_file\)) N
+(235) # (        self.log_level = CM.log_level) N
+(236) # (        self.log_output = CM.log_output) N
+(237) # () N
+(238) # (        ) N
+(239) # () N
+(240) # () N
+(241) # () N
+(242) # () N
+(243) # (    ) S
+(def) K
+( SetupLogger\(self\):) p n
+(244) # () N
+(245) # () N
+(246) # (        logger.remove\(0\)) N
+(247) # (        ) S
+(#now we add color to the terminal output) c n
+(248) # () S
+(        logger.add\(sys.stdout,) p n
+(249) # (                colorize = True,format=") S
+(<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>) str
+(" ,) p n
+(250) # (                level = self.log_level\)) N
+(251) # () N
+(252) # () N
+(253) # () N
+(254) # (        fmt =  ") S
+({time} - {name}-   {function} -{line}- {level}    - {message}) str
+(") p n
+(255) # (        logger.add\(self.log_output, format = fmt , level = self.log_level,rotation=") S
+(1 day) str
+("\)) p n
+(256) # () N
+(257) # () N
+(258) # (        ) S
+(# set the colors of the different levels) c n
+(259) # () S
+(        logger.level\(") p
+(INFO) str
+(",color =') p
+(<black>) str
+('\)) p n
+(260) # (        logger.level\(") S
+(WARNING) str
+(",color=') p
+(<green>) str
+('\)) p n
+(261) # (        logger.level\(") S
+(ERROR) str
+(",color=') p
+(<red>) str
+('\)) p n
+(262) # (        logger.level\(") S
+(DEBUG) str
+(",color = ') p
+(<blue>) str
+('\)) p n
+(263) # ( ) N
+(264) # (        ) S
+(return) K n
+(265) # () S
+(    ) p n
+(266) # (    ) S
+(def) K
+( ShowTables\(self\):) p n
+(267) # (        ''') S
+(prints all the tables in the databe) str
+(''') p n
+(268) # (        self.table_list = self.mycal_db.tables\(type=QSql.Tables\)) N
+(269) # (        ) S
+(for) K
+( k ) p
+(in) K
+( range\(0,len\(self.table_list\)\):) p n
+(270) # (            ) S
+(print) K
+(\(self.table_list[k]\)) p n
+(271) # () N
+(272) # (        ) S
+(#Create list box) c n
+(273) # () S
+(        self.mybox = QComboBox\(\)) p n
+(274) # (        ) S
+(#Insert at index 0 the whole list) c n
+(275) # () S
+(        self.mybox.insertItems\(0,self.table_list\)) p n
+(276) # (        ) S
+(# create independent window) c n
+(277) # () S
+(       ) p n
+(278) # (        self.setCentralWidget\(self.mybox\)) N
+(279) # () N
+(280) # () N
+(281) # (        ) S
+(return) K n
+(282) # () N
+(283) # () S
+(                       ) p n
+(284) # (            ) N
+(285) # () N
+(shit.py) (Page 5/6) (Feb 03, 2025 10:01) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(shit.py) (5/6) (Monday February 03, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (6) 6
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(286) # (    ) p
+(def) K
+( ViewTable\(self,table\):) p n
+(287) # () N
+(288) # (        model = QSqlTableModel\(db = self.mycal_db\) ) N
+(289) # (        model.setTable\(table\)) N
+(290) # (        model.select\(\)) N
+(291) # () N
+(292) # (        table = QTableView\(\)) N
+(293) # (        table.setModel\(model\)) N
+(294) # (        ) S
+(#self.setCentralWidget\(table\)) c n
+(295) # () N
+(296) # () N
+(297) # () S
+(app = QApplication\(sys.argv\) ) p n
+(298) # (window = MainWindow\(Title = ") S
+(GridLayout) str
+("\)) p n
+(299) # () S
+(#window.SetSize\(800,500\)) c n
+(300) # (#window.SetPosition\(100,500\)) N
+(301) # () N
+(302) # () S
+(window.setStyleSheet\(") p
+(background-color: white;) str
+("\)) p n
+(303) # () S
+(#window.CreateCalendar\(\)) c n
+(304) # () N
+(305) # () N
+(306) # () N
+(307) # () S
+(window.show\(\)) p n
+(308) # (window.ConnectDataBase\(\)) N
+(309) # (window.ShowTables\(\)) N
+(310) # (window.ViewTable\(') S
+(Recipes) str
+('\)) p n
+(311) # () S
+(# now run the app) c n
+(312) # () S
+(app.) p
+(exec) K
+(\(\)) p
+(shit.py) (Page 6/6) (Feb 03, 2025 10:01) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(shit.py) (6/6) (Monday February 03, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+
+%%Trailer
+end
+%%EOF

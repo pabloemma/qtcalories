@@ -7,7 +7,6 @@ from loguru import logger
 
 
 import config_mycal
-import ControlDB
 
 
 from PySide6.QtCore import QSize, Qt ,QCoreApplication
@@ -163,16 +162,32 @@ class MainWindow(QMainWindow):
         
 
 
+
     def ConnectDataBase(self):
-        """establish contact to database class"""
-        self.MyDB = ControlDB.ContrlDB(db_user = self.CM.db_user,
-                    db_pwd = self.GetPwd(),
-                    db_name = self.CM.db_name,
-                    db_system =self.CM.db_system)
-        self.MyDB.ConnectDataBase()
+        ''' establish contact to database'''
 
 
+        #instantiate the connection
+        self.mycal_db  = QSqlDatabase.addDatabase(self.CM.db_system)
+        self.mycal_db.setHostName("localhost")
+        self.mycal_db.setDatabaseName(self.CM.db_name)
+        self.mycal_db.setUserName(self.CM.db_user)
+        self.mycal_db.setPassword(self.GetPwd())
+        
 
+ #       self.mycal_db.setPassword(self.CM.pwd)
+
+        result = self.mycal_db.open()
+        if(result):
+            logger.info('connection succsessful')
+            # here we get the connection name
+            # will be needed when we want to close the connection
+            self.connection_name = self.mycal_db.connectionName()
+            logger.info(' database connection name %s' % self.connection_name)
+            #self.ShowTables()
+        else:
+            logger.error('connection failed, exciting')
+            sys.exit(0)
 
     def GetPwd(self):
         temp = self.CM.cryptofile
@@ -249,9 +264,6 @@ class MainWindow(QMainWindow):
         return
     
     def ShowTables(self):
-        self.MyDB.ShowTables()
-
-    def ShowTablesOld(self):
         '''prints all the tables in the databe'''
         self.table_list = self.mycal_db.tables(type=QSql.Tables)
         for k in range(0,len(self.table_list)):
@@ -269,10 +281,19 @@ class MainWindow(QMainWindow):
         return
 
                        
-    def ViewTable(self,table):
-        self.MyDB.ViewTable(table)        
+            
 
- 
+    def ViewTable(self,table):
+
+        model = QSqlTableModel(db = self.mycal_db) 
+        model.setTable(table)
+        model.select()
+
+        table = QTableView()
+        table.setModel(model)
+        #self.setCentralWidget(table)
+
+
 app = QApplication(sys.argv) 
 window = MainWindow(Title = "GridLayout")
 #window.SetSize(800,500)

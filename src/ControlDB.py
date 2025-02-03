@@ -10,6 +10,8 @@ import config_mycal
 
 from PySide6.QtCore import QSize, Qt ,QCoreApplication
 from PySide6.QtGui import QAction
+from PySide6.QtWidgets import QWidget 
+
 from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel
 
 from PySide6.QtWidgets import (
@@ -71,5 +73,32 @@ class ContrlDB(object):
             logger.error('connection failed, exciting')
             sys.exit(0)
 
+
+    def ShowTables(self):
+        '''prints all the tables in the databe'''
+        self.table_list = self.mycal_db.tables(type=QSql.Tables)
+        for k in range(0,len(self.table_list)):
+            print(self.table_list[k])
+
+        #Create list box
+        self.mybox = QComboBox()
+        #Insert at index 0 the whole list
+        self.mybox.insertItems(0,self.table_list)
+        # create independent window
+       
+        #self.setCentralWidget(self.mybox)
+
+
+        return
+
+    def ViewTable(self,table):
+
+        model = QSqlTableModel(db = self.mycal_db) 
+        model.setTable(table)
+        model.select()
+
+        table = QTableView()
+        table.setModel(model)
+        #self.setCentralWidget(table)
 
 
