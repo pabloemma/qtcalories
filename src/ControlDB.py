@@ -13,7 +13,7 @@ from PySide6.QtGui import QAction,QDoubleValidator
 from PySide6.QtWidgets import QWidget 
 from PySide6.QtUiTools import QUiLoader
 
-from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel
+from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel,QSqlQueryModel,QSqlQuery
 
 from PySide6.QtWidgets import (
 QApplication,
@@ -126,8 +126,9 @@ class ContrlDB(QMainWindow):
 
         return
 
-    def ViewTable(self,table,suppress_columns=[],editmode=True,columnwidth=[]):
+    def ViewTable(self,table,suppress_columns=[],editmode=True,columnwidth=[],Title = None):
         self.table_view = QTableView()
+        
 
         self.model = QSqlTableModel(db = self.mycal_db) 
 
@@ -152,10 +153,10 @@ class ContrlDB(QMainWindow):
         for k in range(0,len(columnwidth)):
             self.table_view.setColumnWidth(k, columnwidth[k])
  
-        self.setMinimumSize(QSize(2024, 600)) 
+        self.setMinimumSize(QSize(300, 300)) 
         
         self.setCentralWidget(self.table_view)
-
+        
         self.SetPosition(10,10)
 
         self.show()
@@ -196,13 +197,13 @@ class ContrlDB(QMainWindow):
      
         # setup geometry
         mysize=[400,300]
-        myposit = [200,100]
+        myposit = [800,100]
     
         self.SizeWindow(self.Inform,myposit,mysize)
 
         # Create widgets
         self.name_label      = QLineEdit()
-        self.name_label.setStyleSheet("background-color: white")
+        self.name_label.setStyleSheet("background-color: rgb(3, 252, 227)")
         # force valid entr
         double_validator = QDoubleValidator(0, 500.0, 2)
  
@@ -352,9 +353,27 @@ class ContrlDB(QMainWindow):
         Ing_prot    = float(self.prot_label.text())
 
         #Check all fields are filled out
-        if(Ing_calory !="" and Ing_carb !="" and Ing_fat!=""  and Ing_prot !=""):
-            self.Inform.destroy()
-        
+        ##if(Ing_calory !="" and Ing_carb !="" and Ing_fat!=""  and Ing_prot !=""):
+        ##    self.Inform.destroy() # destrorys the window.
+
+        #now we need to add the values to the ingredients table
+        # first load table
+        suppress_columns = ['Sugar',
+                    'Portion_size',
+                    'Saturated',
+                    'Fiber',
+                    'Salt',
+                    'Sodium',
+                    'Product_source'
+                    ]
+
+        self.ViewTable('Ingredients',suppress_columns=suppress_columns)
+        self.model = QSqlQueryModel()
+        #self.table_view.setModel(self.model)
+        #next we check we don't have an entry yet
+
+        sql = "SELECT exists (SELECT 1 FROM table WHERE column = Name LIMIT 1)"
+        query = QSqlQuery(sql)
     
 
 app = QApplication(sys.argv) 
