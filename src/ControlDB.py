@@ -8,8 +8,8 @@ from loguru import logger
 import config_mycal
 
 
-from PySide6.QtCore import QSize, Qt ,QCoreApplication
-from PySide6.QtGui import QAction
+from PySide6.QtCore import QSize, Qt ,QCoreApplication,Slot,Signal
+from PySide6.QtGui import QAction,QDoubleValidator
 from PySide6.QtWidgets import QWidget 
 from PySide6.QtUiTools import QUiLoader
 
@@ -25,6 +25,7 @@ QApplication,
     QDoubleSpinBox,
     QFileDialog,
     QFontComboBox,
+    QFormLayout,
     QLabel,
     QLCDNumber,
     QLineEdit,
@@ -38,14 +39,23 @@ QApplication,
     QTableView,
     QMenuBar,
     QVBoxLayout,
-    QAbstractItemView
+    QAbstractItemView,
+    QGridLayout,
+    QTextEdit
+    
 )
 
-class NewWindow(QWidget):
-        def __init__(self):
+class NewWindow(QMainWindow):
+        def __init__(self,Title =  None):
             super().__init__()
             layout = QVBoxLayout()
+
             self.label = QLabel("Another Window")
+            if(Title == None):
+                self.setWindowTitle("MyCal")
+            else:
+                self.setWindowTitle(Title)
+        
             layout.addWidget(self.label)
             self.setLayout(layout)
 
@@ -177,22 +187,175 @@ class ContrlDB(QMainWindow):
     def SetPosition(self,pos_x,pos_y):
         self.move(pos_x,pos_y)
 
+    def CreateIngredientsForm1(self):
+        """uses the form layout"""
+    
+       #always use self so window wll be persistent
+        self.Inform = NewWindow(Title = "Add New Ingredient")
+        self.Inform.setStyleSheet("background-color: yellow;")
+     
+        # setup geometry
+        mysize=[400,300]
+        myposit = [200,100]
+    
+        self.SizeWindow(self.Inform,myposit,mysize)
+
+        # Create widgets
+        self.name_label      = QLineEdit()
+        self.name_label.setStyleSheet("background-color: white")
+        # force valid entr
+        double_validator = QDoubleValidator(0, 500.0, 2)
+ 
+        self.calory_label    = QLineEdit()
+        self.calory_label.setStyleSheet("background-color: white")
+        self.calory_label.setValidator(double_validator)
+        
+        self.carb_label      = QLineEdit()
+        self.carb_label.setStyleSheet("background-color: white")
+        self.carb_label.setValidator(double_validator)
+        self.fat_label       = QLineEdit()
+        self.fat_label.setStyleSheet("background-color: white")
+        self.fat_label.setValidator(double_validator)
+        self.prot_label      = QLineEdit() 
+        self.prot_label.setStyleSheet("background-color: white")
+        self.prot_label.setValidator(double_validator)
+ 
+        SaveButton = QPushButton("Save")
+        SaveButton.setStyleSheet("background-color: white")
+        CancelButton = QPushButton("Cancel")
+        CancelButton.setStyleSheet("background-color: red")
+
+ 
+        # Create layout
+        form_layout = QFormLayout()
+        form_layout.addRow("Name:", self.name_label)
+        form_layout.addRow("Calories/100g", self.calory_label)
+        form_layout.addRow("Fat", self.fat_label)
+        form_layout.addRow("Carbohydrates", self.carb_label)
+        form_layout.addRow("Protein", self.prot_label)
+        form_layout.addRow(SaveButton)
+        form_layout.addRow(CancelButton)
+
+        mylayout = QVBoxLayout()
+        mylayout.addLayout(form_layout)
+        self.setLayout(mylayout)
+
+        # Connect submit button
+        SaveButton.clicked.connect(self.SaveIngredients)
+        CancelButton.clicked.connect(lambda : self.Cancel(self.Inform))
+
+        widget = QWidget()
+        widget.setLayout(mylayout)
+         
+
+
+
+
+        self.Inform.setCentralWidget(widget)
+
+        #for label in MyLabel:
+        #    widget = QWidget()
+        #    widget.setLayout(layout)
+        #self.setCentralWidget(widget)
+
+
+        # create the form
+
+        self.Inform.show()
+ 
+
+
+
+
     def CreateIngredientsForm(self):
         """Hopefully creates the ingredients"""
 
         #always use self so window wll be persistent
-        self.Inform = NewWindow()
+        self.Inform = NewWindow(Title = "Add New Ingredient")
+     
+        # setup geometry
+        mysize=[700,500]
+        myposit = [200,100]
+    
+        self.SizeWindow(self.Inform,myposit,mysize)
+
+        # We are laying out things on a grid 2 wide and 4 deep
+        mylayout = QGridLayout()
+        #do the labels
+        mylabel = ['Name','Calories/100g','Fat','Carbohydrates','Protein']
+        k=0
+        for lab in mylabel:
+            mylayout.addWidget(QLabel(lab),k,0)
+            mylayout.addWidget(QLineEdit(),k,1)
+            
+            k+=1
+        # finally add cancel and save button
+        SaveButton = QPushButton("Save")
+        CancelButton = QPushButton("Cancel")
+
+        #Setup signal:
+        SaveButton.clicked.connect(self.SaveIngredients)
+        CancelButton.clicked.connect(lambda : self.Cancel(self.Inform))
+
+
+
+
+        mylayout.addWidget(CancelButton,k,0)
+        mylayout.addWidget(SaveButton,k,1)
+ 
+
+        
+ 
+        widget = QWidget()
+        widget.setLayout(mylayout)
+         
+
+
+
+
+        self.Inform.setCentralWidget(widget)
+
+        #for label in MyLabel:
+        #    widget = QWidget()
+        #    widget.setLayout(layout)
+        #self.setCentralWidget(widget)
+
+
+        # create the form
+
         self.Inform.show()
+ 
 
+    def SizeWindow(self,window,myposit,mysize):
+        """resizes the specified window ,where the parameters are two integer lists"""
+        window.setGeometry(myposit[0],myposit[1],mysize[0],mysize[1])
+        return
+ 
 
-        #self.loader = QUiLoader()
-        #self.loader.load("/Users/klein/git/qt_exercises/src/designer_ui/Ingredients.ui")
-        #mytest=QLabel("test")
-        #mytest.show()
+##########################################################################
+    # section for signals and slots
 
+    
+    def Cancel(self,window):
+        """ closes window without anything"""
+        window.destroy()
+        
+ 
+ 
 
-        #self.show()
+    def SaveIngredients(self):
+        """saving the ingredients"""
+        Ing_name    = self.name_label.text()
+        Ing_calory  = float(self.calory_label.text())
+        Ing_carb    = float(self.carb_label.text())       
+        Ing_fat     = float(self.fat_label.text())
+        Ing_prot    = float(self.prot_label.text())
 
+        #Check all fields are filled out
+        if(Ing_calory !="" and Ing_carb !="" and Ing_fat!=""  and Ing_prot !=""):
+            self.Inform.destroy()
+        
+    
 
 app = QApplication(sys.argv) 
 
@@ -230,8 +393,8 @@ window.setStyleSheet("background-color: white;")
 #window.show()
 window.ConnectDataBase()
 window.ShowTables()
-window.ViewTable('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
-window.CreateIngredientsForm()
+#window.ViewTable('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
+window.CreateIngredientsForm1()
 
 # now run the app
 app.exec()
