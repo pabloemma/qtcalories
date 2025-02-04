@@ -11,6 +11,7 @@ import config_mycal
 from PySide6.QtCore import QSize, Qt ,QCoreApplication
 from PySide6.QtGui import QAction
 from PySide6.QtWidgets import QWidget 
+from PySide6.QtUiTools import QUiLoader
 
 from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel
 
@@ -36,8 +37,19 @@ QApplication,
     QTimeEdit,
     QTableView,
     QMenuBar,
+    QVBoxLayout,
     QAbstractItemView
 )
+
+class NewWindow(QWidget):
+        def __init__(self):
+            super().__init__()
+            layout = QVBoxLayout()
+            self.label = QLabel("Another Window")
+            layout.addWidget(self.label)
+            self.setLayout(layout)
+
+
 
 class ContrlDB(QMainWindow):
 
@@ -57,6 +69,8 @@ class ContrlDB(QMainWindow):
                 self.db_pwd = db_pwd
 
         self.SetupLogger()
+        #self.CreateIngredientsForm()
+        
     
     def ConnectDataBase(self):
         ''' establish contact to database'''
@@ -134,6 +148,7 @@ class ContrlDB(QMainWindow):
 
         self.SetPosition(10,10)
 
+        self.show()
         #self.setCentralWidget(table)
 
     def SetupLogger(self):
@@ -161,6 +176,22 @@ class ContrlDB(QMainWindow):
 
     def SetPosition(self,pos_x,pos_y):
         self.move(pos_x,pos_y)
+
+    def CreateIngredientsForm(self):
+        """Hopefully creates the ingredients"""
+
+        #always use self so window wll be persistent
+        self.Inform = NewWindow()
+        self.Inform.show()
+
+
+        #self.loader = QUiLoader()
+        #self.loader.load("/Users/klein/git/qt_exercises/src/designer_ui/Ingredients.ui")
+        #mytest=QLabel("test")
+        #mytest.show()
+
+
+        #self.show()
 
 
 app = QApplication(sys.argv) 
@@ -196,9 +227,11 @@ window.setStyleSheet("background-color: white;")
 
 
 
-window.show()
+#window.show()
 window.ConnectDataBase()
 window.ShowTables()
 window.ViewTable('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
+window.CreateIngredientsForm()
+
 # now run the app
 app.exec()
