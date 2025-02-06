@@ -265,7 +265,11 @@ class ContrlDB(QMainWindow):
         self.Inform.show()
  
 
+    def InsertRecord(self):
+        """ this inserts a record into the cosen table
+        I will use the query function to do this."""
 
+        
 
 
     def CreateIngredientsForm(self):
@@ -353,8 +357,9 @@ class ContrlDB(QMainWindow):
         Ing_prot    = float(self.prot_label.text())
 
         #Check all fields are filled out
-        ##if(Ing_calory !="" and Ing_carb !="" and Ing_fat!=""  and Ing_prot !=""):
-        ##    self.Inform.destroy() # destrorys the window.
+        if(Ing_calory !="" and Ing_carb !="" and Ing_fat!=""  and Ing_prot !=""):
+            self.Inform.destroy() # destrorys the window.
+            #self.Inform.close() # 
 
         #now we need to add the values to the ingredients table
         # first load table
@@ -369,11 +374,23 @@ class ContrlDB(QMainWindow):
 
         self.ViewTable('Ingredients',suppress_columns=suppress_columns)
         self.model = QSqlQueryModel()
-        #self.table_view.setModel(self.model)
+        self.table_view.setModel(self.model)
         #next we check we don't have an entry yet
 
-        sql = "SELECT exists (SELECT 1 FROM table WHERE column = Name LIMIT 1)"
-        query = QSqlQuery(sql)
+        
+        #sql = "SELECT name from ingredients WHERE ingredients.name LIKE 'Almond%' ; "
+        sql = "SELECT name from ingredients WHERE ingredients.name LIKE '"+Ing_name+"' ; "
+        query = QSqlQuery(sql,db=self.mycal_db)
+        
+        self.model.setQuery(query)
+        while query.next():
+            logger.error(' entry name already exists, try again %s' % query.value(0))
+            self.CreateIngredientsForm1()
+            #myvalue = query.value(0)
+        # Now we need to add this ingredient to the table
+
+
+        return
     
 
 app = QApplication(sys.argv) 
