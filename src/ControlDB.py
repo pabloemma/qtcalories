@@ -61,6 +61,7 @@ class NewWindow(QMainWindow):
 
 
 
+
 class ContrlDB(QMainWindow):
 
     def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None):
@@ -80,6 +81,28 @@ class ContrlDB(QMainWindow):
 
         self.SetupLogger()
         #self.CreateIngredientsForm()
+        self.ingredients_suppress_columns = ['Sugar',
+                    'Portion_size',
+                    'Saturated',
+                    'Fiber',
+                    'Salt',
+                    'Sodium',
+                    'Product_source'
+                    ]
+            
+        self.recipe_suppress_columns = ['Sugar',
+                    'Portions',
+                    'Description',
+                    'Saturated_fat',
+                    'Fiber',
+                    'Salt',
+                    'Sodium',
+                    'Ingredients',
+                    'Time',
+                    'Images',
+                    'vegetarian']
+
+
         
     
     def ConnectDataBase(self):
@@ -126,7 +149,7 @@ class ContrlDB(QMainWindow):
 
         return
 
-    def ViewTable(self,table,suppress_columns=[],editmode=True,columnwidth=[],Title = None):
+    def ViewTable(self,table,suppress_columns=[],editmode=True,columnwidth=[],Title = None, showTable = True):
         self.table_view = QTableView()
         
 
@@ -158,8 +181,8 @@ class ContrlDB(QMainWindow):
         self.setCentralWidget(self.table_view)
         
         self.SetPosition(10,10)
-
-        self.show()
+        if(showTable):
+            self.show()
         #self.setCentralWidget(table)
 
     def SetupLogger(self):
@@ -265,72 +288,51 @@ class ContrlDB(QMainWindow):
         self.Inform.show()
  
 
-    def InsertRecord(self):
+    def InsertRecord(self,table = None):
         """ this inserts a record into the cosen table
-        I will use the query function to do this."""
-
+        I will use the query function to do this.
+        The record contains the info to be added
+        record=[name,energy,fat,carbohydrate,protein]
         
+        This is the same for ingredients and receipes"""
 
+        #Create table view
+        if(table == "ingredients"):
+                
+            self.ViewTable(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False)
+        else:
+            self.ViewTable(table = table,suppress_columns=self.recipe_suppress_columns)
 
-    def CreateIngredientsForm(self):
-        """Hopefully creates the ingredients"""
+        self.model = QSqlQueryModel()
+        self.table_view.setModel(self.model)
+        #next we check we don't have an entry yet
 
-        #always use self so window wll be persistent
-        self.Inform = NewWindow(Title = "Add New Ingredient")
-     
-        # setup geometry
-        mysize=[700,500]
-        myposit = [200,100]
-    
-        self.SizeWindow(self.Inform,myposit,mysize)
+        #Form the sql INSERT statement
+        #       self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]
+        #INSERT INTO products (product_no, name, price) VALUES (1, 'Cheese', 9.99);
+        #INSERT INTO table (name,energy,carbohydrate,fat,protein) VALUES (self.record[0],
+        #                                                               self.record[1],   
+        #                                                               self.record[2],
+        #                                                               self.record[3],
+        #                                                               self.record[4]);
+        temp = "'"+self.record[0]+"'"
+        sql = 'INSERT INTO '+table+' (name,energy,carbohydrate,fat,protein) VALUES ('+temp+','+str(self.record[1])+','+str(self.record[2])+','+str(self.record[3])+','+str(self.record[4])+');'
+        print(sql)
 
-        # We are laying out things on a grid 2 wide and 4 deep
-        mylayout = QGridLayout()
-        #do the labels
-        mylabel = ['Name','Calories/100g','Fat','Carbohydrates','Protein']
-        k=0
-        for lab in mylabel:
-            mylayout.addWidget(QLabel(lab),k,0)
-            mylayout.addWidget(QLineEdit(),k,1)
-            
-            k+=1
-        # finally add cancel and save button
-        SaveButton = QPushButton("Save")
-        CancelButton = QPushButton("Cancel")
-
-        #Setup signal:
-        SaveButton.clicked.connect(self.SaveIngredients)
-        CancelButton.clicked.connect(lambda : self.Cancel(self.Inform))
-
-
-
-
-        mylayout.addWidget(CancelButton,k,0)
-        mylayout.addWidget(SaveButton,k,1)
- 
-
+        query = QSqlQuery(sql,db=self.mycal_db)
         
+        self.model.setQuery(query)
+        logger.info(' inserted record %s into table  %s' % (self.record[0],table))
  
-        widget = QWidget()
-        widget.setLayout(mylayout)
-         
-
-
-
-
-        self.Inform.setCentralWidget(widget)
-
-        #for label in MyLabel:
-        #    widget = QWidget()
-        #    widget.setLayout(layout)
-        #self.setCentralWidget(widget)
-
-
-        # create the form
-
-        self.Inform.show()
  
 
+        return
+
+
+
+
+
+  
     def SizeWindow(self,window,myposit,mysize):
         """resizes the specified window ,where the parameters are two integer lists"""
         window.setGeometry(myposit[0],myposit[1],mysize[0],mysize[1])
@@ -356,6 +358,8 @@ class ContrlDB(QMainWindow):
         Ing_fat     = float(self.fat_label.text())
         Ing_prot    = float(self.prot_label.text())
 
+        #  this is the record we got from the form input
+
         #Check all fields are filled out
         if(Ing_calory !="" and Ing_carb !="" and Ing_fat!=""  and Ing_prot !=""):
             self.Inform.destroy() # destrorys the window.
@@ -363,16 +367,8 @@ class ContrlDB(QMainWindow):
 
         #now we need to add the values to the ingredients table
         # first load table
-        suppress_columns = ['Sugar',
-                    'Portion_size',
-                    'Saturated',
-                    'Fiber',
-                    'Salt',
-                    'Sodium',
-                    'Product_source'
-                    ]
-
-        self.ViewTable('Ingredients',suppress_columns=suppress_columns)
+        table_name = 'ingredients'
+        self.ViewTable(table_name,suppress_columns=self.ingredients_suppress_columns)
         self.model = QSqlQueryModel()
         self.table_view.setModel(self.model)
         #next we check we don't have an entry yet
@@ -389,7 +385,8 @@ class ContrlDB(QMainWindow):
             #myvalue = query.value(0)
         # Now we need to add this ingredient to the table
 
-
+        self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]
+        self.InsertRecord(table = table_name)
         return
     
 
