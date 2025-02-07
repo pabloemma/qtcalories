@@ -8,7 +8,8 @@ from loguru import logger
 import config_mycal
 
 
-from PySide6.QtCore import QSize, Qt ,QCoreApplication,Slot,Signal,QAbstractListModel
+from PySide6.QtCore import (QSize, Qt ,QRect,
+QCoreApplication,Slot,Signal,QAbstractListModel)
 from PySide6.QtGui import QAction,QDoubleValidator
 from PySide6.QtWidgets import QWidget 
 from PySide6.QtUiTools import QUiLoader
@@ -26,6 +27,7 @@ QApplication,
     QFileDialog,
     QFontComboBox,
     QFormLayout,
+    QHBoxLayout,
     QLabel,
     QLCDNumber,
     QLineEdit,
@@ -71,18 +73,16 @@ class RecipeModel(QAbstractListModel):
     # this means we will have to define the data and rowCount
     # see also https://doc.qt.io/qt-6/qabstractlistmodel.html
 
+        self.recipes = recipes or []
+
     def data(self, index, role):
         if role == Qt.DisplayRole:
-            status, text = self.todos[index.row()]
+            status, text = self.recipes[index.row()]
             return text
         
-        if role == Qt.DecorationRole:
-            status, text = self.todos[index.row()] 
-            if status:
-                return tick
-
+ 
     def rowCount(self, index):
-        return len(self.todos)
+        return len(self.recipes)
 
 
 
@@ -356,44 +356,104 @@ class ContrlDB(QMainWindow):
     def MyRecipes(self):
         """this will deal with the recipes"""
         
-        self.RecipeWindow = NewWindow(Title = "Add New Ingredient")
-        self.RecipeView = QListView()
-        self.RecipeModel = RecipeModel()
-        self.RecipeView.setModel(self.RecipeModel)
 
+        # set up geometry
+
+        self.RecipeWindow = NewWindow(Title = "List of Recipes")
+        self.RecipeWindow.resize(1000,800)
+        self.centralWidget = QWidget(self.RecipeWindow)
+        
+
+        self.centralWidget.setObjectName(u"centralWidget")
+
+        self.verticalLayoutWidget = QWidget(self.centralWidget)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        # the coordinates are left,top righ,bottom
+        self.verticalLayoutWidget.setGeometry(QRect(50, 30, 831, 581))
+        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+
+        self.ComboLabel = QLabel("List of Ingredients")
+        self.verticalLayout.addWidget(self.ComboLabel)
+
+
+
+
+        self.RecipeView = QListView(self.verticalLayoutWidget)
+        self.RecipeView.setObjectName(u"RecipeView")
+
+        self.verticalLayout.addWidget(self.RecipeView)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.NewButton = QPushButton(self.verticalLayoutWidget)
+        self.NewButton.setObjectName(u"NewButton")
+        self.NewButton.setText("New Recipe")
+
+
+        self.horizontalLayout.addWidget(self.NewButton)
+
+        self.SaveButton = QPushButton(self.verticalLayoutWidget)
+        self.SaveButton.setObjectName(u"SaveButton")
+        self.SaveButton.setText("Save Recipe")
+        self.horizontalLayout.addWidget(self.SaveButton)
+
+
+
+               # Create just a simple layout with a box with the recipe titles and a qlistview
+        #The title box is just a scroll box
+        # The first thing is to get an alphabetic list of the current recipes
         # Create just a simple layout with a box with the recipe titles and a qlistview
         #The title box is just a scroll box
         # The first thing is to get an alphabetic list of the current recipes
-        self.Combo=RecipeListCombo = QComboBox()
-        RecipeListCombo.addItems(self.GetRecipeList())
+ 
+        self.RecipeListCombo = QComboBox()
+         
+        self.RecipeListCombo.setObjectName(u"RecipeListCombo")
+        self.RecipeListCombo.addItems(self.GetRecipeList())
+        # make box editable
+        self.RecipeListCombo.setEditable(True) # needed so that the next statement works
+        self.RecipeListCombo.setMaxVisibleItems(20)
 
-        self.RecipeWindow.setCentralWidget(RecipeListCombo)
+        self.horizontalLayout.addWidget(self.RecipeListCombo)
+ 
+        self.verticalLayout.addLayout(self.horizontalLayout)
 
-        RecipeListCombo.currentIndexChanged.connect(self.getSelectedItem())
+        #end geometry
+
+        self.RecipeModel = RecipeModel()
+        self.RecipeView.setModel(self.RecipeModel)
+
+
+
+
+ 
+        #RecipeListCombo.currentIndexChanged.connect(self.getSelectedItem)
+        self.RecipeListCombo.currentTextChanged.connect(self.getSelectedText)
         # Now we get the selected value
-        selected_recipe =self.selected_text
+#        selected_recipe =self.selected_text
 
-        logger.info("You have selected %s recipe" % self.selected_text)
+        #logger.info("You have selected %s recipe" % self.selected_text)
+        #self.RecipeWindow.setCentralWidget(self.RecipeListCombo)
+
+        self.RecipeWindow.setCentralWidget(self.centralWidget)
         self.RecipeWindow.show()
  
-
         return
-    
-    def getSelectedItem(self):
-        index = self.Combo.currentIndex()
-        if index >= 0:
-            self.selected_text = self.Combo.itemText(index)
-            logger.info("You have selected %s recipe" % self.selected_text)
 
-        else:
-            logger.warning(" No recipe selected")
+    def getSelectedText(self,s):
+        self.selected_text = s
+        logger.info("You have selected %s recipe" % self.selected_text)
+        return
 
-        return 
+
 
 
 
     def GetRecipeList(self):
-
+        """sql query to get all the names of the recpies
+        will be used to popolate the recipe qlistbox"""
         sql = 'SELECT name from recipes ; '
         query = QSqlQuery(sql,db=self.mycal_db)
         model = QSqlQueryModel()

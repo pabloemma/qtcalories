@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0
-%%Title: shit.py
+%%Title: ToDo.py
 %%For: Andi Klein
 %%Creator: a2ps version 4.15.5
-%%CreationDate: Mon Feb  3 10:12:06 2025
+%%CreationDate: Fri Feb  7 09:35:43 2025
 %%BoundingBox: 24 24 588 767
 %%DocumentData: Clean7Bit
 %%Orientation: Landscape
-%%Pages: 6
+%%Pages: 2
 %%PageOrder: Ascend
 %%DocumentMedia: Letter 612 791 0 () ()
 %%DocumentNeededResources: font Courier
@@ -754,116 +754,106 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1) # (# Program to calculate calories and other information for ) c n
-(2) # (# recipes. ) N
-(3) # () S
-(import) K
-( sys) p n
-(4) # () S
-(import) K
-( os) p n
-(5) # () S
-(import) K
-( platform) p n
-(6) # () S
-(from) K
-( loguru ) p
-(import) K
-( logger) p n
-(7) # () N
-(8) # () N
-(9) # () S
-(import) K
-( config_mycal) p n
+(1) # (# -*- coding: utf-8 -*-) c n
+(2) # () N
+(3) # (################################################################################) N
+(4) # (## Form generated from reading UI file 'ToDo.ui') N
+(5) # (##) N
+(6) # (## Created by: Qt User Interface Compiler version 6.7.2) N
+(7) # (##) N
+(8) # (## WARNING! All changes made in this file will be lost when recompiling UI file!) N
+(9) # (################################################################################) N
 (10) # () N
-(11) # () N
-(12) # () S
+(11) # () S
 (from) K
 ( PySide6.QtCore ) p
 (import) K
-( QSize, Qt ,QCoreApplication) p n
-(13) # () S
+( \(QCoreApplication, QDate, QDateTime, QLocale,) p n
+(12) # (    QMetaObject, QObject, QPoint, QRect,) N
+(13) # (    QSize, QTime, QUrl, Qt\)) N
+(14) # () S
 (from) K
 ( PySide6.QtGui ) p
 (import) K
-( QAction) p n
-(14) # () S
+( \(QBrush, QColor, QConicalGradient, QCursor,) p n
+(15) # (    QFont, QFontDatabase, QGradient, QIcon,) N
+(16) # (    QImage, QKeySequence, QLinearGradient, QPainter,) N
+(17) # (    QPalette, QPixmap, QRadialGradient, QTransform\)) N
+(18) # () S
 (from) K
 ( PySide6.QtWidgets ) p
 (import) K
-( QVBoxLayout , QGridLayout ) p n
-(15) # () S
-(from) K
-( PySide6.QtWidgets ) p
-(import) K
-( QWidget ) p n
-(16) # () S
-(from) K
-( PySide6.QtSql ) p
-(import) K
-( QSqlDatabase , QSql,QSqlTableModel) p n
-(17) # () N
-(18) # () N
-(19) # () N
-(20) # () N
-(21) # () S
-(from) K
-( PySide6.QtWidgets ) p
-(import) K
-( \() p n
-(22) # (QApplication,) N
-(23) # (    QCheckBox,) N
-(24) # (    QComboBox,) N
-(25) # (    QDateEdit,) N
-(26) # (    QDateTimeEdit,) N
-(27) # (    QDial,) N
-(28) # (    QDoubleSpinBox,) N
-(29) # (    QFileDialog,) N
-(30) # (    QFontComboBox,) N
-(31) # (    QLabel,) N
-(32) # (    QLCDNumber,) N
-(33) # (    QLineEdit,) N
-(34) # (    QMainWindow,) N
-(35) # (    QProgressBar,) N
-(36) # (    QPushButton,) N
-(37) # (    QRadioButton,) N
-(38) # (    QSlider,) N
-(39) # (    QSpinBox,) N
-(40) # (    QTimeEdit,) N
-(41) # (    QTableView,) N
-(42) # (    QMenuBar,) N
-(43) # (\)) N
-(44) # () N
-(45) # () N
-(46) # () S
+( \(QApplication, QHBoxLayout, QLineEdit, QListView,) p n
+(19) # (    QMainWindow, QMenuBar, QPushButton, QSizePolicy,) N
+(20) # (    QStatusBar, QVBoxLayout, QWidget\)) N
+(21) # () N
+(22) # () S
 (class) K
-( MainWindow\(QMainWindow\):) p n
-(47) # (    ) S
+( Ui_MainWindow\(object\):) p n
+(23) # (    ) S
 (def) K
-( __init__\(self, Title =  None , pos_x = 100 , pos_y = 500, size_x = 800 , size_y = 600\):) p n
-(48) # (        super\(\).__init__\(\)  ) S
-(# this will the allow to use this as a Subclass) c n
+( setupUi\(self, MainWindow\):) p n
+(24) # (        ) S
+(if) K
+( ) p
+(not) K
+( MainWindow.objectName\(\):) p n
+(25) # (            MainWindow.setObjectName\(u") S
+(MainWindow) str
+("\)) p n
+(26) # (        MainWindow.resize\(895, 838\)) N
+(27) # (        self.centralwidget = QWidget\(MainWindow\)) N
+(28) # (        self.centralwidget.setObjectName\(u") S
+(centralwidget) str
+("\)) p n
+(29) # (        self.verticalLayoutWidget = QWidget\(self.centralwidget\)) N
+(30) # (        self.verticalLayoutWidget.setObjectName\(u") S
+(verticalLayoutWidget) str
+("\)) p n
+(31) # (        self.verticalLayoutWidget.setGeometry\(QRect\(450, 30, 331, 581\)\)) N
+(32) # (        self.verticalLayout = QVBoxLayout\(self.verticalLayoutWidget\)) N
+(33) # (        self.verticalLayout.setObjectName\(u") S
+(verticalLayout) str
+("\)) p n
+(34) # (        self.verticalLayout.setContentsMargins\(0, 0, 0, 0\)) N
+(35) # (        self.todoView = QListView\(self.verticalLayoutWidget\)) N
+(36) # (        self.todoView.setObjectName\(u") S
+(todoView) str
+("\)) p n
+(37) # () N
+(38) # (        self.verticalLayout.addWidget\(self.todoView\)) N
+(39) # () N
+(40) # (        self.horizontalLayout = QHBoxLayout\(\)) N
+(41) # (        self.horizontalLayout.setObjectName\(u") S
+(horizontalLayout) str
+("\)) p n
+(42) # (        self.deleteButton = QPushButton\(self.verticalLayoutWidget\)) N
+(43) # (        self.deleteButton.setObjectName\(u") S
+(deleteButton) str
+("\)) p n
+(44) # () N
+(45) # (        self.horizontalLayout.addWidget\(self.deleteButton\)) N
+(46) # () N
+(47) # (        self.completeButton = QPushButton\(self.verticalLayoutWidget\)) N
+(48) # (        self.completeButton.setObjectName\(u") S
+(completeButton) str
+("\)) p n
 (49) # () N
-(50) # () S
-(        ) p
-(#with self and using QMainWindow, we can now acces everything through self) c n
-(51) # () S
-(        ) p
-(# first we give it the Title) c n
+(50) # (        self.horizontalLayout.addWidget\(self.completeButton\)) N
+(51) # () N
 (52) # () N
-(53) # () N
-(54) # () S
-(        ) p
-(# Read in the configuration) c n
-(55) # () S
-(        self.SetupConfig\(\)) p n
-(56) # ( ) N
+(53) # (        self.verticalLayout.addLayout\(self.horizontalLayout\)) N
+(54) # () N
+(55) # (        self.todoEdit = QLineEdit\(self.verticalLayoutWidget\)) N
+(56) # (        self.todoEdit.setObjectName\(u") S
+(todoEdit) str
+("\)) p n
 (57) # () N
-(shit.py) (Page 1/6) (Feb 03, 2025 10:01) title
+(ToDo.py) (Page 1/2) (Sep 11, 2024 17:29) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(shit.py) (1/6) (Monday February 03, 2025) footer
+(ToDo.py) (1/2) (Friday February 07, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -879,570 +869,66 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(58) # (        ) p
-(# some constants for json file) c n
-(59) # () S
-( ) p n
-(60) # () N
-(61) # (        ) S
-(# the logging system) c n
-(62) # () S
-(        self.SetupLogger\(\)) p n
-(63) # (        self.log_level = self.CM.log_level) N
+(58) # (        self.verticalLayout.addWidget\(self.todoEdit\)) p n
+(59) # () N
+(60) # (        self.addButton = QPushButton\(self.verticalLayoutWidget\)) N
+(61) # (        self.addButton.setObjectName\(u") S
+(addButton) str
+("\)) p n
+(62) # () N
+(63) # (        self.verticalLayout.addWidget\(self.addButton\)) N
 (64) # () N
-(65) # () N
-(66) # (        ) S
-(# first get the password) c n
-(67) # () S
-( ) p
-(#       self.GetPwd\(\)) c n
-(68) # () N
-(69) # () S
-(        ) p
-(# connect to database) c n
-(70) # () S
-(        self.ConnectDataBase\(\)) p n
-(71) # ( ) N
-(72) # (        ) S
-(if) K
-( Title != None:) p n
-(73) # (            self.setWindowTitle\(Title\)) N
-(74) # (        ) S
-(else) K
-(:) p n
-(75) # (            self.setWindowTitle\(") S
-(QMainWindow) str
+(65) # (        MainWindow.setCentralWidget\(self.centralwidget\)) N
+(66) # (        self.menubar = QMenuBar\(MainWindow\)) N
+(67) # (        self.menubar.setObjectName\(u") S
+(menubar) str
 ("\)) p n
-(76) # () N
-(77) # (       ) N
-(78) # (        ) S
-(# now we set up geometry) c n
+(68) # (        self.menubar.setGeometry\(QRect\(0, 0, 895, 37\)\)) N
+(69) # (        MainWindow.setMenuBar\(self.menubar\)) N
+(70) # (        self.statusbar = QStatusBar\(MainWindow\)) N
+(71) # (        self.statusbar.setObjectName\(u") S
+(statusbar) str
+("\)) p n
+(72) # (        MainWindow.setStatusBar\(self.statusbar\)) N
+(73) # () N
+(74) # (        self.retranslateUi\(MainWindow\)) N
+(75) # () N
+(76) # (        QMetaObject.connectSlotsByName\(MainWindow\)) N
+(77) # (    ) S
+(# setupUi) c n
+(78) # () N
 (79) # () S
-(        self.SetSize\(size_x,size_y\)) p n
-(80) # (        self.SetPosition\(pos_x , pos_y\)) N
-(81) # () N
-(82) # () N
-(83) # (        self.AddMyMenu\(\)) N
-(84) # () N
-(85) # (        ) S
-(# now do the layout) c n
-(86) # () S
-(        self.MyLayout\(\)) p n
-(87) # () N
-(88) # (    ) S
-(def) K
-( MyLayout\(self\):) p n
-(89) # (        ''') S
-(Here I do the layout of the window) str
-(''') p n
-(90) # () N
-(91) # (        ) S
-(# here we create a button widget in the mddle of the mainwindow.) c n
-(92) # () S
-(        mylayout = QGridLayout\(\)) p n
-(93) # (        mylayout.addWidget\(QDoubleSpinBox\(\),0,1\)) N
-(94) # (        mylayout.addWidget\(QComboBox\(\),0,0\)) N
-(95) # (        mylayout.addWidget\(QDial\(\),1,0\)) N
-(96) # (        mylayout.addWidget\(QDateTimeEdit\(\),1,1\)) N
-(97) # () N
-(98) # (        ) S
-(# connect to widget) c n
-(99) # () S
-(        mywidget = QWidget\(\)) p n
-(100) # (        mywidget.setLayout\(mylayout\)) N
-(101) # (        self.setCentralWidget\(mywidget\)) N
-(102) # () N
-(103) # () N
-(104) # (    ) S
-(def) K
-( SetPosition\(self,pos_x,pos_y\):) p n
-(105) # (        self.move\(pos_x,pos_y\)) N
-(106) # () N
-(107) # (    ) S
-(def) K
-( SetSize\(self,size_x,size_y\):) p n
-(108) # (        ) S
-(#self.setBaseSize\(size_x,size_y\) only works on QWidget) c n
-(109) # () S
-(        self.resize\(size_x,size_y\)) p n
-(110) # () N
-(111) # () N
-(112) # (       ) N
-(113) # (    ) S
-(def) K
-( AddMyMenu\(self\):   ) p n
-(114) # (        ''') S
-(Now we add a menu) str
-(''') p n
-(shit.py) (Page 2/6) (Feb 03, 2025 10:01) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(shit.py) (2/6) (Monday February 03, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (3) 3
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(115) # (        ) p
-(#menubar = QMenuBar\(None\)) c n
-(116) # () S
-(        menubar = self.menuBar\(\)) p n
-(117) # ( ) N
-(118) # (        file_menu = menubar.addMenu\(") S
-(File) str
-("\)) p n
-(119) # (        db_menu = menubar.addMenu\(") S
-(Database) str
-("\)) p n
-(120) # () N
-(121) # (        ) S
-(# database handling:) c n
-(122) # () S
-(         ) p
-(#No menu will show without an action defined) c n
-(123) # () S
-(        ) p
-(#Also Quit does not show up since this is already in the intrinsic Python menu.) c n
-(124) # () S
-(        ) p
-(# Same for exit) c n
-(125) # () N
-(126) # () S
 (    ) p
-(# here come a few actions, which will be called from the button qwidget) c n
-(127) # () S
-(    ) p
-(# When you press a button, it will trigger one or everal events through slots) c n
-(128) # () S
-(    ) p
-(# one thing which is important to note ist that one click on a button can have many different meanings) c n
-(129) # () S
-(    ) p
-(# DON"T FORGET TO PUT, self IN QACTION) c n
-(130) # () N
-(131) # () S
-(        ) p
-(#here we define the actions: File open section) c n
-(132) # () S
-(        file_action = QAction\(") p
-(Open) str
-(", self\)) p n
-(133) # (        file_action.setStatusTip\(") S
-(Opens a file) str
-("\)) p n
-(134) # (        file_action.triggered.connect\(self.OpenFile\)) N
-(135) # (        file_menu.addAction\(file_action\)) N
-(136) # () N
-(137) # (     ) N
-(138) # (        ) S
-(#file_menu.addAction\("Quit"\)) c n
-(139) # () S
-(   ) p n
-(140) # (    ) N
-(141) # (    ) N
-(142) # () N
-(143) # (        ) S
-(#saving the file) c n
-(144) # () S
-(        save_action = QAction\(") p
-(Save) str
-(", self\)) p n
-(145) # (        save_action.setShortcut\(") S
-(CMD+S) str
-("\)) p n
-(146) # (        save_action.setStatusTip\(') S
-(save File) str
-('\)) p n
-(147) # (        save_action.triggered.connect\(self.SaveFile\)) N
-(148) # (        file_menu.addAction\(save_action\)) N
-(149) # () N
-(150) # (        db_action_1 = QAction\(") S
-(List Table) str
-(",self\)) p n
-(151) # (        db_action_1.setStatusTip\(') S
-(List database tables) str
-('\)) p n
-(152) # (        db_action_1.triggered.connect\(self.ShowTables\)) N
-(153) # (        db_menu.addAction\(db_action_1\)) N
-(154) # (        db_action_2 = QAction\(") S
-(save) str
-(",self\)) p n
-(155) # (        db_action_2.setStatusTip\(') S
-(List database tables) str
-('\)) p n
-(156) # (        db_action_2.triggered.connect\(self.ShowTables\)) N
-(157) # (        db_menu.addAction\(db_action_2\)) N
-(158) # () N
-(159) # () N
-(160) # (        file_menu.addAction\(") S
-(MyExit) str
-("\)) p n
-(161) # (        file_menu.addAction\(") S
-(None) str
-("\)) p n
-(162) # (        ) N
-(163) # () N
-(164) # () N
-(165) # () N
-(166) # (    ) S
 (def) K
-( ConnectDataBase\(self\):) p n
-(167) # (        ''') S
-( establish contact to database) str
-(''') p n
-(168) # () N
-(169) # () N
-(170) # (        ) S
-(#instantiate the connection) c n
-(171) # () S
-(        self.mycal_db  = QSqlDatabase.addDatabase\(self.CM.db_system\)) p n
-(shit.py) (Page 3/6) (Feb 03, 2025 10:01) title
+( retranslateUi\(self, MainWindow\):) p n
+(80) # (        MainWindow.setWindowTitle\(QCoreApplication.translate\(") S
+(MainWindow) str
+(", u") p
+(MainWindow) str
+(", None\)\)) p n
+(81) # (        self.deleteButton.setText\(QCoreApplication.translate\(") S
+(MainWindow) str
+(", u") p
+(Delete) str
+(", None\)\)) p n
+(82) # (        self.completeButton.setText\(QCoreApplication.translate\(") S
+(MainWindow) str
+(", u") p
+(Complete) str
+(", None\)\)) p n
+(83) # (        self.addButton.setText\(QCoreApplication.translate\(") S
+(MainWindow) str
+(", u") p
+(Add Todo) str
+(", None\)\)) p n
+(84) # (    ) S
+(# retranslateUi) c n
+(85) # () N
+(ToDo.py) (Page 2/2) (Sep 11, 2024 17:29) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(shit.py) (3/6) (Monday February 03, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (4) 4
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(172) # (        self.mycal_db.setHostName\(") p
-(localhost) str
-("\)) p n
-(173) # (        self.mycal_db.setDatabaseName\(self.CM.db_name\)) N
-(174) # (        self.mycal_db.setUserName\(self.CM.db_user\)) N
-(175) # (        self.mycal_db.setPassword\(self.GetPwd\(\)\)) N
-(176) # (        ) N
-(177) # () N
-(178) # ( ) S
-(#       self.mycal_db.setPassword\(self.CM.pwd\)) c n
-(179) # () N
-(180) # () S
-(        result = self.mycal_db.open\(\)) p n
-(181) # (        ) S
-(if) K
-(\(result\):) p n
-(182) # (            logger.info\(') S
-(connection succsessful) str
-('\)) p n
-(183) # (            ) S
-(# here we get the connection name) c n
-(184) # () S
-(            ) p
-(# will be needed when we want to close the connection) c n
-(185) # () S
-(            self.connection_name = self.mycal_db.connectionName\(\)) p n
-(186) # (            logger.info\(') S
-( database connection name %s) str
-(' % self.connection_name\)) p n
-(187) # (            ) S
-(#self.ShowTables\(\)) c n
-(188) # () S
-(        ) p
-(else) K
-(:) p n
-(189) # (            logger.error\(') S
-(connection failed, exciting) str
-('\)) p n
-(190) # (            sys.exit\(0\)) N
-(191) # () N
-(192) # (    ) S
-(def) K
-( GetPwd\(self\):) p n
-(193) # (        temp = self.CM.cryptofile) N
-(194) # (        ) S
-(if) K
-( os.path.exists\(temp\):) p n
-(195) # (            with open\(temp, ') S
-(r) str
-('\) as file:) p n
-(196) # (                self.password = password = file.read\(\).rstrip\(\)) N
-(197) # (                ) S
-(return) K
-( password) p n
-(198) # () N
-(199) # () N
-(200) # (        ) S
-(else) K
-(:) p n
-(201) # (            logger.error\(') S
-(crytopfile not found, exciting) str
-('\)   ) p n
-(202) # (            sys.exit\(0\)) N
-(203) # (        ) N
-(204) # (   ) N
-(205) # () N
-(206) # (    ) S
-(def) K
-( OpenFile\(self\):) p n
-(207) # (        ''') S
-( Open file dialog) str
-(''') p n
-(208) # () N
-(209) # (        self.FileName = QFileDialog.getOpenFileName\(self\)) N
-(210) # () N
-(211) # (    ) S
-(def) K
-( SaveFile\(self\):) p n
-(212) # (        name = QFileDialog.getSaveFileName\(self,') S
-(Save File) str
-('\)) p n
-(213) # (        myfile = open\(name,') S
-(w) str
-('\)) p n
-(214) # (        text = self.textEdit.toPlainText\(\)) N
-(215) # (        myfile.write\(text\)) N
-(216) # (        myfile.close\(\)) N
-(217) # () N
-(218) # () N
-(219) # () N
-(220) # () N
-(221) # ( ) N
-(222) # (    ) S
-(def) K
-( SetupConfig\(self\):) p n
-(223) # (        mysystem = platform.system\(\)) N
-(224) # () N
-(225) # (        ) S
-(if) K
-( mysystem == ') p
-(Darwin) str
-(':) p n
-(226) # (            conf_dir = ') S
-(/Users/klein/git/qt_exercises/config/) str
-(') p n
-(227) # (        ) S
-(elif) K
-( mysystem == ') p
-(Linux) str
-(':) p n
-(228) # (            conf_dir = ') S
-(/home/klein/git/qt_exercises/config/) str
-(') p n
-(shit.py) (Page 4/6) (Feb 03, 2025 10:01) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(shit.py) (4/6) (Monday February 03, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (5) 5
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(229) # (        ) p
-(else) K
-(:) p n
-(230) # (            ) S
-(print) K
-(\(') p
-( This os is not supported %s) str
-(' % mysystem\)) p n
-(231) # (            sys.exit\(0\)) N
-(232) # (        config_file = conf_dir + ') S
-(config_mycal.json) str
-(') p n
-(233) # () N
-(234) # (        self.CM = CM = config_mycal.MyConfig\(config_file\)) N
-(235) # (        self.log_level = CM.log_level) N
-(236) # (        self.log_output = CM.log_output) N
-(237) # () N
-(238) # (        ) N
-(239) # () N
-(240) # () N
-(241) # () N
-(242) # () N
-(243) # (    ) S
-(def) K
-( SetupLogger\(self\):) p n
-(244) # () N
-(245) # () N
-(246) # (        logger.remove\(0\)) N
-(247) # (        ) S
-(#now we add color to the terminal output) c n
-(248) # () S
-(        logger.add\(sys.stdout,) p n
-(249) # (                colorize = True,format=") S
-(<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>) str
-(" ,) p n
-(250) # (                level = self.log_level\)) N
-(251) # () N
-(252) # () N
-(253) # () N
-(254) # (        fmt =  ") S
-({time} - {name}-   {function} -{line}- {level}    - {message}) str
-(") p n
-(255) # (        logger.add\(self.log_output, format = fmt , level = self.log_level,rotation=") S
-(1 day) str
-("\)) p n
-(256) # () N
-(257) # () N
-(258) # (        ) S
-(# set the colors of the different levels) c n
-(259) # () S
-(        logger.level\(") p
-(INFO) str
-(",color =') p
-(<black>) str
-('\)) p n
-(260) # (        logger.level\(") S
-(WARNING) str
-(",color=') p
-(<green>) str
-('\)) p n
-(261) # (        logger.level\(") S
-(ERROR) str
-(",color=') p
-(<red>) str
-('\)) p n
-(262) # (        logger.level\(") S
-(DEBUG) str
-(",color = ') p
-(<blue>) str
-('\)) p n
-(263) # ( ) N
-(264) # (        ) S
-(return) K n
-(265) # () S
-(    ) p n
-(266) # (    ) S
-(def) K
-( ShowTables\(self\):) p n
-(267) # (        ''') S
-(prints all the tables in the databe) str
-(''') p n
-(268) # (        self.table_list = self.mycal_db.tables\(type=QSql.Tables\)) N
-(269) # (        ) S
-(for) K
-( k ) p
-(in) K
-( range\(0,len\(self.table_list\)\):) p n
-(270) # (            ) S
-(print) K
-(\(self.table_list[k]\)) p n
-(271) # () N
-(272) # (        ) S
-(#Create list box) c n
-(273) # () S
-(        self.mybox = QComboBox\(\)) p n
-(274) # (        ) S
-(#Insert at index 0 the whole list) c n
-(275) # () S
-(        self.mybox.insertItems\(0,self.table_list\)) p n
-(276) # (        ) S
-(# create independent window) c n
-(277) # () S
-(       ) p n
-(278) # (        self.setCentralWidget\(self.mybox\)) N
-(279) # () N
-(280) # () N
-(281) # (        ) S
-(return) K n
-(282) # () N
-(283) # () S
-(                       ) p n
-(284) # (            ) N
-(285) # () N
-(shit.py) (Page 5/6) (Feb 03, 2025 10:01) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(shit.py) (5/6) (Monday February 03, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (6) 6
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(286) # (    ) p
-(def) K
-( ViewTable\(self,table\):) p n
-(287) # () N
-(288) # (        model = QSqlTableModel\(db = self.mycal_db\) ) N
-(289) # (        model.setTable\(table\)) N
-(290) # (        model.select\(\)) N
-(291) # () N
-(292) # (        table = QTableView\(\)) N
-(293) # (        table.setModel\(model\)) N
-(294) # (        ) S
-(#self.setCentralWidget\(table\)) c n
-(295) # () N
-(296) # () N
-(297) # () S
-(app = QApplication\(sys.argv\) ) p n
-(298) # (window = MainWindow\(Title = ") S
-(GridLayout) str
-("\)) p n
-(299) # () S
-(#window.SetSize\(800,500\)) c n
-(300) # (#window.SetPosition\(100,500\)) N
-(301) # () N
-(302) # () S
-(window.setStyleSheet\(") p
-(background-color: white;) str
-("\)) p n
-(303) # () S
-(#window.CreateCalendar\(\)) c n
-(304) # () N
-(305) # () N
-(306) # () N
-(307) # () S
-(window.show\(\)) p n
-(308) # (window.ConnectDataBase\(\)) N
-(309) # (window.ShowTables\(\)) N
-(310) # (window.ViewTable\(') S
-(Recipes) str
-('\)) p n
-(311) # () S
-(# now run the app) c n
-(312) # () S
-(app.) p
-(exec) K
-(\(\)) p
-(shit.py) (Page 6/6) (Feb 03, 2025 10:01) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(shit.py) (6/6) (Monday February 03, 2025) footer
+(ToDo.py) (2/2) (Friday February 07, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
