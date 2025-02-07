@@ -9,8 +9,8 @@ import config_mycal
 
 
 from PySide6.QtCore import (QSize, Qt ,QRect,
-QCoreApplication,Slot,Signal,QAbstractListModel)
-from PySide6.QtGui import QAction,QDoubleValidator
+QCoreApplication,Slot,Signal,QAbstractListModel,QMetaObject)
+from PySide6.QtGui import QAction,QDoubleValidator,QFont
 from PySide6.QtWidgets import QWidget 
 from PySide6.QtUiTools import QUiLoader
 
@@ -38,6 +38,7 @@ QApplication,
     QRadioButton,
     QSlider,
     QSpinBox,
+    QStatusBar,
     QTimeEdit,
     QTableView,
     QMenuBar,
@@ -352,6 +353,87 @@ class ContrlDB(QMainWindow):
 
         return
 
+    def MyRecipes_new(self):
+        self.RecipeWindow = NewWindow(Title = "List of Recipes")
+        self.RecipeWindow.resize(1000,800)
+         
+        
+        self.centralwidget = QWidget(self.RecipeWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.listView = QListView(self.centralwidget)
+        self.listView.setObjectName(u"listView")
+        self.listView.setGeometry(QRect(320, 60, 391, 351))
+        self.SaveRecipe = QPushButton(self.centralwidget)
+        self.SaveRecipe.setObjectName(u"SaveRecipe")
+        self.SaveRecipe.setGeometry(QRect(320, 420, 100, 32))
+        self.NewRecipe = QPushButton(self.centralwidget)
+        self.NewRecipe.setObjectName(u"NewRecipe")
+        self.NewRecipe.setGeometry(QRect(430, 420, 100, 32))
+        self.recipeComboBox = QComboBox(self.centralwidget)
+        self.recipeComboBox.setObjectName(u"recipeComboBox")
+        self.recipeComboBox.setGeometry(QRect(550, 420, 151, 32))
+        self.CaloryLabel = QLabel(self.centralwidget)
+        self.CaloryLabel.setObjectName(u"CaloryLabel")
+        self.CaloryLabel.setGeometry(QRect(30, 60, 101, 31))
+        font = QFont()
+        font.setPointSize(15)
+        font.setBold(True)
+        self.CaloryLabel.setFont(font)
+        self.TotCal = QLineEdit(self.centralwidget)
+        self.TotCal.setObjectName(u"TotCal")
+        self.TotCal.setGeometry(QRect(180, 60, 113, 31))
+        self.Cal100 = QLabel(self.centralwidget)
+        self.Cal100.setObjectName(u"Cal100")
+        self.Cal100.setGeometry(QRect(30, 120, 121, 31))
+        self.Cal100.setFont(font)
+        self.cal100_out = QLineEdit(self.centralwidget)
+        self.cal100_out.setObjectName(u"cal100_out")
+        self.cal100_out.setGeometry(QRect(180, 120, 113, 31))
+        self.protein = QLabel(self.centralwidget)
+        self.protein.setObjectName(u"protein")
+        self.protein.setGeometry(QRect(30, 170, 121, 31))
+        self.protein.setFont(font)
+        self.lineEdit = QLineEdit(self.centralwidget)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setGeometry(QRect(180, 170, 113, 31))
+        self.CancelButton = QPushButton(self.centralwidget)
+        self.CancelButton.setObjectName(u"CancelButton")
+        self.CancelButton.setGeometry(QRect(390, 460, 231, 61))
+        font1 = QFont()
+        font1.setPointSize(18)
+        self.CancelButton.setFont(font1)
+        self.CancelButton.setAutoFillBackground(False)
+        self.IngredientsLabel = QLabel(self.centralwidget)
+        self.IngredientsLabel.setObjectName(u"IngredientsLabel")
+        self.IngredientsLabel.setGeometry(QRect(407, 19, 211, 31))
+        font2 = QFont()
+        font2.setPointSize(23)
+        self.IngredientsLabel.setFont(font2)
+        self.IngredientsLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.RecipeWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(self.RecipeWindow)
+        self.menubar.setObjectName(u"menubar")
+        self.menubar.setGeometry(QRect(0, 0, 800, 37))
+        self.RecipeWindow.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(self.RecipeWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        self.RecipeWindow.setStatusBar(self.statusbar)
+     
+        self.RecipeWindow.setCentralWidget(self.centralwidget)
+        self.retranslateUi(self.RecipeWindow)
+        QMetaObject.connectSlotsByName(self.RecipeWindow)
+        self.RecipeWindow.show()
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.SaveRecipe.setText(QCoreApplication.translate("MainWindow", u"Save Recipes", None))
+        self.NewRecipe.setText(QCoreApplication.translate("MainWindow", u"New Recipe", None))
+        self.CaloryLabel.setText(QCoreApplication.translate("MainWindow", u"Total Calories", None))
+        self.Cal100.setText(QCoreApplication.translate("MainWindow", u"Calories per gram", None))
+        self.protein.setText(QCoreApplication.translate("MainWindow", u"Protein per gram", None))
+        self.CancelButton.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.IngredientsLabel.setText(QCoreApplication.translate("MainWindow", u"Ingredients", None))
+
 
     def MyRecipes(self):
         """this will deal with the recipes"""
@@ -419,6 +501,12 @@ class ContrlDB(QMainWindow):
         self.horizontalLayout.addWidget(self.RecipeListCombo)
  
         self.verticalLayout.addLayout(self.horizontalLayout)
+
+        #here are the result boxes
+        self.TotalCalories = QLabel(self.verticalLayoutWidget)
+        self.TotalCalories.setText(" Calories / gram")
+        self.TotalCalories.setObjectName(u"TotalCalories")
+        self.horizontalLayout.addWidget(self.TotalCalories)
 
         #end geometry
 
@@ -567,7 +655,7 @@ window.setStyleSheet("background-color: white;")
 window.ConnectDataBase()
 window.ShowTables()
 #window.ViewTable('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
-window.MyRecipes()
+window.MyRecipes_new()
 #window.CreateIngredientsForm1()
 
 # now run the app
