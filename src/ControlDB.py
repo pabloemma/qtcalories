@@ -8,7 +8,7 @@ from loguru import logger
 import config_mycal
 
 
-from PySide6.QtCore import QSize, Qt ,QCoreApplication,Slot,Signal
+from PySide6.QtCore import QSize, Qt ,QCoreApplication,Slot,Signal,QAbstractListModel
 from PySide6.QtGui import QAction,QDoubleValidator
 from PySide6.QtWidgets import QWidget 
 from PySide6.QtUiTools import QUiLoader
@@ -29,6 +29,7 @@ QApplication,
     QLabel,
     QLCDNumber,
     QLineEdit,
+    QListView,
     QMainWindow,
     QProgressBar,
     QPushButton,
@@ -59,6 +60,29 @@ class NewWindow(QMainWindow):
             layout.addWidget(self.label)
             self.setLayout(layout)
 
+
+class RecipeModel(QAbstractListModel):
+
+    def __init__(self,recipes=None):
+        super().__init__()
+
+    #When subclassing QAbstractListModel, you must provide implementations of the rowCount() and data() functions. 
+    # Well behaved models also provide a headerData() implementation.
+    # this means we will have to define the data and rowCount
+    # see also https://doc.qt.io/qt-6/qabstractlistmodel.html
+
+    def data(self, index, role):
+        if role == Qt.DisplayRole:
+            status, text = self.todos[index.row()]
+            return text
+        
+        if role == Qt.DecorationRole:
+            status, text = self.todos[index.row()] 
+            if status:
+                return tick
+
+    def rowCount(self, index):
+        return len(self.todos)
 
 
 
@@ -329,8 +353,64 @@ class ContrlDB(QMainWindow):
         return
 
 
+    def MyRecipes(self):
+        """this will deal with the recipes"""
+        
+        self.RecipeWindow = NewWindow(Title = "Add New Ingredient")
+        self.RecipeView = QListView()
+        self.RecipeModel = RecipeModel()
+        self.RecipeView.setModel(self.RecipeModel)
+
+        # Create just a simple layout with a box with the recipe titles and a qlistview
+        #The title box is just a scroll box
+        # The first thing is to get an alphabetic list of the current recipes
+        self.Combo=RecipeListCombo = QComboBox()
+        RecipeListCombo.addItems(self.GetRecipeList())
+
+        self.RecipeWindow.setCentralWidget(RecipeListCombo)
+
+        RecipeListCombo.currentIndexChanged.connect(self.getSelectedItem())
+        # Now we get the selected value
+        selected_recipe =self.selected_text
+
+        logger.info("You have selected %s recipe" % self.selected_text)
+        self.RecipeWindow.show()
+ 
+
+        return
+    
+    def getSelectedItem(self):
+        index = self.Combo.currentIndex()
+        if index >= 0:
+            self.selected_text = self.Combo.itemText(index)
+            logger.info("You have selected %s recipe" % self.selected_text)
+
+        else:
+            logger.warning(" No recipe selected")
+
+        return 
 
 
+
+    def GetRecipeList(self):
+
+        sql = 'SELECT name from recipes ; '
+        query = QSqlQuery(sql,db=self.mycal_db)
+        model = QSqlQueryModel()
+
+        model.setQuery(query)
+        recipe_list = []
+        while query.next():
+            recipe_list.append(str(query.value(0)))
+
+        return (recipe_list)
+
+
+
+
+
+    def ModifyRecipe(self):
+        pass
 
   
     def SizeWindow(self,window,myposit,mysize):
@@ -427,7 +507,8 @@ window.setStyleSheet("background-color: white;")
 window.ConnectDataBase()
 window.ShowTables()
 #window.ViewTable('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
-window.CreateIngredientsForm1()
+window.MyRecipes()
+#window.CreateIngredientsForm1()
 
 # now run the app
 app.exec()
