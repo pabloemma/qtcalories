@@ -1,0 +1,128 @@
+2025-02-06T07:02:52.912015-0700 - __main__-   ConnectDataBase -123- INFO    - connection succsessful
+2025-02-06T07:02:52.913069-0700 - __main__-   ConnectDataBase -127- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:05:25.882856-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:05:25.883797-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:05:51.905296-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:05:51.906286-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:09:24.787370-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:09:24.788214-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:09:41.825086-0700 - __main__-   InsertRecord -324- INFO    -  inserted record into table test
+2025-02-06T07:10:30.083119-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:10:30.083910-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:13:00.077631-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:13:00.078492-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:13:10.499337-0700 - __main__-   InsertRecord -324- INFO    -  inserted record into table shit ingredients
+2025-02-06T07:13:57.597420-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:13:57.598007-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:14:09.396208-0700 - __main__-   InsertRecord -324- INFO    -  inserted record shit into table  ingredients
+2025-02-06T07:21:19.331953-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:21:19.333057-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:21:38.196760-0700 - __main__-   InsertRecord -324- INFO    -  inserted record Cabernet into table  ingredients
+2025-02-06T07:33:57.077807-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T07:33:57.078769-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T07:34:17.970012-0700 - __main__-   InsertRecord -324- INFO    -  inserted record Cabernet into table  ingredients
+2025-02-06T09:17:37.260692-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:17:37.261396-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:21:17.465406-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:21:17.466059-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:23:43.515647-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:23:43.516698-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:25:16.774504-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:25:16.775126-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:25:46.594584-0700 - __main__-   InsertRecord -324- INFO    -  inserted record Cabernet into table  ingredients
+2025-02-06T09:27:41.813664-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:27:41.814472-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:28:05.402814-0700 - __main__-   InsertRecord -324- INFO    -  inserted record Cabernet into table  ingredients
+2025-02-06T09:29:13.526892-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:29:13.527740-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:29:34.555219-0700 - __main__-   InsertRecord -324- INFO    -  inserted record Cabernet into table  ingredients
+2025-02-06T09:30:41.356229-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:30:41.357184-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:33:37.141094-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:33:37.142268-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:35:46.962885-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:35:46.963574-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:36:10.626326-0700 - __main__-   InsertRecord -324- INFO    -  inserted record Cabernet into table  ingredients
+2025-02-06T09:36:20.088111-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:36:20.088807-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:36:27.698420-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:36:27.699289-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:41:00.107766-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:41:00.108672-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:42:00.943713-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:42:00.944581-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:42:57.308919-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:42:57.309872-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:47:48.158980-0700 - __main__-   ConnectDataBase -124- INFO    - connection succsessful
+2025-02-06T09:47:48.159944-0700 - __main__-   ConnectDataBase -128- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T09:48:24.344285-0700 - __main__-   InsertRecord -325- INFO    -  inserted record Cabernet into table  ingredients
+2025-02-06T15:46:00.704188-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T15:46:00.705633-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T15:47:27.388870-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T15:47:27.389642-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T15:54:26.659605-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T15:54:26.660225-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T16:31:55.515105-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T16:31:55.516103-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T16:32:40.685916-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T16:32:40.686699-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T16:33:40.433502-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T16:33:40.434304-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T16:38:19.465981-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T16:38:19.466751-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:11:29.250722-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:11:29.251548-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:11:29.438055-0700 - __main__-   MyRecipes -377- INFO    - You have selected %s recipe
+2025-02-06T17:12:07.977490-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:12:07.978102-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:12:08.168434-0700 - __main__-   MyRecipes -377- INFO    - You have selected %s recipe
+2025-02-06T17:13:32.564790-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:13:32.565485-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:13:32.781201-0700 - __main__-   MyRecipes -377- INFO    - You have selected aenisbroetli recipe
+2025-02-06T17:14:14.521527-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:14:14.522123-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:14:14.707753-0700 - __main__-   MyRecipes -377- INFO    - You have selected aenisbroetli recipe
+2025-02-06T17:23:57.390548-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:23:57.391185-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:24:25.684057-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:24:25.684617-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:24:52.043761-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:24:52.044419-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:25:21.537538-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:25:21.538170-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:25:21.726478-0700 - __main__-   getSelectedItem -386- INFO    - You have selected aenisbroetli recipe
+2025-02-06T17:25:21.726833-0700 - __main__-   MyRecipes -377- INFO    - You have selected aenisbroetli recipe
+2025-02-06T17:26:43.274808-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:26:43.275688-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:26:43.487401-0700 - __main__-   getSelectedItem -386- INFO    - You have selected aenisbroetli recipe
+2025-02-06T17:26:43.487862-0700 - __main__-   MyRecipes -377- INFO    - You have selected aenisbroetli recipe
+2025-02-06T17:28:22.404327-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T17:28:22.405081-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T17:28:22.414105-0700 - __main__-   getSelectedItem -386- INFO    - You have selected aenisbroetli recipe
+2025-02-06T17:28:22.414297-0700 - __main__-   MyRecipes -376- INFO    - You have selected aenisbroetli recipe
+2025-02-06T18:13:12.489986-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-06T18:13:12.491184-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-06T18:22:08.468247-0700 - __main__-   getSelectedItem -386- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:20:50.756887-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:20:50.757835-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-07T06:21:04.327356-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:21:04.328306-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-07T06:21:04.347124-0700 - __main__-   getSelectedItem -386- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:21:04.347631-0700 - __main__-   MyRecipes -376- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:22:01.724431-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:22:01.725302-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-07T06:22:01.732217-0700 - __main__-   getSelectedItem -386- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:22:08.223427-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:22:08.224367-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-07T06:22:41.649766-0700 - __main__-   getSelectedItem -386- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:31:29.989872-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:31:29.990881-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-07T06:31:30.000669-0700 - __main__-   getSelectedItem -387- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:36:47.761348-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:36:47.762166-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-07T06:36:47.772625-0700 - __main__-   getSelectedItem -388- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:37:40.318776-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:37:40.319566-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection
+2025-02-07T06:37:40.330967-0700 - __main__-   getSelectedItem -388- INFO    - You have selected aenisbroetli recipe
+2025-02-07T06:44:15.476977-0700 - __main__-   ConnectDataBase -148- INFO    - connection succsessful
+2025-02-07T06:44:15.477755-0700 - __main__-   ConnectDataBase -152- INFO    -  database connection name qt_sql_default_connection

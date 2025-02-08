@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QListView" name="listView">
+   <widget class="QListView" name="RecipeView">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -50,7 +50,7 @@
      <string>New Recipe</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="recipeComboBox">
+   <widget class="QComboBox" name="RecipeListCombo">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -58,6 +58,12 @@
       <width>151</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="editable">
+     <bool>true</bool>
+    </property>
+    <property name="maxVisibleItems">
+     <number>20</number>
     </property>
    </widget>
    <widget class="QLabel" name="CaloryLabel">

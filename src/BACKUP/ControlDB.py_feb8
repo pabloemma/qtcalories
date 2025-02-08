@@ -6,7 +6,6 @@ from loguru import logger
 
 
 import config_mycal
-from Recipe import Ui_MainWindow
 
 
 from PySide6.QtCore import (QSize, Qt ,QRect,
@@ -86,10 +85,6 @@ class RecipeModel(QAbstractListModel):
     def rowCount(self, index):
         return len(self.recipes)
 
-class MyRecipeWindow(QMainWindow,Ui_MainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
 
 
 class ContrlDB(QMainWindow):
@@ -366,28 +361,94 @@ class ContrlDB(QMainWindow):
         return
 
     def MyRecipes_new(self):
-        """using the QTdesigner"""
-        self.MRD = MyRecipeWindow()
-        self.MRD.show()
-
-        # Load the model
-        self.RecipeModel = RecipeModel()
-        self.MRD.RecipeView.setModel(self.RecipeModel)
-
-        #poulate the combo box
-        self.MRD.RecipeListCombo.setObjectName(u"RecipeListCombo")
-        self.MRD.RecipeListCombo.addItems(self.GetRecipeList())
-
-
-        #here we define the actions
-        self.MRD.RecipeListCombo.currentTextChanged.connect(self.getSelectedRecipe)
-
+        self.RecipeWindow = NewWindow(Title = "List of Recipes")
+        self.RecipeWindow.resize(1000,800)
+         
         
+        self.centralwidget = QWidget(self.RecipeWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.listView = QListView(self.centralwidget)
+        self.listView.setObjectName(u"listView")
+        self.listView.setGeometry(QRect(320, 60, 391, 351))
+        self.SaveRecipe = QPushButton(self.centralwidget)
+        self.SaveRecipe.setObjectName(u"SaveRecipe")
+        self.SaveRecipe.setGeometry(QRect(320, 420, 100, 32))
+        self.NewRecipe = QPushButton(self.centralwidget)
+        self.NewRecipe.setObjectName(u"NewRecipe")
+        self.NewRecipe.setGeometry(QRect(430, 420, 100, 32))
+        self.recipeComboBox = QComboBox(self.centralwidget)
+        self.recipeComboBox.setObjectName(u"recipeComboBox")
+        self.recipeComboBox.setGeometry(QRect(550, 420, 151, 32))
+        self.recipeComboBox.addItems(self.GetRecipeList())
+        # make box editable
+        self.recipeComboBox.setEditable(True) # needed so that the next statement works
+        self.recipeComboBox.setMaxVisibleItems(20)
+
+        self.CaloryLabel = QLabel(self.centralwidget)
+        self.CaloryLabel.setObjectName(u"CaloryLabel")
+        self.CaloryLabel.setGeometry(QRect(30, 60, 101, 31))
+        font = QFont()
+        font.setPointSize(15)
+        font.setBold(True)
+        self.CaloryLabel.setFont(font)
+        self.TotCal = QLineEdit(self.centralwidget)
+        self.TotCal.setObjectName(u"TotCal")
+        self.TotCal.setGeometry(QRect(180, 60, 113, 31))
+        self.Cal100 = QLabel(self.centralwidget)
+        self.Cal100.setObjectName(u"Cal100")
+        self.Cal100.setGeometry(QRect(30, 120, 121, 31))
+        self.Cal100.setFont(font)
+        self.cal100_out = QLineEdit(self.centralwidget)
+        self.cal100_out.setObjectName(u"cal100_out")
+        self.cal100_out.setGeometry(QRect(180, 120, 113, 31))
+        self.protein = QLabel(self.centralwidget)
+        self.protein.setObjectName(u"protein")
+        self.protein.setGeometry(QRect(30, 170, 121, 31))
+        self.protein.setFont(font)
+        self.lineEdit = QLineEdit(self.centralwidget)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setGeometry(QRect(180, 170, 113, 31))
+        self.CancelButton = QPushButton(self.centralwidget)
+        self.CancelButton.setObjectName(u"CancelButton")
+        self.CancelButton.setGeometry(QRect(390, 460, 231, 61))
+        font1 = QFont()
+        font1.setPointSize(18)
+        self.CancelButton.setFont(font1)
+        self.CancelButton.setAutoFillBackground(False)
+        self.IngredientsLabel = QLabel(self.centralwidget)
+        self.IngredientsLabel.setObjectName(u"IngredientsLabel")
+        self.IngredientsLabel.setGeometry(QRect(407, 19, 211, 31))
+        font2 = QFont()
+        font2.setPointSize(23)
+        self.IngredientsLabel.setFont(font2)
+        self.IngredientsLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.RecipeWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(self.RecipeWindow)
+        self.menubar.setObjectName(u"menubar")
+        self.menubar.setGeometry(QRect(0, 0, 800, 37))
+        self.RecipeWindow.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(self.RecipeWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        self.RecipeWindow.setStatusBar(self.statusbar)
+     
+        self.RecipeWindow.setCentralWidget(self.centralwidget)
+        self.retranslateUi(self.RecipeWindow)
+        QMetaObject.connectSlotsByName(self.RecipeWindow)
+        self.RecipeWindow.show()
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.SaveRecipe.setText(QCoreApplication.translate("MainWindow", u"Save Recipes", None))
+        self.NewRecipe.setText(QCoreApplication.translate("MainWindow", u"New Recipe", None))
+        self.CaloryLabel.setText(QCoreApplication.translate("MainWindow", u"Total Calories", None))
+        self.Cal100.setText(QCoreApplication.translate("MainWindow", u"Calories per gram", None))
+        self.protein.setText(QCoreApplication.translate("MainWindow", u"Protein per gram", None))
+        self.CancelButton.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.IngredientsLabel.setText(QCoreApplication.translate("MainWindow", u"Ingredients", None))
 
 
     def MyRecipes(self):
         """this will deal with the recipes"""
-        
         
 
         # set up geometry
@@ -478,53 +539,16 @@ class ContrlDB(QMainWindow):
 
         self.RecipeWindow.setCentralWidget(self.centralWidget)
         self.RecipeWindow.show()
-
  
         return
 
     def getSelectedText(self,s):
         self.selected_text = s
-        logger.info("You have selected %s text" % self.selected_text)
+        logger.info("You have selected %s recipe" % self.selected_text)
         return
 
 
-    def getSelectedRecipe(self,s):
-        self.selected_recipe = s
-        logger.info("You have selected %s recipe" % self.selected_recipe)
 
-        # now we populate the listview
-        self.FillRecipeIngredientList()
-        return
-    
-    def FillRecipeIngredientList(self):
-        # here we get the ingredients from the Recipe database
-        # this is done with a query
-        sql =' SELECT ingredients from recipes WHERE recipes.name LIKE \''+self.selected_recipe +'\' ;'
-        query = QSqlQuery(sql,db=self.mycal_db)
-        model = QSqlQueryModel()
-
-        model.setQuery(query)
-        while query.next():
-
-            temp_value = ((query.value(0)))
-        # now we have to work with string
-        # the old database still had *u000a in front of the number
-        # need first to strip this
-        #check if temp contains *u000a 
-        mask = '*u000a'
-        if(mask in temp_value):
-            temp_new = self.StripUnicode(temp_value,mask)
-            temp_new = self.StripUnicode(temp_new,'*')
-            
-
-        else:
-            temp_new = temp_value
-
-        return
-
-    def StripUnicode(self,mystring,mask):
-        newstring =mystring.replace(mask,'')
-        return newstring
 
 
     def GetRecipeList(self):
