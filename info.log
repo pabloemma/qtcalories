@@ -93,3 +93,63 @@
 2025-02-07T17:01:04.807402-0700 - __main__-   ConnectDataBase -153- INFO    -  database connection name qt_sql_default_connection
 2025-02-08T06:17:17.649309-0700 - __main__-   ConnectDataBase -149- INFO    - connection succsessful
 2025-02-08T06:17:17.650108-0700 - __main__-   ConnectDataBase -153- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T06:21:48.011385-0700 - __main__-   __init__ -132- INFO    - ******************************************************* 
+
+
+
+2025-02-08T06:21:48.012675-0700 - __main__-   __init__ -134- INFO    -  This is version 0.1
+2025-02-08T06:21:48.012806-0700 - __main__-   __init__ -135- INFO    - 
+
+
+******************************************************* 
+
+2025-02-08T06:21:49.515615-0700 - __main__-   ConnectDataBase -156- INFO    - connection succsessful
+2025-02-08T06:21:49.516044-0700 - __main__-   ConnectDataBase -160- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T06:22:42.785542-0700 - __main__-   __init__ -132- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T06:22:42.786041-0700 - __main__-   __init__ -134- INFO    -  This is version 0.1
+2025-02-08T06:22:42.786127-0700 - __main__-   __init__ -135- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T06:22:42.864788-0700 - __main__-   ConnectDataBase -156- INFO    - connection succsessful
+2025-02-08T06:22:42.865083-0700 - __main__-   ConnectDataBase -160- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T08:05:11.243357-0700 - __main__-   __init__ -136- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T08:05:11.244164-0700 - __main__-   __init__ -138- INFO    -  This is version 0.1
+2025-02-08T08:05:11.244288-0700 - __main__-   __init__ -139- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T08:05:12.795187-0700 - __main__-   ConnectDataBase -160- INFO    - connection succsessful
+2025-02-08T08:05:12.795492-0700 - __main__-   ConnectDataBase -164- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T08:06:04.850736-0700 - __main__-   __init__ -136- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T08:06:04.851585-0700 - __main__-   __init__ -138- INFO    -  This is version 0.1
+2025-02-08T08:06:04.851707-0700 - __main__-   __init__ -139- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T08:06:04.954693-0700 - __main__-   ConnectDataBase -160- INFO    - connection succsessful
+2025-02-08T08:06:04.955016-0700 - __main__-   ConnectDataBase -164- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T08:19:36.076706-0700 - __main__-   __init__ -136- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T08:19:36.077359-0700 - __main__-   __init__ -138- INFO    -  This is version 0.1
+2025-02-08T08:19:36.077453-0700 - __main__-   __init__ -139- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T08:19:37.421707-0700 - __main__-   ConnectDataBase -160- INFO    - connection succsessful
+2025-02-08T08:19:37.422071-0700 - __main__-   ConnectDataBase -164- INFO    -  database connection name qt_sql_default_connection

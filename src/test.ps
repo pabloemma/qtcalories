@@ -1,8 +1,8 @@
 %!PS-Adobe-3.0
-%%Title: ToDo.py
+%%Title: todo_complete.py
 %%For: Andi Klein
 %%Creator: a2ps version 4.15.5
-%%CreationDate: Fri Feb  7 09:35:43 2025
+%%CreationDate: Sat Feb  8 07:32:34 2025
 %%BoundingBox: 24 24 588 767
 %%DocumentData: Clean7Bit
 %%Orientation: Landscape
@@ -754,106 +754,130 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1) # (# -*- coding: utf-8 -*-) c n
-(2) # () N
-(3) # (################################################################################) N
-(4) # (## Form generated from reading UI file 'ToDo.ui') N
-(5) # (##) N
-(6) # (## Created by: Qt User Interface Compiler version 6.7.2) N
-(7) # (##) N
-(8) # (## WARNING! All changes made in this file will be lost when recompiling UI file!) N
-(9) # (################################################################################) N
-(10) # () N
-(11) # () S
+(1) # (import) K
+( json) p n
+(2) # () S
+(import) K
+( os) p n
+(3) # () S
+(import) K
+( sys) p n
+(4) # () N
+(5) # () S
 (from) K
 ( PySide6.QtCore ) p
 (import) K
-( \(QCoreApplication, QDate, QDateTime, QLocale,) p n
-(12) # (    QMetaObject, QObject, QPoint, QRect,) N
-(13) # (    QSize, QTime, QUrl, Qt\)) N
-(14) # () S
+( QAbstractListModel, Qt) p n
+(6) # () S
 (from) K
 ( PySide6.QtGui ) p
 (import) K
-( \(QBrush, QColor, QConicalGradient, QCursor,) p n
-(15) # (    QFont, QFontDatabase, QGradient, QIcon,) N
-(16) # (    QImage, QKeySequence, QLinearGradient, QPainter,) N
-(17) # (    QPalette, QPixmap, QRadialGradient, QTransform\)) N
-(18) # () S
+( QImage) p n
+(7) # () S
 (from) K
 ( PySide6.QtWidgets ) p
 (import) K
-( \(QApplication, QHBoxLayout, QLineEdit, QListView,) p n
-(19) # (    QMainWindow, QMenuBar, QPushButton, QSizePolicy,) N
-(20) # (    QStatusBar, QVBoxLayout, QWidget\)) N
-(21) # () N
-(22) # () S
+( QApplication, QMainWindow) p n
+(8) # () N
+(9) # () S
+(from) K
+( MainWindow ) p
+(import) K
+( Ui_MainWindow) p n
+(10) # () N
+(11) # (basedir = os.path.dirname\(__file__\)) N
+(12) # () N
+(13) # (tick = QImage\(os.path.join\(basedir, ") S
+(tick.png) str
+("\)\)) p n
+(14) # () N
+(15) # () N
+(16) # () S
 (class) K
-( Ui_MainWindow\(object\):) p n
-(23) # (    ) S
+( TodoModel\(QAbstractListModel\):) p n
+(17) # (    ) S
 (def) K
-( setupUi\(self, MainWindow\):) p n
-(24) # (        ) S
+( __init__\(self, todos=None\):) p n
+(18) # (        super\(\).__init__\(\)) N
+(19) # (        self.todos = todos ) S
+(or) K
+( []) p n
+(20) # () N
+(21) # (    ) S
+(def) K
+( data\(self, index, role\):) p n
+(22) # (        ) S
 (if) K
-( ) p
-(not) K
-( MainWindow.objectName\(\):) p n
-(25) # (            MainWindow.setObjectName\(u") S
-(MainWindow) str
-("\)) p n
-(26) # (        MainWindow.resize\(895, 838\)) N
-(27) # (        self.centralwidget = QWidget\(MainWindow\)) N
-(28) # (        self.centralwidget.setObjectName\(u") S
-(centralwidget) str
-("\)) p n
-(29) # (        self.verticalLayoutWidget = QWidget\(self.centralwidget\)) N
-(30) # (        self.verticalLayoutWidget.setObjectName\(u") S
-(verticalLayoutWidget) str
-("\)) p n
-(31) # (        self.verticalLayoutWidget.setGeometry\(QRect\(450, 30, 331, 581\)\)) N
-(32) # (        self.verticalLayout = QVBoxLayout\(self.verticalLayoutWidget\)) N
-(33) # (        self.verticalLayout.setObjectName\(u") S
-(verticalLayout) str
-("\)) p n
-(34) # (        self.verticalLayout.setContentsMargins\(0, 0, 0, 0\)) N
-(35) # (        self.todoView = QListView\(self.verticalLayoutWidget\)) N
-(36) # (        self.todoView.setObjectName\(u") S
-(todoView) str
-("\)) p n
-(37) # () N
-(38) # (        self.verticalLayout.addWidget\(self.todoView\)) N
-(39) # () N
-(40) # (        self.horizontalLayout = QHBoxLayout\(\)) N
-(41) # (        self.horizontalLayout.setObjectName\(u") S
-(horizontalLayout) str
-("\)) p n
-(42) # (        self.deleteButton = QPushButton\(self.verticalLayoutWidget\)) N
-(43) # (        self.deleteButton.setObjectName\(u") S
-(deleteButton) str
-("\)) p n
-(44) # () N
-(45) # (        self.horizontalLayout.addWidget\(self.deleteButton\)) N
-(46) # () N
-(47) # (        self.completeButton = QPushButton\(self.verticalLayoutWidget\)) N
-(48) # (        self.completeButton.setObjectName\(u") S
-(completeButton) str
-("\)) p n
-(49) # () N
-(50) # (        self.horizontalLayout.addWidget\(self.completeButton\)) N
-(51) # () N
-(52) # () N
-(53) # (        self.verticalLayout.addLayout\(self.horizontalLayout\)) N
-(54) # () N
-(55) # (        self.todoEdit = QLineEdit\(self.verticalLayoutWidget\)) N
-(56) # (        self.todoEdit.setObjectName\(u") S
-(todoEdit) str
-("\)) p n
-(57) # () N
-(ToDo.py) (Page 1/2) (Sep 11, 2024 17:29) title
+( role == Qt.DisplayRole:) p n
+(23) # (            status, text = self.todos[index.row\(\)]) N
+(24) # (            ) S
+(return) K
+( text) p n
+(25) # () N
+(26) # (        ) S
+(if) K
+( role == Qt.DecorationRole:) p n
+(27) # (            status, text = self.todos[index.row\(\)]) N
+(28) # (            ) S
+(if) K
+( status:) p n
+(29) # (                ) S
+(return) K
+( tick) p n
+(30) # () N
+(31) # (    ) S
+(def) K
+( rowCount\(self, index\):) p n
+(32) # (        ) S
+(return) K
+( len\(self.todos\)) p n
+(33) # () N
+(34) # () N
+(35) # () S
+(class) K
+( MainWindow\(QMainWindow, Ui_MainWindow\):) p n
+(36) # (    ) S
+(def) K
+( __init__\(self\):) p n
+(37) # (        super\(\).__init__\(\)) N
+(38) # (        self.setupUi\(self\)) N
+(39) # (        self.model = TodoModel\(\)) N
+(40) # (        self.load\(\)) N
+(41) # (        self.todoView.setModel\(self.model\)) N
+(42) # (        self.addButton.pressed.connect\(self.add\)) N
+(43) # (        self.deleteButton.pressed.connect\(self.delete\)) N
+(44) # (        self.completeButton.pressed.connect\(self.complete\)) N
+(45) # () N
+(46) # (    ) S
+(def) K
+( add\(self\):) p n
+(47) # (        """) N
+(48) # () S
+(        Add an item to our todo list, getting the text from the QLineEdit .todoEdit) str n
+(49) # (        and then clearing it.) N
+(50) # (        ) S
+(""") p n
+(51) # (        text = self.todoEdit.text\(\)) N
+(52) # (        ) S
+(# Remove whitespace from the ends of the string.) c n
+(53) # () S
+(        text = text.strip\(\)) p n
+(54) # (        ) S
+(if) K
+( text:  ) p
+(# Don't add empty strings.) c n
+(55) # () S
+(            ) p
+(# Access the list via the model.) c n
+(56) # () S
+(            self.model.todos.append\(\(False, text\)\)) p n
+(57) # (            ) S
+(# Trigger refresh.) c n
+(todo_complete.py) (Page 1/2) (May 19, 2022 5:00) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ToDo.py) (1/2) (Friday February 07, 2025) footer
+(/Users/klein/manuals_1/qt/pyside6-source/model-views/todo_complete.py) (1/2) (Saturday February 08, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -869,66 +893,102 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(58) # (        self.verticalLayout.addWidget\(self.todoEdit\)) p n
-(59) # () N
-(60) # (        self.addButton = QPushButton\(self.verticalLayoutWidget\)) N
-(61) # (        self.addButton.setObjectName\(u") S
-(addButton) str
-("\)) p n
+(58) # (            self.model.layoutChanged.emit\(\)) p n
+(59) # (            ) S
+(# Empty the input) c n
+(60) # () S
+(            self.todoEdit.setText\(""\)) p n
+(61) # (            self.save\(\)) N
 (62) # () N
-(63) # (        self.verticalLayout.addWidget\(self.addButton\)) N
-(64) # () N
-(65) # (        MainWindow.setCentralWidget\(self.centralwidget\)) N
-(66) # (        self.menubar = QMenuBar\(MainWindow\)) N
-(67) # (        self.menubar.setObjectName\(u") S
-(menubar) str
-("\)) p n
-(68) # (        self.menubar.setGeometry\(QRect\(0, 0, 895, 37\)\)) N
-(69) # (        MainWindow.setMenuBar\(self.menubar\)) N
-(70) # (        self.statusbar = QStatusBar\(MainWindow\)) N
-(71) # (        self.statusbar.setObjectName\(u") S
-(statusbar) str
-("\)) p n
-(72) # (        MainWindow.setStatusBar\(self.statusbar\)) N
-(73) # () N
-(74) # (        self.retranslateUi\(MainWindow\)) N
-(75) # () N
-(76) # (        QMetaObject.connectSlotsByName\(MainWindow\)) N
-(77) # (    ) S
-(# setupUi) c n
-(78) # () N
-(79) # () S
+(63) # (    ) S
+(def) K
+( delete\(self\):) p n
+(64) # (        indexes = self.todoView.selectedIndexes\(\)) N
+(65) # (        ) S
+(if) K
+( indexes:) p n
+(66) # (            ) S
+(# Indexes is a single-item list in single-select mode.) c n
+(67) # () S
+(            index = indexes[0]) p n
+(68) # (            ) S
+(# Remove the item and refresh.) c n
+(69) # () S
+(            ) p
+(del) K
+( self.model.todos[index.row\(\)]) p n
+(70) # (            self.model.layoutChanged.emit\(\)) N
+(71) # (            ) S
+(# Clear the selection \(as it is no longer valid\).) c n
+(72) # () S
+(            self.todoView.clearSelection\(\)) p n
+(73) # (            self.save\(\)) N
+(74) # () N
+(75) # (    ) S
+(def) K
+( complete\(self\):) p n
+(76) # (        indexes = self.todoView.selectedIndexes\(\)) N
+(77) # (        ) S
+(if) K
+( indexes:) p n
+(78) # (            index = indexes[0]) N
+(79) # (            row = index.row\(\)) N
+(80) # (            status, text = self.model.todos[row]) N
+(81) # (            self.model.todos[row] = \(True, text\)) N
+(82) # (            ) S
+(# .dataChanged takes top-left and bottom right, which are equal) c n
+(83) # () S
+(            ) p
+(# for a single selection.) c n
+(84) # () S
+(            self.model.dataChanged.emit\(index, index\)) p n
+(85) # (            ) S
+(# Clear the selection \(as it is no longer valid\).) c n
+(86) # () S
+(            self.todoView.clearSelection\(\)) p n
+(87) # (            self.save\(\)) N
+(88) # () N
+(89) # (    ) S
+(def) K
+( load\(self\):) p n
+(90) # (        ) S
+(try) K
+(:) p n
+(91) # (            with open\(") S
+(data.json) str
+(", ") p
+(r) str
+("\) as f:) p n
+(92) # (                self.model.todos = json.load\(f\)) N
+(93) # (        ) S
+(except) K
+( Exception:) p n
+(94) # (            ) S
+(pass) K n
+(95) # () N
+(96) # () S
 (    ) p
 (def) K
-( retranslateUi\(self, MainWindow\):) p n
-(80) # (        MainWindow.setWindowTitle\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(MainWindow) str
-(", None\)\)) p n
-(81) # (        self.deleteButton.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Delete) str
-(", None\)\)) p n
-(82) # (        self.completeButton.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Complete) str
-(", None\)\)) p n
-(83) # (        self.addButton.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Add Todo) str
-(", None\)\)) p n
-(84) # (    ) S
-(# retranslateUi) c n
-(85) # () N
-(ToDo.py) (Page 2/2) (Sep 11, 2024 17:29) title
+( save\(self\):) p n
+(97) # (        with open\(") S
+(data.json) str
+(", ") p
+(w) str
+("\) as f:) p n
+(98) # (            data = json.dump\(self.model.todos, f\)) N
+(99) # () N
+(100) # () N
+(101) # (app = QApplication\(sys.argv\)) N
+(102) # (window = MainWindow\(\)) N
+(103) # (window.show\(\)) N
+(104) # (app.) S
+(exec) K
+(\(\)) p n
+(todo_complete.py) (Page 2/2) (May 19, 2022 5:00) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ToDo.py) (2/2) (Friday February 07, 2025) footer
+(/Users/klein/manuals_1/qt/pyside6-source/model-views/todo_complete.py) (2/2) (Saturday February 08, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
