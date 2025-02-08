@@ -23,6 +23,12 @@
       <height>351</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
    </widget>
    <widget class="QPushButton" name="SaveRecipe">
     <property name="geometry">
