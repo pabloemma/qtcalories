@@ -538,3 +538,33 @@
 2025-02-08T15:10:35.149729-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
 2025-02-08T15:10:35.150027-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
 2025-02-08T15:10:39.727834-0700 - __main__-   getSelectedRecipe -398- INFO    - You have selected bean_soup recipe
+2025-02-08T15:13:12.865147-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T15:13:12.865829-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T15:13:12.865921-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T15:13:14.160279-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T15:13:14.160533-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T15:13:18.714632-0700 - __main__-   getSelectedRecipe -398- INFO    - You have selected bean_soup recipe
+2025-02-08T15:15:38.698959-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T15:15:38.699585-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T15:15:38.699693-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T15:15:38.754491-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T15:15:38.754769-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T15:15:43.630087-0700 - __main__-   getSelectedRecipe -403- INFO    - You have selected bean_gratin recipe
+2025-02-08T15:15:47.364396-0700 - __main__-   getSelectedRecipe -403- INFO    - You have selected BB_quiche recipe
+2025-02-08T15:15:51.217871-0700 - __main__-   getSelectedRecipe -403- INFO    - You have selected apple_jalousie recipe
+2025-02-08T15:15:54.462600-0700 - __main__-   getSelectedRecipe -403- INFO    - You have selected beet_cheese_gratin recipe
+2025-02-08T15:15:57.646718-0700 - __main__-   getSelectedRecipe -403- INFO    - You have selected avocado_mousse recipe

@@ -394,6 +394,11 @@ class ContrlDB(QMainWindow):
 
 
     def getSelectedRecipe(self,s):
+        #Clear Buffer of recipes
+
+              
+        self.RecipeModel.recipes = []
+
         self.selected_recipe = s
         logger.info("You have selected %s recipe" % self.selected_recipe)
 
@@ -405,11 +410,17 @@ class ContrlDB(QMainWindow):
 
         # send signal list has been updated
         self.RecipeModel.layoutChanged.emit()
+
+ 
+
         return
     
     def FillRecipeIngredientList(self):
         # here we get the ingredients from the Recipe database
         # this is done with a query
+
+
+
         sql =' SELECT ingredients from recipes WHERE recipes.name LIKE \''+self.selected_recipe +'\' ;'
         query = QSqlQuery(sql,db=self.mycal_db)
         model = QSqlQueryModel()
