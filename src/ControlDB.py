@@ -104,6 +104,7 @@ class ContrlDB(QMainWindow):
             else:
                 self.db_pwd = db_pwd
 
+
         self.SetupLogger()
         #self.CreateIngredientsForm()
         self.ingredients_suppress_columns = ['Sugar',
@@ -126,6 +127,9 @@ class ContrlDB(QMainWindow):
                     'Time',
                     'Images',
                     'vegetarian']
+
+        self.version+'0.1'
+        logger.info(' This is version %s' % self.version)
 
 
         
@@ -372,6 +376,11 @@ class ContrlDB(QMainWindow):
         self.recipeComboBox = QComboBox(self.centralwidget)
         self.recipeComboBox.setObjectName(u"recipeComboBox")
         self.recipeComboBox.setGeometry(QRect(550, 420, 151, 32))
+        self.recipeComboBox.addItems(self.GetRecipeList())
+        # make box editable
+        self.recipeComboBox.setEditable(True) # needed so that the next statement works
+        self.recipeComboBox.setMaxVisibleItems(20)
+
         self.CaloryLabel = QLabel(self.centralwidget)
         self.CaloryLabel.setObjectName(u"CaloryLabel")
         self.CaloryLabel.setGeometry(QRect(30, 60, 101, 31))
