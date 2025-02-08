@@ -249,3 +249,197 @@
 2025-02-08T10:10:18.701045-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
 2025-02-08T10:10:18.701482-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
 2025-02-08T10:10:24.218032-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected Aspargus Soup recipe
+2025-02-08T14:17:39.290370-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:17:39.291438-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:17:39.291551-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:17:40.718680-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:17:40.718970-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:17:44.874042-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected beet_gnocchi recipe
+2025-02-08T14:19:41.900195-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:19:41.901347-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:19:41.901547-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:19:41.975313-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:19:41.975651-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:19:49.378419-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_cakes recipe
+2025-02-08T14:20:47.632803-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:20:47.633502-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:20:47.633600-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:20:47.688319-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:20:47.688621-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:21:02.035322-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:21:02.036160-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:21:02.036319-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:21:02.192354-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:21:02.192948-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:21:10.278393-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_gratin recipe
+2025-02-08T14:22:03.217209-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:22:03.218050-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:22:03.218204-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:22:04.553652-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:22:04.554176-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:22:10.478372-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected BB_quiche recipe
+2025-02-08T14:24:20.189402-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:24:20.190150-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:24:20.190275-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:24:20.262569-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:24:20.262845-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:24:27.177500-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_gratin recipe
+2025-02-08T14:25:59.804485-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:25:59.805477-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:25:59.805634-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:25:59.880632-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:25:59.880999-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:26:05.286047-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected avocado_filled recipe
+2025-02-08T14:32:09.074637-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:32:09.075403-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:32:09.075495-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:32:10.467140-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:32:10.467460-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:32:16.497290-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_bacon_gratin recipe
+2025-02-08T14:33:22.002556-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:33:22.003710-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:33:22.003895-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:33:23.299638-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:33:23.299976-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:33:26.770784-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected beet_gnocchi recipe
+2025-02-08T14:34:11.929306-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:34:11.929992-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:34:11.930108-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:34:11.982122-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:34:11.982428-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:34:16.292422-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected beet_gnocchi recipe
+2025-02-08T14:36:52.149743-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:36:52.150662-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:36:52.150803-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:36:52.230918-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:36:52.231223-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:36:57.188346-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_bacon_gratin recipe
+2025-02-08T14:37:50.350021-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:37:50.350831-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:37:50.350993-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:37:50.405938-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:37:50.406284-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:37:56.359216-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_soup recipe
+2025-02-08T14:39:41.081765-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:39:41.082441-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:39:41.082605-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:39:42.393118-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:39:42.393411-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:39:48.088137-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_soup recipe
+2025-02-08T14:40:15.940754-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:40:15.941583-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:40:15.941741-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:40:15.997304-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:40:15.997666-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:40:20.670300-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_soup recipe
+2025-02-08T14:41:21.951249-0700 - __main__-   __init__ -137- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-08T14:41:21.952177-0700 - __main__-   __init__ -139- INFO    -  This is version 0.1
+2025-02-08T14:41:21.952319-0700 - __main__-   __init__ -140- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-08T14:41:22.031634-0700 - __main__-   ConnectDataBase -161- INFO    - connection succsessful
+2025-02-08T14:41:22.031910-0700 - __main__-   ConnectDataBase -165- INFO    -  database connection name qt_sql_default_connection
+2025-02-08T14:41:26.367364-0700 - __main__-   getSelectedRecipe -493- INFO    - You have selected bean_soup recipe

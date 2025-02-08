@@ -511,16 +511,71 @@ class ContrlDB(QMainWindow):
         # the old database still had *u000a in front of the number
         # need first to strip this
         #check if temp contains *u000a 
-        mask = '*u000a'
+        mask = 'u000a'
         if(mask in temp_value):
             temp_new = self.StripUnicode(temp_value,mask)
-            temp_new = self.StripUnicode(temp_new,'*')
+            #temp_new = self.StripUnicode(temp_new,'*')
+        
+
             
 
         else:
             temp_new = temp_value
+        
+        delimiter = " g "
+        result = temp_new.replace('u000a','')
+        
 
+        result1 = self.split_and_keep(result, delimiter)
+        #  strip last *
+        result11= result1[0]
+        result2 = result11[:len(result1[0])-1].split('*')
+        # we know that a string with underscores has a max of three spaces. Any number larger than this means words with spaces.
+        #in other words 4 spaces means the 3rd has to be replaced with _ 5 spaces mean the 3rd and 4th
+        result3 =[]
+        for a in result2:
+            space_indices = []
+            for i, char in enumerate(a):
+                if char == ' ':
+                    space_indices.append(i)
+    
+            if len(space_indices) == 4:
+                na = a[:space_indices[2]] + '_' + a[space_indices[2] + 1:]
+             
+                result3.append(na)
+
+            elif len(space_indices) == 5:
+                na = a[:space_indices[2]] + '_' + a[space_indices[2]+1:space_indices[3]] + '_' + a[space_indices[3] + 1:]
+                result3.append(na)
+
+            else:
+                result3.append(a)
+
+
+        recipe_string = result3
+
+        self.recipe_ingredients = result3
         return
+
+
+
+
+    def split_and_keep(self,text, delimiter):
+        """deals with spaces instead of underscores"""
+        result = []
+        temp = ""
+        for char in text:
+            if char == delimiter:
+                result.append(temp + char)
+                temp = ""
+            else:
+                temp += char
+        if temp:
+            result.append(temp)
+        return result
+
+
+
 
     def StripUnicode(self,mystring,mask):
         newstring =mystring.replace(mask,'')
