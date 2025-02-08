@@ -79,7 +79,7 @@ class RecipeModel(QAbstractListModel):
 
     def data(self, index, role):
         if role == Qt.DisplayRole:
-            status, text = self.recipes[index.row()]
+            text = self.recipes[index.row()]
             return text
         
  
@@ -494,6 +494,12 @@ class ContrlDB(QMainWindow):
 
         # now we populate the listview
         self.FillRecipeIngredientList()
+
+        # Now fill qlist
+        self.DisplyRecipeList()
+
+        # send signal list has been updated
+        self.RecipeModel.layoutChanged.emit()
         return
     
     def FillRecipeIngredientList(self):
@@ -557,7 +563,11 @@ class ContrlDB(QMainWindow):
         self.recipe_ingredients = result3
         return
 
-
+    def DisplyRecipeList(self):
+        """loop through ingredient list and add"""
+        for text in self.recipe_ingredients:
+            self.RecipeModel.recipes.append(text)
+        return
 
 
     def split_and_keep(self,text, delimiter):
