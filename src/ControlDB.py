@@ -78,7 +78,7 @@ class RecipeModel(QAbstractTableModel):
         self.recipes = recipes or [[]] #recipes will be a 2d array or a nested list
         self.header_labels = header_labels = ["weight", "unit","ingredient"]
     def data(self, index, role):
-        if role == Qt.DisplayRole:
+        if role == Qt.DisplayRole or Qt.ItemDataRole.DisplayRole or role == Qt.ItemDataRole.EditRole:
             value = self.recipes[index.row()][index.column()]
             # check for type
             if isinstance(value,float):
@@ -103,6 +103,14 @@ class RecipeModel(QAbstractTableModel):
          if role == Qt.DisplayRole and orientation == Qt.Horizontal:
             return self.header_labels[section]
          return None
+    def setData(self, index, value, role ):
+        if role == Qt.ItemDataRole.EditRole:
+            self.recipes[index.row()][index.column()] = value
+            self.dataChanged.emit(index.row(), index.column())
+            return True
+        return False
+    def flags(self, index):
+        return Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsEditable
 
 class MyRecipeWindow(QMainWindow,Ui_MainWindow):
     def __init__(self):
@@ -412,8 +420,14 @@ class ContrlDB(QMainWindow):
         self.MRD.RecipeTableView.clicked.connect(self.on_item_click)
 
     def on_item_click(self, index):
+
+        #columns and rows start from 0
         item_text = index.data()
         item_row = index.row()
+        item_column = index.column()
+        ##needs change
+        ##value =300.
+        ##self.RecipeModel.setData(self.RecipeModel.index(item_row,item_column), value)
         #self.RecipeModel.recipes contains the current list
 
         #replace value at position index.row()
