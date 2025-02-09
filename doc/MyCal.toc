@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Introduction}{2}% 
+\contentsline {section}{\numberline {2}Layout of the program}{2}% 
+\contentsline {section}{\numberline {3}class NewWindow}{2}% 
+\contentsline {section}{\numberline {4}class RecipeModel}{2}% 
+\contentsline {section}{\numberline {5}class ControlDB}{2}% 
+\contentsline {subsection}{\numberline {5.1}ConnectDataBase}{3}% 
+\contentsline {subsection}{\numberline {5.2}SetupLogger}{3}% 
+\contentsline {subsection}{\numberline {5.3}ShowTables}{3}% 
+\contentsline {subsection}{\numberline {5.4}ViewTable}{3}% 
+\contentsline {subsection}{\numberline {5.5}SetPosition}{3}% 
+\contentsline {subsection}{\numberline {5.6}CreateIngredientsForm}{4}% 
+\contentsline {subsection}{\numberline {5.7}InsertRecord}{4}% 
+\contentsline {subsection}{\numberline {5.8}MyRecipes\_new}{4}% 
+\contentsline {subsection}{\numberline {5.9}getSelectedText, getSelectedRecipes}{4}% 
+\contentsline {subsection}{\numberline {5.10}FillRecipeIngredientList}{4}% 
+\contentsline {subsection}{\numberline {5.11}DisplayRecipeList}{5}% 
+\contentsline {subsection}{\numberline {5.12}split\_and\_keep}{5}% 
+\contentsline {subsection}{\numberline {5.13}StripUnicode}{5}% 
+\contentsline {subsection}{\numberline {5.14}GetRecipeList}{5}% 
+\contentsline {subsection}{\numberline {5.15}SizeWindow}{5}% 
+\contentsline {subsection}{\numberline {5.16}SaveIngredients}{5}% 
+\contentsline {subsection}{\numberline {5.17}on\_item\_click}{5}% 
+\contentsline {section}{\numberline {6}Some Useful commands}{6}% 
+\contentsline {section}{\numberline {7}Notes}{6}% 
+\contentsline {section}{\numberline {8}Current Status}{6}% 

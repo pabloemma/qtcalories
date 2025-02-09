@@ -141,7 +141,7 @@ class ContrlDB(QMainWindow):
                     'Images',
                     'vegetarian']
 
-        self.version = '0.1'
+        self.version = '0.3'
         logger.info('******************************************************************************************************** \n\n\n')
 
         logger.info(' This is version %s' % self.version)
