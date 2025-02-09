@@ -14,25 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QListView" name="RecipeView">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>60</y>
-      <width>391</width>
-      <height>351</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-      <italic>true</italic>
-     </font>
-    </property>
-    <property name="editTriggers">
-     <set>QAbstractItemView::EditTrigger::CurrentChanged|QAbstractItemView::EditTrigger::EditKeyPressed|QAbstractItemView::EditTrigger::SelectedClicked</set>
-    </property>
-   </widget>
    <widget class="QPushButton" name="SaveRecipe">
     <property name="geometry">
      <rect>
@@ -202,6 +183,19 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QTableView" name="RecipeTableView">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>60</y>
+      <width>391</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::EditTrigger::AllEditTriggers</set>
     </property>
    </widget>
   </widget>

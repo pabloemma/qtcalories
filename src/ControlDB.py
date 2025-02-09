@@ -6,11 +6,11 @@ from loguru import logger
 
 
 import config_mycal
-from Recipe import Ui_MainWindow
+from Recipe1 import Ui_MainWindow
 
 
 from PySide6.QtCore import (QSize, Qt ,QRect,
-QCoreApplication,Slot,Signal,QAbstractListModel,QMetaObject)
+QCoreApplication,Slot,Signal,QAbstractListModel,QAbstractTableModel,QMetaObject)
 from PySide6.QtGui import QAction,QDoubleValidator,QFont
 from PySide6.QtWidgets import QWidget 
 from PySide6.QtUiTools import QUiLoader
@@ -65,9 +65,9 @@ class NewWindow(QMainWindow):
             self.setLayout(layout)
 
 
-class RecipeModel(QAbstractListModel):
+class RecipeModel(QAbstractTableModel):
 
-    def __init__(self,recipes=None):
+    def __init__(self,recipes=None,header_labels=None):
         super().__init__()
 
     #When subclassing QAbstractListModel, you must provide implementations of the rowCount() and data() functions. 
@@ -75,24 +75,34 @@ class RecipeModel(QAbstractListModel):
     # this means we will have to define the data and rowCount
     # see also https://doc.qt.io/qt-6/qabstractlistmodel.html
 
-        self.recipes = recipes or []
-
+        self.recipes = recipes or [[]] #recipes will be a 2d array or a nested list
+        self.header_labels = header_labels = ["weight", "unit","ingredient"]
     def data(self, index, role):
         if role == Qt.DisplayRole:
-            text = self.recipes[index.row()]
-            return text
-    #def setData(self,index,value,role=Qt.EditRole):
+            value = self.recipes[index.row()][index.column()]
+            # check for type
+            if isinstance(value,float):
+                
+                return "%.2f" % value
 
-    #def setData(self, index, role=Qt.EditRole):
-    #     if role == Qt.EditRole:
-    #        text = self.recipes[index.row()]
-    #        self.dataChanged.emit(index, index, [Qt.DisplayRole, Qt.EditRole])
-    #        return text
-        
+            if isinstance(value,str):
+                return "%s" % value
+
+ 
+            return value
+       
            
  
     def rowCount(self, index):
         return len(self.recipes)
+    
+    def columnCount(self,index):
+        return len(self.recipes[0])
+
+    def headerData(self, section, orientation, role=Qt.DisplayRole):
+         if role == Qt.DisplayRole and orientation == Qt.Horizontal:
+            return self.header_labels[section]
+         return None
 
 class MyRecipeWindow(QMainWindow,Ui_MainWindow):
     def __init__(self):
@@ -381,8 +391,15 @@ class ContrlDB(QMainWindow):
         self.MRD.show()
 
         # Load the model
+        #self.header_labels = header_labels = ["weight", "unit","ingredient"]
+
         self.RecipeModel = RecipeModel()
-        self.MRD.RecipeView.setModel(self.RecipeModel)
+        self.MRD.RecipeTableView.setModel(self.RecipeModel)
+
+
+        #label the columns
+        header = self.MRD.RecipeTableView.horizontalHeader()
+         
 
         #poulate the combo box
         self.MRD.RecipeListCombo.setObjectName(u"RecipeListCombo")
@@ -392,7 +409,7 @@ class ContrlDB(QMainWindow):
         #here we define the actions
         self.MRD.RecipeListCombo.currentTextChanged.connect(self.getSelectedRecipe)
 
-        self.MRD.RecipeView.clicked.connect(self.on_item_click)
+        self.MRD.RecipeTableView.clicked.connect(self.on_item_click)
 
     def on_item_click(self, index):
         item_text = index.data()
@@ -400,10 +417,10 @@ class ContrlDB(QMainWindow):
         #self.RecipeModel.recipes contains the current list
 
         #replace value at position index.row()
-        self.RecipeModel.recipes[index.row()]='shit'
+        #self.RecipeModel.recipes[index.row()]='shit'
 
 
-        self.RecipeModel.dataChanged.emit(index, index, [Qt.DisplayRole, Qt.EditRole])
+        #self.RecipeModel.dataChanged.emit(index, index, [Qt.DisplayRole, Qt.EditRole])
         return
         
 
@@ -500,14 +517,18 @@ class ContrlDB(QMainWindow):
 
 
         recipe_string = result3
-
-        self.recipe_ingredients = result3
+        #finally split every field up into 3 '10 g bean' -> [3,'g','bean]
+        result4 =[]
+        for i in range(len(result3)):
+            temp = (result3[i].split(' '))
+            result4.append(temp[0:3])
+        self.recipe_ingredients = result4
         return
 
     def DisplyRecipeList(self):
         """loop through ingredient list and add"""
-        for text in self.recipe_ingredients:
-            self.RecipeModel.recipes.append(text)
+        for k in range(len(self.recipe_ingredients)):
+            self.RecipeModel.recipes.append(self.recipe_ingredients[k])
         return
 
 
