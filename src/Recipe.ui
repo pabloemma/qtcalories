@@ -29,6 +29,9 @@
       <italic>true</italic>
      </font>
     </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::EditTrigger::CurrentChanged|QAbstractItemView::EditTrigger::EditKeyPressed|QAbstractItemView::EditTrigger::SelectedClicked</set>
+    </property>
    </widget>
    <widget class="QPushButton" name="SaveRecipe">
     <property name="geometry">

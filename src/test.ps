@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0
-%%Title: todo_complete.py
+%%Title: ControlDB.py
 %%For: Andi Klein
 %%Creator: a2ps version 4.15.5
-%%CreationDate: Sat Feb  8 07:32:34 2025
+%%CreationDate: Sat Feb  8 15:17:45 2025
 %%BoundingBox: 24 24 588 767
 %%DocumentData: Clean7Bit
 %%Orientation: Landscape
-%%Pages: 2
+%%Pages: 12
 %%PageOrder: Ascend
 %%DocumentMedia: Letter 612 791 0 () ()
 %%DocumentNeededResources: font Courier
@@ -754,130 +754,112 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1) # (import) K
-( json) p n
+(1) # (# this controls the database interactions in pyside6) c n
 (2) # () S
 (import) K
-( os) p n
+( sys) p n
 (3) # () S
 (import) K
-( sys) p n
-(4) # () N
+( os) p n
+(4) # () S
+(import) K
+( platform) p n
 (5) # () S
 (from) K
-( PySide6.QtCore ) p
+( loguru ) p
 (import) K
-( QAbstractListModel, Qt) p n
-(6) # () S
-(from) K
-( PySide6.QtGui ) p
+( logger) p n
+(6) # () N
+(7) # () N
+(8) # () S
 (import) K
-( QImage) p n
-(7) # () S
-(from) K
-( PySide6.QtWidgets ) p
-(import) K
-( QApplication, QMainWindow) p n
-(8) # () N
+( config_mycal) p n
 (9) # () S
 (from) K
-( MainWindow ) p
+( Recipe ) p
 (import) K
 ( Ui_MainWindow) p n
 (10) # () N
-(11) # (basedir = os.path.dirname\(__file__\)) N
-(12) # () N
-(13) # (tick = QImage\(os.path.join\(basedir, ") S
-(tick.png) str
-("\)\)) p n
-(14) # () N
-(15) # () N
+(11) # () N
+(12) # () S
+(from) K
+( PySide6.QtCore ) p
+(import) K
+( \(QSize, Qt ,QRect,) p n
+(13) # (QCoreApplication,Slot,Signal,QAbstractListModel,QMetaObject\)) N
+(14) # () S
+(from) K
+( PySide6.QtGui ) p
+(import) K
+( QAction,QDoubleValidator,QFont) p n
+(15) # () S
+(from) K
+( PySide6.QtWidgets ) p
+(import) K
+( QWidget ) p n
 (16) # () S
-(class) K
-( TodoModel\(QAbstractListModel\):) p n
-(17) # (    ) S
-(def) K
-( __init__\(self, todos=None\):) p n
-(18) # (        super\(\).__init__\(\)) N
-(19) # (        self.todos = todos ) S
-(or) K
-( []) p n
-(20) # () N
-(21) # (    ) S
-(def) K
-( data\(self, index, role\):) p n
-(22) # (        ) S
-(if) K
-( role == Qt.DisplayRole:) p n
-(23) # (            status, text = self.todos[index.row\(\)]) N
-(24) # (            ) S
-(return) K
-( text) p n
-(25) # () N
-(26) # (        ) S
-(if) K
-( role == Qt.DecorationRole:) p n
-(27) # (            status, text = self.todos[index.row\(\)]) N
-(28) # (            ) S
-(if) K
-( status:) p n
-(29) # (                ) S
-(return) K
-( tick) p n
-(30) # () N
-(31) # (    ) S
-(def) K
-( rowCount\(self, index\):) p n
-(32) # (        ) S
-(return) K
-( len\(self.todos\)) p n
-(33) # () N
-(34) # () N
-(35) # () S
-(class) K
-( MainWindow\(QMainWindow, Ui_MainWindow\):) p n
-(36) # (    ) S
-(def) K
-( __init__\(self\):) p n
-(37) # (        super\(\).__init__\(\)) N
-(38) # (        self.setupUi\(self\)) N
-(39) # (        self.model = TodoModel\(\)) N
-(40) # (        self.load\(\)) N
-(41) # (        self.todoView.setModel\(self.model\)) N
-(42) # (        self.addButton.pressed.connect\(self.add\)) N
-(43) # (        self.deleteButton.pressed.connect\(self.delete\)) N
-(44) # (        self.completeButton.pressed.connect\(self.complete\)) N
-(45) # () N
-(46) # (    ) S
-(def) K
-( add\(self\):) p n
-(47) # (        """) N
-(48) # () S
-(        Add an item to our todo list, getting the text from the QLineEdit .todoEdit) str n
-(49) # (        and then clearing it.) N
-(50) # (        ) S
-(""") p n
-(51) # (        text = self.todoEdit.text\(\)) N
-(52) # (        ) S
-(# Remove whitespace from the ends of the string.) c n
+(from) K
+( PySide6.QtUiTools ) p
+(import) K
+( QUiLoader) p n
+(17) # () N
+(18) # () S
+(from) K
+( PySide6.QtSql ) p
+(import) K
+( QSqlDatabase , QSql,QSqlTableModel,QSqlQueryModel,QSqlQuery) p n
+(19) # () N
+(20) # () S
+(from) K
+( PySide6.QtWidgets ) p
+(import) K
+( \() p n
+(21) # (QApplication,) N
+(22) # (    QCheckBox,) N
+(23) # (    QComboBox,) N
+(24) # (    QDateEdit,) N
+(25) # (    QDateTimeEdit,) N
+(26) # (    QDial,) N
+(27) # (    QDoubleSpinBox,) N
+(28) # (    QFileDialog,) N
+(29) # (    QFontComboBox,) N
+(30) # (    QFormLayout,) N
+(31) # (    QHBoxLayout,) N
+(32) # (    QLabel,) N
+(33) # (    QLCDNumber,) N
+(34) # (    QLineEdit,) N
+(35) # (    QListView,) N
+(36) # (    QMainWindow,) N
+(37) # (    QProgressBar,) N
+(38) # (    QPushButton,) N
+(39) # (    QRadioButton,) N
+(40) # (    QSlider,) N
+(41) # (    QSpinBox,) N
+(42) # (    QStatusBar,) N
+(43) # (    QTimeEdit,) N
+(44) # (    QTableView,) N
+(45) # (    QMenuBar,) N
+(46) # (    QVBoxLayout,) N
+(47) # (    QAbstractItemView,) N
+(48) # (    QGridLayout,) N
+(49) # (    QTextEdit) N
+(50) # (    ) N
+(51) # (\)) N
+(52) # () N
 (53) # () S
-(        text = text.strip\(\)) p n
+(class) K
+( NewWindow\(QMainWindow\):) p n
 (54) # (        ) S
-(if) K
-( text:  ) p
-(# Don't add empty strings.) c n
-(55) # () S
-(            ) p
-(# Access the list via the model.) c n
-(56) # () S
-(            self.model.todos.append\(\(False, text\)\)) p n
-(57) # (            ) S
-(# Trigger refresh.) c n
-(todo_complete.py) (Page 1/2) (May 19, 2022 5:00) title
+(def) K
+( __init__\(self,Title =  None\):) p n
+(55) # (            super\(\).__init__\(\)) N
+(56) # (            layout = QVBoxLayout\(\)) N
+(57) # () N
+(ControlDB.py) (Page 1/12) (Feb 08, 2025 15:15) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(/Users/klein/manuals_1/qt/pyside6-source/model-views/todo_complete.py) (1/2) (Saturday February 08, 2025) footer
+(ControlDB.py) (1/12) (Saturday February 08, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -893,102 +875,1344 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(58) # (            self.model.layoutChanged.emit\(\)) p n
+(58) # (            self.label = QLabel\(") p
+(Another Window) str
+("\)) p n
 (59) # (            ) S
-(# Empty the input) c n
-(60) # () S
-(            self.todoEdit.setText\(""\)) p n
-(61) # (            self.save\(\)) N
-(62) # () N
-(63) # (    ) S
-(def) K
-( delete\(self\):) p n
-(64) # (        indexes = self.todoView.selectedIndexes\(\)) N
-(65) # (        ) S
 (if) K
-( indexes:) p n
-(66) # (            ) S
-(# Indexes is a single-item list in single-select mode.) c n
-(67) # () S
-(            index = indexes[0]) p n
-(68) # (            ) S
-(# Remove the item and refresh.) c n
-(69) # () S
-(            ) p
-(del) K
-( self.model.todos[index.row\(\)]) p n
-(70) # (            self.model.layoutChanged.emit\(\)) N
-(71) # (            ) S
-(# Clear the selection \(as it is no longer valid\).) c n
-(72) # () S
-(            self.todoView.clearSelection\(\)) p n
-(73) # (            self.save\(\)) N
-(74) # () N
-(75) # (    ) S
-(def) K
-( complete\(self\):) p n
-(76) # (        indexes = self.todoView.selectedIndexes\(\)) N
-(77) # (        ) S
-(if) K
-( indexes:) p n
-(78) # (            index = indexes[0]) N
-(79) # (            row = index.row\(\)) N
-(80) # (            status, text = self.model.todos[row]) N
-(81) # (            self.model.todos[row] = \(True, text\)) N
-(82) # (            ) S
-(# .dataChanged takes top-left and bottom right, which are equal) c n
-(83) # () S
-(            ) p
-(# for a single selection.) c n
-(84) # () S
-(            self.model.dataChanged.emit\(index, index\)) p n
-(85) # (            ) S
-(# Clear the selection \(as it is no longer valid\).) c n
-(86) # () S
-(            self.todoView.clearSelection\(\)) p n
-(87) # (            self.save\(\)) N
-(88) # () N
-(89) # (    ) S
-(def) K
-( load\(self\):) p n
-(90) # (        ) S
-(try) K
+(\(Title == None\):) p n
+(60) # (                self.setWindowTitle\(") S
+(MyCal) str
+("\)) p n
+(61) # (            ) S
+(else) K
 (:) p n
-(91) # (            with open\(") S
-(data.json) str
-(", ") p
-(r) str
-("\) as f:) p n
-(92) # (                self.model.todos = json.load\(f\)) N
-(93) # (        ) S
-(except) K
-( Exception:) p n
-(94) # (            ) S
-(pass) K n
-(95) # () N
-(96) # () S
-(    ) p
+(62) # (                self.setWindowTitle\(Title\)) N
+(63) # (        ) N
+(64) # (            layout.addWidget\(self.label\)) N
+(65) # (            self.setLayout\(layout\)) N
+(66) # () N
+(67) # () N
+(68) # () S
+(class) K
+( RecipeModel\(QAbstractListModel\):) p n
+(69) # () N
+(70) # (    ) S
 (def) K
-( save\(self\):) p n
-(97) # (        with open\(") S
-(data.json) str
-(", ") p
-(w) str
-("\) as f:) p n
-(98) # (            data = json.dump\(self.model.todos, f\)) N
-(99) # () N
-(100) # () N
-(101) # (app = QApplication\(sys.argv\)) N
-(102) # (window = MainWindow\(\)) N
-(103) # (window.show\(\)) N
-(104) # (app.) S
-(exec) K
-(\(\)) p n
-(todo_complete.py) (Page 2/2) (May 19, 2022 5:00) title
+( __init__\(self,recipes=None\):) p n
+(71) # (        super\(\).__init__\(\)) N
+(72) # () N
+(73) # (    ) S
+(#When subclassing QAbstractListModel, you must provide implementations of the rowCount\(\) and data\(\) functions. ) c n
+(74) # () S
+(    ) p
+(# Well behaved models also provide a headerData\(\) implementation.) c n
+(75) # () S
+(    ) p
+(# this means we will have to define the data and rowCount) c n
+(76) # () S
+(    ) p
+(# see also https://doc.qt.io/qt-6/qabstractlistmodel.html) c n
+(77) # () N
+(78) # () S
+(        self.recipes = recipes ) p
+(or) K
+( []) p n
+(79) # () N
+(80) # (    ) S
+(def) K
+( data\(self, index, role\):) p n
+(81) # (        ) S
+(if) K
+( role == Qt.DisplayRole:) p n
+(82) # (            text = self.recipes[index.row\(\)]) N
+(83) # (            ) S
+(return) K
+( text) p n
+(84) # (        ) N
+(85) # ( ) N
+(86) # (    ) S
+(def) K
+( rowCount\(self, index\):) p n
+(87) # (        ) S
+(return) K
+( len\(self.recipes\)) p n
+(88) # () N
+(89) # () S
+(class) K
+( MyRecipeWindow\(QMainWindow,Ui_MainWindow\):) p n
+(90) # (    ) S
+(def) K
+( __init__\(self\):) p n
+(91) # (        super\(\).__init__\(\)) N
+(92) # (        self.setupUi\(self\)) N
+(93) # () N
+(94) # () N
+(95) # () S
+(class) K
+( ContrlDB\(QMainWindow\):) p n
+(96) # () N
+(97) # (    ) S
+(def) K
+( __init__\(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None\):) p n
+(98) # (        super\(\).__init__\(\)) N
+(99) # (        self.db_name = db_name) N
+(100) # (        self.db_user = db_user) N
+(101) # (        self.db_system = db_system) N
+(102) # (        ) S
+(if) K
+( db_pwd == None:) p n
+(103) # (        ) N
+(104) # (            temp = ') S
+(/Users/klein/git/qt_exercises/config/pw.txt) str
+(') p n
+(105) # (            ) S
+(if) K
+( os.path.exists\(temp\):) p n
+(106) # (                with open\(temp, ') S
+(r) str
+('\) as file:) p n
+(107) # (                    password = file.read\(\).rstrip\(\)) N
+(108) # (                    self.db_pwd = password) N
+(109) # (            ) S
+(else) K
+(:) p n
+(110) # (                self.db_pwd = db_pwd) N
+(111) # () N
+(112) # () N
+(113) # (        self.SetupLogger\(\)) N
+(114) # (        ) S
+(#self.CreateIngredientsForm\(\)) c n
+(ControlDB.py) (Page 2/12) (Feb 08, 2025 15:15) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(/Users/klein/manuals_1/qt/pyside6-source/model-views/todo_complete.py) (2/2) (Saturday February 08, 2025) footer
+(ControlDB.py) (2/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (3) 3
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(115) # (        self.ingredients_suppress_columns = [') p
+(Sugar) str
+(',) p n
+(116) # (                    ') S
+(Portion_size) str
+(',) p n
+(117) # (                    ') S
+(Saturated) str
+(',) p n
+(118) # (                    ') S
+(Fiber) str
+(',) p n
+(119) # (                    ') S
+(Salt) str
+(',) p n
+(120) # (                    ') S
+(Sodium) str
+(',) p n
+(121) # (                    ') S
+(Product_source) str
+(') p n
+(122) # (                    ]) N
+(123) # (            ) N
+(124) # (        self.recipe_suppress_columns = [') S
+(Sugar) str
+(',) p n
+(125) # (                    ') S
+(Portions) str
+(',) p n
+(126) # (                    ') S
+(Description) str
+(',) p n
+(127) # (                    ') S
+(Saturated_fat) str
+(',) p n
+(128) # (                    ') S
+(Fiber) str
+(',) p n
+(129) # (                    ') S
+(Salt) str
+(',) p n
+(130) # (                    ') S
+(Sodium) str
+(',) p n
+(131) # (                    ') S
+(Ingredients) str
+(',) p n
+(132) # (                    ') S
+(Time) str
+(',) p n
+(133) # (                    ') S
+(Images) str
+(',) p n
+(134) # (                    ') S
+(vegetarian) str
+(']) p n
+(135) # () N
+(136) # (        self.version = ') S
+(0.1) str
+(') p n
+(137) # (        logger.info\(') S
+(******************************************************************************************************** \\n\\n\\n) str
+('\)) p n
+(138) # () N
+(139) # (        logger.info\(') S
+( This is version %s) str
+(' % self.version\)) p n
+(140) # (        logger.info\(') S
+(\\n\\n\\n***************************************************************************************************** \\n) str
+('\)) p n
+(141) # () N
+(142) # () N
+(143) # (        ) N
+(144) # (    ) N
+(145) # (    ) S
+(def) K
+( ConnectDataBase\(self\):) p n
+(146) # (        ''') S
+( establish contact to database) str
+(''') p n
+(147) # () N
+(148) # () N
+(149) # (        ) S
+(#instantiate the connection) c n
+(150) # () S
+(        self.mycal_db  = QSqlDatabase.addDatabase\(self.db_system\)) p n
+(151) # (        self.mycal_db.setHostName\(") S
+(localhost) str
+("\)) p n
+(152) # (        self.mycal_db.setDatabaseName\(self.db_name\)) N
+(153) # (        self.mycal_db.setUserName\(self.db_user\)) N
+(154) # (        self.mycal_db.setPassword\(self.db_pwd\)) N
+(155) # (        ) N
+(156) # () N
+(157) # ( ) S
+(#       self.mycal_db.setPassword\(self.CM.pwd\)) c n
+(158) # () N
+(159) # () S
+(        result = self.mycal_db.open\(\)) p n
+(160) # (        ) S
+(if) K
+(\(result\):) p n
+(161) # (            logger.info\(') S
+(connection succsessful) str
+('\)) p n
+(162) # (            ) S
+(# here we get the connection name) c n
+(163) # () S
+(            ) p
+(# will be needed when we want to close the connection) c n
+(164) # () S
+(            self.connection_name = self.mycal_db.connectionName\(\)) p n
+(165) # (            logger.info\(') S
+( database connection name %s) str
+(' % self.connection_name\)) p n
+(166) # (            ) S
+(#self.ShowTables\(\)) c n
+(167) # () S
+(        ) p
+(else) K
+(:) p n
+(168) # (            logger.error\(') S
+(connection failed, exciting) str
+('\)) p n
+(169) # (            sys.exit\(0\)) N
+(170) # () N
+(171) # () N
+(ControlDB.py) (Page 3/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (3/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (4) 4
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(172) # (    ) p
+(def) K
+( ShowTables\(self\):) p n
+(173) # (        ''') S
+(prints all the tables in the databe) str
+(''') p n
+(174) # (        self.table_list = self.mycal_db.tables\(type=QSql.Tables\)) N
+(175) # (        ) S
+(for) K
+( k ) p
+(in) K
+( range\(0,len\(self.table_list\)\):) p n
+(176) # (            ) S
+(print) K
+(\(self.table_list[k]\)) p n
+(177) # () N
+(178) # (        ) S
+(#Create list box) c n
+(179) # () S
+(        self.mybox = QComboBox\(\)) p n
+(180) # (        ) S
+(#Insert at index 0 the whole list) c n
+(181) # () S
+(        self.mybox.insertItems\(0,self.table_list\)) p n
+(182) # (        ) S
+(# create independent window) c n
+(183) # () S
+(       ) p n
+(184) # (        ) S
+(#self.setCentralWidget\(self.mybox\)) c n
+(185) # () N
+(186) # () N
+(187) # () S
+(        ) p
+(return) K n
+(188) # () N
+(189) # () S
+(    ) p
+(def) K
+( ViewTable\(self,table,suppress_columns=[],editmode=True,columnwidth=[],Title = None, showTable = True\):) p n
+(190) # (        self.table_view = QTableView\(\)) N
+(191) # (        ) N
+(192) # () N
+(193) # (        self.model = QSqlTableModel\(db = self.mycal_db\) ) N
+(194) # () N
+(195) # ( ) N
+(196) # () N
+(197) # (        self.table_view.setModel\(self.model\)) N
+(198) # (        ) S
+(#prevent editing) c n
+(199) # () S
+(        ) p
+(if) K
+(\() p
+(not) K
+( editmode\):) p n
+(200) # (            self.table_view.setEditTriggers\(QAbstractItemView.NoEditTriggers\)) N
+(201) # () N
+(202) # (        self.model.setTable\(table\)) N
+(203) # () N
+(204) # (        ) S
+(# get rid of columns) c n
+(205) # () S
+(        columns_to_remove = suppress_columns) p n
+(206) # (        ) S
+(for) K
+( cn ) p
+(in) K
+( columns_to_remove:) p n
+(207) # (            idx = self.model.fieldIndex\(cn\) ) N
+(208) # (            self.model.removeColumns\(idx, 1\)) N
+(209) # () N
+(210) # () N
+(211) # (        self.model.select\(\)) N
+(212) # (        ) S
+(# change column width) c n
+(213) # () S
+(        ) p
+(for) K
+( k ) p
+(in) K
+( range\(0,len\(columnwidth\)\):) p n
+(214) # (            self.table_view.setColumnWidth\(k, columnwidth[k]\)) N
+(215) # ( ) N
+(216) # (        self.setMinimumSize\(QSize\(300, 300\)\) ) N
+(217) # (        ) N
+(218) # (        self.setCentralWidget\(self.table_view\)) N
+(219) # (        ) N
+(220) # (        self.SetPosition\(10,10\)) N
+(221) # (        ) S
+(if) K
+(\(showTable\):) p n
+(222) # (            self.show\(\)) N
+(223) # (        ) S
+(#self.setCentralWidget\(table\)) c n
+(224) # () N
+(225) # () S
+(    ) p
+(def) K
+( SetupLogger\(self\):) p n
+(226) # () N
+(227) # () N
+(228) # (        logger.remove\(0\)) N
+(ControlDB.py) (Page 4/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (4/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (5) 5
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(229) # (        ) p
+(#now we add color to the terminal output) c n
+(230) # () S
+(        logger.add\(sys.stdout,) p n
+(231) # (                colorize = True,format=") S
+(<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>) str
+(" ,) p n
+(232) # (                level = ") S
+(INFO) str
+("\)) p n
+(233) # () N
+(234) # () N
+(235) # () N
+(236) # (        fmt =  ") S
+({time} - {name}-   {function} -{line}- {level}    - {message}) str
+(") p n
+(237) # (        logger.add\(') S
+(info.log) str
+(', format = fmt , level = ') p
+(INFO) str
+(',rotation=") p
+(1 day) str
+("\)) p n
+(238) # () N
+(239) # () N
+(240) # (        ) S
+(# set the colors of the different levels) c n
+(241) # () S
+(        logger.level\(") p
+(INFO) str
+(",color =') p
+(<black>) str
+('\)) p n
+(242) # (        logger.level\(") S
+(WARNING) str
+(",color=') p
+(<green>) str
+('\)) p n
+(243) # (        logger.level\(") S
+(ERROR) str
+(",color=') p
+(<red>) str
+('\)) p n
+(244) # (        logger.level\(") S
+(DEBUG) str
+(",color = ') p
+(<blue>) str
+('\)) p n
+(245) # ( ) N
+(246) # (        ) S
+(return) K n
+(247) # () N
+(248) # () S
+(    ) p
+(def) K
+( SetPosition\(self,pos_x,pos_y\):) p n
+(249) # (        self.move\(pos_x,pos_y\)) N
+(250) # () N
+(251) # (    ) S
+(def) K
+( CreateIngredientsForm1\(self\):) p n
+(252) # (        """) S
+(uses the form layout) str
+(""") p n
+(253) # (    ) N
+(254) # (       ) S
+(#always use self so window wll be persistent) c n
+(255) # () S
+(        self.Inform = NewWindow\(Title = ") p
+(Add New Ingredient) str
+("\)) p n
+(256) # (        self.Inform.setStyleSheet\(") S
+(background-color: yellow;) str
+("\)) p n
+(257) # (     ) N
+(258) # (        ) S
+(# setup geometry) c n
+(259) # () S
+(        mysize=[400,300]) p n
+(260) # (        myposit = [800,100]) N
+(261) # (    ) N
+(262) # (        self.SizeWindow\(self.Inform,myposit,mysize\)) N
+(263) # () N
+(264) # (        ) S
+(# Create widgets) c n
+(265) # () S
+(        self.name_label      = QLineEdit\(\)) p n
+(266) # (        self.name_label.setStyleSheet\(") S
+(background-color: rgb\(3, 252, 227\)) str
+("\)) p n
+(267) # (        ) S
+(# force valid entr) c n
+(268) # () S
+(        double_validator = QDoubleValidator\(0, 500.0, 2\)) p n
+(269) # ( ) N
+(270) # (        self.calory_label    = QLineEdit\(\)) N
+(271) # (        self.calory_label.setStyleSheet\(") S
+(background-color: white) str
+("\)) p n
+(272) # (        self.calory_label.setValidator\(double_validator\)) N
+(273) # (        ) N
+(274) # (        self.carb_label      = QLineEdit\(\)) N
+(275) # (        self.carb_label.setStyleSheet\(") S
+(background-color: white) str
+("\)) p n
+(276) # (        self.carb_label.setValidator\(double_validator\)) N
+(277) # (        self.fat_label       = QLineEdit\(\)) N
+(278) # (        self.fat_label.setStyleSheet\(") S
+(background-color: white) str
+("\)) p n
+(279) # (        self.fat_label.setValidator\(double_validator\)) N
+(280) # (        self.prot_label      = QLineEdit\(\) ) N
+(281) # (        self.prot_label.setStyleSheet\(") S
+(background-color: white) str
+("\)) p n
+(282) # (        self.prot_label.setValidator\(double_validator\)) N
+(283) # ( ) N
+(284) # (        SaveButton = QPushButton\(") S
+(Save) str
+("\)) p n
+(285) # (        SaveButton.setStyleSheet\(") S
+(background-color: white) str
+("\)) p n
+(ControlDB.py) (Page 5/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (5/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (6) 6
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(286) # (        CancelButton = QPushButton\(") p
+(Cancel) str
+("\)) p n
+(287) # (        CancelButton.setStyleSheet\(") S
+(background-color: red) str
+("\)) p n
+(288) # () N
+(289) # ( ) N
+(290) # (        ) S
+(# Create layout) c n
+(291) # () S
+(        form_layout = QFormLayout\(\)) p n
+(292) # (        form_layout.addRow\(") S
+(Name:) str
+(", self.name_label\)) p n
+(293) # (        form_layout.addRow\(") S
+(Calories/100g) str
+(", self.calory_label\)) p n
+(294) # (        form_layout.addRow\(") S
+(Fat) str
+(", self.fat_label\)) p n
+(295) # (        form_layout.addRow\(") S
+(Carbohydrates) str
+(", self.carb_label\)) p n
+(296) # (        form_layout.addRow\(") S
+(Protein) str
+(", self.prot_label\)) p n
+(297) # (        form_layout.addRow\(SaveButton\)) N
+(298) # (        form_layout.addRow\(CancelButton\)) N
+(299) # () N
+(300) # (        mylayout = QVBoxLayout\(\)) N
+(301) # (        mylayout.addLayout\(form_layout\)) N
+(302) # (        self.setLayout\(mylayout\)) N
+(303) # () N
+(304) # (        ) S
+(# Connect submit button) c n
+(305) # () S
+(        SaveButton.clicked.connect\(self.SaveIngredients\)) p n
+(306) # (        CancelButton.clicked.connect\() S
+(lambda) K
+( : self.Cancel\(self.Inform\)\)) p n
+(307) # () N
+(308) # (        widget = QWidget\(\)) N
+(309) # (        widget.setLayout\(mylayout\)) N
+(310) # (         ) N
+(311) # () N
+(312) # () N
+(313) # () N
+(314) # () N
+(315) # (        self.Inform.setCentralWidget\(widget\)) N
+(316) # () N
+(317) # (        ) S
+(#for label in MyLabel:) c n
+(318) # () S
+(        ) p
+(#    widget = QWidget\(\)) c n
+(319) # () S
+(        ) p
+(#    widget.setLayout\(layout\)) c n
+(320) # () S
+(        ) p
+(#self.setCentralWidget\(widget\)) c n
+(321) # () N
+(322) # () N
+(323) # () S
+(        ) p
+(# create the form) c n
+(324) # () N
+(325) # () S
+(        self.Inform.show\(\)) p n
+(326) # ( ) N
+(327) # () N
+(328) # (    ) S
+(def) K
+( InsertRecord\(self,table = None\):) p n
+(329) # (        """) S
+( this inserts a record into the cosen table) str n
+(330) # (        I will use the query function to do this.) N
+(331) # (        The record contains the info to be added) N
+(332) # (        record=[name,energy,fat,carbohydrate,protein]) N
+(333) # (        ) N
+(334) # (        This is the same for ingredients and receipes) S
+(""") p n
+(335) # () N
+(336) # (        ) S
+(#Create table view) c n
+(337) # () S
+(        ) p
+(if) K
+(\(table == ") p
+(ingredients) str
+("\):) p n
+(338) # (                ) N
+(339) # (            self.ViewTable\(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False\)) N
+(340) # (        ) S
+(else) K
+(:) p n
+(341) # (            self.ViewTable\(table = table,suppress_columns=self.recipe_suppress_columns\)) N
+(342) # () N
+(ControlDB.py) (Page 6/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (6/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (7) 7
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(343) # (        self.model = QSqlQueryModel\(\)) p n
+(344) # (        self.table_view.setModel\(self.model\)) N
+(345) # (        ) S
+(#next we check we don't have an entry yet) c n
+(346) # () N
+(347) # () S
+(        ) p
+(#Form the sql INSERT statement) c n
+(348) # () S
+(        ) p
+(#       self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]) c n
+(349) # () S
+(        ) p
+(#INSERT INTO products \(product_no, name, price\) VALUES \(1, 'Cheese', 9.99\);) c n
+(350) # () S
+(        ) p
+(#INSERT INTO table \(name,energy,carbohydrate,fat,protein\) VALUES \(self.record[0],) c n
+(351) # () S
+(        ) p
+(#                                                               self.record[1],   ) c n
+(352) # () S
+(        ) p
+(#                                                               self.record[2],) c n
+(353) # () S
+(        ) p
+(#                                                               self.record[3],) c n
+(354) # () S
+(        ) p
+(#                                                               self.record[4]\);) c n
+(355) # () S
+(        temp = ") p
+(') str
+("+self.record[0]+") p
+(') str
+(") p n
+(356) # (        sql = ') S
+(INSERT INTO ) str
+('+table+') p
+( \(name,energy,carbohydrate,fat,protein\) VALUES \() str
+('+temp+') p
+(,) str
+('+str\(self.record[1]\)+') p
+(,) str
+('+str\(self.record[2]\)+') p
+(,) str
+('+str\() p n
+0 T (self.record[3]\)+') S
+(,) str
+('+str\(self.record[4]\)+') p
+(\);) str
+(') p n
+(357) # (        ) S
+(print) K
+(\(sql\)) p n
+(358) # () N
+(359) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(360) # (        ) N
+(361) # (        self.model.setQuery\(query\)) N
+(362) # (        logger.info\(') S
+( inserted record %s into table  %s) str
+(' % \(self.record[0],table\)\)) p n
+(363) # ( ) N
+(364) # ( ) N
+(365) # () N
+(366) # (        ) S
+(return) K n
+(367) # () N
+(368) # () S
+(    ) p
+(def) K
+( MyRecipes_new\(self\):) p n
+(369) # (        """) S
+(using the QTdesigner) str
+(""") p n
+(370) # (        self.MRD = MyRecipeWindow\(\)) N
+(371) # (        self.MRD.show\(\)) N
+(372) # () N
+(373) # (        ) S
+(# Load the model) c n
+(374) # () S
+(        self.RecipeModel = RecipeModel\(\)) p n
+(375) # (        self.MRD.RecipeView.setModel\(self.RecipeModel\)) N
+(376) # () N
+(377) # (        ) S
+(#poulate the combo box) c n
+(378) # () S
+(        self.MRD.RecipeListCombo.setObjectName\(u") p
+(RecipeListCombo) str
+("\)) p n
+(379) # (        self.MRD.RecipeListCombo.addItems\(self.GetRecipeList\(\)\)) N
+(380) # () N
+(381) # () N
+(382) # (        ) S
+(#here we define the actions) c n
+(383) # () S
+(        self.MRD.RecipeListCombo.currentTextChanged.connect\(self.getSelectedRecipe\)) p n
+(384) # () N
+(385) # (        ) N
+(386) # () N
+(387) # () N
+(388) # () N
+(389) # () N
+(390) # (    ) S
+(def) K
+( getSelectedText\(self,s\):) p n
+(391) # (        self.selected_text = s) N
+(392) # (        logger.info\(") S
+(You have selected %s text) str
+(" % self.selected_text\)) p n
+(393) # (        ) S
+(return) K n
+(394) # () N
+(395) # () N
+(396) # () S
+(    ) p
+(def) K
+( getSelectedRecipe\(self,s\):) p n
+(397) # (        ) S
+(#Clear Buffer of recipes) c n
+(398) # () N
+(ControlDB.py) (Page 7/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (7/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (8) 8
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(399) # (              ) p n
+(400) # (        self.RecipeModel.recipes = []) N
+(401) # () N
+(402) # (        self.selected_recipe = s) N
+(403) # (        logger.info\(") S
+(You have selected %s recipe) str
+(" % self.selected_recipe\)) p n
+(404) # () N
+(405) # (        ) S
+(# now we populate the listview) c n
+(406) # () S
+(        self.FillRecipeIngredientList\(\)) p n
+(407) # () N
+(408) # (        ) S
+(# Now fill qlist) c n
+(409) # () S
+(        self.DisplyRecipeList\(\)) p n
+(410) # () N
+(411) # (        ) S
+(# send signal list has been updated) c n
+(412) # () S
+(        self.RecipeModel.layoutChanged.emit\(\)) p n
+(413) # () N
+(414) # ( ) N
+(415) # () N
+(416) # (        ) S
+(return) K n
+(417) # () S
+(    ) p n
+(418) # (    ) S
+(def) K
+( FillRecipeIngredientList\(self\):) p n
+(419) # (        ) S
+(# here we get the ingredients from the Recipe database) c n
+(420) # () S
+(        ) p
+(# this is done with a query) c n
+(421) # () N
+(422) # () N
+(423) # () N
+(424) # () S
+(        sql =') p
+( SELECT ingredients from recipes WHERE recipes.name LIKE \\') str
+('+self.selected_recipe +') p
+(\\' ;) str
+(') p n
+(425) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(426) # (        model = QSqlQueryModel\(\)) N
+(427) # () N
+(428) # (        model.setQuery\(query\)) N
+(429) # (        ) S
+(while) K
+( query.next\(\):) p n
+(430) # () N
+(431) # (            temp_value = \(\(query.value\(0\)\)\)) N
+(432) # (        ) S
+(# now we have to work with string) c n
+(433) # () S
+(        ) p
+(# the old database still had *u000a in front of the number) c n
+(434) # () S
+(        ) p
+(# need first to strip this) c n
+(435) # () S
+(        ) p
+(#check if temp contains *u000a ) c n
+(436) # () S
+(        mask = ') p
+(u000a) str
+(') p n
+(437) # (        ) S
+(if) K
+(\(mask ) p
+(in) K
+( temp_value\):) p n
+(438) # (            temp_new = self.StripUnicode\(temp_value,mask\)) N
+(439) # (            ) S
+(#temp_new = self.StripUnicode\(temp_new,'*'\)) c n
+(440) # () S
+(        ) p n
+(441) # () N
+(442) # (            ) N
+(443) # () N
+(444) # (        ) S
+(else) K
+(:) p n
+(445) # (            temp_new = temp_value) N
+(446) # (        ) N
+(447) # (        delimiter = ") S
+( g ) str
+(") p n
+(448) # (        result = temp_new.replace\(') S
+(u000a) str
+(',''\)) p n
+(449) # (        ) N
+(450) # () N
+(451) # (        result1 = self.split_and_keep\(result, delimiter\)) N
+(452) # (        ) S
+(#  strip last *) c n
+(453) # () S
+(        result11= result1[0]) p n
+(454) # (        result2 = result11[:len\(result1[0]\)-1].split\(') S
+(*) str
+('\)) p n
+(455) # (        ) S
+(# we know that a string with underscores has a max of three spaces. Any number larger than this means words with spaces.) c n
+(ControlDB.py) (Page 8/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (8/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (9) 9
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(456) # (        ) p
+(#in other words 4 spaces means the 3rd has to be replaced with _ 5 spaces mean the 3rd and 4th) c n
+(457) # () S
+(        result3 =[]) p n
+(458) # (        ) S
+(for) K
+( a ) p
+(in) K
+( result2:) p n
+(459) # (            space_indices = []) N
+(460) # (            ) S
+(for) K
+( i, char ) p
+(in) K
+( enumerate\(a\):) p n
+(461) # (                ) S
+(if) K
+( char == ') p
+( ) str
+(':) p n
+(462) # (                    space_indices.append\(i\)) N
+(463) # (    ) N
+(464) # (            ) S
+(if) K
+( len\(space_indices\) == 4:) p n
+(465) # (                na = a[:space_indices[2]] + ') S
+(_) str
+(' + a[space_indices[2] + 1:]) p n
+(466) # (             ) N
+(467) # (                result3.append\(na\)) N
+(468) # () N
+(469) # (            ) S
+(elif) K
+( len\(space_indices\) == 5:) p n
+(470) # (                na = a[:space_indices[2]] + ') S
+(_) str
+(' + a[space_indices[2]+1:space_indices[3]] + ') p
+(_) str
+(' + a[space_indices[3] + 1:]) p n
+(471) # (                result3.append\(na\)) N
+(472) # () N
+(473) # (            ) S
+(else) K
+(:) p n
+(474) # (                result3.append\(a\)) N
+(475) # () N
+(476) # () N
+(477) # (        recipe_string = result3) N
+(478) # () N
+(479) # (        self.recipe_ingredients = result3) N
+(480) # (        ) S
+(return) K n
+(481) # () N
+(482) # () S
+(    ) p
+(def) K
+( DisplyRecipeList\(self\):) p n
+(483) # (        """) S
+(loop through ingredient list and add) str
+(""") p n
+(484) # (        ) S
+(for) K
+( text ) p
+(in) K
+( self.recipe_ingredients:) p n
+(485) # (            self.RecipeModel.recipes.append\(text\)) N
+(486) # (        ) S
+(return) K n
+(487) # () N
+(488) # () N
+(489) # () S
+(    ) p
+(def) K
+( split_and_keep\(self,text, delimiter\):) p n
+(490) # (        """) S
+(deals with spaces instead of underscores) str
+(""") p n
+(491) # (        result = []) N
+(492) # (        temp = "") N
+(493) # (        ) S
+(for) K
+( char ) p
+(in) K
+( text:) p n
+(494) # (            ) S
+(if) K
+( char == delimiter:) p n
+(495) # (                result.append\(temp + char\)) N
+(496) # (                temp = "") N
+(497) # (            ) S
+(else) K
+(:) p n
+(498) # (                temp += char) N
+(499) # (        ) S
+(if) K
+( temp:) p n
+(500) # (            result.append\(temp\)) N
+(501) # (        ) S
+(return) K
+( result) p n
+(502) # () N
+(503) # () N
+(504) # () N
+(505) # () N
+(506) # (    ) S
+(def) K
+( StripUnicode\(self,mystring,mask\):) p n
+(507) # (        newstring =mystring.replace\(mask,''\)) N
+(508) # (        ) S
+(return) K
+( newstring) p n
+(509) # () N
+(510) # () N
+(511) # (    ) S
+(def) K
+( GetRecipeList\(self\):) p n
+(512) # (        """) S
+(sql query to get all the names of the recpies) str n
+(ControlDB.py) (Page 9/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (9/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (10) 10
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(513) # (        will be used to popolate the recipe qlistbox) str
+(""") p n
+(514) # (        sql = ') S
+(SELECT name from recipes ; ) str
+(') p n
+(515) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(516) # (        model = QSqlQueryModel\(\)) N
+(517) # () N
+(518) # (        model.setQuery\(query\)) N
+(519) # (        recipe_list = []) N
+(520) # (        ) S
+(while) K
+( query.next\(\):) p n
+(521) # (            recipe_list.append\(str\(query.value\(0\)\)\)) N
+(522) # () N
+(523) # (        ) S
+(return) K
+( \(recipe_list\)) p n
+(524) # () N
+(525) # () N
+(526) # () N
+(527) # () N
+(528) # () N
+(529) # (    ) S
+(def) K
+( ModifyRecipe\(self\):) p n
+(530) # (        ) S
+(pass) K n
+(531) # () N
+(532) # () S
+(  ) p n
+(533) # (    ) S
+(def) K
+( SizeWindow\(self,window,myposit,mysize\):) p n
+(534) # (        """) S
+(resizes the specified window ,where the parameters are two integer lists) str
+(""") p n
+(535) # (        window.setGeometry\(myposit[0],myposit[1],mysize[0],mysize[1]\)) N
+(536) # (        ) S
+(return) K n
+(537) # () S
+( ) p n
+(538) # () N
+(539) # () S
+(##########################################################################) c n
+(540) # () S
+(    ) p
+(# section for signals and slots) c n
+(541) # () N
+(542) # () S
+(    ) p n
+(543) # (    ) S
+(def) K
+( Cancel\(self,window\):) p n
+(544) # (        """) S
+( closes window without anything) str
+(""") p n
+(545) # (        window.destroy\(\)) N
+(546) # (        ) N
+(547) # ( ) N
+(548) # ( ) N
+(549) # () N
+(550) # (    ) S
+(def) K
+( SaveIngredients\(self\):) p n
+(551) # (        """) S
+(saving the ingredients) str
+(""") p n
+(552) # (        Ing_name    = self.name_label.text\(\)) N
+(553) # (        Ing_calory  = float\(self.calory_label.text\(\)\)) N
+(554) # (        Ing_carb    = float\(self.carb_label.text\(\)\)       ) N
+(555) # (        Ing_fat     = float\(self.fat_label.text\(\)\)) N
+(556) # (        Ing_prot    = float\(self.prot_label.text\(\)\)) N
+(557) # () N
+(558) # (        ) S
+(#  this is the record we got from the form input) c n
+(559) # () N
+(560) # () S
+(        ) p
+(#Check all fields are filled out) c n
+(561) # () S
+(        ) p
+(if) K
+(\(Ing_calory !="" ) p
+(and) K
+( Ing_carb !="" ) p
+(and) K
+( Ing_fat!=""  ) p
+(and) K
+( Ing_prot !=""\):) p n
+(562) # (            self.Inform.destroy\(\) ) S
+(# destrorys the window.) c n
+(563) # () S
+(            ) p
+(#self.Inform.close\(\) # ) c n
+(564) # () N
+(565) # () S
+(        ) p
+(#now we need to add the values to the ingredients table) c n
+(566) # () S
+(        ) p
+(# first load table) c n
+(567) # () S
+(        table_name = ') p
+(ingredients) str
+(') p n
+(568) # (        self.ViewTable\(table_name,suppress_columns=self.ingredients_suppress_columns\)) N
+(569) # (        self.model = QSqlQueryModel\(\)) N
+(ControlDB.py) (Page 10/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (10/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (11) 11
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(570) # (        self.table_view.setModel\(self.model\)) p n
+(571) # (        ) S
+(#next we check we don't have an entry yet) c n
+(572) # () N
+(573) # () S
+(        ) p n
+(574) # (        ) S
+(#sql = "SELECT name from ingredients WHERE ingredients.name LIKE 'Almond%' ; ") c n
+(575) # () S
+(        sql = ") p
+(SELECT name from ingredients WHERE ingredients.name LIKE ') str
+("+Ing_name+") p
+(' ; ) str
+(") p n
+(576) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(577) # (        ) N
+(578) # (        self.model.setQuery\(query\)) N
+(579) # (        ) S
+(while) K
+( query.next\(\):) p n
+(580) # (            logger.error\(') S
+( entry name already exists, try again %s) str
+(' % query.value\(0\)\)) p n
+(581) # (            self.CreateIngredientsForm1\(\)) N
+(582) # (            ) S
+(#myvalue = query.value\(0\)) c n
+(583) # () S
+(        ) p
+(# Now we need to add this ingredient to the table) c n
+(584) # () N
+(585) # () S
+(        self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]) p n
+(586) # (        self.InsertRecord\(table = table_name\)) N
+(587) # (        ) S
+(return) K n
+(588) # () S
+(    ) p n
+(589) # () N
+(590) # (app = QApplication\(sys.argv\) ) N
+(591) # () N
+(592) # (Title=None) N
+(593) # (db_name=') S
+(recipe_ak) str
+(') p n
+(594) # (db_user=') S
+(klein) str
+(') p n
+(595) # (db_system=') S
+(QPSQL) str
+(') p n
+(596) # (db_pwd = None) N
+(597) # () N
+(598) # (suppress_columns = [') S
+(Sugar) str
+(',) p n
+(599) # (                    ') S
+(Portions) str
+(',) p n
+(600) # (                    ') S
+(Description) str
+(',) p n
+(601) # (                    ') S
+(Saturated_fat) str
+(',) p n
+(602) # (                    ') S
+(Fiber) str
+(',) p n
+(603) # (                    ') S
+(Salt) str
+(',) p n
+(604) # (                    ') S
+(Sodium) str
+(',) p n
+(605) # (                    ') S
+(Ingredients) str
+(',) p n
+(606) # (                    ') S
+(Time) str
+(',) p n
+(607) # (                    ') S
+(Images) str
+(',) p n
+(608) # (                    ') S
+(vegetarian) str
+(']) p n
+(609) # (columnwidth = [40,200,200,200,200,200]) N
+(610) # () N
+(611) # (window = ContrlDB\(Title = ") S
+(ControlDB) str
+(",) p n
+(612) # (                  db_name=db_name,) N
+(613) # (                  db_user=db_user,) N
+(614) # (                  db_system=db_system\)) N
+(615) # () S
+(#window.SetSize\(800,500\)) c n
+(616) # (#window.SetPosition\(100,500\)) N
+(617) # () N
+(618) # () S
+(window.setStyleSheet\(") p
+(background-color: white;) str
+("\)) p n
+(619) # () S
+(#window.CreateCalendar\(\)) c n
+(620) # () N
+(621) # () N
+(622) # () N
+(623) # (#window.show\(\)) N
+(624) # () S
+(window.ConnectDataBase\(\)) p n
+(625) # (window.ShowTables\(\)) N
+(626) # () S
+(#window.ViewTable\('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth\)) c n
+(ControlDB.py) (Page 11/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (11/12) (Saturday February 08, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (12) 12
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(627) # (window.MyRecipes_new\(\)) p n
+(628) # () S
+(#window.CreateIngredientsForm1\(\)) c n
+(629) # () N
+(630) # (# now run the app) N
+(631) # () S
+(app.) p
+(exec) K
+(\(\)) p
+(ControlDB.py) (Page 12/12) (Feb 08, 2025 15:15) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB.py) (12/12) (Saturday February 08, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage

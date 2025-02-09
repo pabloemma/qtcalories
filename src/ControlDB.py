@@ -81,7 +81,15 @@ class RecipeModel(QAbstractListModel):
         if role == Qt.DisplayRole:
             text = self.recipes[index.row()]
             return text
+    #def setData(self,index,value,role=Qt.EditRole):
+
+    #def setData(self, index, role=Qt.EditRole):
+    #     if role == Qt.EditRole:
+    #        text = self.recipes[index.row()]
+    #        self.dataChanged.emit(index, index, [Qt.DisplayRole, Qt.EditRole])
+    #        return text
         
+           
  
     def rowCount(self, index):
         return len(self.recipes)
@@ -168,6 +176,30 @@ class ContrlDB(QMainWindow):
             logger.error('connection failed, exciting')
             sys.exit(0)
 
+    def SetupLogger(self):
+
+
+        logger.remove(0)
+        #now we add color to the terminal output
+        logger.add(sys.stdout,
+                colorize = True,format="<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>" ,
+                level = "INFO")
+
+
+
+        fmt =  "{time} - {name}-   {function} -{line}- {level}    - {message}"
+        logger.add('info.log', format = fmt , level = 'INFO',rotation="1 day")
+
+
+        # set the colors of the different levels
+        logger.level("INFO",color ='<black>')
+        logger.level("WARNING",color='<green>')
+        logger.level("ERROR",color='<red>')
+        logger.level("DEBUG",color = '<blue>')
+ 
+        return
+
+
 
     def ShowTables(self):
         '''prints all the tables in the databe'''
@@ -222,28 +254,6 @@ class ContrlDB(QMainWindow):
             self.show()
         #self.setCentralWidget(table)
 
-    def SetupLogger(self):
-
-
-        logger.remove(0)
-        #now we add color to the terminal output
-        logger.add(sys.stdout,
-                colorize = True,format="<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>" ,
-                level = "INFO")
-
-
-
-        fmt =  "{time} - {name}-   {function} -{line}- {level}    - {message}"
-        logger.add('info.log', format = fmt , level = 'INFO',rotation="1 day")
-
-
-        # set the colors of the different levels
-        logger.level("INFO",color ='<black>')
-        logger.level("WARNING",color='<green>')
-        logger.level("ERROR",color='<red>')
-        logger.level("DEBUG",color = '<blue>')
- 
-        return
 
     def SetPosition(self,pos_x,pos_y):
         self.move(pos_x,pos_y)
@@ -382,8 +392,23 @@ class ContrlDB(QMainWindow):
         #here we define the actions
         self.MRD.RecipeListCombo.currentTextChanged.connect(self.getSelectedRecipe)
 
+        self.MRD.RecipeView.clicked.connect(self.on_item_click)
+
+    def on_item_click(self, index):
+        item_text = index.data()
+        item_row = index.row()
+        #self.RecipeModel.recipes contains the current list
+
+        #replace value at position index.row()
+        self.RecipeModel.recipes[index.row()]='shit'
+
+
+        self.RecipeModel.dataChanged.emit(index, index, [Qt.DisplayRole, Qt.EditRole])
+        return
         
 
+        #print(f"Clicked item: {item_text}")
+        #print(index.row())
 
 
 

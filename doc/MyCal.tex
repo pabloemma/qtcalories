@@ -1,0 +1,191 @@
+%\documentclass[14pt,tlenc]{article}
+
+\documentclass[12pt]{article}
+%\Large
+\include{usepack}
+%\include{my_environ}
+%for version counter
+
+
+
+% environment for computer listing
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+%commands for shortening the typing
+
+\newcommand{\polp}{$p^{\uparrow}$}
+
+\newcommand{\pold}{$d^{\uparrow}$}
+
+\newcommand{\xT}{$x_{2}$}
+
+\newcommand{\xB}{$x_1$}
+
+\newcommand{\xF}{$x_F$}
+
+\newcommand {\poc}{POC}
+
+\newcommand{\ra}{$\rightarrow$}
+
+%\newcommand{\bl}{\textcolor{blue}}
+%\newcommand{\bl}[1]{\textcolor{blue}{#1}}
+
+% define counter for lab
+\newcounter{labcount}
+%\makeindex
+\begin{document}
+
+
+
+\author{ Andi Klein}
+\title{ MyCal \\ 
+		\bf{version: 0.02}}
+%\date{12 Nov 2002}
+%\today
+\maketitle
+% set the counter level depth
+\setcounter{secnumdepth}{10}
+\setcounter{tocdepth}{10}
+
+
+
+\newenvironment{andilist}{\begin{itemize} \em}{\end{itemize}}
+% end of definitions
+\begin{abstract}
+MyCal is a program to calculate calories from a database of ingredients. It is based on {\bf psql} and {\bf pyside6}
+\end{abstract}
+\pagebreak
+
+\tableofcontents
+%\section{Tasks to be done}
+%\begin{enumerate}
+%\item check references. Make sure xarch is replaced with real pub
+%\end{enumerate}
+%\pagebreak
+
+\section{Introduction}
+In the following I will try to descripbe the setup of the program, so that in a few month I still can remember what I did.
+
+\section{Layout of the program}
+Currently, the main class is ControlDB, which has the methods described below. While in the beginning I created the form for ingredients from scratch, I later started to use the QT designer. The advantage of the QT designer is that I can easily add or move things in a design, run the conversion from ui to py and be done.
+Calling the designer is done by {\bf pyside6-designer Recipe.ui \&} to open the Recipe.ui form. After having changed the design and saved it, running {\bf pyside6-uic Recipe.ui -o Recipe.py} converts the design into a python class, which can the be reused.
+
+
+\section{class NewWindow}
+Creates a simple mainwindow, which can then be used to add widgets.
+
+\section{class RecipeModel}
+This is created from QAbstractListModel and creates the model for the recipe form. This is part of the model view architecture of pyside6 and is used by the method {\bf MyRecipes\_new}.
+
+\section{class ControlDB}
+This the main class of the program. It is called by
+\begin{verbatim}
+
+class ContrlDB(QMainWindow):
+
+    def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None):8
+        super().__init__()
+        self.db_name = db_name
+        self.db_user = db_user
+        self.db_system = db_system
+        if db_pwd == None:
+\end{verbatim}
+
+where the database parameters are passed.
+
+\subsection{ConnectDataBase}
+This establishes the connection to the psql database, using a text file for the password. 
+If the connection fails , the program exits
+
+\subsection{SetupLogger}
+This creates the logger system. It deals with warnings and errors.
+
+\subsection{ShowTables}
+Lists all the tables in the database
+
+\subsection{ViewTable}
+This method sets up the connection to a specific table and you can view this table. You can choose the list of columns which you want to suppress in display.
+\begin{verbatim}
+def ViewTable(self,table,suppress_columns=[],editmode=True, 
+columnwidth=[],Title = None, showTable = True):
+\end{verbatim}
+Calling this method with showTable = False will suppress the display. This is one of the main methods to deal with tables and selecting them.
+
+\subsection{SetPosition}
+Move the window to position chosen.
+
+\subsection{CreateIngredientsForm}
+This creates the form to add ingredients. This builds the respective form from scratch, something I don't want to do .
+It connects to SaveIngredients and also to Cancel
+
+\subsection{InsertRecord}
+First it creates a tableview with the above ViewTable for the ingredients table and then creates a QSqlQuerymodel. It inserts self.record, which has been created by SaveIngredients, which in turn is a connected method called by clicking on the SaveButton from the ingredient form.
+
+\subsection{MyRecipes\_new}
+This is the heart of the communication with the recipes table. This establishes the recipe window creates the RecipeView, as well as the RecipeModel. It calls the GetRecipeList, which creates a list of all the recipe names.
+
+\subsection{getSelectedText, getSelectedRecipes}
+This is a function called through a connector in the Recipe Combobox. First it clears the record, and then 
+fills the record with the table row chosen through the combo box. It uses an emit signal to refresh the list.
+\subsection{FillRecipeIngredientList}
+This is currently fairly long for historical reasons. The columns , which contains the ingredients of a specific recipe from the original Libreoffice days looks like this:
+
+\begin{verbatim}
+177 g Flour unbleached *u000a79 g Butter *u000a33 g Almond flour *u000a480 g Apricots frozen  *u000a8 g Sugar *
+\end{verbatim}
+There are a few problems with this:
+\begin{enumerate}
+\item We have spaces in the name of some of the ingredients. I manually changed the ingredients table to have always underscores, but the recipe table is too long.
+\item We have characters in which have to do with textformatting (*u000a)
+\item It is one string
+\end{enumerate}
+
+In this routine we strip out the UTF characters, remove the *, and then create a list in self.recipe\_ingredients
+
+\subsection{DisplayRecipeList}
+Adds items to the Recipelist.
+
+\subsection{split\_and\_keep}
+This is used by FillRecipeIngredientList to separate the long string into a list of values, where the separation character is {\bf g}.
+\subsection{StripUnicode}
+removes the u000a from the record.
+
+\subsection{GetRecipeList}
+Gets a list of all the recipes in the recipe table.
+
+\subsection{SizeWindow}
+Creates dimensions of the window selected. it gives the upper corner coordinate and the x and y size.
+
+\subsection{SaveIngredients}
+Connected to from the CreateIngredientsForm, it checks that the new ingredient is unique and then saves the new created ingredient in the table.
+
+\subsection{on_item_click}
+gets connected to QlistView, and called when you click on one of the items.
+
+\section{Some Useful commands}
+\begin{enumerate}
+\item {\bf pyside6-designer Recipe.ui \&}
+\item {\bf pyside6-uic Recipe.ui -o Recipe.py}
+\end{enumerate}
+
+\section{Notes}
+There are a few issues I still need to address:
+\begin{enumerate}
+\item	Make recipe list editable
+\item Populate the textfield in the form like cal\/gram etc
+\item Create the calorie calculator
+\item Make sure entries in table get checked for upper and lower characters
+\item Clean up the code with consistent name scheme.
+
+
+
+\end{enumerate}
+
+It is important to only use underscores in names or ingredients. Do not use spaces. All entries are in {\bf gram}. I find the US system of oz, cups etc totally stone age; so will never use that system.
+
+
+
+
+\end{document}

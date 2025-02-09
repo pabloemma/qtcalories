@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QLineEdit,
-    QListView, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QLabel,
+    QLineEdit, QListView, QMainWindow, QMenuBar,
+    QPushButton, QSizePolicy, QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -33,6 +33,7 @@ class Ui_MainWindow(object):
         font.setPointSize(18)
         font.setItalic(True)
         self.RecipeView.setFont(font)
+        self.RecipeView.setEditTriggers(QAbstractItemView.EditTrigger.CurrentChanged|QAbstractItemView.EditTrigger.EditKeyPressed|QAbstractItemView.EditTrigger.SelectedClicked)
         self.SaveRecipe = QPushButton(self.centralwidget)
         self.SaveRecipe.setObjectName(u"SaveRecipe")
         self.SaveRecipe.setGeometry(QRect(320, 420, 100, 32))
