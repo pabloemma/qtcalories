@@ -10,7 +10,7 @@ from Recipe1 import Ui_MainWindow
 
 
 from PySide6.QtCore import (QSize, Qt ,QRect,
-QCoreApplication,Slot,Signal,QAbstractListModel,QAbstractTableModel,QMetaObject)
+QCoreApplication,Slot,Signal,QAbstractListModel,QAbstractTableModel,QMetaObject,QModelIndex)
 from PySide6.QtGui import QAction,QDoubleValidator,QFont
 from PySide6.QtWidgets import QWidget 
 from PySide6.QtUiTools import QUiLoader
@@ -93,16 +93,24 @@ class RecipeModel(QAbstractTableModel):
        
            
  
-    def rowCount(self, index):
+    def rowCount(self,  parent=QModelIndex()):
         return len(self.recipes)
     
-    def columnCount(self,index):
+    def columnCount(self,parent=QModelIndex()):
         return len(self.recipes[0])
 
     def headerData(self, section, orientation, role=Qt.DisplayRole):
          if role == Qt.DisplayRole and orientation == Qt.Horizontal:
             return self.header_labels[section]
          return None
+    
+    def insertRows(self, position, rows=1,parent=QModelIndex(),*args,**kwargs):
+        self.beginInsertRows(parent, position, position + rows - 1)
+        for _ in range(rows):
+            self.recipes.insert(position, [""] * self.columnCount())
+        self.endInsertRows()
+        return True
+
     def setData(self, index, value, role ):
         if role == Qt.ItemDataRole.EditRole:
             self.recipes[index.row()][index.column()] = value
@@ -428,6 +436,17 @@ class ContrlDB(QMainWindow):
         #cancel button
         self.MRD.CancelButton.clicked.connect(lambda : self.Cancel(self.MRD))
 
+        #add row button
+        self.MRD.AddRowButton.clicked.connect(self.add_row)
+       
+
+    def add_row(self):
+        """ adds row to reipe table"""
+        row_position = self.RecipeModel.rowCount()
+        self.RecipeModel.insertRows(row_position)
+
+        return
+
     def on_item_click(self, index):
 
         #columns and rows start from 0
@@ -472,6 +491,7 @@ class ContrlDB(QMainWindow):
         c=''
         a=record
         for k in range(len(a)):
+            if(a[k][0]==''): break
             b.append(a[k][0]+' '+a[k][1]+' '+a[k][2]+' ')
 
         for k in range(0,len(b)):
