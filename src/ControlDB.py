@@ -106,11 +106,14 @@ class RecipeModel(QAbstractTableModel):
     def setData(self, index, value, role ):
         if role == Qt.ItemDataRole.EditRole:
             self.recipes[index.row()][index.column()] = value
-            self.dataChanged.emit(index.row(), index.column())
             return True
         return False
     def flags(self, index):
         return Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsEditable
+
+    def StoreValue(self):
+        return self.recipes
+
 
 class MyRecipeWindow(QMainWindow,Ui_MainWindow):
     def __init__(self):
@@ -419,6 +422,9 @@ class ContrlDB(QMainWindow):
 
         self.MRD.RecipeTableView.clicked.connect(self.on_item_click)
 
+        # save button
+        self.MRD.SaveRecipe.clicked.connect(self.save_recipe)
+
     def on_item_click(self, index):
 
         #columns and rows start from 0
@@ -441,7 +447,11 @@ class ContrlDB(QMainWindow):
         #print(f"Clicked item: {item_text}")
         #print(index.row())
 
-
+    def save_recipe(self):
+        """gets called fro clicking the save button"""
+        record = self.RecipeModel.StoreValue()
+        print(record)
+        return
 
     def getSelectedText(self,s):
         self.selected_text = s
