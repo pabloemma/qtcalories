@@ -165,6 +165,22 @@ Connected to from the CreateIngredientsForm, it checks that the new ingredient i
 \subsection{on\_item\_click}
 gets connected to QlistView, and called when you click on one of the items.
 
+\subsection{save\_recipe}
+Called from save button in recipe form, it saves the current record for ingredients. It then calls pack\_record, so that we can update the record.
+
+\subsection{pack\_record}
+The record from save\_recipe needs to be packed back into a single string.
+
+\subsection{update\_recipe}
+called from save recipe it updates the ingredient record.
+
+\subsection{update\_record}
+This updates   row b with name in table
+
+\subsection{do\_sql}
+Executes a sql statement whihc has been formed by the calling method.
+
+
 \section{Some Useful commands}
 \begin{enumerate}
 \item {\bf pyside6-designer Recipe.ui \&}
@@ -189,6 +205,11 @@ It is important to only use underscores in names or ingredients. Do not use spac
 \section{Current Status}
 I think with QListview for the recipes, I boxed myself into a corner. This is the end of vs 0.2
 I create now vs 0.3 where the interface is a tableview. Tableview is working, next step is to be able to edit the fields and then save them.
+
+\section{Current issues}
+\begin{itemize}
+\item The unpacking of a ingredienst list with the new stored value only gives the first entry. Needs to be solved first. fixed
+\end{itemize}
 
 
 \end{document}

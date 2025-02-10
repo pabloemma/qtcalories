@@ -431,16 +431,6 @@ class ContrlDB(QMainWindow):
         item_text = index.data()
         item_row = index.row()
         item_column = index.column()
-        ##needs change
-        ##value =300.
-        ##self.RecipeModel.setData(self.RecipeModel.index(item_row,item_column), value)
-        #self.RecipeModel.recipes contains the current list
-
-        #replace value at position index.row()
-        #self.RecipeModel.recipes[index.row()]='shit'
-
-
-        #self.RecipeModel.dataChanged.emit(index, index, [Qt.DisplayRole, Qt.EditRole])
         return
         
 
@@ -450,8 +440,43 @@ class ContrlDB(QMainWindow):
     def save_recipe(self):
         """gets called fro clicking the save button"""
         record = self.RecipeModel.StoreValue()
-        print(record)
+        logger.info("ingredients %s "% record)
+        #create original string
+        record = self.pack_record(record)
+        # Now update the record
+        self.update_record('recipes','ingredients',record,self.selected_recipe)
+
+        #remove window
+        self.MRD.RecipeTableView.destroy()
+
         return
+    
+    def update_record(self,table,column_name,record,row_name):
+        """ updates record for name in table
+        example SQL statement 
+        UPDATE recipes SET ingredients = '30 g almonds 60 g dry_tomatoes 517 g tenderloin' WHERE name='basil_tenderloin';
+        """
+
+        sql = 'UPDATE '+table+' SET '+column_name+' = \''+record+'\' WHERE name = \''+row_name+'\';'
+        self.do_sql(sql)
+
+        return
+
+    def pack_record(self,record):
+        """ put record back into original form for ingredients, which is just one string"""
+        b=[]
+        c=''
+        a=record
+        for k in range(len(a)):
+            b.append(a[k][0]+' '+a[k][1]+' '+a[k][2]+' ')
+
+        for k in range(0,len(b)):
+            c = c+ b[k]
+   
+        # remove last space
+        d = c[0:len(c)-1]
+        return(d)
+
 
     def getSelectedText(self,s):
         self.selected_text = s
@@ -481,6 +506,13 @@ class ContrlDB(QMainWindow):
 
         return
     
+    def do_sql(self,sql):
+        """executes a sql statement"""
+        query = QSqlQuery(sql,db=self.mycal_db)
+        #model = QSqlQueryModel()
+        return
+
+
     def FillRecipeIngredientList(self):
         # here we get the ingredients from the Recipe database
         # this is done with a query
@@ -508,7 +540,14 @@ class ContrlDB(QMainWindow):
             
 
         else:
-            temp_new = temp_value
+            #already the new entry way
+            temp_new1 = []
+            temp_new = temp_value.split(' ')
+            for k in range(0,len(temp_new),3):
+                temp_new1.append([temp_new[k],temp_new[k+1],temp_new[k+2]])
+            self.recipe_ingredients = temp_new1
+            return
+
         
         delimiter = " g "
         result = temp_new.replace('u000a','')
@@ -541,7 +580,7 @@ class ContrlDB(QMainWindow):
 
 
         recipe_string = result3
-        #finally split every field up into 3 '10 g bean' -> [3,'g','bean]
+        #finally split every field up into 3 '10 g bean' -> [10,'g','bean]
         result4 =[]
         for i in range(len(result3)):
             temp = (result3[i].split(' '))

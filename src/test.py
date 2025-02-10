@@ -1,61 +1,11 @@
-import sys
 
-from PySide6.QtCore import QAbstractTableModel, Qt
-from PySide6.QtWidgets import QApplication, QMainWindow, QTableView
+b=[]
+c=''
+for k in range(len(a)):
+    b.append(a[k][0]+' '+a[k][1]+' '+a[k][2]+' ')
 
-
-class PandasModel(QAbstractTableModel):
-    def __init__(self, data):
-        super().__init__()
-        self._data = data
-
-    def rowCount(self, index):
-        # The length of the outer list.
-        return len(self._data)
-
-    def columnCount(self, index):
-        # The following takes the first sub-list, and returns
-        # the length (only works if all rows are an equal length)
-        return len(self._data[0])
-
-    def data(self, index, role=Qt.DisplayRole):
-        if index.isValid():
-            if role == Qt.ItemDataRole.DisplayRole or role == Qt.ItemDataRole.EditRole:
-                value = self._data[index.row()][index.column()]
-                return str(value)
-
-    def setData(self, index, value, role):
-        if role == Qt.ItemDataRole.EditRole:
-            self._data[index.row()][index.column()] = value
-            return True
-        return False
-
-    def flags(self, index):
-        return Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsEditable
-
-
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.table = QTableView()
-
-        data = [
-            [1, 9, 2],
-            [1, 0, -1],
-            [3, 5, 2],
-            [3, 3, 2],
-            [5, 8, 9],
-        ]
-
-        self.model = PandasModel(data)
-        self.table.setModel(self.model)
-
-        self.setCentralWidget(self.table)
-
-
-app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
-app.exec_()
-
+for k in range(0,len(b)):
+    c = c+ b[k]
+   
+# remove last space
+d = c[0:len(c)-1]
