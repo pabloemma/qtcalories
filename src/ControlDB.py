@@ -425,6 +425,9 @@ class ContrlDB(QMainWindow):
         # save button
         self.MRD.SaveRecipe.clicked.connect(self.save_recipe)
 
+        #cancel button
+        self.MRD.CancelButton.clicked.connect(lambda : self.Cancel(self.MRD))
+
     def on_item_click(self, index):
 
         #columns and rows start from 0
@@ -447,7 +450,8 @@ class ContrlDB(QMainWindow):
         self.update_record('recipes','ingredients',record,self.selected_recipe)
 
         #remove window
-        self.MRD.RecipeTableView.destroy()
+        self.MRD.close()
+ 
 
         return
     
@@ -651,7 +655,7 @@ class ContrlDB(QMainWindow):
     
     def Cancel(self,window):
         """ closes window without anything"""
-        window.destroy()
+        window.close()
         
  
  

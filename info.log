@@ -239,3 +239,57 @@
 2025-02-10T13:33:28.464446-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
 2025-02-10T13:33:34.965901-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
 2025-02-10T13:33:41.446146-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['515', 'g', 'tenderloin']] 
+2025-02-10T13:36:10.291906-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-10T13:36:10.292887-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
+2025-02-10T13:36:10.293014-0700 - __main__-   __init__ -169- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-10T13:36:10.373762-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
+2025-02-10T13:36:10.374082-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
+2025-02-10T13:36:17.208892-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
+2025-02-10T13:36:24.364902-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
+2025-02-10T13:36:59.902463-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-10T13:36:59.903093-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
+2025-02-10T13:36:59.903194-0700 - __main__-   __init__ -169- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-10T13:36:59.987253-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
+2025-02-10T13:36:59.987545-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
+2025-02-10T13:37:06.340238-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
+2025-02-10T13:37:12.693192-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
+2025-02-10T13:38:24.560644-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-10T13:38:24.561253-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
+2025-02-10T13:38:24.561341-0700 - __main__-   __init__ -169- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-10T13:38:25.859605-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
+2025-02-10T13:38:25.859878-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
+2025-02-10T13:38:32.690850-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
+2025-02-10T13:38:38.165670-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
+2025-02-10T13:43:08.735056-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-10T13:43:08.735802-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
+2025-02-10T13:43:08.735934-0700 - __main__-   __init__ -169- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-10T13:43:08.816950-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
+2025-02-10T13:43:08.817233-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
