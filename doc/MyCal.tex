@@ -219,10 +219,12 @@ In the following I will sketch some of the stuff needed.
 \begin{enumerate}
 \item  For every recipe I need to access both databases. To get the recipes, ingredients and amounts as well as 
 the values for each ingredient.
-\item I will use pandas to deal with the math and storing the variables. Manipulating the vairables is more striaght forward.
-\item I will try to keep this class completely free from pyside6, so that I can keep the code as clean as possible. This will require some kind of interface between the two. This will provide the data from ControlDB to the calculate class.
+\item I will use pandas to deal with the math and storing the variables. Manipulating the variables is more straight forward.
+\item I will try to keep this class completely free from pyside6, so that I can keep the code as clean as possible. This will require some kind of interface between the two. This will provide the data from ControlDB to the calculate class. I think the best way is to already fill a data frame in ControlDB and then pass this dataframe to the CalculateCalories class.
 \item In the controlDB, I still need to create a function, which will deal with a missing ingredient. Shall I automatically open the fill ingredient form? 
-\item Since potentially I would like to use the US nutrition database, I might be able to access a lot more info than just the calories. So I will try to design the clas accordingly
+\item Since potentially I would like to use the US nutrition database, I might be able to access a lot more info than just the calories. So I will try to design the class accordingly.
+\item In order 
+
 
 \end{enumerate}
 \end{document}
