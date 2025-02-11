@@ -43,3 +43,7 @@ class CalculateCalories(object):
         logger.level("DEBUG",color = '<blue>')
  
         return
+    
+    def calculate_value(self,item = None):
+
+        pass 

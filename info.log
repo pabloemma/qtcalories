@@ -1,761 +1,710 @@
-2025-02-10T09:11:14.610459-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:03:42.612462-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T09:11:14.611919-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:11:14.612127-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T09:11:16.135532-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:11:16.136037-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:11:22.314382-0700 - __main__-   getSelectedRecipe -491- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T09:13:28.682562-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T09:13:28.683561-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:13:28.683761-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:03:42.613193-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:03:42.613278-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T09:13:28.762009-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:13:28.762353-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:13:34.836677-0700 - __main__-   getSelectedRecipe -491- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T09:15:04.504339-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:03:44.096905-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:03:44.097221-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:03:49.288338-0700 - __main__-   getSelectedRecipe -553- INFO    - You have selected bean_gratin recipe
+2025-02-11T11:03:51.915545-0700 - __main__-   save_recipe -498- INFO    - ingredients [['100', 'g', 'beans_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] 
+2025-02-11T11:03:51.915930-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_gratin and record 100 g beans_dried 100 g bacon 81 g onions 271 g tomato 27 g bread_crumbs 80 g gruyere for recipes
+2025-02-11T11:05:25.976775-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T09:15:04.504899-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:15:04.504985-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T09:15:04.580412-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:15:04.580794-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:15:11.912563-0700 - __main__-   getSelectedRecipe -491- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T09:15:36.691366-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T09:15:36.691906-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:15:36.692026-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:05:25.977601-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:05:25.977768-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T09:15:36.778992-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:15:36.779328-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:15:46.457327-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:05:26.057090-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:05:26.057422-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:05:32.905498-0700 - __main__-   getSelectedRecipe -553- INFO    - You have selected beet_potato recipe
+2025-02-11T11:05:35.024261-0700 - __main__-   save_recipe -498- INFO    - ingredients [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] 
+2025-02-11T11:07:52.569917-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T09:15:46.458072-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:15:46.458231-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T09:15:46.512568-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:15:46.512980-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:15:53.596622-0700 - __main__-   getSelectedRecipe -491- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T09:18:14.893909-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T09:18:14.895133-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:18:14.895394-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:07:52.570360-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:07:52.570472-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T09:18:14.970131-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:18:14.970497-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:18:33.362052-0700 - __main__-   getSelectedRecipe -491- INFO    - You have selected alibaba_rice recipe
-2025-02-10T09:20:47.636780-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:07:53.940403-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:07:53.940697-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:07:58.160055-0700 - __main__-   getSelectedRecipe -554- INFO    - You have selected beet_potato recipe
+2025-02-11T11:07:59.780062-0700 - __main__-   save_recipe -498- INFO    - ingredients [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] 
+2025-02-11T11:07:59.780651-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_potato and record [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] for recipes
+2025-02-11T11:31:58.171604-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T09:20:47.637884-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:20:47.638044-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T09:20:47.717122-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:20:47.717438-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:20:55.664952-0700 - __main__-   getSelectedRecipe -491- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T09:27:06.645903-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T09:27:06.647112-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:27:06.647303-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:31:58.172349-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:31:58.172515-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T09:27:07.975264-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:27:07.975613-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:27:15.719132-0700 - __main__-   getSelectedRecipe -491- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T09:27:58.170840-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['517', 'g', 'tenderloin']] 
-2025-02-10T09:34:50.368194-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:31:59.490684-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:31:59.491018-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:32:05.580834-0700 - __main__-   getSelectedRecipe -567- INFO    - You have selected beet-barlye recipe
+2025-02-11T11:32:07.917957-0700 - __main__-   save_recipe -511- INFO    - ingredients [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T11:32:46.808723-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T11:36:14.646734-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T09:34:50.368764-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T09:34:50.368884-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T09:34:51.758605-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T09:34:51.758914-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T09:34:59.097313-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T09:35:02.085189-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['517', 'g', 'tenderloin']] 
-2025-02-10T13:02:16.059934-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T13:02:16.060651-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:02:16.060760-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:36:14.647651-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:36:14.647862-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T13:02:17.539189-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:02:17.539692-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:02:24.928530-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:02:33.463682-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['517', 'g', 'tenderloin']] 
-2025-02-10T13:09:38.245695-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:36:14.711013-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:36:14.711478-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:36:19.806542-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected beet_cheese_gratin recipe
+2025-02-11T11:36:21.442375-0700 - __main__-   save_recipe -512- INFO    - ingredients [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'eggs'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] 
+2025-02-11T11:36:21.442995-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_cheese_gratin and record [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'eggs'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] for recipes
+2025-02-11T11:37:39.157131-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T13:09:38.246613-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:09:38.246768-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T13:09:39.554082-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:09:39.554424-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:09:46.215453-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:12:07.351897-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T13:12:07.352567-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:12:07.352653-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:37:39.157939-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:37:39.158184-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T13:12:07.413442-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:12:07.413738-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:12:13.812279-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:20:47.896162-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:37:39.219781-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:37:39.220193-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:37:41.608417-0700 - __main__-   save_recipe -512- INFO    - ingredients [[]] 
+2025-02-11T11:37:47.318738-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected beet_gnocchi recipe
+2025-02-11T11:37:48.937582-0700 - __main__-   save_recipe -512- INFO    - ingredients [['309', 'g', 'beet'], ['425', 'g', 'ricotta'], ['65', 'g', 'mascarpone'], ['325', 'g', 'spelt_flour']] 
+2025-02-11T11:37:48.938387-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_gnocchi and record [['309', 'g', 'beet'], ['425', 'g', 'ricotta'], ['65', 'g', 'mascarpone'], ['325', 'g', 'spelt_flour']] for recipes
+2025-02-11T11:40:21.492450-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T13:20:47.897198-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:20:47.897344-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T13:20:49.206167-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:20:49.206514-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:21:00.178266-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:21:43.926649-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T13:21:43.927109-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:21:43.927193-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:40:21.493438-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:40:21.493672-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T13:21:43.984975-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:21:43.985265-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:21:52.545134-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:21:59.506268-0700 - __main__-   save_recipe -444- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['515', 'g', 'tenderloin']] 
-2025-02-10T13:23:46.032981-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:40:21.555928-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:40:21.556302-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:40:25.301677-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected beet-barlye recipe
+2025-02-11T11:40:27.003621-0700 - __main__-   save_recipe -512- INFO    - ingredients [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T11:40:27.004355-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T11:40:53.343583-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T13:23:46.034354-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:23:46.034502-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T13:23:46.115162-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:23:46.115612-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:23:53.026941-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:25:14.077837-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['515', 'g', 'tenderloin']] 
-2025-02-10T13:26:56.100278-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T13:26:56.101239-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:26:56.101400-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:40:53.344055-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:40:53.344140-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T13:26:57.436250-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:26:57.436698-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:27:04.066687-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:27:31.693967-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['515', 'g', 'tenderloin']] 
-2025-02-10T13:31:04.094083-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:40:53.428260-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:40:53.428561-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:40:55.704450-0700 - __main__-   save_recipe -512- INFO    - ingredients [[]] 
+2025-02-11T11:41:01.456794-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected beet-barlye recipe
+2025-02-11T11:41:04.001762-0700 - __main__-   save_recipe -512- INFO    - ingredients [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T11:41:04.002330-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T11:41:40.688432-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T13:31:04.095371-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:31:04.095566-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T13:31:04.154257-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:31:04.154631-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:31:11.260684-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:31:19.095183-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['515', 'g', 'tenderloin']] 
-2025-02-10T13:33:27.116839-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T13:33:27.118076-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:33:27.118232-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:41:40.688833-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:41:40.688918-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T13:33:28.464083-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:33:28.464446-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:33:34.965901-0700 - __main__-   getSelectedRecipe -494- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:33:41.446146-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['515', 'g', 'tenderloin']] 
-2025-02-10T13:36:10.291906-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:41:40.771176-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:41:40.771470-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:41:44.257193-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected beet-barlye recipe
+2025-02-11T11:41:45.595262-0700 - __main__-   save_recipe -512- INFO    - ingredients [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T11:41:45.595902-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T11:43:04.625611-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T13:36:10.292887-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:36:10.293014-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T13:36:10.373762-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:36:10.374082-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:36:17.208892-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:36:24.364902-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
-2025-02-10T13:36:59.902463-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T13:36:59.903093-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:36:59.903194-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:43:04.626080-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:43:04.626233-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T13:36:59.987253-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:36:59.987545-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:37:06.340238-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:37:12.693192-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
-2025-02-10T13:38:24.560644-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:43:05.937767-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:43:05.938065-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:43:18.523376-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected beet-barlye recipe
+2025-02-11T11:43:31.308120-0700 - __main__-   save_recipe -512- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T11:43:31.308880-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T11:44:24.262724-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T13:38:24.561253-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:38:24.561341-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T13:38:25.859605-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:38:25.859878-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T13:38:32.690850-0700 - __main__-   getSelectedRecipe -495- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T13:38:38.165670-0700 - __main__-   save_recipe -443- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
-2025-02-10T13:43:08.735056-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T13:43:08.735802-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T13:43:08.735934-0700 - __main__-   __init__ -169- INFO    - 
+2025-02-11T11:44:24.263140-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:44:24.263229-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T13:43:08.816950-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T13:43:08.817233-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:11:26.605628-0700 - __main__-   __init__ -166- INFO    - ******************************************************************************************************** 
+2025-02-11T11:44:24.352474-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:44:24.352810-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:44:31.456122-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected bean_gratin recipe
+2025-02-11T11:44:35.061186-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected beet-barlye recipe
+2025-02-11T11:44:37.323445-0700 - __main__-   save_recipe -512- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T11:44:37.323762-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T11:46:01.465759-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:11:26.606224-0700 - __main__-   __init__ -168- INFO    -  This is version 0.3
-2025-02-10T14:11:26.606316-0700 - __main__-   __init__ -169- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:11:27.917201-0700 - __main__-   ConnectDataBase -190- INFO    - connection succsessful
-2025-02-10T14:11:27.917515-0700 - __main__-   ConnectDataBase -194- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:26:27.036578-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:26:27.037238-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:26:27.037373-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T11:46:01.466242-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:46:01.466395-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:26:28.366432-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:26:28.366793-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:26:48.103034-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T11:46:01.546689-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:46:01.546989-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:46:07.058303-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected bean_soup recipe
+2025-02-11T11:46:10.897913-0700 - __main__-   save_recipe -512- INFO    - ingredients [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_beans'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] 
+2025-02-11T11:46:10.898806-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_soup and record [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_beans'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] for recipes
+2025-02-11T11:46:43.731954-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:26:48.103693-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:26:48.103789-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:26:48.179064-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:26:48.179356-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:26:55.249766-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:32:32.391655-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:32:32.392573-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:32:32.392733-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T11:46:43.732430-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:46:43.732541-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:32:33.738448-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:32:33.738744-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:33:47.175820-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T11:46:43.803842-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:46:43.804154-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:46:48.794709-0700 - __main__-   getSelectedRecipe -568- INFO    - You have selected bean_soup recipe
+2025-02-11T11:46:50.163796-0700 - __main__-   save_recipe -512- INFO    - ingredients [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_beans'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] 
+2025-02-11T11:46:50.164068-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_soup and record [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_beans'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] for recipes
+2025-02-11T11:50:02.869955-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:33:47.176453-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:33:47.176542-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:33:47.254752-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:33:47.255058-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:34:52.800063-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:34:52.800556-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:34:52.800642-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T11:50:02.870928-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:50:02.871087-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:34:52.860859-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:34:52.861171-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:35:43.197878-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T11:50:04.182627-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:50:04.182958-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:50:10.009106-0700 - __main__-   getSelectedRecipe -569- INFO    - You have selected BB_quiche recipe
+2025-02-11T11:50:11.912896-0700 - __main__-   save_recipe -513- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T11:50:11.913650-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T11:50:42.648694-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:35:43.198484-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:35:43.198573-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:35:43.288897-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:35:43.289221-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:35:53.529027-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:36:26.165009-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:36:26.165776-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:36:26.165882-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T11:50:42.649151-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:50:42.649316-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:36:26.251317-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:36:26.251757-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:36:35.593076-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:38:05.868849-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T11:50:42.730381-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:50:42.730677-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:50:47.259854-0700 - __main__-   getSelectedRecipe -570- INFO    - You have selected BB_quiche recipe
+2025-02-11T11:50:48.414802-0700 - __main__-   save_recipe -514- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T11:50:48.415632-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T11:51:40.183880-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:38:05.869400-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:38:05.869489-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:38:05.958873-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:38:05.959288-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:38:12.663429-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:42:37.980511-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:42:37.981127-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:42:37.981244-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T11:51:40.184636-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:51:40.184825-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:42:39.294395-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:42:39.294710-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:42:45.456178-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:44:20.789586-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T11:51:40.265787-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:51:40.266140-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:51:45.199469-0700 - __main__-   getSelectedRecipe -570- INFO    - You have selected BB_quiche recipe
+2025-02-11T11:51:46.528262-0700 - __main__-   save_recipe -514- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T11:51:46.528710-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T11:59:09.591217-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:44:20.790356-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:44:20.790467-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:44:20.864611-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:44:20.864919-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:44:27.039518-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:44:56.685017-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:44:56.685465-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:44:56.685549-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T11:59:09.591934-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T11:59:09.592109-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:44:56.744391-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:44:56.744707-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:45:02.389547-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:45:18.327247-0700 - __main__-   save_recipe -465- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin'], ['', '', ''], ['', '', ''], ['', '', '']] 
-2025-02-10T14:45:40.129098-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T11:59:10.897928-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T11:59:10.898251-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T11:59:16.458969-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected beet_cheese_gratin recipe
+2025-02-11T11:59:18.444284-0700 - __main__-   save_recipe -515- INFO    - ingredients [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'eggs'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] 
+2025-02-11T11:59:18.444684-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_cheese_gratin and record [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'eggs'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] for recipes
+2025-02-11T12:00:07.374313-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:45:40.130133-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:45:40.130266-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:45:40.207211-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:45:40.207517-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:45:47.644483-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:47:03.266252-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:47:03.267444-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:47:03.267592-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T12:00:07.375112-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T12:00:07.375357-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:47:04.582600-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:47:04.582957-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:47:10.429687-0700 - __main__-   getSelectedRecipe -517- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:47:16.438448-0700 - __main__-   save_recipe -465- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin'], ['', '', ''], ['', '', ''], ['', '', '']] 
-2025-02-10T14:49:49.484686-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T12:00:07.431612-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T12:00:07.431978-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T12:00:11.964100-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected BB_quiche recipe
+2025-02-11T12:00:14.830037-0700 - __main__-   save_recipe -515- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T12:00:14.831108-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T12:02:25.891877-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:49:49.486012-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:49:49.486157-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:49:49.574175-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:49:49.574513-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:49:55.679508-0700 - __main__-   getSelectedRecipe -518- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:50:00.083330-0700 - __main__-   save_recipe -465- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin'], ['', '', ''], ['', '', ''], ['', '', '']] 
-2025-02-10T14:50:45.007579-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T14:50:45.008024-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:50:45.008109-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T12:02:25.892665-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T12:02:25.892805-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T14:50:45.065436-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:50:45.065743-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:50:50.727840-0700 - __main__-   getSelectedRecipe -518- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T14:50:53.533513-0700 - __main__-   save_recipe -465- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin'], ['', '', ''], ['', '', ''], ['', '', '']] 
-2025-02-10T14:51:02.265344-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T12:02:25.978082-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T12:02:25.978442-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T12:02:30.301106-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected BB_quiche recipe
+2025-02-11T12:02:39.501581-0700 - __main__-   save_recipe -515- INFO    - ingredients [['113', 'g', 'Cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T12:02:39.502895-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'Cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T12:03:17.756800-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T14:51:02.265826-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T14:51:02.265912-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T14:51:02.322842-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T14:51:02.323135-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T14:51:07.629739-0700 - __main__-   getSelectedRecipe -518- INFO    - You have selected basil_tenderloin recipe
-2025-02-10T15:05:29.685957-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:05:29.686525-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:05:29.686607-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T12:03:17.757597-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T12:03:17.757828-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:05:31.004461-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:05:31.004754-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:08:52.876660-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T12:03:17.815567-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T12:03:17.815951-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T12:03:22.315085-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected BB_quiche recipe
+2025-02-11T12:03:32.222339-0700 - __main__-   save_recipe -515- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T12:03:32.223398-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T13:10:09.690507-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T15:08:52.877402-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:08:52.877489-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T15:08:52.957516-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:08:52.957814-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:14:39.189923-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:14:39.190689-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:14:39.190810-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T13:10:09.690978-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T13:10:09.691069-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:14:40.503674-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:14:40.503956-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:17:57.158269-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T13:10:11.107314-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T13:10:11.107657-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T13:10:17.620196-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected BB_quiche recipe
+2025-02-11T13:10:20.108671-0700 - __main__-   save_recipe -515- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T13:10:20.109220-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T13:11:11.996051-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T15:17:57.159075-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:17:57.159161-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T15:17:57.237952-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:17:57.238232-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:18:19.564212-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:18:19.564832-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:18:19.564943-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T13:11:11.996567-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T13:11:11.996706-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:18:19.640399-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:18:19.640688-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:19:44.327502-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T13:11:12.077546-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T13:11:12.077841-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T13:11:28.836355-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected birnenparfait recipe
+2025-02-11T13:11:31.103092-0700 - __main__-   save_recipe -515- INFO    - ingredients [['500', 'g', 'Pear'], ['150', 'g', 'Sugar'], ['50', 'g', 'White_wine'], ['51.24', 'g', 'Egg_yoke'], ['400', 'g', 'Cream'], ['100', 'g', 'Chocolate_dark']] 
+2025-02-11T13:11:31.103698-0700 - __main__-   create_pandas_frame -470- INFO    -  name birnenparfait and record [['500', 'g', 'Pear'], ['150', 'g', 'Sugar'], ['50', 'g', 'White_wine'], ['51.24', 'g', 'Egg_yoke'], ['400', 'g', 'Cream'], ['100', 'g', 'Chocolate_dark']] for recipes
+2025-02-11T14:16:40.440338-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T15:19:44.328220-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:19:44.328308-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T15:19:44.418897-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:19:44.419305-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:20:22.342420-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:20:22.343141-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:20:22.343227-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:16:40.441117-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:16:40.441255-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:20:22.398845-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:20:22.399140-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:25:52.243729-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T14:16:41.852136-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:16:41.852480-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:16:49.721532-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected BB_quiche recipe
+2025-02-11T14:17:23.463448-0700 - __main__-   save_recipe -515- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T14:17:23.466029-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T14:26:39.015519-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T15:25:52.244383-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:25:52.244471-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T15:25:53.551362-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:25:53.551656-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:29:01.578163-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:29:01.578912-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:29:01.579059-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:26:39.016080-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:26:39.016168-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:29:01.660595-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:29:01.660878-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:29:37.684156-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T14:26:39.133128-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:26:39.133424-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:26:44.939264-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected bean_gratin recipe
+2025-02-11T14:26:46.386313-0700 - __main__-   save_recipe -515- INFO    - ingredients [['100', 'g', 'beans_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] 
+2025-02-11T14:26:46.387018-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_gratin and record [['100', 'g', 'beans_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] for recipes
+2025-02-11T14:28:15.167565-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T15:29:37.684750-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:29:37.684835-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T15:29:37.755824-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:29:37.756105-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:30:22.008541-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:30:22.009226-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:30:22.009342-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:28:15.168047-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:28:15.168234-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:30:22.079765-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:30:22.080054-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:31:28.700833-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T14:28:16.507652-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:28:16.507974-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:28:19.965332-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected basil_tenderloin recipe
+2025-02-11T14:28:21.231526-0700 - __main__-   save_recipe -515- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
+2025-02-11T14:28:21.232468-0700 - __main__-   create_pandas_frame -470- INFO    -  name basil_tenderloin and record [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] for recipes
+2025-02-11T14:31:59.584594-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T15:31:28.701514-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:31:28.701633-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T15:31:28.782470-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:31:28.782768-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:32:26.983735-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:32:26.984756-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:32:26.984927-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:31:59.585656-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:31:59.585826-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:32:27.076848-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:32:27.077177-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:35:07.578631-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T14:31:59.665481-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:31:59.665833-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:32:04.207821-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected beet_gnocchi recipe
+2025-02-11T14:32:05.824869-0700 - __main__-   save_recipe -515- INFO    - ingredients [['309', 'g', 'beet'], ['425', 'g', 'ricotta'], ['65', 'g', 'mascarpone'], ['325', 'g', 'spelt_flour']] 
+2025-02-11T14:32:05.825686-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_gnocchi and record [['309', 'g', 'beet'], ['425', 'g', 'ricotta'], ['65', 'g', 'mascarpone'], ['325', 'g', 'spelt_flour']] for recipes
+2025-02-11T14:41:25.148580-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T15:35:07.579535-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:35:07.579624-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T15:35:07.652770-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:35:07.653060-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:36:19.938933-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T15:36:19.940316-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T15:36:19.940465-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:41:25.149321-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:41:25.149494-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T15:36:20.017531-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T15:36:20.017855-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T15:36:25.126410-0700 - __main__-   create_new_recipe -453- INFO    - new recipe name test
-2025-02-10T17:34:59.862889-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T14:41:25.230695-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:41:25.231018-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:41:33.098271-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected beet_cheese_gratin recipe
+2025-02-11T14:41:34.182515-0700 - __main__-   save_recipe -515- INFO    - ingredients [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'eggs'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] 
+2025-02-11T14:41:34.182879-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_cheese_gratin and record [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'eggs'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] for recipes
+2025-02-11T14:43:21.048559-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T17:34:59.863726-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T17:34:59.863817-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T17:35:01.379698-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T17:35:01.380009-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T17:35:05.898854-0700 - __main__-   create_new_recipe -453- INFO    - new recipe name test
-2025-02-10T17:36:09.948680-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T17:36:09.949424-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T17:36:09.949517-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:43:21.049319-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:43:21.049481-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T17:36:10.021381-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T17:36:10.021701-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T17:36:15.638032-0700 - __main__-   create_new_recipe -453- INFO    - new recipe name test
-2025-02-10T17:38:17.541897-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T14:43:21.129992-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:43:21.130293-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:43:27.528921-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T17:38:17.542614-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T17:38:17.542725-0700 - __main__-   __init__ -177- INFO    - 
-
-
-***************************************************************************************************** 
-
-2025-02-10T17:38:17.597248-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T17:38:17.597546-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T17:38:23.183918-0700 - __main__-   create_new_recipe -453- INFO    - new recipe name test
-2025-02-10T17:40:05.330476-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
-
-
-
-2025-02-10T17:40:05.331408-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T17:40:05.331552-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:43:27.529649-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:43:27.529788-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T17:40:05.410844-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T17:40:05.411206-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T17:40:10.045254-0700 - __main__-   create_new_recipe -453- INFO    - new recipe name test
-2025-02-10T17:50:00.809876-0700 - __main__-   __init__ -174- INFO    - ******************************************************************************************************** 
+2025-02-11T14:43:27.588925-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:43:27.589278-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:43:32.831620-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected basil_tenderloin recipe
+2025-02-11T14:43:34.698491-0700 - __main__-   save_recipe -515- INFO    - ingredients [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] 
+2025-02-11T14:43:34.699209-0700 - __main__-   create_pandas_frame -470- INFO    -  name basil_tenderloin and record [['30', 'g', 'almonds'], ['60', 'g', 'dry_tomatoes'], ['516', 'g', 'tenderloin']] for recipes
+2025-02-11T14:47:08.719465-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
 
 
 
-2025-02-10T17:50:00.810621-0700 - __main__-   __init__ -176- INFO    -  This is version 0.3
-2025-02-10T17:50:00.810709-0700 - __main__-   __init__ -177- INFO    - 
+2025-02-11T14:47:08.720393-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:47:08.720533-0700 - __main__-   __init__ -179- INFO    - 
 
 
 ***************************************************************************************************** 
 
-2025-02-10T17:50:02.135516-0700 - __main__-   ConnectDataBase -198- INFO    - connection succsessful
-2025-02-10T17:50:02.135794-0700 - __main__-   ConnectDataBase -202- INFO    -  database connection name qt_sql_default_connection
-2025-02-10T17:50:06.510715-0700 - __main__-   create_new_recipe -453- INFO    - new recipe name test
+2025-02-11T14:47:10.109908-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:47:10.110240-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:47:13.220016-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected beet_potato recipe
+2025-02-11T14:47:14.429297-0700 - __main__-   save_recipe -515- INFO    - ingredients [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] 
+2025-02-11T14:47:14.429825-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_potato and record [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] for recipes
+2025-02-11T14:48:29.064347-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T14:48:29.065283-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:48:29.065421-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T14:48:29.144803-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:48:29.145148-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:48:34.438627-0700 - __main__-   getSelectedRecipe -571- INFO    - You have selected BB_quiche recipe
+2025-02-11T14:48:37.704467-0700 - __main__-   save_recipe -515- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T14:48:37.704866-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T14:50:39.956190-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T14:50:39.956908-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:50:39.957078-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T14:50:40.041087-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:50:40.041432-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:50:44.602295-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected beet_potato recipe
+2025-02-11T14:50:46.456055-0700 - __main__-   save_recipe -516- INFO    - ingredients [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] 
+2025-02-11T14:50:46.456588-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_potato and record [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] for recipes
+2025-02-11T14:53:10.711769-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T14:53:10.712224-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T14:53:10.712337-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T14:53:12.019714-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T14:53:12.020157-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T14:53:17.634564-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected beet_potato recipe
+2025-02-11T14:53:19.886869-0700 - __main__-   save_recipe -516- INFO    - ingredients [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] 
+2025-02-11T14:53:19.887651-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet_potato and record [['601', 'g', 'beet'], ['605', 'g', 'potato'], ['362', 'g', 'beef'], ['150', 'g', 'bacon'], ['68', 'g', 'dried_tomato'], ['21', 'g', 'butter'], ['300', 'g', 'bouillon']] for recipes
+2025-02-11T15:10:33.285139-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:10:33.285699-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:10:33.285906-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:10:34.420400-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:10:34.420802-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T15:10:38.821234-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected barley_soup recipe
+2025-02-11T15:10:42.687162-0700 - __main__-   save_recipe -516- INFO    - ingredients [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273g', 'carrots282', 'g_leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato']] 
+2025-02-11T15:10:42.689186-0700 - __main__-   create_pandas_frame -470- INFO    -  name barley_soup and record [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273g', 'carrots282', 'g_leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato']] for recipes
+2025-02-11T15:19:35.661482-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:19:35.661899-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:19:35.661986-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:19:36.762166-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:19:36.762440-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T15:19:56.451223-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected barley_soup recipe
+2025-02-11T15:19:59.052174-0700 - __main__-   save_recipe -516- INFO    - ingredients [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273g', 'carrots282', 'g_leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato']] 
+2025-02-11T15:19:59.052699-0700 - __main__-   create_pandas_frame -470- INFO    -  name barley_soup and record [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273g', 'carrots282', 'g_leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato']] for recipes
+2025-02-11T15:22:03.676006-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:22:03.677137-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:22:03.677300-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:22:03.760700-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:22:03.761030-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T15:22:08.018076-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected beet-barlye recipe
+2025-02-11T15:22:10.728740-0700 - __main__-   save_recipe -516- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T15:22:10.729687-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T15:23:06.242096-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:23:06.243216-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:23:06.243419-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:23:06.323555-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:23:06.323886-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T15:23:10.016076-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected beet-barlye recipe
+2025-02-11T15:23:11.831744-0700 - __main__-   save_recipe -516- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-11T15:23:11.832245-0700 - __main__-   create_pandas_frame -470- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', '', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-11T15:26:24.196953-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:26:24.197352-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:26:24.197436-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:26:25.267986-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:26:25.268266-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T15:27:07.963267-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:27:07.963878-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:27:07.963971-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:27:08.022371-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:27:08.022666-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T15:27:22.628924-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected aprikosenwaehe recipe
+2025-02-11T15:27:29.648777-0700 - __main__-   save_recipe -516- INFO    - ingredients [['177', 'g', 'Flour_unbleached'], ['79', 'g', 'Butter'], ['33', 'g', 'Almond_flour'], ['480', 'g', 'Apricots_frozen'], ['55', 'g', 'Egg'], ['103', 'g', 'Milk'], ['8', 'g', 'Sugar']] 
+2025-02-11T15:27:29.649416-0700 - __main__-   create_pandas_frame -470- INFO    -  name aprikosenwaehe and record [['177', 'g', 'Flour_unbleached'], ['79', 'g', 'Butter'], ['33', 'g', 'Almond_flour'], ['480', 'g', 'Apricots_frozen'], ['55', 'g', 'Egg'], ['103', 'g', 'Milk'], ['8', 'g', 'Sugar']] for recipes
+2025-02-11T15:31:52.914482-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:31:52.915260-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:31:52.915445-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:31:54.295376-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:31:54.295707-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T15:32:08.617390-0700 - __main__-   getSelectedRecipe -572- INFO    - You have selected asian_chicken_soup recipe
+2025-02-11T15:32:32.908659-0700 - __main__-   save_recipe -516- INFO    - ingredients [['207', 'g', 'carrot'], ['232', 'g', 'leek'], ['103', 'g', 'orzo'], ['100', 'g', 'onions'], ['400', 'g', 'coconut_cream'], ['1300', 'g', 'bouillon'], ['450', 'g', 'chicken_breast'], ['0', 'g', 'walnut']] 
+2025-02-11T15:32:32.910519-0700 - __main__-   create_pandas_frame -470- INFO    -  name asian_chicken_soup and record [['207', 'g', 'carrot'], ['232', 'g', 'leek'], ['103', 'g', 'orzo'], ['100', 'g', 'onions'], ['400', 'g', 'coconut_cream'], ['1300', 'g', 'bouillon'], ['450', 'g', 'chicken_breast'], ['0', 'g', 'walnut']] for recipes
+2025-02-11T15:35:27.610393-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T15:35:27.611096-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T15:35:27.611237-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T15:35:27.692895-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T15:35:27.693184-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:02:45.268644-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:02:45.269105-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:02:45.269281-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:02:46.739541-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:02:46.739832-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:02:50.966776-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected avocado_cream recipe
+2025-02-11T16:02:59.036675-0700 - __main__-   save_recipe -527- INFO    - ingredients [['230', 'g', 'avocado'], ['40', 'g', 'lemon'], ['154', 'g', 'yogurt_nancy']] 
+2025-02-11T16:02:59.037531-0700 - __main__-   create_pandas_frame -470- INFO    -  name avocado_cream and record [['230', 'g', 'avocado'], ['40', 'g', 'lemon'], ['154', 'g', 'yogurt_nancy']] for recipes
+2025-02-11T16:03:20.553795-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:03:20.554233-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:03:20.554317-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:03:20.629958-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:03:20.630235-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:03:27.516214-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected avocado_filled recipe
+2025-02-11T16:03:29.776879-0700 - __main__-   save_recipe -527- INFO    - ingredients [['19', 'g', 'almond'], ['79', 'g', 'boursin'], ['270', 'g', 'avocado']] 
+2025-02-11T16:03:29.777445-0700 - __main__-   create_pandas_frame -470- INFO    -  name avocado_filled and record [['19', 'g', 'almond'], ['79', 'g', 'boursin'], ['270', 'g', 'avocado']] for recipes
+2025-02-11T16:03:43.905870-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:03:43.906281-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:03:43.906367-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:03:43.981031-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:03:43.981327-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:03:52.949141-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected avocado_mousse recipe
+2025-02-11T16:04:33.711773-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:04:33.712190-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:04:33.712301-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:04:33.788346-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:04:33.788643-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:04:37.885597-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected avocado_mousse recipe
+2025-02-11T16:04:40.851034-0700 - __main__-   save_recipe -527- INFO    - ingredients [['280', 'g', 'avocado'], ['130', 'g', 'mascarpone']] 
+2025-02-11T16:04:40.851376-0700 - __main__-   create_pandas_frame -470- INFO    -  name avocado_mousse and record [['280', 'g', 'avocado'], ['130', 'g', 'mascarpone']] for recipes
+2025-02-11T16:04:49.425679-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:04:49.426071-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:04:49.426155-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:04:49.483628-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:04:49.483968-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:05:02.600315-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected bean_bacon_gratin recipe
+2025-02-11T16:05:05.903385-0700 - __main__-   save_recipe -527- INFO    - ingredients [['129', 'g', 'beans']] 
+2025-02-11T16:05:05.905481-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_bacon_gratin and record [['129', 'g', 'beans']] for recipes
+2025-02-11T16:06:29.997585-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:06:29.998091-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:06:29.998185-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:06:30.071639-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:06:30.071944-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:07:04.429381-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected asian_chicken_soup recipe
+2025-02-11T16:07:14.997718-0700 - __main__-   save_recipe -527- INFO    - ingredients [['207', 'g', 'carrot'], ['232', 'g', 'leek'], ['103', 'g', 'orzo'], ['100', 'g', 'onions'], ['400', 'g', 'coconut_cream'], ['1300', 'g', 'bouillon'], ['450', 'g', 'chicken_breast'], ['0', 'g', 'walnut']] 
+2025-02-11T16:07:14.999854-0700 - __main__-   create_pandas_frame -470- INFO    -  name asian_chicken_soup and record [['207', 'g', 'carrot'], ['232', 'g', 'leek'], ['103', 'g', 'orzo'], ['100', 'g', 'onions'], ['400', 'g', 'coconut_cream'], ['1300', 'g', 'bouillon'], ['450', 'g', 'chicken_breast'], ['0', 'g', 'walnut']] for recipes
+2025-02-11T16:10:37.925350-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:10:37.925841-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:10:37.926002-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:10:39.227509-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:10:39.227791-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:10:48.766632-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected asian_chicken_soup recipe
+2025-02-11T16:11:25.029377-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected asian_chicken_soup; recipe

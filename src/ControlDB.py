@@ -8,6 +8,8 @@ from loguru import logger
 import config_mycal
 from Recipe1 import Ui_MainWindow
 
+import pandas as PD # to pack the recipe information into a pandas dataframe
+
 
 from PySide6.QtCore import (QSize, Qt ,QRect,
 QCoreApplication,Slot,Signal,QAbstractListModel,QAbstractTableModel,QMetaObject,QModelIndex)
@@ -462,9 +464,43 @@ class ContrlDB(QMainWindow):
 
         return
 
-    def calculate_values(self):
-        """This routine calculates derived values like calories/100 g, protein etc."""
-        pass
+    def create_pandas_frame(self,name=None):
+        """This routine creates the pandas frames which then get passed to CalculateCalories class"""
+        #collect the information
+        logger.info(" name %s and record %s for recipes" % (name,self.panda_ingredients))
+        
+        # now we need to get the different quantities for each ingredient
+        # at the same time we need to check if the ingredient is in the list available
+        #if not we have to deal with this
+
+        #example sql statement:
+        # SELECT energy,protein,carbohydrate,fat FROM ingredients where name = 'Butter';
+        sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \'' + self.panda_ingredients[0][2] +'\';'
+        print(sql)
+        energy,protein,carbohydrate,fat = range(4) 
+        query = QSqlQuery(sql,db=self.mycal_db)
+        model = QSqlQueryModel()
+
+        model.setQuery(query)
+        print(query.first())
+        print(query.value(0))
+        while query.next():
+
+            temp_value = ((query.value(0)))
+
+        #model = QSqlQueryModel()
+ 
+        query.first()
+
+        for k in range(4):
+            print(query.value(k))
+        #for k in range(len(myquery.next())):
+        #    print(myquery.value(k))
+    
+
+
+
+        return
 
     def add_row(self):
         """ adds row to reipe table"""
@@ -491,6 +527,8 @@ class ContrlDB(QMainWindow):
         logger.info("ingredients %s "% record)
         #create original string
         record = self.pack_record(record)
+        #here we call create_pandas_frame tframe for CalculateCalories start producing the 
+        self.create_pandas_frame(name=self.selected_recipe)
         # Now update the record
         self.update_record('recipes','ingredients',record,self.selected_recipe)
 
@@ -515,7 +553,8 @@ class ContrlDB(QMainWindow):
         """ put record back into original form for ingredients, which is just one string"""
         b=[]
         c=''
-        a=record
+        #self.panda_ingredients are the correct list for creating the panda frame
+        self.panda_ingredients = a =record
         for k in range(len(a)):
             if(a[k][0]==''): break
             b.append(a[k][0]+' '+a[k][1]+' '+a[k][2]+' ')
@@ -559,8 +598,7 @@ class ContrlDB(QMainWindow):
     def do_sql(self,sql):
         """executes a sql statement"""
         query = QSqlQuery(sql,db=self.mycal_db)
-        #model = QSqlQueryModel()
-        return
+        return query
 
 
     def FillRecipeIngredientList(self):
@@ -733,7 +771,7 @@ class ContrlDB(QMainWindow):
 
         
         #sql = "SELECT name from ingredients WHERE ingredients.name LIKE 'Almond%' ; "
-        sql = "SELECT name from ingredients WHERE ingredients.name LIKE '"+Ing_name+"' ; "
+        sql = 'SELECT name from ingredients WHERE ingredients.name LIKE '"+Ing_name+"' ; '
         query = QSqlQuery(sql,db=self.mycal_db)
         
         self.model.setQuery(query)

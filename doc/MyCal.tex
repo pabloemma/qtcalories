@@ -181,6 +181,9 @@ This updates   row b with name in table
 \subsection{do\_sql}
 Executes a sql statement whihc has been formed by the calling method.
 
+\subsection{create\_pandas\_frame}
+This packs all the pertinent information for CalculateCalories into a pandas frame.
+
 
 \section{Some Useful commands}
 \begin{enumerate}
@@ -192,6 +195,8 @@ Executes a sql statement whihc has been formed by the calling method.
 If you change a value in the table form, you have to hit a <CR>; same for entering the name.
 
 It is important to only use underscores in names or ingredients. Do not use spaces. All entries are in {\bf gram}. I find the US system of oz, cups etc totally stone age; so will never use that system.
+
+do {\bf NOT} use plural for any quantity
 
 \section{Current Status}
 I think with QListview for the recipes, I boxed myself into a corner. This is the end of vs 0.2
@@ -209,6 +214,8 @@ I create now vs 0.3 where the interface is a tableview. Tableview is working, ne
 \item Test for existence in ingredients database. Handle the case where it does not exist.
 \item Possibly use US govt nutrition database. https://fdc.nal.usda.gov/
 \item Clean up the code with consistent name scheme.
+\item ingredient names plural and singular. set all to singular
+\item Currently it looks like the UPDATE actually deletes the record. This might have to do with my do\_sql changes. Need backup of psql table. actually it does not delete it but also not update it. again this might be my do\_sql.
 
 \end{itemize}
 
