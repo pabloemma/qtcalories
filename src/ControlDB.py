@@ -439,6 +439,29 @@ class ContrlDB(QMainWindow):
         #add row button
         self.MRD.AddRowButton.clicked.connect(self.add_row)
        
+       #new recipe button
+        #self.MRD.NewRecipeButton.clicked.connect(self.create_new_recipe) 
+
+        #if line has change
+        self.MRD.NewRecipeName.returnPressed.connect(self.create_new_recipe)   
+        #self.MRD.NewRecipeName.textChanged.connect(self.create_new_recipe)   
+
+    def create_new_recipe(self):
+        """creates new recipe"""
+        #first get name
+        self.new_recipe_name = self.MRD.NewRecipeName.text()
+        logger.info("new recipe name %s" % self.new_recipe_name)
+        #let's create a default starter table
+        #first create the data list for the model
+        self.RecipeModel.recipes = []
+
+        self.recipe_ingredients=[['0','g',' '],['0','g',' '],['0','g',' '],['0','g',' '],['0','g',' ']]
+        self.DisplayRecipeList()
+        self.RecipeModel.layoutChanged.emit()
+
+
+        return
+
 
     def add_row(self):
         """ adds row to reipe table"""
@@ -460,7 +483,7 @@ class ContrlDB(QMainWindow):
         #print(index.row())
 
     def save_recipe(self):
-        """gets called fro clicking the save button"""
+        """gets called from clicking the save button"""
         record = self.RecipeModel.StoreValue()
         logger.info("ingredients %s "% record)
         #create original string
@@ -521,7 +544,7 @@ class ContrlDB(QMainWindow):
         self.FillRecipeIngredientList()
 
         # Now fill qlist
-        self.DisplyRecipeList()
+        self.DisplayRecipeList()
 
         # send signal list has been updated
         self.RecipeModel.layoutChanged.emit()
@@ -612,8 +635,10 @@ class ContrlDB(QMainWindow):
         self.recipe_ingredients = result4
         return
 
-    def DisplyRecipeList(self):
+    def DisplayRecipeList(self):
         """loop through ingredient list and add"""
+        
+
         for k in range(len(self.recipe_ingredients)):
             self.RecipeModel.recipes.append(self.recipe_ingredients[k])
         return

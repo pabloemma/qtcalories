@@ -188,17 +188,7 @@ Executes a sql statement whihc has been formed by the calling method.
 \end{enumerate}
 
 \section{Notes}
-There are a few issues I still need to address:
-\begin{enumerate}
-\item	Make recipe list editable
-\item Populate the textfield in the form like cal\/gram etc
-\item Create the calorie calculator
-\item Make sure entries in table get checked for upper and lower characters
-\item Clean up the code with consistent name scheme.
-
-
-
-\end{enumerate}
+If you change a value in the table form, you have to hit a <CR>; same for entering the name.
 
 It is important to only use underscores in names or ingredients. Do not use spaces. All entries are in {\bf gram}. I find the US system of oz, cups etc totally stone age; so will never use that system.
 
@@ -209,6 +199,14 @@ I create now vs 0.3 where the interface is a tableview. Tableview is working, ne
 \section{Current issues}
 \begin{itemize}
 \item The unpacking of a ingredienst list with the new stored value only gives the first entry. Needs to be solved first. fixed
+\item updating the ingredients in recipe does NOT update any calculated values
+\item finish new recipe setup
+\item menu
+\item Populate the textfield in the form like cal\/gram etc
+\item Create the calorie calculator
+\item Make sure entries in table get checked for upper and lower characters
+\item Clean up the code with consistent name scheme.
+
 \end{itemize}
 
 

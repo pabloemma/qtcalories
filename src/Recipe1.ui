@@ -19,22 +19,32 @@
      <rect>
       <x>320</x>
       <y>410</y>
-      <width>100</width>
+      <width>181</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>Don't forget to hit return</string>
     </property>
     <property name="text">
      <string>Save Recipes</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="NewRecipe">
+   <widget class="QPushButton" name="NewRecipeButton">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>410</y>
+      <x>10</x>
+      <y>280</y>
       <width>100</width>
-      <height>32</height>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>New Recipe</string>
@@ -43,9 +53,9 @@
    <widget class="QComboBox" name="RecipeListCombo">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>530</x>
       <y>410</y>
-      <width>151</width>
+      <width>171</width>
       <height>32</height>
      </rect>
     </property>
@@ -255,6 +265,25 @@
     </property>
     <property name="text">
      <string>AddRow</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="NewRecipeName">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>301</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Name of new recipe</string>
     </property>
    </widget>
   </widget>
