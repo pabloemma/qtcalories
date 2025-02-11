@@ -94,7 +94,8 @@ class ContrlDB(QMainWindow):
 \end{verbatim}
 
 where the database parameters are passed.
-
+\subsection{some poogrammatic issues}
+The connection to the tableviewmodel goes through {\bf self.RecipeModel.recipes = []}. Defining this creates the data in the model. 
 \subsection{ConnectDataBase}
 This establishes the connection to the psql database, using a text file for the password. 
 If the connection fails , the program exits
@@ -205,9 +206,23 @@ I create now vs 0.3 where the interface is a tableview. Tableview is working, ne
 \item Populate the textfield in the form like cal\/gram etc
 \item Create the calorie calculator
 \item Make sure entries in table get checked for upper and lower characters
+\item Test for existence in ingredients database. Handle the case where it does not exist.
+\item Possibly use US govt nutrition database. https://fdc.nal.usda.gov/
 \item Clean up the code with consistent name scheme.
 
 \end{itemize}
 
+\section{Design of Calculation}
+Before I start, I want to think about the design of the center piece, calculating the calories etc of the recipes. In order to do this, I will need to create a new class. The program as it stands in vs .3 is already unwieldy enough and testing is pretty darn difficult. So this should be a stand alone class.
 
+In the following I will sketch some of the stuff needed.
+\begin{enumerate}
+\item  For every recipe I need to access both databases. To get the recipes, ingredients and amounts as well as 
+the values for each ingredient.
+\item I will use pandas to deal with the math and storing the variables. Manipulating the vairables is more striaght forward.
+\item I will try to keep this class completely free from pyside6, so that I can keep the code as clean as possible. This will require some kind of interface between the two. This will provide the data from ControlDB to the calculate class.
+\item In the controlDB, I still need to create a function, which will deal with a missing ingredient. Shall I automatically open the fill ingredient form? 
+\item Since potentially I would like to use the US nutrition database, I might be able to access a lot more info than just the calories. So I will try to design the clas accordingly
+
+\end{enumerate}
 \end{document}

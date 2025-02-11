@@ -462,6 +462,9 @@ class ContrlDB(QMainWindow):
 
         return
 
+    def calculate_values(self):
+        """This routine calculates derived values like calories/100 g, protein etc."""
+        pass
 
     def add_row(self):
         """ adds row to reipe table"""
