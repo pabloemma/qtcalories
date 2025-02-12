@@ -94,6 +94,17 @@ class ContrlDB(QMainWindow):
 \end{verbatim}
 
 where the database parameters are passed.
+
+\subsection{Important variables}
+\begin{enumerate}
+\item self.panda\_ingredients[][] list of ingredients in a recipe
+\item self.MRD.recipes The table entry of the recipes. This contains the list of weights and ingredients
+\item self.selected\_recipe name of the recipe clicked on 
+
+
+
+\end{enumerate}
+
 \subsection{some poogrammatic issues}
 The connection to the tableviewmodel goes through {\bf self.RecipeModel.recipes = []}. Defining this creates the data in the model. 
 \subsection{ConnectDataBase}

@@ -214,7 +214,7 @@ class ContrlDB(QMainWindow):
         #now we add color to the terminal output
         logger.add(sys.stdout,
                 colorize = True,format="<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>" ,
-                level = "INFO")
+                level = "DEBUG")
 
 
 
@@ -242,12 +242,21 @@ class ContrlDB(QMainWindow):
         self.mybox = QComboBox()
         #Insert at index 0 the whole list
         self.mybox.insertItems(0,self.table_list)
+
+        # Now sort them alphabetically
+        self.sort_mybox()
+
         # create independent window
        
         #self.setCentralWidget(self.mybox)
 
 
         return
+    def sort_mybox(self):
+        items = [self.mybox.itemText(i) for i in range(self.mybox.count())]
+        items.sort()
+        self.mybox.clear()
+        self.mybox.addItems(items)
 
     def ViewTable(self,table,suppress_columns=[],editmode=True,columnwidth=[],Title = None, showTable = True):
         self.table_view = QTableView()
@@ -472,28 +481,70 @@ class ContrlDB(QMainWindow):
         # now we need to get the different quantities for each ingredient
         # at the same time we need to check if the ingredient is in the list available
         #if not we have to deal with this
+        number_column = 4
+        energy,protein,carbohydrate,fat = range(number_column) # for referencing the query values
+
+        logger.debug('recipes ingredient : %s' % self.RecipeModel.recipes)
 
         #example sql statement:
         # SELECT energy,protein,carbohydrate,fat FROM ingredients where name = 'Butter';
-        sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \'' + self.panda_ingredients[0][2] +'\';'
-        energy,protein,carbohydrate,fat = range(4) 
-        query = self.do_sql(sql)
+ 
+ 
+        energy_v,protein_v,carbohydrate_v,fat_v =([] for i in range(number_column))
+        print(self.RecipeModel.recipes)
+ 
+        # loop over all ingredients
+        Total_calories_per_gm = 0. # cacluated calories/g
+        Total_protein_per_gm = 0.
+        Total_fat_per_gm = 0.
+        Total_carbs_per_gram = 0.
+        temp_weight = 0.
+        Total_weight = 0.
+        for k in range(len(self.panda_ingredients)):
+            sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \'' + self.panda_ingredients[k][2] +'\';'
+            logger.debug('the query string %s ' % sql)
+ 
+            query = self.do_sql(sql)
         
-        logger.DEBUG("value of query.first %s " % (query.first())
-        while query.next():
+            logger.debug('value of query.first %s ' % query.first())
+            while query.next():
 
-            temp_value = ((query.value(0)))
+                temp_value = ((query.value(0)))
 
         #model = QSqlQueryModel()
  
-        query.first()
+            if( not query.first()):
+                logger.info('this ingredient %s is missing '%self.panda_ingredients[k][2])
 
-        for k in range(4):
-            print(query.value(k))
-     
+            else:
+                #fill variables
+                energy_v.append(float(query.value(energy)))
+                protein_v.append(float(query.value(protein)))
+                carbohydrate_v.append(float(query.value(carbohydrate)))
+                fat_v.append(float(query.value(fat)))
+                temp_weight = float(self.RecipeModel.recipes[k][0])/100.  # all is normalized to per 100 g
 
+                Total_calories_per_gm   = Total_calories_per_gm+temp_weight*energy_v[k]
+                Total_protein_per_gm    = Total_protein_per_gm + temp_weight*protein_v[k]
+                Total_fat_per_gm        = Total_fat_per_gm + temp_weight*fat_v[k]
+                Total_carbs_per_gram    = Total_carbs_per_gram +  temp_weight*carbohydrate_v[k]
 
+                Total_weight = Total_weight+temp_weight*100.
 
+                print(self.RecipeModel.recipes[k][0],'     ', Total_calories_per_gm)
+                logger.debug('ingredient : %s' % self.panda_ingredients[k][2])
+                logger.debug('energy : %f' % energy_v[k])
+                logger.debug('protein : %f' % protein_v[k])
+                logger.debug('carbohydrate : %f' % carbohydrate_v[k])
+                logger.debug('fat : %f' % fat_v[k])
+        temp_cal    = Total_calories_per_gm/Total_weight
+        temp_fat    = Total_fat_per_gm/Total_weight
+        temp_prot   = Total_protein_per_gm/Total_weight
+        temp_carb   = Total_carbs_per_gram/Total_weight
+        logger.debug('total calories per gram : %f' % temp_cal)
+        logger.debug('total carbs per gram : %f' % temp_carb)
+        logger.debug('total protein per gram : %f' % temp_prot)
+        logger.debug('total fat per gram : %f' % temp_fat)
         return
 
     def add_row(self):
@@ -521,11 +572,11 @@ class ContrlDB(QMainWindow):
         logger.info("ingredients %s "% record)
         #create original string
         record = self.pack_record(record)
+       # Now update the record
+        self.update_record('recipes','ingredients',record,self.selected_recipe)
         #here we call create_pandas_frame tframe for CalculateCalories start producing the 
         self.create_pandas_frame(name=self.selected_recipe)
-        # Now update the record
-        self.update_record('recipes','ingredients',record,self.selected_recipe)
-
+ 
         #remove window
         self.MRD.close()
  
@@ -720,8 +771,13 @@ class ContrlDB(QMainWindow):
         recipe_list = []
         while query.next():
             recipe_list.append(str(query.value(0)))
+ 
 
-        return (recipe_list)
+        # now sort them alphabetically
+        items = [recipe_list[i] for i in range(len(recipe_list))]
+        items.sort(key=str.lower) #this way no diff between upper and lower case
+ 
+        return (items)
 
 
 

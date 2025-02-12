@@ -1,3 +1,27 @@
-2025-01-31T08:50:51.991838-0700 - __main__-   ConnectDataBase -188- ERROR    - connection failed, exciting
-2025-01-31T12:42:36.059476-0700 - __main__-   ConnectDataBase -188- ERROR    - connection failed, exciting
-2025-01-31T13:00:19.998202-0700 - __main__-   ConnectDataBase -189- ERROR    - connection failed, exciting
+2025-02-12T14:17:32.731270-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T14:17:32.733349-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T14:17:32.733466-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T14:17:32.786157-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T14:17:32.786462-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T14:17:42.677450-0700 - __main__-   getSelectedRecipe -611- INFO    - You have selected barley_soup recipe
+2025-02-12T14:17:44.718350-0700 - __main__-   save_recipe -555- INFO    - ingredients [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['538', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] 
+2025-02-12T14:17:44.723650-0700 - __main__-   do_sql -630- INFO    - query in do_sql UPDATE recipes SET ingredients = '0 g onion 0 g pork_stew 0 g bacon 538 g sausage_281 273 g carrot 282 g leek 0 g celery 300 g lima_bean 250 g barley_dry 584 g potato 1500 g bouillon' WHERE name = 'barley_soup';
+2025-02-12T14:17:44.724405-0700 - __main__-   create_pandas_frame -479- INFO    -  name barley_soup and record [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['538', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] for recipes
+2025-02-12T14:17:44.725968-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T14:17:44.727393-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'pork_stew';
+2025-02-12T14:17:44.728202-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T14:17:44.729055-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sausage_281';
+2025-02-12T14:17:44.730336-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'carrot';
+2025-02-12T14:17:44.732270-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'leek';
+2025-02-12T14:17:44.733791-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'celery';
+2025-02-12T14:17:44.735142-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'lima_bean';
+2025-02-12T14:17:44.736753-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T14:17:44.738407-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-12T14:17:44.739831-0700 - __main__-   do_sql -630- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
