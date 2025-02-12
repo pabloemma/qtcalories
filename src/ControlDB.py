@@ -446,6 +446,9 @@ class ContrlDB(QMainWindow):
 
         #cancel button
         self.MRD.CancelButton.clicked.connect(lambda : self.Cancel(self.MRD))
+        
+        #close button 
+        self.MRD.CloseButton.clicked.connect(lambda : self.Cancel(self.MRD))
 
         #add row button
         self.MRD.AddRowButton.clicked.connect(self.add_row)
@@ -456,6 +459,9 @@ class ContrlDB(QMainWindow):
         #if line has change
         self.MRD.NewRecipeName.returnPressed.connect(self.create_new_recipe)   
         #self.MRD.NewRecipeName.textChanged.connect(self.create_new_recipe)   
+
+        # here we fill first label
+        self.MRD.version_line.setText(self.version)
 
     def create_new_recipe(self):
         """creates new recipe"""
@@ -545,6 +551,22 @@ class ContrlDB(QMainWindow):
         logger.debug('total carbs per gram : %f' % temp_carb)
         logger.debug('total protein per gram : %f' % temp_prot)
         logger.debug('total fat per gram : %f' % temp_fat)
+
+        # convert to string
+        string_cal = f"{temp_cal:.2f}"
+        string_fat = f"{temp_fat:.2f}"
+        string_prot = f"{temp_prot:.2f}"
+        string_carb = f"{temp_carb:.2f}"
+
+
+        #Update the values on the form
+        self.MRD.cal_line.setText(string_cal)
+        self.MRD.fat_line.setText(string_fat)
+        self.MRD.prot_line.setText(string_prot)
+        self.MRD.carb_line.setText(string_carb)
+
+        # put values onto form
+
         return
 
     def add_row(self):
@@ -578,7 +600,7 @@ class ContrlDB(QMainWindow):
         self.create_pandas_frame(name=self.selected_recipe)
  
         #remove window
-        self.MRD.close()
+        #self.MRD.close()
  
 
         return

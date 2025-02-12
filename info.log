@@ -598,3 +598,171 @@
 2025-02-12T14:46:27.801629-0700 - __main__-   do_sql -647- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
 2025-02-12T14:46:27.802342-0700 - __main__-   do_sql -647- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
 2025-02-12T14:46:27.803132-0700 - __main__-   do_sql -647- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
+2025-02-12T15:18:53.821116-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:18:53.821626-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:18:53.821710-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:18:53.901265-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:18:53.901542-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:36:29.661839-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:36:29.662455-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:36:29.662543-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:36:29.744736-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:36:29.745026-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:37:51.303946-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:37:51.304465-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:37:51.304552-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:37:51.382512-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:37:51.382805-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:41:42.872079-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:41:42.872411-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:41:42.872503-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:41:42.930835-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:41:42.931123-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:41:52.217174-0700 - __main__-   getSelectedRecipe -640- INFO    - You have selected barley_soup recipe
+2025-02-12T15:41:54.815829-0700 - __main__-   save_recipe -584- INFO    - ingredients [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] 
+2025-02-12T15:41:54.823070-0700 - __main__-   do_sql -659- INFO    - query in do_sql UPDATE recipes SET ingredients = '0 g onion 0 g pork_stew 0 g bacon 548 g sausage_281 273 g carrot 282 g leek 0 g celery 300 g lima_bean 250 g barley_dry 584 g potato 1500 g bouillon' WHERE name = 'barley_soup';
+2025-02-12T15:41:54.824087-0700 - __main__-   create_pandas_frame -482- INFO    -  name barley_soup and record [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] for recipes
+2025-02-12T15:41:54.826414-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T15:41:54.828181-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'pork_stew';
+2025-02-12T15:41:54.828978-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T15:41:54.830095-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sausage_281';
+2025-02-12T15:41:54.831108-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'carrot';
+2025-02-12T15:41:54.832850-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'leek';
+2025-02-12T15:41:54.833802-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'celery';
+2025-02-12T15:41:54.834643-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'lima_bean';
+2025-02-12T15:41:54.835814-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T15:41:54.836755-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-12T15:41:54.837876-0700 - __main__-   do_sql -659- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
+2025-02-12T15:45:16.039086-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:45:16.039674-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:45:16.039796-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:45:16.119904-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:45:16.120177-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:45:24.769271-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:45:24.769622-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:45:24.769718-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:45:24.824034-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:45:24.824364-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:45:33.728752-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:45:33.729101-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:45:33.729185-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:45:33.784714-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:45:33.785094-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:45:39.178646-0700 - __main__-   getSelectedRecipe -643- INFO    - You have selected barley_soup recipe
+2025-02-12T15:45:41.613534-0700 - __main__-   save_recipe -587- INFO    - ingredients [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] 
+2025-02-12T15:45:41.617893-0700 - __main__-   do_sql -662- INFO    - query in do_sql UPDATE recipes SET ingredients = '0 g onion 0 g pork_stew 0 g bacon 548 g sausage_281 273 g carrot 282 g leek 0 g celery 300 g lima_bean 250 g barley_dry 584 g potato 1500 g bouillon' WHERE name = 'barley_soup';
+2025-02-12T15:45:41.619040-0700 - __main__-   create_pandas_frame -485- INFO    -  name barley_soup and record [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] for recipes
+2025-02-12T15:45:41.620813-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T15:45:41.622340-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'pork_stew';
+2025-02-12T15:45:41.623138-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T15:45:41.624508-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sausage_281';
+2025-02-12T15:45:41.625942-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'carrot';
+2025-02-12T15:45:41.626968-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'leek';
+2025-02-12T15:45:41.628034-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'celery';
+2025-02-12T15:45:41.628791-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'lima_bean';
+2025-02-12T15:45:41.629449-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T15:45:41.630091-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-12T15:45:41.630729-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
+2025-02-12T15:46:24.931467-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:46:24.932284-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:46:24.932451-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:46:25.010157-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:46:25.010550-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:46:32.012702-0700 - __main__-   getSelectedRecipe -643- INFO    - You have selected barley_soup recipe
+2025-02-12T15:46:33.532005-0700 - __main__-   save_recipe -587- INFO    - ingredients [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] 
+2025-02-12T15:46:33.536266-0700 - __main__-   do_sql -662- INFO    - query in do_sql UPDATE recipes SET ingredients = '0 g onion 0 g pork_stew 0 g bacon 548 g sausage_281 273 g carrot 282 g leek 0 g celery 300 g lima_bean 250 g barley_dry 584 g potato 1500 g bouillon' WHERE name = 'barley_soup';
+2025-02-12T15:46:33.537458-0700 - __main__-   create_pandas_frame -485- INFO    -  name barley_soup and record [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] for recipes
+2025-02-12T15:46:33.538772-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T15:46:33.540594-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'pork_stew';
+2025-02-12T15:46:33.541901-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T15:46:33.543044-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sausage_281';
+2025-02-12T15:46:33.544136-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'carrot';
+2025-02-12T15:46:33.545402-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'leek';
+2025-02-12T15:46:33.546431-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'celery';
+2025-02-12T15:46:33.547635-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'lima_bean';
+2025-02-12T15:46:33.548955-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T15:46:33.550045-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-12T15:46:33.551307-0700 - __main__-   do_sql -662- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
+2025-02-12T15:53:17.442686-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T15:53:17.443361-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-12T15:53:17.443460-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T15:53:17.527635-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T15:53:17.527919-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T15:53:24.007498-0700 - __main__-   getSelectedRecipe -650- INFO    - You have selected barley_soup recipe
+2025-02-12T15:53:26.519104-0700 - __main__-   save_recipe -594- INFO    - ingredients [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] 
+2025-02-12T15:53:26.526558-0700 - __main__-   do_sql -669- INFO    - query in do_sql UPDATE recipes SET ingredients = '0 g onion 0 g pork_stew 0 g bacon 548 g sausage_281 273 g carrot 282 g leek 0 g celery 300 g lima_bean 250 g barley_dry 584 g potato 1500 g bouillon' WHERE name = 'barley_soup';
+2025-02-12T15:53:26.529705-0700 - __main__-   create_pandas_frame -485- INFO    -  name barley_soup and record [['0', 'g', 'onion'], ['0', 'g', 'pork_stew'], ['0', 'g', 'bacon'], ['548', 'g', 'sausage_281'], ['273', 'g', 'carrot'], ['282', 'g', 'leek'], ['0', 'g', 'celery'], ['300', 'g', 'lima_bean'], ['250', 'g', 'barley_dry'], ['584', 'g', 'potato'], ['1500', 'g', 'bouillon']] for recipes
+2025-02-12T15:53:26.531679-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T15:53:26.533134-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'pork_stew';
+2025-02-12T15:53:26.534217-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T15:53:26.535094-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sausage_281';
+2025-02-12T15:53:26.535891-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'carrot';
+2025-02-12T15:53:26.536648-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'leek';
+2025-02-12T15:53:26.537386-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'celery';
+2025-02-12T15:53:26.538616-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'lima_bean';
+2025-02-12T15:53:26.539335-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T15:53:26.539997-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-12T15:53:26.540677-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
