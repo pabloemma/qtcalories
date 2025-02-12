@@ -708,3 +708,165 @@
 2025-02-11T16:10:39.227791-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
 2025-02-11T16:10:48.766632-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected asian_chicken_soup recipe
 2025-02-11T16:11:25.029377-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected asian_chicken_soup; recipe
+2025-02-11T16:58:12.091491-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T16:58:12.092350-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T16:58:12.092490-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T16:58:12.196480-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T16:58:12.196833-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T16:58:19.609091-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected aenisbroetli recipe
+2025-02-11T16:58:26.393872-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected Birchermuesli recipe
+2025-02-11T16:58:39.550947-0700 - __main__-   save_recipe -527- INFO    - ingredients [['402', 'g', 'yogurt_nancy'], ['0', 'g', 'apricot'], ['280', 'g', 'Muesli'], ['548', 'g', 'Banana'], ['600', 'g', 'Apple'], ['0', 'g', 'Pear'], ['351', 'g', 'mango'], ['170', 'g', 'Raspberry'], ['320', 'g', 'Blueberry'], ['0', 'g', 'blackberry'], ['0', 'g', 'walnut'], ['0', 'g', 'mango'], ['0', 'g', 'strawberry'], ['0', 'g', 'almonds'], ['0', 'g', 'yogurt_coop'], ['0', 'g', 'peache']] 
+2025-02-11T16:58:39.551618-0700 - __main__-   create_pandas_frame -470- INFO    -  name Birchermuesli and record [['402', 'g', 'yogurt_nancy'], ['0', 'g', 'apricot'], ['280', 'g', 'Muesli'], ['548', 'g', 'Banana'], ['600', 'g', 'Apple'], ['0', 'g', 'Pear'], ['351', 'g', 'mango'], ['170', 'g', 'Raspberry'], ['320', 'g', 'Blueberry'], ['0', 'g', 'blackberry'], ['0', 'g', 'walnut'], ['0', 'g', 'mango'], ['0', 'g', 'strawberry'], ['0', 'g', 'almonds'], ['0', 'g', 'yogurt_coop'], ['0', 'g', 'peache']] for recipes
+2025-02-11T17:01:22.227199-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:01:22.227945-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:01:22.228115-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:01:22.310114-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:01:22.310420-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:01:29.900265-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected Birchermuesli recipe
+2025-02-11T17:01:40.451129-0700 - __main__-   save_recipe -527- INFO    - ingredients [['402', 'g', 'yogurt_nancy'], ['0', 'g', 'apricot'], ['280', 'g', 'Muesli'], ['548', 'g', 'Banana'], ['600', 'g', 'Apple'], ['0', 'g', 'Pear'], ['351', 'g', 'mango'], ['170', 'g', 'Raspberry'], ['320', 'g', 'Blueberry'], ['0', 'g', 'blackberry'], ['0', 'g', 'walnut'], ['0', 'g', 'mango'], ['0', 'g', 'strawberry'], ['0', 'g', 'almonds'], ['0', 'g', 'yogurt_coop'], ['0', 'g', 'peache']] 
+2025-02-11T17:01:40.451885-0700 - __main__-   create_pandas_frame -470- INFO    -  name Birchermuesli and record [['402', 'g', 'yogurt_nancy'], ['0', 'g', 'apricot'], ['280', 'g', 'Muesli'], ['548', 'g', 'Banana'], ['600', 'g', 'Apple'], ['0', 'g', 'Pear'], ['351', 'g', 'mango'], ['170', 'g', 'Raspberry'], ['320', 'g', 'Blueberry'], ['0', 'g', 'blackberry'], ['0', 'g', 'walnut'], ['0', 'g', 'mango'], ['0', 'g', 'strawberry'], ['0', 'g', 'almonds'], ['0', 'g', 'yogurt_coop'], ['0', 'g', 'peache']] for recipes
+2025-02-11T17:01:40.459977-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '402 g yogurt_nancy 0 g apricot 280 g Muesli 548 g Banana 600 g Apple 0 g Pear 351 g mango 170 g Raspberry 320 g Blueberry 0 g blackberry 0 g walnut 0 g mango 0 g strawberry 0 g almonds 0 g yogurt_coop 0 g peache' WHERE name = 'Birchermuesli';
+2025-02-11T17:05:13.299485-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:05:13.299975-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:05:13.300063-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:05:14.616474-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:05:14.616767-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:05:23.809704-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected avocado_mousse recipe
+2025-02-11T17:05:30.239168-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected brunsli recipe
+2025-02-11T17:05:40.190316-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected cervelat_mix recipe
+2025-02-11T17:06:44.614796-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected almond_pear_tart recipe
+2025-02-11T17:06:52.481346-0700 - __main__-   save_recipe -527- INFO    - ingredients [['210', 'g', 'flour_unbleached'], ['237', 'g', 'sugar'], ['150', 'g', 'butter'], ['272', 'g', 'water'], ['635', 'g', 'pear'], ['110', 'g', 'egg'], ['100', 'g', 'almond']] 
+2025-02-11T17:06:52.481884-0700 - __main__-   create_pandas_frame -470- INFO    -  name almond_pear_tart and record [['210', 'g', 'flour_unbleached'], ['237', 'g', 'sugar'], ['150', 'g', 'butter'], ['272', 'g', 'water'], ['635', 'g', 'pear'], ['110', 'g', 'egg'], ['100', 'g', 'almond']] for recipes
+2025-02-11T17:06:52.486536-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '210 g flour_unbleached 237 g sugar 150 g butter 272 g water 635 g pear 110 g egg 100 g almond' WHERE name = 'almond_pear_tart';
+2025-02-11T17:09:15.915718-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:09:15.916502-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:09:15.916688-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:09:15.993337-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:09:15.993637-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:09:19.947649-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected BB_quiche recipe
+2025-02-11T17:09:25.979437-0700 - __main__-   save_recipe -527- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-11T17:09:25.980135-0700 - __main__-   create_pandas_frame -470- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-11T17:09:25.989767-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '113 g cream_cheese 115 g butter 67 g flour_unbleached 109 g bacon 165 g eggs 69 g onion 265 g gruyere 190 g cream' WHERE name = 'BB_quiche';
+2025-02-11T17:10:02.211767-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:10:02.212502-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:10:02.212670-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:10:03.514842-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:10:03.515185-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:10:07.966996-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected aenisbroetli recipe
+2025-02-11T17:10:13.293302-0700 - __main__-   save_recipe -527- INFO    - ingredients [['500', 'g', 'sugar'], ['265', 'g', 'egg'], ['500', 'g', 'flour_unbleached']] 
+2025-02-11T17:10:13.294158-0700 - __main__-   create_pandas_frame -470- INFO    -  name aenisbroetli and record [['500', 'g', 'sugar'], ['265', 'g', 'egg'], ['500', 'g', 'flour_unbleached']] for recipes
+2025-02-11T17:10:41.629108-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '500 g sugar 265 g egg 500 g flour_unbleached' WHERE name = 'aenisbroetli';
+2025-02-11T17:12:04.618778-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:12:04.619196-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:12:04.619312-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:12:04.688819-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:12:04.689167-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:12:11.613515-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected bean_cakes recipe
+2025-02-11T17:12:19.643086-0700 - __main__-   save_recipe -527- INFO    - ingredients [['208', 'g', 'white_beans_dry'], ['110', 'g', 'eggs'], ['80', 'g', 'parmesan'], ['28', 'g', 'bread_crumbs']] 
+2025-02-11T17:12:19.643468-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_cakes and record [['208', 'g', 'white_beans_dry'], ['110', 'g', 'eggs'], ['80', 'g', 'parmesan'], ['28', 'g', 'bread_crumbs']] for recipes
+2025-02-11T17:12:19.647967-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '208 g white_beans_dry 110 g eggs 80 g parmesan 28 g bread_crumbs' WHERE name = 'bean_cakes';
+2025-02-11T17:12:31.046022-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:12:31.046474-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:12:31.046594-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:12:31.124044-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:12:31.124342-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:12:40.307895-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected bean_cakes recipe
+2025-02-11T17:12:57.497025-0700 - __main__-   save_recipe -527- INFO    - ingredients [['208', 'g', 'white_bean_dry'], ['110', 'g', 'eggs'], ['80', 'g', 'parmesan'], ['28', 'g', 'bread_crumbs']] 
+2025-02-11T17:12:57.499199-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_cakes and record [['208', 'g', 'white_bean_dry'], ['110', 'g', 'eggs'], ['80', 'g', 'parmesan'], ['28', 'g', 'bread_crumbs']] for recipes
+2025-02-11T17:12:57.508337-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '208 g white_bean_dry 110 g eggs 80 g parmesan 28 g bread_crumbs' WHERE name = 'bean_cakes';
+2025-02-11T17:13:08.445990-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:13:08.446437-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:13:08.446543-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:13:08.520328-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:13:08.520622-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:13:17.791267-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected bean_soup recipe
+2025-02-11T17:14:03.976046-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected bean_cakes recipe
+2025-02-11T17:14:48.740412-0700 - __main__-   save_recipe -527- INFO    - ingredients [['209', 'g', 'white_bean_dry'], ['110', 'g', 'egg'], ['80', 'g', 'parmesan'], ['28', 'g', 'bread_crumbs']] 
+2025-02-11T17:14:48.741812-0700 - __main__-   create_pandas_frame -470- INFO    -  name bean_cakes and record [['209', 'g', 'white_bean_dry'], ['110', 'g', 'egg'], ['80', 'g', 'parmesan'], ['28', 'g', 'bread_crumbs']] for recipes
+2025-02-11T17:14:48.748042-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '209 g white_bean_dry 110 g egg 80 g parmesan 28 g bread_crumbs' WHERE name = 'bean_cakes';
+2025-02-11T17:14:55.882956-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:14:55.883339-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:14:55.883421-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:14:55.942988-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:14:55.943278-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:15:09.434830-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected bean_cakes recipe
+2025-02-11T17:21:10.461703-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-11T17:21:10.462222-0700 - __main__-   __init__ -178- INFO    -  This is version 0.4
+2025-02-11T17:21:10.462312-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-11T17:21:11.773991-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-11T17:21:11.774438-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-11T17:21:16.035325-0700 - __main__-   getSelectedRecipe -583- INFO    - You have selected almond_pear_tart recipe
+2025-02-11T17:21:19.339473-0700 - __main__-   save_recipe -527- INFO    - ingredients [['210', 'g', 'flour_unbleached'], ['237', 'g', 'sugar'], ['150', 'g', 'butter'], ['272', 'g', 'water'], ['635', 'g', 'pear'], ['110', 'g', 'egg'], ['100', 'g', 'almond']] 
+2025-02-11T17:21:19.339827-0700 - __main__-   create_pandas_frame -470- INFO    -  name almond_pear_tart and record [['210', 'g', 'flour_unbleached'], ['237', 'g', 'sugar'], ['150', 'g', 'butter'], ['272', 'g', 'water'], ['635', 'g', 'pear'], ['110', 'g', 'egg'], ['100', 'g', 'almond']] for recipes
+2025-02-11T17:21:19.341357-0700 - __main__-   do_sql -602- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'flour_unbleached';
+2025-02-11T17:21:19.345094-0700 - __main__-   do_sql -602- INFO    - query in do_sql UPDATE recipes SET ingredients = '210 g flour_unbleached 237 g sugar 150 g butter 272 g water 635 g pear 110 g egg 100 g almond' WHERE name = 'almond_pear_tart';

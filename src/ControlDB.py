@@ -476,14 +476,10 @@ class ContrlDB(QMainWindow):
         #example sql statement:
         # SELECT energy,protein,carbohydrate,fat FROM ingredients where name = 'Butter';
         sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \'' + self.panda_ingredients[0][2] +'\';'
-        print(sql)
         energy,protein,carbohydrate,fat = range(4) 
-        query = QSqlQuery(sql,db=self.mycal_db)
-        model = QSqlQueryModel()
-
-        model.setQuery(query)
-        print(query.first())
-        print(query.value(0))
+        query = self.do_sql(sql)
+        
+        logger.DEBUG("value of query.first %s " % (query.first())
         while query.next():
 
             temp_value = ((query.value(0)))
@@ -494,9 +490,7 @@ class ContrlDB(QMainWindow):
 
         for k in range(4):
             print(query.value(k))
-        #for k in range(len(myquery.next())):
-        #    print(myquery.value(k))
-    
+     
 
 
 
@@ -598,6 +592,14 @@ class ContrlDB(QMainWindow):
     def do_sql(self,sql):
         """executes a sql statement"""
         query = QSqlQuery(sql,db=self.mycal_db)
+        model = QSqlQueryModel()
+        logger.info("query in do_sql %s" % sql)
+        model.setQuery(query)
+        if query.lastError().isValid():
+            logger.ERROR(f"Query error: {query.lastError().text()}")
+ 
+        
+
         return query
 
 
