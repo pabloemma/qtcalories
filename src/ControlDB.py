@@ -8,6 +8,8 @@ from loguru import logger
 import config_mycal
 from Recipe1 import Ui_MainWindow
 
+from missing_ingredient import Ui_MissingIngredient
+
 import pandas as PD # to pack the recipe information into a pandas dataframe
 
 
@@ -129,6 +131,12 @@ class MyRecipeWindow(QMainWindow,Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+class MyMissIngWindow(QMainWindow,Ui_MissingIngredient):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+
 
 
 class ContrlDB(QMainWindow):
@@ -414,6 +422,18 @@ class ContrlDB(QMainWindow):
  
 
         return
+    def MyMissingIngredients(self):
+        """ form if ingredient is missing"""
+        self.MMI = MyMissIngWindow()
+        self.MMI.show()
+        self.MMI.IngredLine.setText(self.missing_ingredient)
+        self.MMI.EditIngButton.clicked.connect(self.show_ingred_form())
+        self.MMI.CloseButton.clicked.connect(self.Cancel(self.MMI))
+
+    def show_ingred_form(self):
+        window.CreateIngredientsForm1()
+
+
 
     def MyRecipes_new(self):
         """using the QTdesigner"""
@@ -426,6 +446,7 @@ class ContrlDB(QMainWindow):
         self.RecipeModel = RecipeModel()
         self.MRD.RecipeTableView.setModel(self.RecipeModel)
 
+        # now working self.RecipeModel.setEditStrategy(QSqlTableModel.setEditStrategy.OnFieldChange)
 
         #label the columns
         header = self.MRD.RecipeTableView.horizontalHeader()
@@ -506,6 +527,15 @@ class ContrlDB(QMainWindow):
         Total_carbs_per_gram = 0.
         temp_weight = 0.
         Total_weight = 0.
+        print(self.panda_ingredients)
+        #remove empty rows
+        temp_buf=[]
+        for k in range(len(self.panda_ingredients)):
+            if self.panda_ingredients[k][2] != ' ':
+                temp_buf.append(self.panda_ingredients[k])
+        
+        self.panda_ingredients= temp_buf
+
         for k in range(len(self.panda_ingredients)):
             sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \'' + self.panda_ingredients[k][2] +'\';'
             logger.debug('the query string %s ' % sql)
@@ -521,7 +551,8 @@ class ContrlDB(QMainWindow):
  
             if( not query.first()):
                 logger.info('this ingredient %s is missing '%self.panda_ingredients[k][2])
-
+                self.missing_ingredient = self.panda_ingredients[k][2]
+                self.MyMissingIngredients()
             else:
                 #fill variables
                 energy_v.append(float(query.value(energy)))
@@ -567,6 +598,9 @@ class ContrlDB(QMainWindow):
 
         # put values onto form
 
+
+       
+        self.new_recipe_record=(self.new_recipe_name,string_cal,string_prot,string_carb,string_fat,self.pack_record(self.panda_ingredients))
         return
 
     def add_row(self):
@@ -595,16 +629,69 @@ class ContrlDB(QMainWindow):
         #create original string
         record = self.pack_record(record)
        # Now update the record
-        self.update_record('recipes','ingredients',record,self.selected_recipe)
+
+        #check if this is a new recipe or an updated one
+        if self.new_recipe_name != None:
+            rec_name=self.new_recipe_name
+            self.create_pandas_frame(name=rec_name)
+ 
+            self.insert_record()
+        else: 
+            rec_name = self.selected_recipe
+            self.create_pandas_frame(name=rec_name)
+
+            self.update_record('recipes','ingredients',record,rec_name)
+
+        self.new_recipe_name = None  # reset recipe name
         #here we call create_pandas_frame tframe for CalculateCalories start producing the 
-        self.create_pandas_frame(name=self.selected_recipe)
  
         #remove window
         #self.MRD.close()
  
 
         return
-    
+    def insert_record(self):
+        """inserts new recipe into table
+        columname is a list of all the columns
+        record is a corresponding list"""
+        # create sql statement
+
+        record =self.new_recipe_record
+
+        # since ID is a non-zero number we need to find the highest number and then add one for the next reipce
+        sql ='SELECT id from recipes ;'
+        ID_number=[]
+        myquery = self.do_sql(sql)
+        while myquery.next():
+
+            ID_number.append(int(myquery.value(0)))
+        #find the highest numer in the list
+        imax = max(ID_number)
+        new_recipe_id = str(imax+1)
+
+
+        b= new_recipe_id+',\''+record[0]+'\','+record[1]+','+record[2]+','+record[3]+','+record[4]+',\''+record[5]+'\''
+
+
+        sql = 'INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES ('+b+');'
+        logger.debug("insert recipe %s" % sql)
+        #finally exceute the sql
+        self.do_sql(sql)
+        return
+        
+       
+
+
+        #self.new_recipe_record=(self.new_recipe_name,string_cal,string_prot,string_carb,string_fat,self.pack_record(self.panda_ingredients))
+
+        # the sql statements should be
+        # sql = INSERT INTO table1(name,energy,protein,carbohydrate,fat,ingredients) VALUES (row_name,record[0],record[1],record[2]record[3],record[4]);
+        logger.debug(" insert statement %s % sql")
+        self.do_sql(sql)
+
+        return
+
+
     def update_record(self,table,column_name,record,row_name):
         """ updates record for name in table
         example SQL statement 
@@ -669,7 +756,7 @@ class ContrlDB(QMainWindow):
         logger.info("query in do_sql %s" % sql)
         model.setQuery(query)
         if query.lastError().isValid():
-            logger.ERROR(f"Query error: {query.lastError().text()}")
+            logger.error(f"Query error: {query.lastError().text()}")
  
         
 
@@ -756,6 +843,8 @@ class ContrlDB(QMainWindow):
         
 
         for k in range(len(self.recipe_ingredients)):
+            print(self.recipe_ingredients[k])
+            
             self.RecipeModel.recipes.append(self.recipe_ingredients[k])
         return
 

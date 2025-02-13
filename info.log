@@ -766,3 +766,777 @@
 2025-02-12T15:53:26.539335-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
 2025-02-12T15:53:26.539997-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
 2025-02-12T15:53:26.540677-0700 - __main__-   do_sql -669- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
+2025-02-12T16:03:20.076416-0700 - __main__-   __init__ -176- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T16:03:20.076993-0700 - __main__-   __init__ -178- INFO    -  This is version 0.5
+2025-02-12T16:03:20.077108-0700 - __main__-   __init__ -179- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T16:03:20.155714-0700 - __main__-   ConnectDataBase -200- INFO    - connection succsessful
+2025-02-12T16:03:20.155994-0700 - __main__-   ConnectDataBase -204- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T16:03:24.356707-0700 - __main__-   getSelectedRecipe -651- INFO    - You have selected apple_jalousie recipe
+2025-02-12T16:03:27.982684-0700 - __main__-   save_recipe -595- INFO    - ingredients [['65', 'g', 'puff_pastry'], ['44', 'g', 'apple']] 
+2025-02-12T16:03:27.984525-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '65 g puff_pastry 44 g apple' WHERE name = 'apple_jalousie';
+2025-02-12T16:03:27.985321-0700 - __main__-   create_pandas_frame -485- INFO    -  name apple_jalousie and record [['65', 'g', 'puff_pastry'], ['44', 'g', 'apple']] for recipes
+2025-02-12T16:03:27.986378-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'puff_pastry';
+2025-02-12T16:03:27.987436-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'apple';
+2025-02-12T16:03:38.805397-0700 - __main__-   getSelectedRecipe -651- INFO    - You have selected beet-barlye recipe
+2025-02-12T16:03:48.401309-0700 - __main__-   save_recipe -595- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'g_onions'], ['46', 'g', 'parmesan']] 
+2025-02-12T16:03:48.405155-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '377 g beets 104 g barley_dry 130 g g_onions 46 g parmesan' WHERE name = 'beet-barlye';
+2025-02-12T16:03:48.405421-0700 - __main__-   create_pandas_frame -485- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'g_onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-12T16:03:48.406555-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'beets';
+2025-02-12T16:03:48.406753-0700 - __main__-   create_pandas_frame -523- INFO    - this ingredient beets is missing 
+2025-02-12T16:03:48.451300-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T16:04:07.723202-0700 - __main__-   save_recipe -595- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onions'], ['46', 'g', 'parmesan']] 
+2025-02-12T16:04:07.726369-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '377 g beets 104 g barley_dry 130 g onions 46 g parmesan' WHERE name = 'beet-barlye';
+2025-02-12T16:04:07.726628-0700 - __main__-   create_pandas_frame -485- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onions'], ['46', 'g', 'parmesan']] for recipes
+2025-02-12T16:04:07.727443-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'beets';
+2025-02-12T16:04:07.727642-0700 - __main__-   create_pandas_frame -523- INFO    - this ingredient beets is missing 
+2025-02-12T16:04:07.769009-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T16:04:17.610839-0700 - __main__-   save_recipe -595- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onion'], ['46', 'g', 'parmesan']] 
+2025-02-12T16:04:17.614611-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '377 g beets 104 g barley_dry 130 g onion 46 g parmesan' WHERE name = 'beet-barlye';
+2025-02-12T16:04:17.615154-0700 - __main__-   create_pandas_frame -485- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onion'], ['46', 'g', 'parmesan']] for recipes
+2025-02-12T16:04:17.615925-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'beets';
+2025-02-12T16:04:17.616199-0700 - __main__-   create_pandas_frame -523- INFO    - this ingredient beets is missing 
+2025-02-12T16:04:17.673109-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T16:04:21.956208-0700 - __main__-   save_recipe -595- INFO    - ingredients [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onion'], ['46', 'g', 'parmesan']] 
+2025-02-12T16:04:21.962957-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '377 g beets 104 g barley_dry 130 g onion 46 g parmesan' WHERE name = 'beet-barlye';
+2025-02-12T16:04:21.963220-0700 - __main__-   create_pandas_frame -485- INFO    -  name beet-barlye and record [['377', 'g', 'beets'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onion'], ['46', 'g', 'parmesan']] for recipes
+2025-02-12T16:04:21.964110-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'beets';
+2025-02-12T16:04:21.965347-0700 - __main__-   create_pandas_frame -523- INFO    - this ingredient beets is missing 
+2025-02-12T16:04:22.009933-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T16:04:43.264400-0700 - __main__-   save_recipe -595- INFO    - ingredients [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onion'], ['46', 'g', 'parmesan']] 
+2025-02-12T16:04:43.268217-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '377 g beet 104 g barley_dry 130 g onion 46 g parmesan' WHERE name = 'beet-barlye';
+2025-02-12T16:04:43.268679-0700 - __main__-   create_pandas_frame -485- INFO    -  name beet-barlye and record [['377', 'g', 'beet'], ['104', 'g', 'barley_dry'], ['130', 'g', 'onion'], ['46', 'g', 'parmesan']] for recipes
+2025-02-12T16:04:43.270193-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'beet';
+2025-02-12T16:04:43.271645-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'barley_dry';
+2025-02-12T16:04:43.273175-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T16:04:43.274040-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'parmesan';
+2025-02-12T16:04:59.582395-0700 - __main__-   getSelectedRecipe -651- INFO    - You have selected Aspargus_Soup recipe
+2025-02-12T16:05:06.493089-0700 - __main__-   save_recipe -595- INFO    - ingredients [['331', 'g', 'Aspargus_green'], ['187', 'g', 'Potato'], ['500', 'g', 'Bouillon'], ['50', 'g', 'Cream']] 
+2025-02-12T16:05:06.496529-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '331 g Aspargus_green 187 g Potato 500 g Bouillon 50 g Cream' WHERE name = 'Aspargus_Soup';
+2025-02-12T16:05:06.496792-0700 - __main__-   create_pandas_frame -485- INFO    -  name Aspargus_Soup and record [['331', 'g', 'Aspargus_green'], ['187', 'g', 'Potato'], ['500', 'g', 'Bouillon'], ['50', 'g', 'Cream']] for recipes
+2025-02-12T16:05:06.497750-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Aspargus_green';
+2025-02-12T16:05:06.498632-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Potato';
+2025-02-12T16:05:06.499827-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Bouillon';
+2025-02-12T16:05:06.500927-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Cream';
+2025-02-12T16:05:13.890045-0700 - __main__-   getSelectedRecipe -651- INFO    - You have selected BB_quiche recipe
+2025-02-12T16:05:15.679116-0700 - __main__-   save_recipe -595- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-12T16:05:15.682353-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '113 g cream_cheese 115 g butter 67 g flour_unbleached 109 g bacon 165 g eggs 69 g onion 265 g gruyere 190 g cream' WHERE name = 'BB_quiche';
+2025-02-12T16:05:15.682610-0700 - __main__-   create_pandas_frame -485- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-12T16:05:15.683432-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'cream_cheese';
+2025-02-12T16:05:15.684260-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'butter';
+2025-02-12T16:05:15.685272-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'flour_unbleached';
+2025-02-12T16:05:15.687159-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:05:15.688802-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'eggs';
+2025-02-12T16:05:15.689081-0700 - __main__-   create_pandas_frame -523- INFO    - this ingredient eggs is missing 
+2025-02-12T16:05:15.745337-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T16:05:33.184903-0700 - __main__-   save_recipe -595- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-12T16:05:33.188833-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '113 g cream_cheese 115 g butter 67 g flour_unbleached 109 g bacon 165 g eggs 69 g onion 265 g gruyere 190 g cream' WHERE name = 'BB_quiche';
+2025-02-12T16:05:33.189091-0700 - __main__-   create_pandas_frame -485- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'eggs'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-12T16:05:33.189864-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'cream_cheese';
+2025-02-12T16:05:33.190760-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'butter';
+2025-02-12T16:05:33.191765-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'flour_unbleached';
+2025-02-12T16:05:33.193306-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:05:33.194418-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'eggs';
+2025-02-12T16:05:33.194633-0700 - __main__-   create_pandas_frame -523- INFO    - this ingredient eggs is missing 
+2025-02-12T16:05:33.232487-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T16:05:42.376782-0700 - __main__-   save_recipe -595- INFO    - ingredients [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'egg'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] 
+2025-02-12T16:05:42.380819-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '113 g cream_cheese 115 g butter 67 g flour_unbleached 109 g bacon 165 g egg 69 g onion 265 g gruyere 190 g cream' WHERE name = 'BB_quiche';
+2025-02-12T16:05:42.381090-0700 - __main__-   create_pandas_frame -485- INFO    -  name BB_quiche and record [['113', 'g', 'cream_cheese'], ['115', 'g', 'butter'], ['67', 'g', 'flour_unbleached'], ['109', 'g', 'bacon'], ['165', 'g', 'egg'], ['69', 'g', 'onion'], ['265', 'g', 'gruyere'], ['190', 'g', 'cream']] for recipes
+2025-02-12T16:05:42.381848-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'cream_cheese';
+2025-02-12T16:05:42.382791-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'butter';
+2025-02-12T16:05:42.383690-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'flour_unbleached';
+2025-02-12T16:05:42.385435-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:05:42.386287-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'egg';
+2025-02-12T16:05:42.387162-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T16:05:42.388749-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'gruyere';
+2025-02-12T16:05:42.389603-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'cream';
+2025-02-12T16:05:54.239291-0700 - __main__-   getSelectedRecipe -651- INFO    - You have selected aprikosenwaehe recipe
+2025-02-12T16:05:59.060979-0700 - __main__-   save_recipe -595- INFO    - ingredients [['177', 'g', 'Flour_unbleached'], ['79', 'g', 'Butter'], ['33', 'g', 'Almond_flour'], ['480', 'g', 'Apricots_frozen'], ['55', 'g', 'Egg'], ['103', 'g', 'Milk'], ['8', 'g', 'Sugar']] 
+2025-02-12T16:05:59.064067-0700 - __main__-   do_sql -670- INFO    - query in do_sql UPDATE recipes SET ingredients = '177 g Flour_unbleached 79 g Butter 33 g Almond_flour 480 g Apricots_frozen 55 g Egg 103 g Milk 8 g Sugar' WHERE name = 'aprikosenwaehe';
+2025-02-12T16:05:59.064342-0700 - __main__-   create_pandas_frame -485- INFO    -  name aprikosenwaehe and record [['177', 'g', 'Flour_unbleached'], ['79', 'g', 'Butter'], ['33', 'g', 'Almond_flour'], ['480', 'g', 'Apricots_frozen'], ['55', 'g', 'Egg'], ['103', 'g', 'Milk'], ['8', 'g', 'Sugar']] for recipes
+2025-02-12T16:05:59.065110-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Flour_unbleached';
+2025-02-12T16:05:59.066601-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Butter';
+2025-02-12T16:05:59.067457-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Almond_flour';
+2025-02-12T16:05:59.068350-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Apricots_frozen';
+2025-02-12T16:05:59.068546-0700 - __main__-   create_pandas_frame -523- INFO    - this ingredient Apricots_frozen is missing 
+2025-02-12T16:05:59.110216-0700 - __main__-   do_sql -670- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'Egg';
+2025-02-12T16:35:41.684046-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T16:35:41.684755-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-12T16:35:41.684848-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T16:35:41.768607-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-12T16:35:41.768958-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T16:35:45.719876-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected avocado_mousse recipe
+2025-02-12T16:35:47.473226-0700 - __main__-   save_recipe -615- INFO    - ingredients [['280', 'g', 'avocado'], ['130', 'g', 'mascarpone']] 
+2025-02-12T16:35:47.476387-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '280 g avocado 130 g mascarpone' WHERE name = 'avocado_mousse';
+2025-02-12T16:35:47.477772-0700 - __main__-   create_pandas_frame -505- INFO    -  name avocado_mousse and record [['280', 'g', 'avocado'], ['130', 'g', 'mascarpone']] for recipes
+2025-02-12T16:35:47.478964-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'avocado';
+2025-02-12T16:35:47.480400-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'mascarpone';
+2025-02-12T16:35:51.044976-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected bean_gratin recipe
+2025-02-12T16:35:52.865989-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'beans_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] 
+2025-02-12T16:35:52.870260-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g beans_dried 100 g bacon 81 g onions 271 g tomato 27 g bread_crumbs 80 g gruyere' WHERE name = 'bean_gratin';
+2025-02-12T16:35:52.870510-0700 - __main__-   create_pandas_frame -505- INFO    -  name bean_gratin and record [['100', 'g', 'beans_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] for recipes
+2025-02-12T16:35:52.871509-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'beans_dried';
+2025-02-12T16:35:52.871694-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient beans_dried is missing 
+2025-02-12T16:35:52.872424-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:36:22.575994-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] 
+2025-02-12T16:36:22.579959-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g bean_dried 100 g bacon 81 g onions 271 g tomato 27 g bread_crumbs 80 g gruyere' WHERE name = 'bean_gratin';
+2025-02-12T16:36:22.580210-0700 - __main__-   create_pandas_frame -505- INFO    -  name bean_gratin and record [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] for recipes
+2025-02-12T16:36:22.581046-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bean_dried';
+2025-02-12T16:36:22.582211-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:36:22.583987-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onions';
+2025-02-12T16:36:22.584345-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient onions is missing 
+2025-02-12T16:36:22.584947-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'tomato';
+2025-02-12T16:36:22.585202-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient tomato is missing 
+2025-02-12T16:36:22.585703-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bread_crumbs';
+2025-02-12T16:36:22.585861-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient bread_crumbs is missing 
+2025-02-12T16:36:22.586305-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'gruyere';
+2025-02-12T16:36:25.130882-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] 
+2025-02-12T16:36:25.135223-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g bean_dried 100 g bacon 81 g onions 271 g tomato 27 g bread_crumbs 80 g gruyere' WHERE name = 'bean_gratin';
+2025-02-12T16:36:25.135498-0700 - __main__-   create_pandas_frame -505- INFO    -  name bean_gratin and record [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] for recipes
+2025-02-12T16:36:25.136482-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bean_dried';
+2025-02-12T16:36:25.137694-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:36:25.138476-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onions';
+2025-02-12T16:36:25.138734-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient onions is missing 
+2025-02-12T16:36:25.139232-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'tomato';
+2025-02-12T16:36:25.139395-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient tomato is missing 
+2025-02-12T16:36:25.139839-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bread_crumbs';
+2025-02-12T16:36:25.140001-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient bread_crumbs is missing 
+2025-02-12T16:36:25.140455-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'gruyere';
+2025-02-12T16:36:25.744608-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] 
+2025-02-12T16:36:25.746714-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g bean_dried 100 g bacon 81 g onions 271 g tomato 27 g bread_crumbs 80 g gruyere' WHERE name = 'bean_gratin';
+2025-02-12T16:36:25.747182-0700 - __main__-   create_pandas_frame -505- INFO    -  name bean_gratin and record [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] for recipes
+2025-02-12T16:36:25.748359-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bean_dried';
+2025-02-12T16:36:25.750258-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:36:25.753111-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onions';
+2025-02-12T16:36:25.753661-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient onions is missing 
+2025-02-12T16:36:25.754836-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'tomato';
+2025-02-12T16:36:25.755509-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient tomato is missing 
+2025-02-12T16:36:25.756266-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bread_crumbs';
+2025-02-12T16:36:25.756633-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient bread_crumbs is missing 
+2025-02-12T16:36:25.757202-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'gruyere';
+2025-02-12T16:36:25.976225-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] 
+2025-02-12T16:36:25.979281-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g bean_dried 100 g bacon 81 g onions 271 g tomato 27 g bread_crumbs 80 g gruyere' WHERE name = 'bean_gratin';
+2025-02-12T16:36:25.979542-0700 - __main__-   create_pandas_frame -505- INFO    -  name bean_gratin and record [['100', 'g', 'bean_dried'], ['100', 'g', 'bacon'], ['81', 'g', 'onions'], ['271', 'g', 'tomato'], ['27', 'g', 'bread_crumbs'], ['80', 'g', 'gruyere']] for recipes
+2025-02-12T16:36:25.980341-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bean_dried';
+2025-02-12T16:36:25.981227-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-12T16:36:25.981993-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onions';
+2025-02-12T16:36:25.982752-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient onions is missing 
+2025-02-12T16:36:25.983590-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'tomato';
+2025-02-12T16:36:25.983896-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient tomato is missing 
+2025-02-12T16:36:25.984376-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bread_crumbs';
+2025-02-12T16:36:25.984557-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient bread_crumbs is missing 
+2025-02-12T16:36:25.985006-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'gruyere';
+2025-02-12T16:37:30.420386-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T16:37:30.420863-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-12T16:37:30.420956-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T16:37:30.500755-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-12T16:37:30.501045-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T16:37:35.879756-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected bean_bacon_gratin recipe
+2025-02-12T16:37:42.756316-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected bean_soup recipe
+2025-02-12T16:37:46.147768-0700 - __main__-   save_recipe -615- INFO    - ingredients [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_bean'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] 
+2025-02-12T16:37:46.152216-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '256 g onion 407 g leek 230 g lima_bean 1300 g bouillon 900 g sausage_320' WHERE name = 'bean_soup';
+2025-02-12T16:37:46.153649-0700 - __main__-   create_pandas_frame -505- INFO    -  name bean_soup and record [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_bean'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] for recipes
+2025-02-12T16:37:46.155275-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T16:37:46.157044-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'leek';
+2025-02-12T16:37:46.158771-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'lima_bean';
+2025-02-12T16:37:46.159655-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
+2025-02-12T16:37:46.160403-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sausage_320';
+2025-02-12T16:37:50.926126-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected bean_bacon_gratin recipe
+2025-02-12T16:37:57.850704-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected bean_soup recipe
+2025-02-12T16:38:01.353609-0700 - __main__-   save_recipe -615- INFO    - ingredients [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_bean'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] 
+2025-02-12T16:38:01.357158-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '256 g onion 407 g leek 230 g lima_bean 1300 g bouillon 900 g sausage_320' WHERE name = 'bean_soup';
+2025-02-12T16:38:01.357437-0700 - __main__-   create_pandas_frame -505- INFO    -  name bean_soup and record [['256', 'g', 'onion'], ['407', 'g', 'leek'], ['230', 'g', 'lima_bean'], ['1300', 'g', 'bouillon'], ['900', 'g', 'sausage_320']] for recipes
+2025-02-12T16:38:01.358154-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-12T16:38:01.359301-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'leek';
+2025-02-12T16:38:01.360073-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'lima_bean';
+2025-02-12T16:38:01.361148-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bouillon';
+2025-02-12T16:38:01.362138-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sausage_320';
+2025-02-12T16:38:04.778785-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected bean_bacon_gratin recipe
+2025-02-12T16:38:08.093312-0700 - __main__-   getSelectedRecipe -671- INFO    - You have selected beet_cheese_gratin recipe
+2025-02-12T16:38:19.897845-0700 - __main__-   save_recipe -615- INFO    - ingredients [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'egg'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] 
+2025-02-12T16:38:19.901204-0700 - __main__-   do_sql -690- INFO    - query in do_sql UPDATE recipes SET ingredients = '415 g beets 158 g ham 160 g raclette 55 g egg 100 g milk 40 g cr_bread' WHERE name = 'beet_cheese_gratin';
+2025-02-12T16:38:19.901433-0700 - __main__-   create_pandas_frame -505- INFO    -  name beet_cheese_gratin and record [['415', 'g', 'beets'], ['158', 'g', 'ham'], ['160', 'g', 'raclette'], ['55', 'g', 'egg'], ['100', 'g', 'milk'], ['40', 'g', 'cr_bread']] for recipes
+2025-02-12T16:38:19.902163-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'beets';
+2025-02-12T16:38:19.902425-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient beets is missing 
+2025-02-12T16:38:20.028343-0700 - __main__-   do_sql -690- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'ham';
+2025-02-12T17:35:55.810296-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-12T17:35:55.810911-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-12T17:35:55.811086-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-12T17:35:55.890496-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-12T17:35:55.890846-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-12T17:36:08.490113-0700 - __main__-   create_new_recipe -490- INFO    - new recipe name roesti
+2025-02-12T17:36:39.386712-0700 - __main__-   save_recipe -615- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-12T17:36:43.369318-0700 - __main__-   save_recipe -615- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:05:55.099279-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:05:55.099770-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:05:55.099963-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:05:55.401361-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:05:55.401720-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:06:02.124289-0700 - __main__-   create_new_recipe -490- INFO    - new recipe name Roesti
+2025-02-13T07:06:46.115811-0700 - __main__-   save_recipe -615- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T07:06:46.119225-0700 - __main__-   do_sql -699- INFO    - query in do_sql UPDATE recipes SET ingredients = '110 g onion 107 g bacon 531 g potato 140 g raclette 0 g  ' WHERE name = 'Roesti';
+2025-02-13T07:08:18.592030-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:08:18.592520-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:08:18.592615-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:08:18.675265-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:08:18.675601-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:08:25.222071-0700 - __main__-   create_new_recipe -490- INFO    - new recipe name roesti
+2025-02-13T07:08:59.814585-0700 - __main__-   save_recipe -615- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:08:59.818750-0700 - __main__-   do_sql -699- INFO    - query in do_sql UPDATE recipes SET ingredients = '110 g onion 107 g bacon 531 g potato 140 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T07:08:59.819644-0700 - __main__-   create_pandas_frame -505- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T07:08:59.821408-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T07:08:59.822998-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T07:08:59.824062-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T07:08:59.825028-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:08:59.825789-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:08:59.902527-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:08:59.902802-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:10:17.858163-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:10:17.858426-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:10:17.858513-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:10:17.940318-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:10:17.940656-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:10:26.038491-0700 - __main__-   create_new_recipe -490- INFO    - new recipe name raclette
+2025-02-13T07:10:34.415394-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:10:34.419494-0700 - __main__-   do_sql -699- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g   0 g   0 g   0 g   0 g  ' WHERE name = 'raclette';
+2025-02-13T07:10:34.421167-0700 - __main__-   create_pandas_frame -505- INFO    -  name raclette and record [['100', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T07:10:34.422874-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:10:34.423667-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:10:34.526302-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:10:34.526645-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:10:34.595887-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:10:34.596182-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:10:34.660944-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:10:34.661275-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:10:34.736501-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:10:34.736805-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:10:56.351925-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:10:56.352187-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:10:56.352270-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:10:56.413663-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:10:56.414060-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:11:01.665081-0700 - __main__-   create_new_recipe -490- INFO    - new recipe name raclette
+2025-02-13T07:11:16.553297-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'raclette'], ['100', 'g', 'raclette'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:11:16.557922-0700 - __main__-   do_sql -699- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g raclette 100 g raclette 0 g   0 g   0 g  ' WHERE name = 'raclette';
+2025-02-13T07:11:16.558579-0700 - __main__-   create_pandas_frame -505- INFO    -  name raclette and record [['100', 'g', 'raclette'], ['100', 'g', 'raclette'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T07:11:16.559942-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T07:11:16.561295-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T07:11:16.561988-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:11:16.562161-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:11:16.640783-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:11:16.641025-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:11:16.709199-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:11:16.709528-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:15:53.901183-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:15:53.902180-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:15:53.902350-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:15:53.982817-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:15:53.983196-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:16:38.643417-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:16:38.644265-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:16:38.644426-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:16:38.727793-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:16:38.728158-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:16:44.796044-0700 - __main__-   create_new_recipe -490- INFO    - new recipe name roesti
+2025-02-13T07:18:24.866744-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'raclette'], ['200 ', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:18:24.871620-0700 - __main__-   do_sql -699- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g raclette 200  g   0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T07:18:24.872874-0700 - __main__-   create_pandas_frame -505- INFO    -  name roesti and record [['100', 'g', 'raclette'], ['200 ', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T07:18:24.875429-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T07:18:24.877662-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:18:24.878003-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:18:24.956763-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:18:24.957188-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:18:25.027517-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:18:25.027989-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:18:25.101520-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:18:25.102102-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:21:39.287182-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:21:39.287533-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:21:39.287623-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:21:39.345478-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:21:39.345794-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:21:45.208157-0700 - __main__-   create_new_recipe -490- INFO    - new recipe name roesti
+2025-02-13T07:22:03.117513-0700 - __main__-   save_recipe -615- INFO    - ingredients [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:22:03.120680-0700 - __main__-   do_sql -699- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g raclette 200 g onion 0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T07:22:03.121345-0700 - __main__-   create_pandas_frame -505- INFO    -  name roesti and record [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T07:22:03.122533-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T07:22:03.124328-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T07:22:03.125523-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:22:03.125769-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:22:03.206544-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:22:03.206878-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:22:03.281580-0700 - __main__-   do_sql -699- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:22:03.281928-0700 - __main__-   create_pandas_frame -543- INFO    - this ingredient   is missing 
+2025-02-13T07:44:11.467307-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:44:11.467636-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:44:11.467719-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:44:11.525402-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:44:11.525706-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:44:58.383925-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:44:58.384345-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:44:58.384466-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:44:58.475830-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:44:58.476145-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:55:18.857643-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:55:18.858448-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:55:18.858542-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:55:18.939991-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:55:18.940280-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:55:44.730041-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:55:44.730476-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:55:44.730587-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:55:44.807707-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:55:44.808029-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:55:50.546449-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T07:56:15.349336-0700 - __main__-   save_recipe -616- INFO    - ingredients [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:56:15.354444-0700 - __main__-   do_sql -700- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g raclette 200 g onion 0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T07:56:15.355617-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T07:56:15.357352-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T07:56:15.358952-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T07:56:15.359769-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:56:15.359929-0700 - __main__-   create_pandas_frame -544- INFO    - this ingredient   is missing 
+2025-02-13T07:56:15.447624-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:56:15.447914-0700 - __main__-   create_pandas_frame -544- INFO    - this ingredient   is missing 
+2025-02-13T07:56:15.512886-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:56:15.513156-0700 - __main__-   create_pandas_frame -544- INFO    - this ingredient   is missing 
+2025-02-13T07:56:44.624094-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T07:56:44.624368-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T07:56:44.624451-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T07:56:44.685783-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T07:56:44.686091-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T07:56:50.530432-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T07:57:05.204478-0700 - __main__-   save_recipe -616- INFO    - ingredients [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T07:57:05.205845-0700 - __main__-   do_sql -700- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g raclette 200 g onion 0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T07:57:05.206272-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T07:57:05.207198-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T07:57:05.209269-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T07:57:05.212317-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:57:05.212983-0700 - __main__-   create_pandas_frame -544- INFO    - this ingredient   is missing 
+2025-02-13T07:57:05.301781-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:57:05.302063-0700 - __main__-   create_pandas_frame -544- INFO    - this ingredient   is missing 
+2025-02-13T07:57:05.371349-0700 - __main__-   do_sql -700- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE ' ';
+2025-02-13T07:57:05.371711-0700 - __main__-   create_pandas_frame -544- INFO    - this ingredient   is missing 
+2025-02-13T09:05:27.222929-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:05:27.224240-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:05:27.224441-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:05:27.304929-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:05:27.305321-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:05:34.997089-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:06:32.577980-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:06:46.197712-0700 - __main__-   save_recipe -617- INFO    - ingredients [['100', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:06:46.201654-0700 - __main__-   do_sql -701- INFO    - query in do_sql UPDATE recipes SET ingredients = '100 g   0 g   0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T09:06:46.204180-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['100', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T09:07:36.647354-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:07:36.648222-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:07:36.648470-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:07:36.743249-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:07:36.743667-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:07:43.528018-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:07:57.647796-0700 - __main__-   save_recipe -617- INFO    - ingredients [['19', 'g', 'raclette'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:07:57.652817-0700 - __main__-   do_sql -701- INFO    - query in do_sql UPDATE recipes SET ingredients = '19 g raclette 0 g   0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T09:07:57.654389-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['19', 'g', 'raclette'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T09:11:45.615501-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:11:45.615827-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:11:45.615924-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:11:45.675785-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:11:45.676094-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:11:54.511850-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:13:02.095755-0700 - __main__-   save_recipe -625- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:13:02.100602-0700 - __main__-   do_sql -709- INFO    - query in do_sql UPDATE recipes SET ingredients = '110 g onion 107 g bacon 531 g potato 140 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T09:13:02.101465-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T09:13:02.102872-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T09:13:02.105009-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T09:13:02.105852-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T09:15:13.655329-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:15:13.655790-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:15:13.655985-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:15:13.736716-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:15:13.737009-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:15:37.682167-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:15:53.111892-0700 - __main__-   save_recipe -625- INFO    - ingredients [['110', 'g', 'raclette'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:15:53.113510-0700 - __main__-   do_sql -709- INFO    - query in do_sql UPDATE recipes SET ingredients = '110 g raclette 0 g   0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T09:15:53.114977-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'raclette'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T09:15:53.115899-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T09:16:21.697955-0700 - __main__-   save_recipe -625- INFO    - ingredients [['110', 'g', 'raclette'], ['100', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:16:42.183380-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:16:42.183699-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:16:42.183786-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:16:42.249751-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:16:42.250077-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:16:51.552051-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:17:06.528289-0700 - __main__-   save_recipe -625- INFO    - ingredients [['110', 'g', 'onion'], ['200', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:17:06.532779-0700 - __main__-   do_sql -709- INFO    - query in do_sql UPDATE recipes SET ingredients = '110 g onion 200 g   0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T09:17:06.533459-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['200', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T09:17:06.535094-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T09:18:29.138818-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:18:29.139358-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:18:29.139446-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:18:29.226276-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:18:29.226815-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:18:38.090959-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:18:56.967899-0700 - __main__-   save_recipe -625- INFO    - ingredients [['110', 'g', 'potato'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:18:56.969676-0700 - __main__-   do_sql -709- INFO    - query in do_sql UPDATE recipes SET ingredients = '110 g potato 200 g onion 0 g   0 g   0 g  ' WHERE name = 'roesti';
+2025-02-13T09:18:56.970791-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'potato'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T09:18:56.971767-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T09:18:56.972780-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T09:21:44.962688-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:21:44.963561-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:21:44.963733-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:21:45.040905-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:21:45.041266-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:21:51.751244-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:22:11.372133-0700 - __main__-   save_recipe -625- INFO    - ingredients [['110', 'g', 'potato'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T09:34:20.634395-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T09:34:20.635189-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T09:34:20.635357-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T09:34:20.711736-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T09:34:20.712047-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T09:34:27.946122-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T09:35:16.446920-0700 - __main__-   save_recipe -625- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T09:35:16.460605-0700 - __main__-   do_sql -709- INFO    - query in do_sql UPDATE recipes SET ingredients = '110 g onion 107 g bacon 531 g potato 140 g raclette 0 g  ' WHERE name = 'roesti';
+2025-02-13T09:35:16.461806-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] for recipes
+2025-02-13T09:35:16.467152-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T09:35:16.469379-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T09:35:16.470233-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T09:35:16.470945-0700 - __main__-   do_sql -709- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T10:22:05.702878-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T10:22:05.703998-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T10:22:05.704163-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T10:22:05.789893-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T10:22:05.790264-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T10:22:13.028747-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T10:22:54.462340-0700 - __main__-   save_recipe -628- INFO    - ingredients [['100', 'g', 'onion'], ['200', 'g', 'potato'], ['300', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T10:59:27.605723-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T10:59:27.606455-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T10:59:27.606646-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T10:59:27.668632-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T10:59:27.669017-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T10:59:34.899227-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T11:00:21.629556-0700 - __main__-   save_recipe -628- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T11:01:17.837696-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T11:01:17.838258-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T11:01:17.838430-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T11:01:17.898598-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T11:01:17.898956-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T11:01:23.624993-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T11:01:23.625582-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T11:01:23.625719-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T11:01:23.683047-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T11:01:23.683422-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T11:01:30.722965-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T11:01:51.913339-0700 - __main__-   save_recipe -628- INFO    - ingredients [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-13T11:01:51.915443-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['100', 'g', 'raclette'], ['200', 'g', 'onion'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-13T11:02:26.177122-0700 - __main__-   do_sql -739- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T11:02:26.182247-0700 - __main__-   do_sql -739- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T11:06:07.480571-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T11:06:07.481231-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T11:06:07.481320-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T11:06:07.565699-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T11:06:07.566013-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T11:06:17.216352-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T11:07:01.108896-0700 - __main__-   save_recipe -628- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T11:07:01.110933-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] for recipes
+2025-02-13T11:07:01.114621-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T11:07:01.117666-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T11:07:01.118834-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T11:07:01.120464-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T11:07:01.125028-0700 - __main__-   do_sql -742- INFO    - query in do_sql INSERT INTO recipes (name,energy,protein,carbohydrate,fat,ingredients) VALUES (roesti,1.87,0.10,0.13,0.11,110 g onion 107 g bacon 531 g potato 140 g raclette);
+2025-02-13T11:08:10.694995-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T11:08:10.696027-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T11:08:10.696200-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T11:08:10.774075-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T11:08:10.774447-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T11:08:17.323404-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T11:09:07.761793-0700 - __main__-   save_recipe -628- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T11:09:07.762987-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] for recipes
+2025-02-13T11:09:07.766059-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T11:09:24.669412-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T11:09:29.852295-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T11:09:31.602788-0700 - __main__-   do_sql -742- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T11:09:37.351123-0700 - __main__-   do_sql -742- INFO    - query in do_sql INSERT INTO recipes (name,energy,protein,carbohydrate,fat,ingredients) VALUES (roesti,1.87,0.10,0.13,0.11,110 g onion 107 g bacon 531 g potato 140 g raclette);
+2025-02-13T11:10:09.298402-0700 - __main__-   do_sql -745- ERROR    - Query error: ERROR:  syntax error at or near "g"
+LINE 1: ...gredients) VALUES (roesti,1.87,0.10,0.13,0.11,110 g onion 10...
+                                                             ^
+(42601) QPSQL: Unable to create query
+2025-02-13T12:20:26.483847-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T12:20:26.484766-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T12:20:26.485021-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T12:20:26.567589-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T12:20:26.567962-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T12:20:33.413011-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T12:21:41.602906-0700 - __main__-   save_recipe -628- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T12:21:41.603943-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] for recipes
+2025-02-13T12:21:41.608890-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T12:21:54.877022-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T12:21:54.879316-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T12:21:54.881079-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T12:22:05.902789-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT id from recipes ;
+2025-02-13T12:23:51.123792-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T12:23:51.124122-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T12:23:51.124205-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T12:23:51.184156-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T12:23:51.184468-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T12:23:58.098662-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T12:23:58.099411-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T12:23:58.099572-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T12:23:58.156515-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T12:23:58.156901-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T12:24:07.340090-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T12:24:48.269944-0700 - __main__-   save_recipe -628- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T12:24:48.272023-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] for recipes
+2025-02-13T12:24:48.275375-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T12:24:48.279331-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T12:24:48.281261-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T12:24:48.283211-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T12:24:52.251571-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT id from recipes ;
+2025-02-13T12:27:56.996961-0700 - __main__-   __init__ -184- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-13T12:27:56.997828-0700 - __main__-   __init__ -186- INFO    -  This is version 0.5
+2025-02-13T12:27:56.998092-0700 - __main__-   __init__ -187- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-13T12:27:57.073753-0700 - __main__-   ConnectDataBase -208- INFO    - connection succsessful
+2025-02-13T12:27:57.074140-0700 - __main__-   ConnectDataBase -212- INFO    -  database connection name qt_sql_default_connection
+2025-02-13T12:28:05.468405-0700 - __main__-   create_new_recipe -491- INFO    - new recipe name roesti
+2025-02-13T12:29:05.433718-0700 - __main__-   save_recipe -628- INFO    - ingredients [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] 
+2025-02-13T12:29:05.434549-0700 - __main__-   create_pandas_frame -506- INFO    -  name roesti and record [['110', 'g', 'onion'], ['107', 'g', 'bacon'], ['531', 'g', 'potato'], ['140', 'g', 'raclette'], ['0', 'g', ' ']] for recipes
+2025-02-13T12:29:05.437587-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'onion';
+2025-02-13T12:29:05.440367-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'bacon';
+2025-02-13T12:29:05.442941-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'potato';
+2025-02-13T12:29:05.444343-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raclette';
+2025-02-13T12:29:08.618003-0700 - __main__-   do_sql -756- INFO    - query in do_sql SELECT id from recipes ;
+2025-02-13T12:29:33.149869-0700 - __main__-   do_sql -756- INFO    - query in do_sql INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES (226,'roesti',1.87,0.10,0.13,0.11,'110 g onion 107 g bacon 531 g potato 140 g raclette');

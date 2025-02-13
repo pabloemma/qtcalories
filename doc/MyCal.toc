@@ -1,34 +1,35 @@
-\contentsline {section}{\numberline {1}Introduction}{2}% 
-\contentsline {section}{\numberline {2}Layout of the program}{2}% 
-\contentsline {section}{\numberline {3}class NewWindow}{2}% 
-\contentsline {section}{\numberline {4}class RecipeModel}{2}% 
-\contentsline {section}{\numberline {5}class ControlDB}{2}% 
-\contentsline {subsection}{\numberline {5.1}some poogrammatic issues}{3}% 
-\contentsline {subsection}{\numberline {5.2}ConnectDataBase}{3}% 
-\contentsline {subsection}{\numberline {5.3}SetupLogger}{3}% 
-\contentsline {subsection}{\numberline {5.4}ShowTables}{3}% 
-\contentsline {subsection}{\numberline {5.5}ViewTable}{3}% 
-\contentsline {subsection}{\numberline {5.6}SetPosition}{4}% 
-\contentsline {subsection}{\numberline {5.7}CreateIngredientsForm}{4}% 
-\contentsline {subsection}{\numberline {5.8}InsertRecord}{4}% 
-\contentsline {subsection}{\numberline {5.9}MyRecipes\_new}{4}% 
-\contentsline {subsection}{\numberline {5.10}getSelectedText, getSelectedRecipes}{4}% 
-\contentsline {subsection}{\numberline {5.11}FillRecipeIngredientList}{4}% 
-\contentsline {subsection}{\numberline {5.12}DisplayRecipeList}{5}% 
-\contentsline {subsection}{\numberline {5.13}split\_and\_keep}{5}% 
-\contentsline {subsection}{\numberline {5.14}StripUnicode}{5}% 
-\contentsline {subsection}{\numberline {5.15}GetRecipeList}{5}% 
-\contentsline {subsection}{\numberline {5.16}SizeWindow}{5}% 
-\contentsline {subsection}{\numberline {5.17}SaveIngredients}{5}% 
-\contentsline {subsection}{\numberline {5.18}on\_item\_click}{6}% 
-\contentsline {subsection}{\numberline {5.19}save\_recipe}{6}% 
-\contentsline {subsection}{\numberline {5.20}pack\_record}{6}% 
-\contentsline {subsection}{\numberline {5.21}update\_recipe}{6}% 
-\contentsline {subsection}{\numberline {5.22}update\_record}{6}% 
-\contentsline {subsection}{\numberline {5.23}do\_sql}{6}% 
-\contentsline {subsection}{\numberline {5.24}create\_pandas\_frame}{6}% 
-\contentsline {section}{\numberline {6}Some Useful commands}{6}% 
-\contentsline {section}{\numberline {7}Notes}{7}% 
-\contentsline {section}{\numberline {8}Current Status}{7}% 
-\contentsline {section}{\numberline {9}Current issues}{7}% 
-\contentsline {section}{\numberline {10}Design of Calculation}{8}% 
+\contentsline {section}{\numberline {1}Introduction}{3}% 
+\contentsline {section}{\numberline {2}Layout of the program}{3}% 
+\contentsline {section}{\numberline {3}class NewWindow}{3}% 
+\contentsline {section}{\numberline {4}class RecipeModel}{3}% 
+\contentsline {section}{\numberline {5}class ControlDB}{4}% 
+\contentsline {subsection}{\numberline {5.1}Important variables}{4}% 
+\contentsline {subsection}{\numberline {5.2}some poogrammatic issues}{4}% 
+\contentsline {subsection}{\numberline {5.3}ConnectDataBase}{4}% 
+\contentsline {subsection}{\numberline {5.4}SetupLogger}{4}% 
+\contentsline {subsection}{\numberline {5.5}ShowTables}{5}% 
+\contentsline {subsection}{\numberline {5.6}ViewTable}{5}% 
+\contentsline {subsection}{\numberline {5.7}SetPosition}{5}% 
+\contentsline {subsection}{\numberline {5.8}CreateIngredientsForm}{5}% 
+\contentsline {subsection}{\numberline {5.9}InsertRecord}{5}% 
+\contentsline {subsection}{\numberline {5.10}MyRecipes\_new}{5}% 
+\contentsline {subsection}{\numberline {5.11}getSelectedText, getSelectedRecipes}{6}% 
+\contentsline {subsection}{\numberline {5.12}FillRecipeIngredientList}{6}% 
+\contentsline {subsection}{\numberline {5.13}DisplayRecipeList}{6}% 
+\contentsline {subsection}{\numberline {5.14}split\_and\_keep}{6}% 
+\contentsline {subsection}{\numberline {5.15}StripUnicode}{6}% 
+\contentsline {subsection}{\numberline {5.16}GetRecipeList}{7}% 
+\contentsline {subsection}{\numberline {5.17}SizeWindow}{7}% 
+\contentsline {subsection}{\numberline {5.18}SaveIngredients}{7}% 
+\contentsline {subsection}{\numberline {5.19}on\_item\_click}{7}% 
+\contentsline {subsection}{\numberline {5.20}save\_recipe}{7}% 
+\contentsline {subsection}{\numberline {5.21}pack\_record}{7}% 
+\contentsline {subsection}{\numberline {5.22}update\_recipe}{7}% 
+\contentsline {subsection}{\numberline {5.23}update\_record}{7}% 
+\contentsline {subsection}{\numberline {5.24}do\_sql}{7}% 
+\contentsline {subsection}{\numberline {5.25}create\_pandas\_frame}{8}% 
+\contentsline {section}{\numberline {6}Some Useful commands}{8}% 
+\contentsline {section}{\numberline {7}Notes}{8}% 
+\contentsline {section}{\numberline {8}Current Status}{8}% 
+\contentsline {section}{\numberline {9}Current issues}{8}% 
+\contentsline {section}{\numberline {10}Design of Calculation}{9}% 
