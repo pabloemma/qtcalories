@@ -9,6 +9,7 @@ import config_mycal
 from Recipe1 import Ui_MainWindow
 
 from missing_ingredient import Ui_MissingIngredient
+from missing_ingredient_widget import Ui_MyMissingIngredientForm
 
 import pandas as PD # to pack the recipe information into a pandas dataframe
 
@@ -132,11 +133,15 @@ class MyRecipeWindow(QMainWindow,Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
-class MyMissIngWindow(QMainWindow,Ui_MissingIngredient):
+class MyMissIngWindow1(QMainWindow,Ui_MissingIngredient):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
+class MyMissIngWindow(QWidget,Ui_MyMissingIngredientForm):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
 
 
 class ContrlDB(QMainWindow):
@@ -422,14 +427,23 @@ class ContrlDB(QMainWindow):
  
 
         return
+ 
+    
     def MyMissingIngredients(self):
         """ form if ingredient is missing"""
-        self.MMI = MyMissIngWindow()
-        self.MMI.show()
-        self.MMI.IngredLine.setText(self.missing_ingredient)
-        self.MMI.EditIngButton.clicked.connect(self.show_ingred_form())
-        self.MMI.CloseButton.clicked.connect(self.Cancel(self.MMI))
+        self.MMI1 = MyMissIngWindow1()
+        self.MMI1.IngredLine.setText(self.missing_ingredient)
+        self.MMI1.EditIngButton.clicked.connect(self.show_ingred_form)
+        self.MMI1.CloseButton.clicked.connect(self.Cancel(self.MMI1))
 
+ 
+        self.MMI1.move(100,50)
+ 
+        self.MMI1.show()
+        return
+
+    
+    
     def show_ingred_form(self):
         window.CreateIngredientsForm1()
 
