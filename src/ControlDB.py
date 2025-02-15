@@ -138,10 +138,10 @@ class MyMissIngWindow1(QMainWindow,Ui_MissingIngredient):
         super().__init__()
         self.setupUi(self)
 
-class MyMissIngWindow(QWidget,Ui_MyMissingIngredientForm):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
+#class MyMissIngWindow(QWidget,Ui_MyMissingIngredientForm):
+#    def __init__(self):
+#        super().__init__()
+#        self.setupUi(self)
 
 
 class ContrlDB(QMainWindow):
@@ -417,11 +417,12 @@ class ContrlDB(QMainWindow):
         #                                                               self.record[4]);
         temp = "'"+self.record[0]+"'"
         sql = 'INSERT INTO '+table+' (name,energy,carbohydrate,fat,protein) VALUES ('+temp+','+str(self.record[1])+','+str(self.record[2])+','+str(self.record[3])+','+str(self.record[4])+');'
-        print(sql)
+        #print(sql)
 
-        query = QSqlQuery(sql,db=self.mycal_db)
+        #query = QSqlQuery(sql,db=self.mycal_db)
         
-        self.model.setQuery(query)
+        #self.model.setQuery(query)
+        self.do_sql(sql)
         logger.info(' inserted record %s into table  %s' % (self.record[0],table))
  
  
@@ -440,6 +441,7 @@ class ContrlDB(QMainWindow):
         self.MMI1.move(100,50)
  
         self.MMI1.show()
+        self.MMI1.exec()
         return
 
     
@@ -588,6 +590,8 @@ class ContrlDB(QMainWindow):
                 logger.debug('protein : %f' % protein_v[k])
                 logger.debug('carbohydrate : %f' % carbohydrate_v[k])
                 logger.debug('fat : %f' % fat_v[k])
+        if(Total_weight == 0.):
+            return
         temp_cal    = Total_calories_per_gm/Total_weight
         temp_fat    = Total_fat_per_gm/Total_weight
         temp_prot   = Total_protein_per_gm/Total_weight
