@@ -1,9 +1,7 @@
 
 #!/bin/bash
 
-
-
-pip3 install loguru
-pip3 install --uppade Matplotlib
-pip3 install --upgrade numpy
-pip3 install pyside6
+sudo apt install loguru
+sudo apt install Matplotlib
+sudo apt install numpy
+sudo apt install pyside6
