@@ -253,3 +253,15 @@
 2025-02-15T11:01:30.931492-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'cream';
 2025-02-15T11:01:30.933875-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT id from recipes ;
 2025-02-15T11:01:30.938658-0700 - __main__-   do_sql -812- INFO    - query in do_sql INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES (227,'raspberry_tart',2.58,0.04,0.21,0.18,'190 g sugar 150 g almond 40 g flour_unbleached 600 g raspberry 600 g cream');
+2025-02-15T15:58:05.603192-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T15:58:05.603703-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-15T15:58:05.603799-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T15:58:06.968345-0700 - __main__-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-15T15:58:06.968701-0700 - __main__-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
