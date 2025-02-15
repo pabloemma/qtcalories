@@ -4,7 +4,7 @@ import os
 import platform
 from loguru import logger
 
-
+import numpy as np #for pyinstaller
 import config_mycal
 from Recipe1 import Ui_MainWindow
 
