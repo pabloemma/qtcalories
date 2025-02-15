@@ -190,14 +190,17 @@ class ContrlDB(QMainWindow):
                     'Images',
                     'vegetarian']
 
-        self.version = '0.5'
+        self.version = '1.0'
         logger.info('******************************************************************************************************** \n\n\n')
 
         logger.info(' This is version %s' % self.version)
         logger.info('\n\n\n***************************************************************************************************** \n')
 
 
-        
+    def  init_variables(self):
+        """ initialize some variable to None"""
+
+        self.missing_ingredient = None
     
     def ConnectDataBase(self):
         ''' establish contact to database'''
@@ -330,7 +333,11 @@ class ContrlDB(QMainWindow):
         self.SizeWindow(self.Inform,myposit,mysize)
 
         # Create widgets
-        self.name_label      = QLineEdit()
+        #fill with ingredients if called from missing ingredients
+        if(  self.missing_ingredient != None or self.missing_ingredient != ''):
+            self.name_label      = QLineEdit(self.missing_ingredient)
+        else:
+            self.name_label        =QLineEdit()
         self.name_label.setStyleSheet("background-color: rgb(3, 252, 227)")
         # force valid entr
         double_validator = QDoubleValidator(0, 500.0, 2)
@@ -473,7 +480,11 @@ class ContrlDB(QMainWindow):
     
     def show_ingred_form(self):
         # destrory dialog give action back
-        self.MMI1.destroy()
+        try:
+            self.MMI1.destroy()
+        except:
+            logger.debug("nothing to detsroy")
+
         window.CreateIngredientsForm1()
 
 
