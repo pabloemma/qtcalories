@@ -9,8 +9,7 @@ import config_mycal
 from Recipe1 import Ui_MainWindow
 
 from missing_ingredient import Ui_MissingIngredient
-from missing_ingredient_widget import Ui_MyMissingIngredientForm
-
+from missing_ingredient_dialog import Ui_missing_ingredient_dialog
 import pandas as PD # to pack the recipe information into a pandas dataframe
 
 
@@ -29,6 +28,7 @@ QApplication,
     QDateEdit,
     QDateTimeEdit,
     QDial,
+    QDialog,
     QDoubleSpinBox,
     QFileDialog,
     QFontComboBox,
@@ -138,11 +138,10 @@ class MyMissIngWindow1(QMainWindow,Ui_MissingIngredient):
         super().__init__()
         self.setupUi(self)
 
-#class MyMissIngWindow(QWidget,Ui_MyMissingIngredientForm):
-#    def __init__(self):
-#        super().__init__()
-#        self.setupUi(self)
-
+class MyMissingIngredientDialog(QDialog,Ui_missing_ingredient_dialog):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
 
 class ContrlDB(QMainWindow):
 
@@ -430,7 +429,7 @@ class ContrlDB(QMainWindow):
         return
  
     
-    def MyMissingIngredients(self):
+    def MyMissingIngredients_old(self):
         """ form if ingredient is missing"""
         self.MMI1 = MyMissIngWindow1()
         self.MMI1.IngredLine.setText(self.missing_ingredient)
@@ -441,7 +440,21 @@ class ContrlDB(QMainWindow):
         self.MMI1.move(100,50)
  
         self.MMI1.show()
+
+        return
+
+    def MyMissingIngredients(self):
+        """ form if ingredient is missing"""
+        self.MMI1 = MyMissingIngredientDialog()
+        self.MMI1.IngredLine.setText(self.missing_ingredient)
+        #self.MMI1.EditIngButton.clicked.connect(self.show_ingred_form)
+        #self.MMI1.CloseButton.clicked.connect(self.Cancel(self.MMI1))
+
+ 
+        self.MMI1.move(100,50)
         self.MMI1.exec()
+        self.MMI1.show()
+
         return
 
     
