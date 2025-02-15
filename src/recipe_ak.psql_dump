@@ -1,0 +1,565 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.4
+-- Dumped by pg_dump version 16.4
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: ingredients; Type: TABLE; Schema: public; Owner: klein
+--
+
+CREATE TABLE public.ingredients (
+    name character varying(255) NOT NULL,
+    energy numeric(6,3),
+    protein numeric(6,3),
+    carbohydrate numeric(6,3),
+    sugar numeric(6,3),
+    fat numeric(6,3),
+    saturated numeric(6,3),
+    fiber numeric(6,3),
+    salt numeric(6,3),
+    sodium numeric(6,3),
+    portion_size numeric(6,3),
+    product_source character varying(255)
+);
+
+
+ALTER TABLE public.ingredients OWNER TO klein;
+
+--
+-- Name: recipes; Type: TABLE; Schema: public; Owner: klein
+--
+
+CREATE TABLE public.recipes (
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    portions numeric(3,1),
+    energy character varying(100),
+    protein character varying(100),
+    carbohydrate character varying(100),
+    sugar character varying(100),
+    fat character varying(100),
+    saturated_fat character varying(100),
+    fiber character varying(100),
+    salt character varying(100),
+    sodium character varying(100),
+    ingredients character varying(1000),
+    description character varying(1000),
+    "time" character varying(100),
+    images character varying(1000),
+    vegetarian smallint
+);
+
+
+ALTER TABLE public.recipes OWNER TO klein;
+
+--
+-- Data for Name: ingredients; Type: TABLE DATA; Schema: public; Owner: klein
+--
+
+COPY public.ingredients (name, energy, protein, carbohydrate, sugar, fat, saturated, fiber, salt, sodium, portion_size, product_source) FROM stdin;
+Almond_Flour	633.000	23.330	20.000	\N	50.000	\N	\N	\N	\N	\N	\N
+Apple	52.000	0.260	13.810	10.390	0.170	0.028	2.400	\N	0.001	\N	fatsecret.com.au
+apple_cider	54.000	0.000	12.200	\N	0.000	\N	\N	\N	\N	\N	\N
+Apricot_dried	241.000	3.390	62.200	\N	0.510	\N	\N	\N	\N	\N	\N
+aspargus_GREEN	30.000	2.100	3.100	\N	0.400	\N	\N	\N	\N	\N	\N
+Aussteller	259.000	12.000	0.000	\N	23.000	\N	\N	\N	\N	\N	\N
+Avocado	160.000	2.000	8.530	0.660	14.660	2.126	6.700	\N	0.007	\N	fatsecret.com.au
+Bacon	541.000	37.040	1.430	\N	41.780	\N	\N	\N	\N	\N	\N
+Banana	89.000	1.090	22.840	12.230	0.330	0.112	2.600	\N	0.001	\N	fatsecret.com.au
+barley_dry	122.000	2.250	28.000	\N	0.440	\N	\N	\N	\N	\N	\N
+bean_gratin	213.600	13.500	15.300	\N	10.200	\N	\N	\N	\N	\N	\N
+beef	288.000	26.330	0.000	\N	19.540	\N	\N	\N	\N	\N	\N
+Beetroot	43.000	1.610	9.560	6.760	0.170	0.027	2.800	\N	0.078	\N	fatsecret.com.au
+bell_pepper	37.000	1.300	6.400	\N	0.500	\N	\N	\N	\N	\N	\N
+bell_wuerstli	229.000	18.000	1.000	\N	17.000	\N	\N	\N	\N	\N	\N
+Bellpepper	37.000	1.300	6.400	\N	0.500	\N	\N	\N	\N	\N	\N
+blackberry	43.000	1.300	9.610	\N	0.490	\N	\N	\N	\N	\N	\N
+blue_cheese	392.000	21.000	3.600	\N	29.000	\N	\N	\N	\N	\N	\N
+Blueberry	57.000	0.740	14.500	\N	0.330	\N	\N	\N	\N	\N	\N
+borlotti_cooked	127.000	8.700	22.800	\N	0.500	\N	\N	\N	\N	\N	\N
+Bouillon	6.000	0.500	0.500	\N	0.500	\N	\N	\N	\N	\N	\N
+boursin	406.000	8.500	3.000	\N	40.000	\N	\N	\N	\N	\N	\N
+bread	357.000	12.500	75.000	\N	1.800	\N	\N	\N	\N	\N	\N
+Brown_cane_sugar	396.000	0.000	99.000	99.000	0.000	0.000	0.000	0.000	\N	\N	Fairglobe, with fine caramel notes
+bulgur	341.000	9.000	69.000	\N	1.000	\N	\N	\N	\N	\N	\N
+Butter	745.000	0.500	0.500	0.500	82.000	54.000	\N	1.200	\N	\N	Smu00f8r
+butternut_squash	45.000	1.000	11.700	\N	0.100	\N	\N	\N	\N	\N	\N
+Cabbage	24.000	1.440	5.580	\N	0.120	\N	\N	\N	\N	\N	\N
+Cannelloni	359.000	13.000	71.000	\N	2.000	\N	\N	\N	\N	\N	\N
+Carrot	41.000	0.930	9.580	4.540	0.240	0.037	2.800	\N	0.069	\N	fatsecret.com.au
+Cauliflower	25.000	1.980	5.300	\N	0.100	\N	\N	\N	\N	\N	\N
+celery	14.000	0.690	2.000	\N	0.170	\N	\N	\N	\N	\N	\N
+Cereal_bar_blueberry	369.000	4.200	82.000	29.000	2.700	0.500	2.700	0.100	\N	20.000	Ravensbergen muesli+ blu00e5bu00e6rsmag
+Cereal_bar_coconut_chocolate	455.000	4.800	68.000	24.000	18.000	10.000	3.400	0.530	\N	21.000	Ravensbergen muesli+ kokos med mu00e6lkechokolade
+cherries_unpitted	63.000	1.300	0.000	\N	0.000	\N	\N	\N	\N	\N	\N
+chicken_breast	195.000	29.550	0.000	\N	7.720	\N	\N	\N	\N	\N	\N
+chickpeas_dry	279.000	21.000	65.110	\N	4.700	\N	\N	\N	\N	\N	\N
+chile_con_carne	115.000	8.800	8.500	\N	5.000	\N	\N	\N	\N	\N	\N
+Chobani	100.000	8.800	4.116	\N	5.300	\N	\N	\N	\N	\N	\N
+Chocolate_dark	579.000	10.800	21.400	\N	46.800	\N	\N	\N	\N	\N	\N
+chorizo	212.000	19.000	1.860	\N	12.000	\N	\N	\N	\N	\N	\N
+Ciabatta	271.000	8.800	50.000	\N	3.500	\N	\N	\N	\N	\N	\N
+cider	49.000	0.060	12.240	\N	0.120	\N	\N	\N	\N	\N	\N
+Cinnamon	261.000	3.890	79.850	2.170	3.190	0.650	54.300	\N	0.026	\N	fatsecret.com.au
+Cloves	323.000	5.980	61.210	2.380	20.070	5.438	34.200	\N	0.243	\N	fatsecret.com.au
+Cocoa_fiber_flour	289.000	17.300	9.000	0.500	7.800	4.500	57.000	\N	0.000	\N	naturalia Bake Kakao Fibermel
+Cocoa_powder	368.000	19.800	8.700	0.500	20.700	12.500	24.000	0.080	\N	\N	Belbake, fiber from other source
+coconut_cream	219.000	2.060	2.850	\N	22.500	\N	\N	\N	\N	\N	\N
+Coconut_oil	899.000	0.000	0.000	0.000	99.900	92.100	0.000	0.000	\N	\N	VitaD'or Bio Organic virgin
+Coconut_sugar	400.000	1.700	97.000	96.000	1.000	0.500	0.800	0.180	\N	\N	Urtekram u00f8ko
+Comte	429.000	29.000	0.000	\N	35.000	\N	\N	\N	\N	\N	\N
+Cooking_oil	720.000	0.000	0.000	0.000	80.000	29.000	\N	1.200	\N	\N	VitaD'or Stege- & bagemargarine
+Coppa	357.000	7.000	0.000	\N	29.000	\N	\N	\N	\N	\N	\N
+Corn	77.000	2.400	11.800	7.400	1.700	0.400	2.700	0.400	\N	\N	Freshone sweetcorn in salted water, fiber missing
+Corn_can	48.000	0.800	10.400	\N	0.800	\N	\N	\N	\N	\N	\N
+Corn_starch	355.000	0.500	86.000	0.000	0.500	0.100	1.000	0.010	\N	\N	Maizena Majsstivelse
+Couscous	112.000	3.790	23.220	\N	0.160	\N	\N	\N	\N	\N	\N
+couscous_dry	360.000	12.760	77.340	\N	0.640	\N	\N	\N	\N	\N	\N
+CR_bread	244.000	9.600	47.000	\N	1.100	\N	\N	\N	\N	\N	\N
+Cream	333.000	2.500	3.000	\N	35.000	\N	\N	\N	\N	\N	\N
+Cream_cheese	324.000	7.550	2.660	\N	34.870	\N	\N	\N	\N	\N	\N
+Creme_fraiche	339.000	2.500	3.000	\N	35.200	\N	\N	\N	\N	\N	\N
+Cucumber	12.000	0.590	2.160	\N	0.160	\N	\N	\N	\N	\N	\N
+dried_tomatos	300.000	0.000	30.000	\N	20.000	\N	\N	\N	\N	\N	\N
+dunkles_brot	196.000	7.000	38.000	\N	1.000	\N	\N	\N	\N	\N	\N
+Ebly	135.000	4.500	26.100	\N	0.500	\N	\N	\N	\N	\N	\N
+Egg	155.000	12.580	0.770	0.770	9.940	3.099	0.000	0.350	0.140	60.000	fatsecret.com.au / salt info from Hedegaard skrabeu00e6g
+egg_white	52.000	10.900	0.730	\N	0.170	\N	\N	\N	\N	\N	\N
+Egg_yolk	322.000	15.860	3.590	0.560	26.540	9.551	0.000	\N	0.048	20.000	fatsecret.com.au
+eggplant	24.000	1.010	5.700	\N	0.190	\N	\N	\N	\N	\N	\N
+Eggwhite	52.000	10.900	0.730	\N	0.170	\N	\N	\N	\N	\N	\N
+elbow_pasta_dry	357.000	14.200	71.400	\N	1.800	\N	\N	\N	\N	\N	\N
+elbows_dry	357.000	14.200	71.400	\N	1.800	\N	\N	\N	\N	\N	\N
+Endive	17.000	1.250	3.350	\N	0.200	\N	\N	\N	\N	\N	\N
+entrecote	165.000	19.620	0.000	\N	8.950	\N	\N	\N	\N	\N	\N
+Erythritol	0.000	0.000	100.000	0.000	0.000	0.000	0.000	0.000	0.000	\N	Naturea Group Eritrit
+Fennel	31.000	1.240	7.290	\N	0.200	\N	\N	\N	\N	\N	\N
+Feta	264.000	14.210	4.100	\N	21.280	\N	\N	\N	\N	\N	\N
+filet_mignon	193.000	20.030	0.000	\N	12.000	\N	\N	\N	\N	\N	\N
+flour_rye	324.000	14.030	68.740	\N	2.690	\N	\N	\N	\N	\N	\N
+Flour_unbleached	356.000	12.000	71.000	\N	1.500	\N	\N	\N	\N	\N	\N
+Flour_whole_wheat	339.000	13.700	72.570	\N	1.870	\N	\N	\N	\N	\N	\N
+Garlic	149.000	6.360	33.060	1.000	0.500	0.089	2.100	\N	0.017	\N	fatsecret.com.au
+Ginger	347.000	9.120	70.790	3.390	5.950	1.940	12.500	\N	0.032	\N	fatsecret.com.au
+Almond	578.000	21.260	19.740	4.800	50.640	3.881	11.800	\N	0.001	\N	fatsecret.com.au
+Apricot	48.000	1.400	11.120	\N	0.390	\N	\N	\N	\N	\N	\N
+apricot_frozen	65.000	1.000	13.000	\N	0.500	\N	\N	\N	\N	\N	\N
+Bean_dried	347.000	21.420	62.550	\N	1.230	\N	\N	\N	\N	\N	\N
+Bread_crumb	395.000	13.350	71.980	\N	5.300	\N	\N	\N	\N	\N	\N
+Canned_tomato	32.000	1.640	7.290	\N	0.280	\N	\N	\N	\N	\N	fatsecret.com.au
+beet	73.000	1.610	9.560	\N	0.170	\N	\N	\N	\N	\N	\N
+Chickpea	146.000	8.190	22.450	\N	3.240	\N	\N	\N	\N	\N	\N
+Cumin_seed	375.000	17.810	44.240	2.250	22.270	1.535	10.500	\N	0.168	\N	fatsecret.com.au
+Gluten-free_flour_mix	353.000	0.800	85.000	7.400	0.700	0.200	1.800	1.300	\N	\N	Melblanding glutenfri pizzabund (75% majsstivelse, 10% kartoffelmel, 7% dextrose, 4% tu00f8rret surdej)
+Goat_cheese	291.000	20.000	1.000	1.000	23.000	16.000	\N	1.500	\N	\N	Soignon gederulle
+Graham_flour	350.000	12.000	66.000	2.000	1.500	0.300	11.000	0.000	\N	\N	Guldvang grahamsmel
+Green_pesto	315.000	5.100	2.900	2.200	30.200	6.200	3.600	1.600	\N	\N	Cucina Pesto alla Genovese
+ground_beef	176.000	20.000	0.000	\N	10.000	\N	\N	\N	\N	\N	\N
+Ground_pork	271.000	27.340	0.000	\N	17.040	\N	\N	\N	\N	\N	\N
+Gruyere	413.000	29.810	0.360	\N	32.400	\N	\N	\N	\N	\N	\N
+Halbweissbrot	254.000	5.000	51.000	\N	1.100	\N	\N	\N	\N	\N	\N
+Half_and_half	130.000	2.960	4.300	\N	11.500	\N	\N	\N	\N	\N	\N
+Ham	127.000	19.640	1.050	\N	4.380	\N	\N	\N	\N	\N	\N
+Hemp_seed	514.000	30.000	10.700	1.400	41.000	5.300	9.300	0.040	\N	\N	Kilic hampefru00f8
+Hobelkaes	417.000	29.000	1.000	\N	33.000	\N	\N	\N	\N	\N	\N
+Kiwi	61.000	1.140	14.660	8.990	0.520	0.029	3.000	\N	0.003	\N	fatsecret.com.au
+knackwurst	259.000	12.000	0.000	\N	23.000	\N	\N	\N	\N	\N	\N
+kohlrabi	27.000	1.700	6.200	\N	0.100	\N	\N	\N	\N	\N	\N
+Lamb_chop	314.000	22.030	0.000	\N	24.370	\N	\N	\N	\N	\N	\N
+Lamb_leg	292.000	24.320	0.000	\N	20.770	\N	\N	\N	\N	\N	\N
+Leek	61.000	1.500	14.150	\N	0.300	\N	\N	\N	\N	\N	\N
+Leibniz_cookies	433.000	6.700	76.700	\N	13.000	\N	\N	\N	\N	\N	\N
+Lemon	29.000	1.100	9.320	2.500	0.300	0.039	2.800	\N	0.002	\N	fatsecret.com.au
+Lentils_red	304.000	24.500	38.600	\N	2.000	\N	\N	\N	\N	\N	\N
+lettuce	15.000	1.000	3.000	\N	0.000	\N	\N	\N	\N	\N	\N
+Licorice_powder	313.000	6.900	65.000	22.000	0.200	0.000	12.000	1.350	\N	\N	Natur Drogeriet Engelsk lakrids pulver
+Linseed	534.000	18.290	28.880	1.550	42.160	3.663	27.300	\N	0.030	\N	fatsecret.com.au
+Mango	65.000	0.510	17.000	\N	0.270	\N	\N	\N	\N	\N	\N
+Mascarpone	442.000	4.190	2.620	\N	47.060	\N	\N	\N	\N	\N	\N
+Milk	63.000	3.400	4.600	4.600	3.500	2.200	0.000	0.110	\N	\N	Su00f8dmu00e6lk
+milk_whole	63.000	3.300	5.000	\N	3.300	\N	\N	\N	\N	\N	\N
+Millet_cooked	119.000	3.510	23.670	\N	1.000	\N	\N	\N	\N	\N	\N
+millet_dry	378.000	11.020	72.850	\N	4.220	\N	\N	\N	\N	\N	\N
+Mozzarella	238.000	17.000	2.000	\N	18.000	\N	\N	\N	\N	\N	\N
+Mozzarella_cheese	245.000	18.000	1.500	1.500	18.500	12.000	\N	0.800	\N	\N	Lovilio
+Muesli	380.000	12.000	63.000	\N	0.000	\N	\N	\N	\N	\N	\N
+mustard	489.000	6.500	1.300	\N	7.600	\N	\N	\N	\N	\N	\N
+mustard_thomy	163.000	9.500	4.200	\N	10.000	\N	\N	\N	\N	\N	\N
+Napa_cabbage	12.000	1.000	2.000	\N	0.000	\N	\N	\N	\N	\N	\N
+oat_bran	400.000	15.000	64.000	\N	7.500	\N	\N	\N	\N	\N	\N
+oat_steel_cut	386.000	9.100	70.500	\N	7.950	\N	\N	\N	\N	\N	\N
+Olive_oil	824.000	0.000	0.000	0.000	91.600	14.100	\N	0.000	\N	\N	Primadonna ekstra jomfruolivenolie
+Onion	42.000	0.920	10.110	4.280	0.080	0.026	1.400	\N	0.003	\N	fatsecret.com.au
+orange_juice	45.000	0.700	10.400	\N	0.200	\N	\N	\N	\N	\N	\N
+orzo	357.000	12.000	\N	\N	\N	\N	\N	\N	\N	\N	\N
+paisano_bread	209.000	4.660	42.000	\N	0.000	\N	\N	\N	\N	\N	\N
+papaya	39.000	0.610	9.810	\N	0.140	\N	\N	\N	\N	\N	\N
+Paprika_powder	289.000	14.760	55.740	10.340	12.950	2.100	37.400	\N	0.034	\N	fatsecret.com.au
+Parmesan	431.000	38.460	4.060	\N	28.610	\N	\N	\N	\N	\N	\N
+Parsnip	75.000	1.200	17.990	4.800	0.300	0.050	4.900	\N	0.010	\N	fatsecret.com.au
+pasta	384.000	14.160	71.270	\N	4.440	\N	\N	\N	\N	\N	\N
+pasta_dry	371.000	13.000	75.000	\N	1.510	\N	\N	\N	\N	\N	\N
+peache	39.000	0.910	9.540	\N	0.250	\N	\N	\N	\N	\N	\N
+Pear	58.000	0.380	15.400	0.000	0.120	\N	\N	\N	\N	\N	\N
+Pepper	255.000	10.950	64.810	0.640	3.260	0.980	26.500	\N	0.044	\N	fatsecret.com.au, ground black pepper
+pesto	384.000	1.900	5.200	\N	39.000	\N	\N	\N	\N	\N	\N
+philadelphia_cheese	321.000	3.570	7.100	\N	21.400	\N	\N	\N	\N	\N	\N
+phyllo_dough	320.000	8.000	64.000	\N	2.000	\N	\N	\N	\N	\N	\N
+pie_dough	462.000	78.600	0.000	\N	22.600	\N	\N	\N	\N	\N	\N
+pie_dough1	401.900	6.800	39.000	\N	1.380	\N	\N	\N	\N	\N	\N
+Pineapple	48.000	0.540	12.630	9.260	0.120	0.009	1.400	\N	0.001	\N	fatsecret.com.au
+pistachio	571.000	21.400	28.500	\N	46.000	\N	\N	\N	\N	\N	\N
+pizza_dough	230.000	7.000	41.000	\N	4.000	\N	\N	\N	\N	\N	\N
+Pizza_sauce	70.000	1.500	11.000	6.500	1.800	0.100	1.500	1.800	\N	\N	Rema1000 Pizzasauce (Tomatsauce med lu00f8g og basilikum)
+plain_yoghurt	77.000	5.290	5.000	\N	3.500	\N	\N	\N	\N	\N	\N
+plum	46.000	0.700	11.400	\N	0.280	\N	\N	\N	\N	\N	\N
+Polenta	340.000	8.000	66.000	\N	2.800	\N	\N	\N	\N	\N	\N
+polenta_cooked	192.000	4.400	40.000	\N	1.230	\N	\N	\N	\N	\N	\N
+polish_sausage	210.000	14.000	4.200	\N	24.000	\N	\N	\N	\N	\N	\N
+Pork_stew	271.000	27.340	0.000	\N	17.100	\N	\N	\N	\N	\N	\N
+Pork_tenderloin	122.000	22.260	0.000	\N	2.860	\N	\N	\N	\N	\N	\N
+Potato	104.000	1.660	19.360	0.820	2.400	0.458	1.700	\N	0.254	\N	fatsecret.com.au
+Potato_starch	325.000	0.500	81.000	0.000	0.500	0.000	\N	0.000	\N	\N	mamone Dansk Kartoffelmel
+prosciutto	214.000	25.000	0.000	\N	12.500	\N	\N	\N	\N	\N	\N
+Puff_pastry	558.000	7.400	45.700	\N	38.500	0.000	\N	\N	\N	\N	\N
+Puffpastry	412.000	5.300	33.000	\N	25.000	\N	\N	\N	\N	\N	\N
+Pumpkin	46.000	1.080	7.940	\N	1.750	\N	\N	\N	\N	\N	\N
+quark	55.000	9.920	3.180	\N	0.230	\N	\N	\N	\N	\N	\N
+quince_preserve	233.000	0.500	58.000	\N	0.500	\N	\N	\N	\N	\N	\N
+quinoa_cooked	143.000	5.010	26.350	\N	2.220	\N	\N	\N	\N	\N	\N
+Quinoa_dry	374.000	13.100	68.000	\N	5.800	\N	\N	\N	\N	\N	\N
+Raclette	345.000	25.000	1.000	\N	27.000	\N	\N	\N	\N	\N	\N
+Radicchio	23.000	1.430	4.480	\N	0.250	\N	\N	\N	\N	\N	\N
+Raspberry	52.000	1.200	11.940	\N	0.650	\N	\N	\N	\N	\N	\N
+Hazelnut	628.000	14.950	16.700	4.340	60.750	4.464	9.700	\N	0.000	\N	fatsecret.com.au
+Kidney_bean	97.000	7.200	11.300	1.900	0.500	0.200	6.400	0.650	\N	\N	King's Crown kidney bu00f8nner, fiber missing
+lima_bean	113.000	6.840	20.170	\N	0.860	\N	\N	\N	\N	\N	\N
+mashed_potato	237.000	3.930	35.220	\N	8.860	\N	\N	\N	\N	\N	\N
+moro_bean_dry	361.000	22.200	64.000	\N	0.000	\N	\N	\N	\N	\N	\N
+moth_bean	333.000	22.200	63.000	\N	2.700	\N	\N	\N	\N	\N	\N
+Oat_flake	366.000	13.000	58.000	1.000	6.500	1.100	10.000	0.020	\N	\N	Finax 100% fuldkorn Havregryn Grovvalsede
+orange	62.000	1.230	15.390	\N	0.160	\N	\N	\N	\N	\N	\N
+pinquitos_bean	351.000	22.000	62.000	\N	0.000	\N	\N	\N	\N	\N	\N
+Poppy_seed	520.000	18.000	8.600	3.000	42.000	4.500	20.000	0.000	\N	\N	Kilic blu00e5 birkes
+Raisin	300.000	2.500	76.000	59.000	0.500	0.100	\N	0.030	\N	\N	Naturens egne lu00e6kkerier Chilenske rosiner
+Red_grapefruit	42.000	0.770	10.660	\N	0.140	\N	\N	\N	\N	\N	\N
+red_lentils_cooked	165.000	8.390	18.730	\N	6.760	\N	\N	\N	\N	\N	\N
+Red_pepper	26.000	0.990	6.030	4.200	0.300	0.059	2.000	\N	0.002	\N	fatsecret.com.au / Paprika
+red_wine	84.000	0.070	2.580	\N	0.000	\N	\N	\N	\N	\N	\N
+rice_cooked	112.000	2.320	23.510	\N	0.830	\N	\N	\N	\N	\N	\N
+Ricotta	156.000	11.320	4.090	\N	10.440	\N	\N	\N	\N	\N	\N
+risotto	195.000	8.170	22.530	\N	7.550	\N	\N	\N	\N	\N	\N
+rum	231.000	0.000	0.000	\N	0.000	\N	\N	\N	\N	\N	\N
+rye_flour	259.000	8.500	48.300	\N	3.300	\N	\N	\N	\N	\N	\N
+Salad	15.000	1.360	2.790	\N	0.150	\N	\N	\N	\N	\N	\N
+Salami	384.000	25.000	1.000	\N	32.000	\N	\N	\N	\N	\N	\N
+Salmon	161.000	21.000	0.000	0.000	8.400	1.600	\N	3.000	\N	\N	princip Koldru00f8get Norsk Laks (omega 3-fedtsyrer pr. 100 g: 3.3 g)
+Salt	0.000	0.000	0.000	0.000	0.000	0.000	0.000	100.000	38.758	\N	salt
+saucen_rahm	250.000	2.500	3.600	\N	25.000	\N	\N	\N	\N	\N	\N
+Sausage_170	247.000	12.900	2.300	\N	18.800	\N	\N	\N	\N	\N	\N
+Sausage_190	267.000	14.000	2.300	\N	18.800	\N	\N	\N	\N	\N	\N
+sausage_281	281.000	14.000	4.230	\N	24.000	\N	\N	\N	\N	\N	\N
+sausage_320	283.000	18.000	4.000	\N	25.000	\N	\N	\N	\N	\N	\N
+schwarzwurzel	82.000	3.300	18.600	\N	0.200	\N	\N	\N	\N	\N	\N
+Seed_mix	420.000	15.000	37.000	0.500	20.000	2.400	15.000	\N	0.002	\N	Svansu00f8 u00f8kologisk 5-korns blanding (rugkerner, knu00e6kkede hvedekerner, hu00f8rfru00f8, sesamfru00f8 og solsikkekerner)
+Sellery_root	18.000	0.820	4.010	\N	0.190	\N	\N	\N	\N	\N	\N
+Semolina	360.000	12.680	72.830	\N	1.050	\N	\N	\N	\N	\N	\N
+Shallots	72.000	2.500	16.800	\N	0.100	\N	\N	\N	\N	\N	\N
+Shredded_coconut	650.000	6.000	6.000	5.000	63.000	55.000	20.000	0.001	\N	\N	Knaseriet kokosmel
+Sour_cream_18%	188.000	2.800	3.000	3.000	18.000	11.000	\N	0.090	\N	\N	Creme fraiche
+sour_cream_nancy	233.000	3.330	6.700	\N	20.000	\N	\N	\N	\N	\N	\N
+spaetzli	327.000	4.000	54.000	\N	6.000	\N	\N	\N	\N	\N	\N
+spaghetti	356.000	12.500	73.000	\N	1.800	\N	\N	\N	\N	\N	\N
+Spaghettisquash	31.000	0.640	6.910	\N	0.570	\N	\N	\N	\N	\N	\N
+Spelt_flour	260.000	9.100	47.200	\N	4.100	\N	\N	\N	\N	\N	\N
+Spinach	23.000	2.860	3.630	0.420	0.390	0.063	2.200	\N	0.079	\N	fatsecret.com.au
+Steel_cut_oats	386.000	9.100	70.450	\N	7.000	\N	\N	\N	\N	\N	\N
+Strawberry	32.000	0.670	7.680	\N	0.300	\N	\N	\N	\N	\N	\N
+Sugar	400.000	\N	100.000	\N	\N	\N	\N	\N	\N	\N	https://www.fatsecret.ch/
+Sunflower_oil	884.000	0.000	0.000	\N	100.000	\N	\N	\N	\N	\N	\N
+Sweet_Potato	86.000	1.570	20.120	\N	0.050	\N	\N	\N	\N	\N	\N
+swiss_chard	19.000	1.800	3.700	\N	0.000	\N	\N	\N	\N	\N	\N
+Tomato_sauce	40.000	1.100	6.900	5.600	0.600	0.100	\N	0.900	\N	\N	Casa Morando Basilico
+Tomato_sauce_ak	37.000	1.500	8.187	\N	0.210	\N	\N	\N	\N	\N	\N
+Tomatos	18.000	0.880	3.920	\N	0.200	\N	\N	\N	\N	\N	\N
+Tricolore_quinoa_mix	380.000	13.200	70.000	0.500	4.800	0.700	7.400	0.030	\N	\N	Simply Organics u00f8kologisk tricolore quinoa mix
+Upma	362.000	9.500	66.500	3.700	6.200	2.500	1.200	4.000	\N	\N	Gits UPMA Mix
+Vermouth	160.000	0.200	13.690	\N	0.000	\N	\N	\N	\N	\N	\N
+Vinegar	3.000	0.000	0.010	0.010	0.000	0.000	0.000	\N	0.000	\N	fatsecret.com.au
+vinegar_mango	108.000	0.000	24.000	\N	0.000	\N	\N	\N	\N	\N	\N
+Water	0.000	0.000	0.000	0.000	0.000	0.000	0.000	\N	0.002	\N	fatsecret.com.au
+wheat_bran	216.000	15.550	64.510	\N	4.250	\N	\N	\N	\N	\N	\N
+Whipping_cream_38%	362.000	2.100	3.000	3.000	38.000	26.000	\N	0.130	\N	\N	Piskeflu00f8de
+white_beans_cooked	82.000	5.000	10.000	\N	1.500	\N	\N	\N	\N	\N	\N
+white_beans_dry	336.000	21.110	62.560	\N	1.180	\N	\N	\N	\N	\N	\N
+White_wine	84.000	0.070	2.720	\N	\N	\N	\N	\N	\N	\N	\N
+Whole_spelt_flour	342.000	14.000	63.000	0.700	1.900	0.300	8.300	0.010	\N	\N	Belbake Wholemeal Spelt Flour (teljes kiu0151rlu00e9su0171 tu00f6nku00f6lyliszt)
+Whole_wheat_flour	350.000	12.000	66.000	2.200	1.500	0.300	11.000	0.010	\N	\N	finax fuldkorns hvedemel
+Whole_white_wheat_flour	335.000	16.000	57.000	0.700	2.300	0.500	9.600	0.020	\N	\N	Finax HvidHvede Fuldkornsmel (white wheat flour, wheat gluten, ascorbic acid)
+Wild_rice	357.000	14.730	74.900	\N	1.080	\N	\N	\N	\N	\N	\N
+wild_rice_cooked	101.000	3.990	21.340	\N	0.340	\N	\N	\N	\N	\N	\N
+Xylitol	240.000	0.000	100.000	0.000	0.000	0.000	0.000	0.000	0.000	\N	Naturae Group Xilit
+yeast	295.000	38.300	38.200	\N	4.600	\N	\N	\N	\N	\N	\N
+Yogurt_1.5%_fat	93.000	5.100	6.100	6.100	1.500	1.000	\N	0.180	\N	\N	Milbona Natural yogurt
+Yogurt_10%_fat	123.000	3.400	4.200	4.200	10.000	6.100	\N	0.130	\N	\N	Milbona Turkish style yogurt
+yogurt_coop	69.000	4.600	4.000	\N	3.800	\N	\N	\N	\N	\N	\N
+yogurt_nancy	99.000	6.900	6.900	\N	4.600	\N	\N	\N	\N	\N	\N
+Zucchini	16.000	1.210	3.350	\N	0.180	\N	\N	\N	\N	\N	\N
+Cabernet	83.000	0.070	2.600	\N	0.000	\N	\N	\N	\N	\N	\N
+Cereal_bar_orange_and_dark_chocolate	408.000	5.200	77.000	27.000	8.400	2.400	3.800	0.430	\N	21.000	Ravensbergen muesli+ appelsin og mu00f8rk cholokade
+Vanilla_pudding_mix	346.000	0.500	86.000	0.100	0.100	0.100	\N	0.000	\N	\N	Haas Natural Vanu00edliau00edzu0171 pudingpor
+grape	69.000	0.720	18.100	\N	0.160	\N	\N	\N	\N	\N	\N
+Green_olive	163.000	1.000	0.000	0.000	17.000	3.000	\N	4.000	\N	\N	Vores spanske oliven uden sten
+Rye_kernel	326.000	9.600	61.000	3.000	1.400	0.300	13.000	0.010	\N	\N	Finax sku00e5rne rugkerner
+tortilla_chip	500.000	7.140	64.000	\N	25.000	\N	\N	\N	\N	\N	\N
+Walnut	654.000	15.230	13.710	2.610	65.210	6.126	6.700	\N	0.002	\N	fatsecret.com.au
+\.
+
+
+--
+-- Data for Name: recipes; Type: TABLE DATA; Schema: public; Owner: klein
+--
+
+COPY public.recipes (id, name, portions, energy, protein, carbohydrate, sugar, fat, saturated_fat, fiber, salt, sodium, ingredients, description, "time", images, vegetarian) FROM stdin;
+111	apple_jalousie	\N	386 / 386 kcal	4.924 / 4.924 g	34.725 / 34.725 g	3.537 / 3.537 g	25.100 / 25.100 g	0.012 / 0.012 g	109.000 / 109.000 g	0.000 / 0.000 g	0.045 / 0.045 g	65 g puff_pastry *u000a44 g apple *	\N	\N	\N	\N
+152	avocado_cream	\N	532 / 532 kcal	15.666 / 15.666 g	17.443 / 17.443 g	1.255 / 1.255 g	40.922 / 40.922 g	4.905 / 4.905 g	424.000 / 424.000 g	0.000 / 0.000 g	0.037 / 0.037 g	230 g avocado *u000a40 g lemon *u000a154 g yogurt_nancy *	\N	\N	\N	\N
+93	avocado_filled	\N	863 / 863 kcal	16.154 / 16.154 g	8.820 / 8.820 g	2.344 / 2.344 g	80.804 / 80.804 g	6.478 / 6.478 g	368.000 / 368.000 g	0.000 / 0.000 g	0.044 / 0.044 g	19 g almond *u000a79 g boursin *u000a270 g avocado *u000a	\N	\N	\N	\N
+173	avocado_mousse	\N	1023 / 1023 kcal	11.047 / 11.047 g	8.530 / 8.530 g	2.494 / 2.494 g	102.226 / 102.226 g	5.953 / 5.953 g	410.000 / 410.000 g	0.000 / 0.000 g	0.027 / 0.027 g	280 g avocado *u000a130 g mascarpone *	\N	\N	\N	\N
+177	bean_bacon_gratin	\N	0 / 0 kcal	0.000 / 0.000 g	0.000 / 0.000 g	0.000 / 0.000 g	0.000 / 0.000 g	0.000 / 0.000 g	0.000 / 0.000 g	0.000 / 0.000 g	0.000 / 0.000 g	129 g beans	\N	\N	\N	\N
+95	bean_cakes	\N	1328 / 1328 kcal	92.464 / 92.464 g	155.000 / 155.000 g	3.110 / 3.110 g	37.772 / 37.772 g	3.409 / 3.409 g	427.000 / 427.000 g	0.385 / 0.385 g	0.217 / 0.217 g	209 g white_beans_dry *u000a110 g eggs *u000a80 g parmesan *u000a28 g bread_crumbs *	\N	\N	\N	\N
+209	bean_soup	\N	3241 / 3241 kcal	192.692 / 192.692 g	168.779 / 168.779 g	1.048 / 1.048 g	234.904 / 234.904 g	0.067 / 0.067 g	3093.000 / 3093.000 g	0.000 / 0.000 g	0.062 / 0.062 g	256 g onion *u000a407 g leek *u000a230 g lima_beans *u000a1300 g bouillon *u000a900 g sausage_320 *u000a	\N	\N	\N	\N
+198	beet_cheese_gratin	\N	1301 / 1301 kcal	91.872 / 91.872 g	66.757 / 66.757 g	1.402 / 1.402 g	60.233 / 60.233 g	3.904 / 3.904 g	928.000 / 928.000 g	0.303 / 0.303 g	0.099 / 0.099 g	415 g beets *u000a158 g ham *u000a160 g raclette *u000a55 g eggs *u000a100 g milk *u000a40 g cr_bread *u000a	\N	\N	\N	\N
+184	beet_gnocchi	\N	2021 / 2021 kcal	85.383 / 85.383 g	202.026 / 202.026 g	1.798 / 1.798 g	88.809 / 88.809 g	0.000 / 0.000 g	1124.000 / 1124.000 g	0.000 / 0.000 g	0.076 / 0.076 g	309 g beet *u000a425 g ricotta *u000a65 g mascarpone *u000a325 g spelt_flour *	\N	\N	\N	\N
+24	Birchermuesli	\N	2761 / 2761 kcal	75.069 / 75.069 g	509.881 / 509.881 g	1.034 / 1.034 g	24.429 / 24.429 g	0.782 / 0.782 g	2671.000 / 2671.000 g	0.000 / 0.000 g	0.028 / 0.028 g	402 g yogurt_nancy *u000a0 g apricot *u000a280 g Muesli *u000a548 g Banana *u000a600 g Apple *u000a0 g Pear *u000a351 g mango *u000a170 g Raspberry *u000a320 g Blueberry *u000a0 g blackberry *u000a0 g walnuts *u000a0 g mango *u000a0 g strawberry *u000a0 g almonds *u000a0 g yogurt_coop *u000a0 g peache *u000au000au000a	\N			1
+179	beet_potato	\N	3300 / 3300 kcal	172.199 / 172.199 g	188.449 / 188.449 g	1.566 / 1.566 g	181.267 / 181.267 g	14.111 / 14.111 g	2107.000 / 2107.000 g	0.252 / 0.252 g	0.082 / 0.082 g	601 g beet 605 g potato 362 g beef 150 g bacon 68 g dried_tomato 21 g butter 300 g bouillon	\N	\N	\N	\N
+156	basil_tenderloin	\N	173 / 173 kcal	6.378 / 6.378 g	2.382 / 2.382 g	5.780 / 5.780 g	15.192 / 15.192 g	1.164 / 1.164 g	30.000 / 30.000 g	0.000 / 0.000 g	0.213 / 0.213 g	30 g almonds 60 g dry_tomatoes 516 g tenderloin	\N	\N	\N	\N
+211	aenisbroetli	\N	4191 / 4191 kcal	93.337 / 93.337 g	857.041 / 857.041 g	3.313 / 3.313 g	33.841 / 33.841 g	8.212 / 8.212 g	1265.000 / 1265.000 g	0.928 / 0.928 g	0.074 / 0.074 g	500 g sugar *u000a265 g egg *u000a500 g flour_unbleached *	\N	\N	\N	\N
+90	beet-barlye	\N	655 / 655 kcal	27.297 / 27.297 g	78.352 / 78.352 g	0.997 / 0.997 g	14.363 / 14.363 g	0.034 / 0.034 g	657.000 / 657.000 g	0.000 / 0.000 g	0.042 / 0.042 g	377 g beets 104 g barley_dry 130  g_onions 46 g parmesan	\N	\N	\N	\N
+220	BB_quiche	\N	4063 / 4063 kcal	162.658 / 162.658 g	66.644 / 66.644 g	3.717 / 3.717 g	349.065 / 349.065 g	67.231 / 67.231 g	1093.000 / 1093.000 g	1.958 / 1.958 g	0.149 / 0.149 g	113 g cream_cheese 115 g butter 67 g flour_unbleached 109 g bacon 165 g eggs 69 g onion 265 g gruyere 190 g cream	\N	\N	\N	\N
+23	birnenparfait	\N	3008 / 3008 kcal	30.9 / 30.9 g	263.6 / 263.6 g	2.4 / 2.4 g	201 / 201 g	0 / 0 g	1251.2 / 1251.2 g	0 / 0 g	0 / 0 g	500 g Pear 150 g Sugar 50 g White_wine 51.24 g Egg_yoke 400 g Cream 100 g Chocolate_dark	\N	\N	\N	1
+178	bean_gratin	\N	1408 / 1408 kcal	89.043 / 89.043 g	101.381 / 101.381 g	2.136 / 2.136 g	70.968 / 70.968 g	0.021 / 0.021 g	659.000 / 659.000 g	0.000 / 0.000 g	0.135 / 0.135 g	100 g beans_dried 100 g bacon 81 g onions 271 g tomato 27 g bread_crumbs 80 g gruyere	\N	\N	\N	\N
+191	barley_soup	\N	2714 / 2714 kcal	103.769 / 103.769 g	243.718 / 243.718 g	0.858 / 0.858 g	154.982 / 154.982 g	2.675 / 2.675 g	3165.000 / 3165.000 g	0.000 / 0.000 g	0.033 / 0.033 g	0 g onion 0 g pork_stew 0 g bacon 548 g sausage_281 273g carrots282 g_leek 0 g celery 300 g lima 250 g barley_dry 584 g potato	\N	\N	\N	\N
+163	alibaba_rice	\N	1691 / 1691 kcal	86.548 / 86.548 g	254.474 / 254.474 g	1.216 / 1.216 g	53.181 / 53.181 g	0.000 / 0.000 g	1391.000 / 1391.000 g	0.000 / 0.000 g	0.062 / 0.062 g	200 g wild_rice *u000a100 g chickpea_dry *u000a400 g bouillon *u000a291 g eggplant *u000a199 g bellpepper *u000a201 g feta *	\N	\N	\N	\N
+166	almond_pear_tart	\N	3930 / 3930 kcal	63.461 / 63.461 g	493.427 / 493.427 g	2.293 / 2.293 g	188.486 / 188.486 g	88.290 / 88.290 g	1714.000 / 1714.000 g	2.185 / 2.185 g	0.037 / 0.037 g	210 g flour_unbleached *u000a237 g sugar *u000a150 g butter *u000a272 g water *u000a635 g pear *u000a110 g egg *u000a100 g almond *u000au000a	\N	\N	\N	\N
+157	apple_chocolate_cake	\N	3237 / 3237 kcal	61.832 / 61.832 g	368.564 / 368.564 g	2.880 / 2.880 g	158.083 / 158.083 g	60.913 / 60.913 g	1124.000 / 1124.000 g	1.970 / 1.970 g	0.055 / 0.055 g	340 g apple *u000a109 g chocolate_dark *u000a100 g butter *u000a180 g sugar *u000a175 g flour_unbleached *u000a220 g egg *	\N	\N	\N	\N
+36	aprikosenwaehe	\N	1922 / 1922 kcal	44.55 / 44.55 g	208.23 / 208.23 g	2.06 / 2.06 g	95.41 / 95.41 g	46.63 / 46.63 g	935.00 / 935.00 g	1.25 / 1.25 g	0.49 / 0.49 g	177 g Flour_unbleached 79 g Butter 33 g Almond_flour 480 g Apricots_frozen 55 g Egg 103 g Milk 8 g Sugar	\N	\N	\N	1
+124	asian_chicken_soup	\N	2468 / 2468 kcal	166.400 / 166.400 g	73.473 / 73.473 g	0.884 / 0.884 g	132.513 / 132.513 g	0.103 / 0.103 g	2792.000 / 2792.000 g	0.000 / 0.000 g	0.060 / 0.060 g	207 g carrot 232 g leek 103 g orzo 100 g onions 400 g coconut_cream 1300 g bouillon 450 g chicken_breast 0 g walnut	\N	\N	\N	\N
+75	bluecheese_salad_dressing	\N	1527 / 1527 kcal	43.04 / 43.04 g	10.51 / 10.51 g	2.57 / 2.57 g	125.70 / 125.70 g	0.00 / 0.00 g	595.00 / 595.00 g	0.00 / 0.00 g	0.00 / 0.00 g	179 g blue_cheese *u000a205 g bouillon *u000a35 g mustard *u000a40 g sunflower oil *u000a50 g vinegar *u000a86 g cream *u000au000a	\N	\N	\N	\N
+210	brunsli	\N	6486 / 6486 kcal	147.891 / 147.891 g	597.279 / 597.279 g	4.687 / 4.687 g	377.422 / 377.422 g	19.405 / 19.405 g	1384.000 / 1384.000 g	0.000 / 0.000 g	0.107 / 0.107 g	265 g chocolate_dark *u000a119 g egg_white *u000a500 g almonds *u000a500 g sugar *	\N	\N	\N	\N
+218	bruscetta	\N	80 / 80 kcal	4.008 / 4.008 g	17.408 / 17.408 g	0.180 / 0.180 g	0.894 / 0.894 g	0.000 / 0.000 g	447.000 / 447.000 g	0.000 / 0.000 g	0.009 / 0.009 g	427 g tomato *u000a20 g endive *u000a	\N	\N	\N	\N
+112	cabbage_rolls	\N	1568 / 1568 kcal	76.212 / 76.212 g	44.171 / 44.171 g	1.376 / 1.376 g	115.754 / 115.754 g	0.000 / 0.000 g	1140.000 / 1140.000 g	0.000 / 0.000 g	0.067 / 0.067 g	126 g creme_fraiche *u000a182 g sour_cream_nancy *u000a100 g parmesan *u000a113 g ham *u000a369 g cabbage *u000a200 g bouillon *u000a50 g white_wine *u000au000a	\N	\N	\N	\N
+145	cellery_potato_puree	\N	1291 / 1291 kcal	24.198 / 24.198 g	151.008 / 151.008 g	1.010 / 1.010 g	60.913 / 60.913 g	31.118 / 31.118 g	1278.000 / 1278.000 g	0.798 / 0.798 g	0.200 / 0.200 g	755 g potato *u000a184 g celery *u000a300 g milk *u000a39 g butter *	\N	\N	\N	\N
+182	cervelat_mix	\N	653 / 653 kcal	30.265 / 30.265 g	21.045 / 21.045 g	0.956 / 0.956 g	50.047 / 50.047 g	0.018 / 0.018 g	683.000 / 683.000 g	0.000 / 0.000 g	0.044 / 0.044 g	214 g knackwurst *u000a71 g onion *u000a130 g zucchini *u000a268 g tomato *u000a	\N	\N	\N	\N
+172	chard_quiche	\N	2806 / 2806 kcal	99.819 / 99.819 g	228.790 / 228.790 g	1.976 / 1.976 g	80.763 / 80.763 g	3.133 / 3.133 g	1420.000 / 1420.000 g	0.350 / 0.350 g	0.070 / 0.070 g	360 g pie_dough1 *u000a130 g onion *u000a101 g bouillon *u000a473 g quark *u000a180 g creme_fraiche *u000a100 g egg *u000a76 g semolina *u000a	\N	\N	\N	\N
+131	cheese_pie	\N	3709 / 3709 kcal	374.327 / 374.327 g	12.567 / 12.567 g	3.529 / 3.529 g	259.778 / 259.778 g	5.609 / 5.609 g	1051.000 / 1051.000 g	0.495 / 0.495 g	0.356 / 0.356 g	110 g eggs *u000a200 g cream *u000a100 g milk *u000a311 g gruyere *u000a330 g pie_dough *	\N	\N	\N	\N
+153	cheesecake	\N	2603 / 2603 kcal	46.720 / 46.720 g	242.643 / 242.643 g	2.697 / 2.697 g	157.635 / 157.635 g	48.022 / 48.022 g	965.000 / 965.000 g	1.963 / 1.963 g	0.048 / 0.048 g	260 g tj_cookiesu000a65 g butter *u000a225 g sugar *u000a200 g cream *u000a200 g milk *u000a275 g eggs *u000a30 g flouru000a	\N	\N	\N	\N
+161	chicken_ebly_gratin	\N	1555 / 1555 kcal	170.912 / 170.912 g	63.948 / 63.948 g	1.111 / 1.111 g	65.803 / 65.803 g	0.029 / 0.029 g	1400.000 / 1400.000 g	0.000 / 0.000 g	0.122 / 0.122 g	110 g onion *u000a187 g Ebly *u000a500 g bouillon *u000a153 g mozzarella *u000a450 g chicken_breast *u000a	\N	\N	\N	\N
+221	chickensalad	\N	1760 / 1760 kcal	42.353 / 42.353 g	171.053 / 171.053 g	1.099 / 1.099 g	102.610 / 102.610 g	11.209 / 11.209 g	1601.000 / 1601.000 g	0.018 / 0.018 g	0.026 / 0.026 g	205 g chickenu000a129 g orangeu000a60 g raisins *u000a235 g avocado *u000a534 g cucumber *u000a175 g tomato *u000a100 6 endiveu000a97 g apple *u000a100 g walnut *u000a200 g wild_rice_cooked * *u000au000au000a	\N	\N	\N	\N
+120	chili_spaetzli	\N	1092 / 1092 kcal	62.226 / 62.226 g	104.024 / 104.024 g	0.993 / 0.993 g	50.178 / 50.178 g	0.026 / 0.026 g	1100.000 / 1100.000 g	0.000 / 0.000 g	0.057 / 0.057 g	459 g porku000a100 g onion *u000a400 g tomato *u000a60 g beans_dried *u000a400 g corn_can *u000a140 g gruyere *u000a0 g spaetzli *u000a	\N	\N	\N	\N
+160	chinakohl_lasagne	\N	3548 / 3548 kcal	207.822 / 207.822 g	234.711 / 234.711 g	1.099 / 1.099 g	189.821 / 189.821 g	0.993 / 0.993 g	3229.000 / 3229.000 g	0.000 / 0.000 g	0.064 / 0.064 g	280 g lentils_red *u000a171 g onions *u000a1230 g tomato *u000a240 g gruyere *u000a101 g parmesan *u000a207 g potato *u000a200 g cream *u000a800 g napa_cabbage *u000a	\N	\N	\N	\N
+190	choclate_almond_brownies	\N	5806 / 5806 kcal	120.754 / 120.754 g	371.367 / 371.367 g	4.783 / 4.783 g	410.513 / 410.513 g	98.894 / 98.894 g	1214.000 / 1214.000 g	2.581 / 2.581 g	0.099 / 0.099 g	313 g chocolate_dark *u000a155 g butter *u000a213 g sugar *u000a206 g eggs *u000a227 g almond *u000a100 g flour_unbleached *u000au000a	\N	\N	\N	\N
+181	chocolate_almonds	\N	2537 / 2537 kcal	64.295 / 64.295 g	33.335 / 33.335 g	6.159 / 6.159 g	236.380 / 236.380 g	67.263 / 67.263 g	412.000 / 412.000 g	1.236 / 1.236 g	0.156 / 0.156 g	218 g chocolateu000a103 g butter *u000a9 g sugar *u000a300 g almonds *	\N	\N	\N	\N
+176	chorizo_mixture	\N	6419 / 6419 kcal	345.680 / 345.680 g	23.118 / 23.118 g	4.457 / 4.457 g	541.976 / 541.976 g	0.000 / 0.000 g	1440.000 / 1440.000 g	0.000 / 0.000 g	0.240 / 0.240 g	290 g gruyere *u000a90 g mascarpone *u000a1060 g chorizo *	\N	\N	\N	\N
+225	cinnamon_roll	\N	3047 / 3047 kcal	83.492 / 83.492 g	316.998 / 316.998 g	3.071 / 3.071 g	154.350 / 154.350 g	43.251 / 43.251 g	992.000 / 992.000 g	1.047 / 1.047 g	0.084 / 0.084 g	300 g flour_unbleached *u000a60 g sugar *u000a60 g butter *u000a55 g egg *u000a122 g milk *u000a210 g apple *u000a20 g cream *u000a165 g almonds *	\N	\N	\N	\N
+212	cinnamonstar	\N	4147 / 4147 kcal	118.290 / 118.290 g	340.503 / 340.503 g	4.320 / 4.320 g	253.387 / 253.387 g	19.405 / 19.405 g	960.000 / 960.000 g	0.000 / 0.000 g	0.123 / 0.123 g	300 g sugar *u000a110 g egg_white *u000a500 g almonds *u000a50 g water *	\N	\N	\N	\N
+135	coq_au_rum	\N	1457 / 1457 kcal	132.350 / 132.350 g	58.269 / 58.269 g	1.453 / 1.453 g	73.298 / 73.298 g	1.088 / 1.088 g	1003.000 / 1003.000 g	0.000 / 0.000 g	0.132 / 0.132 g	66 g onions *u000a4 g garlic *u000a418 g chicken_breast *u000a182 g tomatos *u000a233 g potatoes *u000a100 g cream *	\N	\N	\N	\N
+207	coq_au_rum1	\N	1443 / 1443 kcal	138.529 / 138.529 g	64.702 / 64.702 g	1.065 / 1.065 g	40.560 / 40.560 g	1.034 / 1.034 g	1355.000 / 1355.000 g	0.000 / 0.000 g	0.102 / 0.102 g	137 g onions *u000a218 g potato *u000a440 g chicken_breast *u000a350 g tomato *u000a110 g bouillon *u000a100 g rum *u000a0 g yogurt_nancy *	\N	\N	\N	\N
+213	coq_au_vin	\N	4739 / 4739 kcal	633.122 / 633.122 g	7.574 / 7.574 g	1.539 / 1.539 g	226.884 / 226.884 g	0.000 / 0.000 g	3080.000 / 3080.000 g	0.000 / 0.000 g	0.206 / 0.206 g	1900 g chicken_breast *u000a180 g bacon *u000a1000 g bouillon *u000au000au000a	\N	\N	\N	\N
+60	chickpea_curry	\N	2212 / 2212 kcal	84.400 / 84.400 g	295.450 / 295.450 g	1.035 / 1.035 g	107.170 / 107.170 g	0.369 / 0.369 g	2138.000 / 2138.000 g	0.000 / 0.000 g	0.039 / 0.039 g	300 g chickpeas_dry *u000a900 g carrots *u000a138 g onions *u000a0 g lamb legu000a400 g coconut_cream *u000a400 g tomato *u000a	\N	\N	\N	\N
+40	chili_con_carne	\N	2352 / 2352 kcal	178.660 / 178.660 g	173.427 / 173.427 g	1.153 / 1.153 g	101.854 / 101.854 g	1.051 / 1.051 g	2040.000 / 2040.000 g	0.000 / 0.000 g	0.088 / 0.088 g	478 g Pork_stew *u000a113 g onion *u000a406 g Tomato *u000a105 g Beans_dried *u000a250 g Bouillon *u000a223 g Potato *u000a265 g Corn_can *u000a200 g yogurt_nancy *u000a0 g creme_fraiche *	\N	\N	\N	\N
+82	CR_chickensandwich	\N	289 / 289 kcal	0.001 / 0.001 g	41.410 / 41.410 g	2.951 / 2.951 g	9.168 / 9.168 g	5.400 / 5.400 g	98.000 / 98.000 g	0.120 / 0.120 g	0.047 / 0.047 g	88 g CR_bread *u000a282 g chickenu000a10 g butter *u000a	\N	\N	\N	\N
+78	CR_mueli1	\N	1090 / 1090 kcal	0.01 / 0.01 g	194.29 / 194.29 g	1.01 / 1.01 g	5.36 / 5.36 g	2.71 / 2.71 g	1082.00 / 1082.00 g	0.45 / 0.45 g	0.18 / 0.18 g	189 g banana *u000a193 g mango *u000a330 g papaya *u000a120 g muesli *u000a250 g yogurt_1.5%_fat *	\N	\N	\N	\N
+76	CR_muesli	\N	746 / 746 kcal	0.008 / 0.008 g	165.108 / 165.108 g	0.835 / 0.835 g	1.961 / 1.961 g	0.317 / 0.317 g	894.000 / 894.000 g	0.000 / 0.000 g	0.003 / 0.003 g	283  g banana *u000a200 g mango *u000a348 g papaya *u000a63 g muesli *u000a410 g yogurt 1.5% fat	\N	\N	\N	\N
+81	CR_restsalad	\N	821 / 821 kcal	46.73 / 46.73 g	66.72 / 66.72 g	0.98 / 0.98 g	38.72 / 38.72 g	1.89 / 1.89 g	836.00 / 836.00 g	0.00 / 0.00 g	0.01 / 0.01 g	135 g pork stew *u000a230 g rice_cooked *u000a89 g avocado *u000a157 g tomato *u000a225 g cucumber *u000a	\N	\N	\N	\N
+77	CR_salad	\N	248 / 248 kcal	0.01 / 0.01 g	23.83 / 23.83 g	0.80 / 0.80 g	10.67 / 10.67 g	0.00 / 0.00 g	310.00 / 310.00 g	0.00 / 0.00 g	0.00 / 0.00 g	0 g gruyere *u000a20 g salad *u000a0 g eggs *u000a0 g quinoa_cooked *u000a0 g sausage_170 *u000a55 g mozzarella *u000a80 g riceu000a81 g tomato *u000a118 g cucumber *u000a35 g CR_bread *	\N	\N	\N	\N
+80	CR_sandwich	\N	355 / 355 kcal	19.09 / 19.09 g	33.95 / 33.95 g	2.93 / 2.93 g	15.17 / 15.17 g	2.70 / 2.70 g	121.00 / 121.00 g	0.06 / 0.06 g	0.02 / 0.02 g	5 g butter *u000a20 g prosciutto *u000a24 g gruyere *u000a72 g CR_bread *	\N	\N	\N	\N
+79	CR_tomatoes	\N	227 / 227 kcal	0.04 / 0.04 g	26.48 / 26.48 g	0.51 / 0.51 g	3.92 / 3.92 g	0.20 / 0.20 g	446.00 / 446.00 g	0.20 / 0.20 g	0.08 / 0.08 g	279 g tomatos *u000a41 g rice_cooked *u000a50 g corn *u000a76 g pork_tenderloin *u000a	\N	\N	\N	\N
+169	curry_lamb	\N	2546 / 2546 kcal	141.948 / 141.948 g	37.009 / 37.009 g	1.548 / 1.548 g	201.180 / 201.180 g	0.030 / 0.030 g	1645.000 / 1645.000 g	0.000 / 0.000 g	0.086 / 0.086 g	531 g lamb_leg *u000a114 g onions *u000a200 g water *u000a400 g coconut_cream *u000a400 g tomato *	\N	\N	\N	\N
+150	curry_tomatoes	\N	178 / 178 kcal	7.029 / 7.029 g	38.184 / 38.184 g	0.225 / 0.225 g	1.405 / 1.405 g	0.039 / 0.039 g	792.000 / 792.000 g	0.000 / 0.000 g	0.009 / 0.009 g	643 g tomatos *u000a149 g onion *	\N	\N	\N	\N
+125	dark_bread	\N	1673 / 1673 kcal	57.789 / 57.789 g	333.715 / 333.715 g	2.035 / 2.035 g	9.686 / 9.686 g	0.000 / 0.000 g	822.000 / 822.000 g	0.000 / 0.000 g	0.070 / 0.070 g	72 g flour_whole_wheat *u000a105 g rye_flour *u000a325 g flour_unbleached *u000a320 g water *	\N	\N	\N	\N
+200	double_chocolate_cake	\N	4363 / 4363 kcal	73.095 / 73.095 g	427.868 / 427.868 g	4.021 / 4.021 g	254.335 / 254.335 g	143.522 / 143.522 g	1085.000 / 1085.000 g	3.963 / 3.963 g	0.067 / 0.067 g	400 g chocolateu000a50 g cream *u000a250 g butter *u000a210 g sugar *u000a275 g eggs *u000a300 g flour_unbleached *u000au000a	https://www.wildeisen.ch/rezepte/doppelter-schokoladecake	\N	\N	\N
+92	dukkah	\N	738 / 738 kcal	21.665 / 21.665 g	11.720 / 11.720 g	6.051 / 6.051 g	68.052 / 68.052 g	4.627 / 4.627 g	122.000 / 122.000 g	0.000 / 0.000 g	0.178 / 0.178 g	68 g hazelnut *u000a41 g almond *u000a13 g pistachio *	\N	\N	\N	\N
+51	dunkelbrot	\N	1738 / 1738 kcal	64.25 / 64.25 g	358.93 / 358.93 g	1.93 / 1.93 g	8.43 / 8.43 g	0.00 / 0.00 g	900.00 / 900.00 g	0.00 / 0.00 g	0.01 / 0.01 g	250 g Flour unbleached *u000a250 g Flour whole_wheat *u000a400 g water *u000a	\N	\N	\N	1
+168	ebly_salad	\N	1110 / 1110 kcal	57.735 / 57.735 g	74.339 / 74.339 g	1.003 / 1.003 g	61.560 / 61.560 g	5.939 / 5.939 g	1107.000 / 1107.000 g	0.385 / 0.385 g	0.052 / 0.052 g	200 g ebly *u000a0 g gruyere *u000a223 g tomato *u000a0 g celery *u000a130 g lettuce *u000a250 g cucumber *u000a110 g eggs *u000a75 g bacon *u000a119 g avocado *	\N	\N	\N	\N
+180	egg_plant_gratin	\N	1478 / 1478 kcal	122.174 / 122.174 g	45.278 / 45.278 g	1.091 / 1.091 g	90.087 / 90.087 g	0.029 / 0.029 g	1355.000 / 1355.000 g	0.000 / 0.000 g	0.090 / 0.090 g	272 g eggplant *u000a0 g bellpepper *u000a0 g bacon *u000a400 g tomato *u000a300 g ground_beef *u000a200 g mozzarella *u000a0 g parmesan *u000a70 g gruyere *u000a113 g onion *	\N	\N	\N	\N
+98	ellbow_gratin	\N	2943 / 2943 kcal	185.809 / 185.809 g	171.369 / 171.369 g	2.228 / 2.228 g	164.919 / 164.919 g	5.636 / 5.636 g	1321.000 / 1321.000 g	0.495 / 0.495 g	0.141 / 0.141 g	72 g bacon *u000a260 g swiss_chard *u000a104 g onion *u000a260 g pork_stew *u000a200 g elbows_dry *u000a115 g gruyere *u000a110 g eggs *u000a100 g milk *u000a100 g cream *u000a	\N	\N	\N	\N
+188	fennel_tomato_gratin	\N	783 / 783 kcal	50.414 / 50.414 g	53.801 / 53.801 g	0.870 / 0.870 g	43.512 / 43.512 g	0.000 / 0.000 g	900.000 / 900.000 g	0.000 / 0.000 g	0.056 / 0.056 g	380 g fennel *u000a287 g tomato *u000a200 g mozzarella *u000a14 g bread_crumbs *u000a19 g parmesan *	\N	\N	\N	\N
+130	fennel-couscous	\N	993 / 993 kcal	29.029 / 29.029 g	97.909 / 97.909 g	1.040 / 1.040 g	58.376 / 58.376 g	5.330 / 5.330 g	955.000 / 955.000 g	0.000 / 0.000 g	0.030 / 0.030 g	232 g couscous *u000a386 g fennel *u000a250 g tomatos *u000a87 g walnuts *u000a	wildeisen https://www.wildeisen.ch/rezepte/fenchel-couscous-salat-mit-granatapfel-060722	\N	\N	\N
+123	filled_tomato	\N	227 / 227 kcal	14.951 / 14.951 g	16.009 / 16.009 g	0.522 / 0.522 g	12.900 / 12.900 g	0.004 / 0.004 g	436.000 / 436.000 g	0.000 / 0.000 g	0.034 / 0.034 g	300 g tomatos *u000a77 g zucchini *u000a45 g raclette *u000a0 g mascarpone *u000a0 g egg *u000a14 g onion *	\N	\N	\N	\N
+203	geschnetzeltes_schweinefleisch	\N	889 / 889 kcal	54.687 / 54.687 g	32.503 / 32.503 g	1.317 / 1.317 g	59.470 / 59.470 g	0.028 / 0.028 g	675.000 / 675.000 g	0.000 / 0.000 g	0.081 / 0.081 g	214 g pork_tenderloin *u000a150 g cream *u000a75 g bouillon *u000a106 g onions *u000a130 g leek *u000a	\N	\N	\N	\N
+49	filled_avocado	\N	366 / 366 kcal	5.00 / 5.00 g	3.94 / 3.94 g	2.24 / 2.24 g	34.99 / 34.99 g	2.76 / 2.76 g	163.00 / 163.00 g	0.00 / 0.00 g	0.01 / 0.01 g	8 g almonds *u000a115 g Avocado *u000a40 g creme fraiche *	\N	\N	\N	1
+52	french_toast	\N	721 / 721 kcal	26.838 / 26.838 g	103.367 / 103.367 g	1.794 / 1.794 g	16.546 / 16.546 g	5.609 / 5.609 g	402.000 / 402.000 g	0.495 / 0.495 g	0.109 / 0.109 g	192 g Halbweissbrot *u000a110 g eggs *u000a100 g milk *u000a	\N	\N	\N	1
+53	grapefruit_salad	\N	1370 / 1370 kcal	56.92 / 56.92 g	196.91 / 196.91 g	1.40 / 1.40 g	37.80 / 37.80 g	0.00 / 0.00 g	981.00 / 981.00 g	0.00 / 0.00 g	0.00 / 0.00 g	294 g red grapefruit *u000a7 g sugar *u000a200 g bulgur *u000a150 g radicchio *u000a137 g fennel *u000a193 g mozzarella *u000a	\N	\N	\N	1
+25	Griessgnochi	\N	3045 / 3045 kcal	155.8 / 155.8 g	233.9 / 233.9 g	0.9 / 0.9 g	165.7 / 165.7 g	15.2 / 15.2 g	3271 / 3271 g	1 / 1 g	0.4 / 0.4 g	200 g Semolina *u000a538 g Milk *u000a559 g Water *u000a110 g eggs *u000a298 g Bellpepper *u000a206 g Parmesan *u000a310 g Tomato *u000a200 g Cream *u000a400 g Bouillon *u000a450 g Zucchini *	Wildeisen vegetarian book p162	\N	\N	1
+196	guacamole	\N	440 / 440 kcal	5.560 / 5.560 g	29.988 / 29.988 g	1.274 / 1.274 g	30.028 / 30.028 g	4.435 / 4.435 g	345.000 / 345.000 g	0.000 / 0.000 g	0.016 / 0.016 g	202 g avocado *u000a23 g onions *u000a120 g banana *	\N	\N	\N	\N
+50	Halbweissbrot	\N	1780 / 1780 kcal	60.00 / 60.00 g	355.00 / 355.00 g	2.54 / 2.54 g	7.50 / 7.50 g	0.00 / 0.00 g	700.00 / 700.00 g	0.00 / 0.00 g	0.00 / 0.00 g	500 g Flour unbleached *u000a200 g water *	\N	\N	\N	1
+110	ham_croissant	\N	4926 / 4926 kcal	126.372 / 126.372 g	361.329 / 361.329 g	4.055 / 4.055 g	328.039 / 328.039 g	5.036 / 5.036 g	1215.000 / 1215.000 g	0.544 / 0.544 g	0.104 / 0.104 g	203 g ham *u000a50 g onions *u000a150 g eggs *u000a17 g milk *u000a25 g parmesan *u000a770 g puff_pastry *	\N	\N	\N	\N
+162	himbeer_mousse	\N	1308 / 1308 kcal	23.460 / 23.460 g	83.048 / 83.048 g	1.774 / 1.774 g	100.273 / 100.273 g	0.000 / 0.000 g	737.000 / 737.000 g	0.000 / 0.000 g	0.032 / 0.032 g	245 g raspberry *u000a32 g sugar *u000a205 g yogurt_nancy *u000a255 g cream *	\N	\N	\N	\N
+205	kaeseschnitten	\N	3948 / 3948 kcal	199.398 / 199.398 g	249.888 / 249.888 g	3.403 / 3.403 g	228.200 / 228.200 g	0.000 / 0.000 g	1160.000 / 1160.000 g	0.000 / 0.000 g	0.172 / 0.172 g	415 g gruyere *u000a165 g gruyere *u000a100 g cream *u000a480 g halbweissbrot *u000au000au000a	\N	\N	\N	\N
+62	katoffelflan	\N	1458 / 1458 kcal	18.10 / 18.10 g	61.58 / 61.58 g	2.65 / 2.65 g	124.43 / 124.43 g	55.83 / 55.83 g	550.00 / 550.00 g	1.07 / 1.07 g	1.26 / 1.26 g	320 g potato *u000a89 g butter *u000a66 g egg yolk *u000a75 g cream *u000a	\N	\N	\N	1
+144	kirschenpfannkuchen	\N	3275 / 3275 kcal	94.519 / 94.519 g	201.267 / 201.267 g	1.843 / 1.843 g	178.016 / 178.016 g	45.434 / 45.434 g	1777.000 / 1777.000 g	1.707 / 1.707 g	0.053 / 0.053 g	200 g paisano_bread *u000a41 g butter *u000a270 g eggs *u000a245 g milk *u000a90 g sugar *u000a80 g almonds *u000a105 g walnuts *u000a746 g cherries_unpitted *u000a	\N	\N	\N	\N
+141	kohlrabi_soup	\N	1521 / 1521 kcal	57.361 / 57.361 g	93.790 / 93.790 g	0.816 / 0.816 g	95.538 / 95.538 g	3.158 / 3.158 g	1864.000 / 1864.000 g	0.110 / 0.110 g	0.031 / 0.031 g	180 g onions *u000a426 g kohlrabi *u000a259 g sausage_190 *u000a199 g potatoes *u000a600 g bouillon *u000a100 g milk *u000a100 g cream *u000a	\N	\N	\N	\N
+94	labneh	\N	495 / 495 kcal	34.500 / 34.500 g	34.500 / 34.500 g	0.990 / 0.990 g	23.000 / 23.000 g	0.000 / 0.000 g	500.000 / 500.000 g	0.000 / 0.000 g	0.069 / 0.069 g	500 g yogurt_nancy *u000a	\N	\N	\N	\N
+114	lamb_stew	\N	1677 / 1677 kcal	86.453 / 86.453 g	302.327 / 302.327 g	0.583 / 0.583 g	9.146 / 9.146 g	0.188 / 0.188 g	2877.000 / 2877.000 g	0.000 / 0.000 g	0.030 / 0.030 g	0 g chickpea *u000a0 g lamb_leg *u000a300 g pinquitos_beans *u000a100 g onions *u000a0 g cabbage *u000a454 g leek *u000a438 g carrots *u000a384 g celery *u000a0 g canned_tomatos *u000a1200 g bouillon *u000a0 g potato *u000a	\N	\N	\N	\N
+206	lamb_vindaloo	\N	1611 / 1611 kcal	129.896 / 129.896 g	20.103 / 20.103 g	1.355 / 1.355 g	109.222 / 109.222 g	0.031 / 0.031 g	1189.000 / 1189.000 g	0.000 / 0.000 g	0.109 / 0.109 g	515 g lamb_leg *u000a118 g onion *u000a206 g tomato *u000a350 g bouillon *	\N	\N	\N	\N
+86	lamb_with_chickpeas	\N	1254 / 1254 kcal	93.038 / 93.038 g	105.308 / 105.308 g	0.944 / 0.944 g	57.955 / 57.955 g	0.020 / 0.020 g	1329.000 / 1329.000 g	0.000 / 0.000 g	0.070 / 0.070 g	250 g lamb_leg *u000a75 g onion *u000a400 g canned_tomato *u000a50 g chickpeas_dry *u000a54 g moro_beans_dry *u000a500 g bouillon *	\N	\N	\N	\N
+158	lamm_chops_zucchini	\N	436 / 436 kcal	6.391 / 6.391 g	31.033 / 31.033 g	2.757 / 2.757 g	31.736 / 31.736 g	19.440 / 19.440 g	158.000 / 158.000 g	0.432 / 0.432 g	0.040 / 0.040 g	36 g butter *u000a83 g zucchini *u000a39 g bread_crumbs *	\N	\N	\N	\N
+138	Laubfroesche	\N	387 / 387 kcal	10.836 / 10.836 g	72.168 / 72.168 g	0.573 / 0.573 g	5.224 / 5.224 g	0.021 / 0.021 g	675.000 / 675.000 g	0.000 / 0.000 g	0.016 / 0.016 g	95 g polenta *u000a80 g onions *u000a500 g bouillon *u000a30 g lemon_juiceu000a	\N	\N	\N	\N
+189	leek_bean_potato_gratin	\N	1747 / 1747 kcal	97.607 / 97.607 g	119.367 / 119.367 g	1.338 / 1.338 g	96.827 / 96.827 g	7.892 / 7.892 g	1305.000 / 1305.000 g	0.330 / 0.330 g	0.075 / 0.075 g	213 g leek *u000a100 g bacon *u000a282 g potato *u000a300 g milk *u000a100 g borlotti_cooked *u000a110 g gruyere *u000a200 g bouillon *	\N	\N	\N	\N
+208	leek_potato_cervelat_gratin	\N	3166 / 3166 kcal	118.327 / 118.327 g	170.692 / 170.692 g	1.667 / 1.667 g	220.752 / 220.752 g	8.010 / 8.010 g	1899.000 / 1899.000 g	0.275 / 0.275 g	0.062 / 0.062 g	431 g knackwurst *u000a548 g potato *u000a250 g milk *u000a100 g parmesan *u000a200 g cream *u000a370 g leek *u000au000au000a	\N	\N	\N	\N
+223	leek_potato_gratin	\N	2625 / 2625 kcal	134.349 / 134.349 g	156.884 / 156.884 g	1.389 / 1.389 g	158.134 / 158.134 g	7.701 / 7.701 g	1890.000 / 1890.000 g	0.275 / 0.275 g	0.071 / 0.071 g	220 g onions *u000a390 g pork_stew *u000a262 g leek *u000a468 g potatoes *u000a200 g cream *u000a250 g milk *u000a100 g bouillon *	\N	\N	\N	\N
+57	leek_potato_soup	\N	1188 / 1188 kcal	1.11 / 1.11 g	129.43 / 129.43 g	0.61 / 0.61 g	48.69 / 48.69 g	4.99 / 4.99 g	1941.00 / 1941.00 g	0.06 / 0.06 g	1.29 / 1.29 g	500 g potato *u000a1000 g bouillon *u000a241 g leek *u000a5 g butter *u000a114 g ham *u000a81 g raclette *u000au000a	rezept vom spiegel	\N	\N	1
+146	leek_potato_soup_1	\N	755 / 755 kcal	17.312 / 17.312 g	131.740 / 131.740 g	0.425 / 0.425 g	18.371 / 18.371 g	2.431 / 2.431 g	1776.000 / 1776.000 g	0.000 / 0.000 g	0.010 / 0.010 g	529 g potato *u000a30 g onion *u000a217 g leek *u000a1000 g bouillon *u000a	\N	\N	\N	\N
+55	Kaeseseschnitten	\N	1738 / 1738 kcal	108.74 / 108.74 g	94.50 / 94.50 g	2.09 / 2.09 g	100.53 / 100.53 g	7.84 / 7.84 g	830.00 / 830.00 g	0.61 / 0.61 g	0.24 / 0.24 g	300 g Raclette *u000a110 g Eggs *u000a100 g flour unbleached *u000a200 g Milk *u000a0 g Halbweissbrot *u000a120 g onion *u000a	\N	\N	\N	1
+155	Kaesesesoufflee	\N	1599 / 1599 kcal	94.507 / 94.507 g	38.599 / 38.599 g	1.897 / 1.897 g	115.275 / 115.275 g	31.818 / 31.818 g	843.000 / 843.000 g	1.570 / 1.570 g	0.283 / 0.283 g	30 g butter *u000a25 g flour_unbleached *u000a168 g gruyere *u000a220 g eggs *u000a400 g milk *	\N	\N	\N	\N
+29	Leek_Quinoa_gratin	\N	1977 / 1977 kcal	114.6 / 114.6 g	125.4 / 125.4 g	1.7 / 1.7 g	113.3 / 113.3 g	0 / 0 g	1194 / 1194 g	0 / 0 g	0 / 0 g	300 g leek *u000a100 g Quinoa dry *u000a161 g bacon *u000a118 g Onion *u000a400 g Bouillon *u000a115 g Gruyere *	Betty Bossi website	\N	\N	1
+167	leek_spaetzli_gratin	\N	3515 / 3515 kcal	185.426 / 185.426 g	243.859 / 243.859 g	2.382 / 2.382 g	194.388 / 194.388 g	8.589 / 8.589 g	1476.000 / 1476.000 g	0.760 / 0.760 g	0.126 / 0.126 g	122 g bacon *u000a238 g leek *u000a80 g onion *u000a465 g porku000a100 g bouillon *u000a100 g cream *u000a150 g milk *u000a170 g eggs *u000a266 g flour_unbleached *u000a250 g gruyere *	\N	\N	\N	\N
+118	leek_tart	\N	4547 / 4547 kcal	131.567 / 131.567 g	330.354 / 330.354 g	3.358 / 3.358 g	298.268 / 298.268 g	1.324 / 1.324 g	1354.000 / 1354.000 g	0.000 / 0.000 g	0.097 / 0.097 g	309 g leek *u000a289 g potato *u000a153 g bacon *u000a510 g puff_pastry *u000a93 g gruyere *	\N	\N	\N	\N
+222	leek-noodle-gratin	\N	3880 / 3880 kcal	172.167 / 172.167 g	300.775 / 300.775 g	2.521 / 2.521 g	218.312 / 218.312 g	5.961 / 5.961 g	1539.000 / 1539.000 g	0.297 / 0.297 g	0.227 / 0.227 g	170 g bacon *u000a80 g onion *u000a330 g leek *u000a300 g pasta_dry *u000a167 g gruyere *u000a222 g creme_fraiche *u000a270 g milk *u000au000a	\N	\N	\N	\N
+215	lemon_cannelloni	\N	1006 / 1006 kcal	38.127 / 38.127 g	114.772 / 114.772 g	1.194 / 1.194 g	40.308 / 40.308 g	2.711 / 2.711 g	842.000 / 842.000 g	0.000 / 0.000 g	0.045 / 0.045 g	592 g potato *u000a27 g oliveoilu000a250 g ricotta *	\N	\N	\N	\N
+151	lentil_rice	\N	685 / 685 kcal	41.230 / 41.230 g	115.500 / 115.500 g	1.142 / 1.142 g	5.080 / 5.080 g	0.000 / 0.000 g	600.000 / 600.000 g	0.000 / 0.000 g	0.069 / 0.069 g	100 g lentils_red *u000a100 g wild_rice *u000a400 g bouillon *	\N	\N	\N	\N
+102	lettuce_packages	\N	2311 / 2311 kcal	77.905 / 77.905 g	187.774 / 187.774 g	1.130 / 1.130 g	133.617 / 133.617 g	6.391 / 6.391 g	2045.000 / 2045.000 g	0.385 / 0.385 g	0.038 / 0.038 g	642 g potatos *u000a667 g lettuce *u000a100 g dried_tomatos *u000a160 g onion *u000a106 g parmesan *u000a110 g egg *u000a160 g creme_fraiche *u000a100 g bouillon *	\N	\N	\N	\N
+22	luftmattauflauf	\N	3204 / 3204 kcal	170.121 / 170.121 g	171.231 / 171.231 g	1.781 / 1.781 g	203.666 / 203.666 g	0.071 / 0.071 g	1799.000 / 1799.000 g	0.000 / 0.000 g	0.095 / 0.095 g	273 g onions *u000a184 g tomato *u000a400 g canned_tomato *u000a220 g Ciabatta *u000a300 g Gruyere *u000a422 g Aussteller *	\N	\N	\N	\N
+126	marocan_lamb	\N	2206 / 2206 kcal	124.582 / 124.582 g	130.401 / 130.401 g	2.279 / 2.279 g	116.231 / 116.231 g	1.807 / 1.807 g	968.000 / 968.000 g	0.012 / 0.012 g	0.129 / 0.129 g	128 g apricot_dried *u000a40 g raisins *u000a445 g lamb_leg *u000a45 g almonds *u000a80 g onions *u000a180 g red_wine *u000a50 g orange_juice *u000a	\N	\N	\N	\N
+216	meat_cannelloni	\N	1599 / 1599 kcal	144.785 / 144.785 g	46.145 / 46.145 g	1.109 / 1.109 g	87.226 / 87.226 g	0.113 / 0.113 g	1442.000 / 1442.000 g	0.000 / 0.000 g	0.100 / 0.100 g	200 g carrots *u000a192 g celery *u000a150 g onion *u000a500 g pork_stew *u000a400 g tomato *u000au000a	\N	\N	\N	\N
+74	minestrone	\N	4997 / 4997 kcal	278.915 / 278.915 g	428.388 / 428.388 g	0.806 / 0.806 g	232.680 / 232.680 g	1.824 / 1.824 g	6199.000 / 6199.000 g	0.000 / 0.000 g	0.045 / 0.045 g	456 g bacon *u000a3000 g water *u000a234 g sellery_root *u000a350 g potato *u000a400 g leek *u000a345 g carrots *u000a365 g risotto *u000a360 g onions *u000a689 g borlotti_cooked *u000a0 g sausage_320 *u000au000au000au000a	\N	\N	\N	\N
+97	mixed_salad	\N	1740 / 1740 kcal	117.974 / 117.974 g	47.371 / 47.371 g	1.546 / 1.546 g	117.288 / 117.288 g	3.409 / 3.409 g	1125.000 / 1125.000 g	0.385 / 0.385 g	0.105 / 0.105 g	190 g mozzarella *u000a145 g salad *u000a237 g tomatos *u000a0 g walnuts *u000a100 g couscous *u000a110 g eggs *u000a170 g bacon *u000a173 g cucumber *u000a0 g avocado *u000a	\N	\N	\N	\N
+65	Naan_Bread	\N	1560 / 1560 kcal	56.06 / 56.06 g	267.18 / 267.18 g	2.45 / 2.45 g	24.57 / 24.57 g	10.22 / 10.22 g	636.00 / 636.00 g	12.44 / 12.44 g	4.83 / 4.83 g	350 g flour unbleached *u000a9 g sugar *u000a12 g salt *u000a110 g milk *u000a100 g Yogurt 10% fat *u000a55 g egg *	\N	\N	\N	1
+183	nachos_ak	\N	867 / 867 kcal	46.044 / 46.044 g	69.360 / 69.360 g	1.962 / 1.962 g	45.386 / 45.386 g	0.000 / 0.000 g	442.000 / 442.000 g	0.000 / 0.000 g	0.104 / 0.104 g	39 g gruyere *u000a340 g chile_con_carne *u000a63 g tortilla_chips *u000au000a	\N	\N	\N	\N
+73	nappacabbage_lasagne	\N	2689 / 2689 kcal	187.52 / 187.52 g	87.78 / 87.78 g	1.66 / 1.66 g	171.91 / 171.91 g	0.01 / 0.01 g	1617.00 / 1617.00 g	0.00 / 0.00 g	0.00 / 0.00 g	100 g lentils red *u000a120 g bacon *u000a250 g ground_pork *u000a411 g canned tomato *u000a55 g onion *u000a455 g napa cabbage *u000a120 g gruyere *u000a106 g cream *u000a	\N	\N	\N	\N
+106	nidlechueche	\N	2926 / 2926 kcal	52.757 / 52.757 g	285.681 / 285.681 g	2.656 / 2.656 g	172.204 / 172.204 g	60.990 / 60.990 g	1102.000 / 1102.000 g	4.762 / 4.762 g	0.048 / 0.048 g	221 g flour_unbleached *u000a3 g salt *u000a99 g butter *u000a75 g water *u000a100 g sugar *u000a200 g cream *u000a200 g milk *u000a101 g eggs *u000a103 g raspberry *u000a	\N	\N	\N	\N
+58	ofengemuese	\N	910 / 910 kcal	44.57 / 44.57 g	81.23 / 81.23 g	1.00 / 1.00 g	44.80 / 44.80 g	1.55 / 1.55 g	912.00 / 912.00 g	0.00 / 0.00 g	0.85 / 0.85 g	108 g bell pepperu000a229 g zucchini *u000a335 g potato *u000a17 g garlic *u000a131 g tomato *u000a200 g mozzarella *	wildeisen vegetarisch p144	\N	\N	1
+137	onion_dip	\N	923 / 923 kcal	20.183 / 20.183 g	36.713 / 36.713 g	1.573 / 1.573 g	76.102 / 76.102 g	0.052 / 0.052 g	587.000 / 587.000 g	0.000 / 0.000 g	0.034 / 0.034 g	200 g onions *u000a197 g yogurt_nancy *u000a190 g creme_fraiche *	\N	\N	\N	\N
+129	onion_pie	\N	2566 / 2566 kcal	284.718 / 284.718 g	40.800 / 40.800 g	2.382 / 2.382 g	159.284 / 159.284 g	5.697 / 5.697 g	1077.000 / 1077.000 g	0.495 / 0.495 g	0.307 / 0.307 g	330 g pie_dough *u000a337 g onion *u000a110 g eggs *u000a200 g cream *u000a100 g milk *	\N	\N	\N	\N
+165	orange_lamb	\N	95 / 95 kcal	3.564 / 3.564 g	16.807 / 16.807 g	0.167 / 0.167 g	2.136 / 2.136 g	0.044 / 0.044 g	570.000 / 570.000 g	0.000 / 0.000 g	0.006 / 0.006 g	170 g onion *u000a156 lambu000a400 g orangeu000a400 g bouillon *	\N	\N	\N	\N
+101	ornage_lamb	\N	2017 / 2017 kcal	138.122 / 138.122 g	14.546 / 14.546 g	2.563 / 2.563 g	151.228 / 151.228 g	0.043 / 0.043 g	787.000 / 787.000 g	0.000 / 0.000 g	0.176 / 0.176 g	620 g lamb_chops *u000a167 g onions *u000a	\N	\N	\N	\N
+136	oven_potatoes	\N	985 / 985 kcal	13.633 / 13.633 g	124.022 / 124.022 g	1.535 / 1.535 g	44.822 / 44.822 g	7.168 / 7.168 g	642.000 / 642.000 g	0.000 / 0.000 g	0.021 / 0.021 g	32 g olive_oil *u000a30 g bread_crumbs *u000a580 g potatoes *	\N	\N	\N	\N
+72	pancakes	\N	740 / 740 kcal	30.379 / 30.379 g	87.464 / 87.464 g	1.520 / 1.520 g	27.647 / 27.647 g	14.424 / 14.424 g	487.000 / 487.000 g	0.584 / 0.584 g	0.133 / 0.133 g	102 g flour_unbleached *u000a0 g butter *u000a0 g sugar *u000a55 g egg *u000a138 g milk *u000a161 g yogurt_10%_fat *	betty bossi.u000amilk correctefd aferwards for total weight. Start with 388g milk	\N	\N	\N
+43	napacabbage_soup	\N	440 / 440 kcal	21.63 / 21.63 g	83.70 / 83.70 g	0.34 / 0.34 g	6.08 / 6.08 g	0.00 / 0.00 g	1290.00 / 1290.00 g	0.00 / 0.00 g	0.00 / 0.00 g	1000 g Bouillon *u000a190 g napa cabbage *u000a100 g wild rice *u000a	\N	\N	\N	1
+54	pastetli	\N	768 / 768 kcal	6.11 / 6.11 g	63.45 / 63.45 g	1.10 / 1.10 g	29.91 / 29.91 g	0.29 / 0.29 g	699.00 / 699.00 g	0.00 / 0.00 g	0.21 / 0.21 g	313 g porku000a86 g onion *u000a116 g carrot *u000a200 g vermouth *u000a100 g water *u000a67 g leek *u000a80 g creme fraiche *u000a50 g potato *u000au000a	\N	\N	\N	\N
+127	pastetli_filling	\N	2512 / 2512 kcal	195.270 / 195.270 g	23.583 / 23.583 g	1.615 / 1.615 g	177.317 / 177.317 g	0.050 / 0.050 g	1555.000 / 1555.000 g	0.000 / 0.000 g	0.126 / 0.126 g	521 g pork_stew *u000a120 g bacon *u000a166 g zucchini *u000a40 g onions *u000a108 g carrots *u000a500 g bouillon *u000a100 g cream *	\N	\N	\N	\N
+140	pastetli_vegetarian	\N	1574 / 1574 kcal	30.785 / 30.785 g	114.625 / 114.625 g	0.580 / 0.580 g	106.394 / 106.394 g	0.366 / 0.366 g	2714.000 / 2714.000 g	0.000 / 0.000 g	0.011 / 0.011 g	666 g zucchini *u000a848 g carrots *u000a200 g onions *u000a600 g bouillon *u000a400 g saucen_rahm *u000a	\N	\N	\N	\N
+175	peach_pie	\N	4385 / 4385 kcal	69.192 / 69.192 g	476.165 / 476.165 g	2.851 / 2.851 g	244.150 / 244.150 g	112.269 / 112.269 g	1538.000 / 1538.000 g	2.400 / 2.400 g	0.045 / 0.045 g	400 g peache *u000a301 g flour_unbleached *u000a185 g sugar *u000a200 g butter *u000a110 g almond *u000a50 g cream *u000a292 g blackberry *	\N	\N	\N	\N
+89	pear_salad	\N	1078 / 1078 kcal	72.353 / 72.353 g	43.216 / 43.216 g	1.020 / 1.020 g	69.145 / 69.145 g	3.099 / 3.099 g	1057.000 / 1057.000 g	0.350 / 0.350 g	0.068 / 0.068 g	150 g salad *u000a233 g mozzarella *u000a0 g bacon *u000a147 g pear *u000a0 g avocado *u000a50 g gruyere *u000a227 g cucumber *u000a150 g tomato *u000a100 g eggs *	\N	\N	\N	\N
+193	pesto_bread	\N	2587 / 2587 kcal	62.242 / 62.242 g	361.136 / 361.136 g	2.692 / 2.692 g	92.908 / 92.908 g	6.063 / 6.063 g	961.000 / 961.000 g	0.000 / 0.000 g	0.065 / 0.065 g	300 g water *u000a500 g flour_unbleached *u000a118 g pesto *u000a43 g olive_oil *u000a	\N	\N	\N	\N
+63	piccata	\N	565 / 565 kcal	79.187 / 79.187 g	1.966 / 1.966 g	1.605 / 1.605 g	23.746 / 23.746 g	1.704 / 1.704 g	352.000 / 352.000 g	0.193 / 0.193 g	0.225 / 0.225 g	259 g pork_tenderloin *u000a55 g eggs *u000a38 g parmesan *	\N	\N	\N	\N
+128	pie_dough	\N	2542 / 2542 kcal	48.750 / 48.750 g	284.750 / 284.750 g	4.621 / 4.621 g	129.000 / 129.000 g	81.000 / 81.000 g	550.000 / 550.000 g	1.800 / 1.800 g	0.786 / 0.786 g	400 g flour_unbleached *u000a150 g Butter *u000a	\N	\N	\N	\N
+170	pie_dough1	\N	2914 / 2914 kcal	49.000 / 49.000 g	285.000 / 285.000 g	4.019 / 4.019 g	170.000 / 170.000 g	108.000 / 108.000 g	725.000 / 725.000 g	2.400 / 2.400 g	0.068 / 0.068 g	400 g flour_unbleached *u000a200 g butter *u000a125 g water *u000a	\N	\N	\N	\N
+45	pizza	\N	1331 / 1331 kcal	75.090 / 75.090 g	102.700 / 102.700 g	1.477 / 1.477 g	70.280 / 70.280 g	0.000 / 0.000 g	901.000 / 901.000 g	0.000 / 0.000 g	0.083 / 0.083 g	200 g pizza_dough *u000a00 g tomato_sauce *u000a221 g mozzarella *u000a20  g prosciutto *u000a60 g Salami *u000a400 g tomato *	\N	\N	\N	\N
+187	polenta_pizza	\N	4411 / 4411 kcal	201.999 / 201.999 g	491.787 / 491.787 g	1.798 / 1.798 g	175.370 / 175.370 g	8.292 / 8.292 g	2454.000 / 2454.000 g	0.180 / 0.180 g	0.082 / 0.082 g	1130 g polenta_cooked *u000a15 g butter *u000a110 g onions *u000a400 g tomato *u000a260 g spinach *u000a189 g bacon *u000a300 g mozzarella *u000a50 g parmesan *	\N	\N	\N	\N
+174	pork_gratin	\N	2480 / 2480 kcal	158.850 / 158.850 g	147.670 / 147.670 g	1.335 / 1.335 g	132.580 / 132.580 g	3.232 / 3.232 g	1858.000 / 1858.000 g	0.000 / 0.000 g	0.085 / 0.085 g	500 g pork_tenderloin *u000a700 g potato *u000a100 g onion *u000a200 g tomato *u000a250 g cream *u000a108 g prosciutto *u000a	\N	\N	\N	\N
+139	pork_stew	\N	1244 / 1244 kcal	86.072 / 86.072 g	9.326 / 9.326 g	2.144 / 2.144 g	93.848 / 93.848 g	0.016 / 0.016 g	580.000 / 580.000 g	0.000 / 0.000 g	0.148 / 0.148 g	60 g onions *u000a300 g pork_stew *u000a120 g cream *u000a100 g bouillon *u000a	\N	\N	\N	\N
+103	porkstew_swissmilk	\N	1695 / 1695 kcal	127.695 / 127.695 g	34.652 / 34.652 g	1.706 / 1.706 g	112.995 / 112.995 g	0.037 / 0.037 g	994.000 / 994.000 g	0.000 / 0.000 g	0.128 / 0.128 g	450 g pork_stew *u000a144 g onion *u000a150 g cider *u000a150 g bouillon *u000a100 g cream *	\N	\N	\N	\N
+147	potato_bacon_egg	\N	1101 / 1101 kcal	66.176 / 66.176 g	43.970 / 43.970 g	2.105 / 2.105 g	68.387 / 68.387 g	6.697 / 6.697 g	523.000 / 523.000 g	0.624 / 0.624 g	0.131 / 0.131 g	230 g potato *u000a108 g bacon *u000a175 g eggs *u000a10 g milk *	\N	\N	\N	\N
+185	potato_latke	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
+186	potato_latkes	\N	1516 / 1516 kcal	32.651 / 32.651 g	218.972 / 218.972 g	2.361 / 2.361 g	55.046 / 55.046 g	1.704 / 1.704 g	642.000 / 642.000 g	0.193 / 0.193 g	0.051 / 0.051 g	55 g eggs *u000a554 g mashed_potatoes *u000a33 g flour_unbleached *u000a	\N	\N	\N	\N
+134	potato_salad	\N	2756 / 2756 kcal	94.357 / 94.357 g	245.697 / 245.697 g	1.418 / 1.418 g	139.605 / 139.605 g	5.949 / 5.949 g	1944.000 / 1944.000 g	0.000 / 0.000 g	0.049 / 0.049 g	1290 g potatoes *u000a187 g bacon *u000a250 g bouillon *u000a0 g eggs *u000a158 g onion *u000a28 g sunflower_oil *u000a16 g vinegar *u000a15 g mustard *	\N	\N	\N	\N
+119	potato_shit	\N	1181 / 1181 kcal	63.274 / 63.274 g	68.632 / 68.632 g	1.808 / 1.808 g	67.506 / 67.506 g	4.939 / 4.939 g	653.000 / 653.000 g	0.385 / 0.385 g	0.097 / 0.097 g	330 g potato *u000a0 g leek *u000a116 g bacon *u000a0 g cream *u000a71 g onion *u000a26 g bellpepper *u000a0 g sellery_root *u000a110 g eggs *u000a	\N	\N	\N	\N
+132	potato_sliced	\N	976 / 976 kcal	52.931 / 52.931 g	55.095 / 55.095 g	1.870 / 1.870 g	56.124 / 56.124 g	4.702 / 4.702 g	522.000 / 522.000 g	0.385 / 0.385 g	0.101 / 0.101 g	280 g potatoes *u000a92 g bacon *u000a40 g onions *u000a110 g eggs *	\N	\N	\N	\N
+70	potato_tortilla	\N	824 / 824 kcal	3.56 / 3.56 g	86.27 / 86.27 g	1.06 / 1.06 g	31.60 / 31.60 g	8.69 / 8.69 g	780.00 / 780.00 g	0.77 / 0.77 g	1.33 / 1.33 g	400 g potato *u000a160 g onions *u000a0 g bacon *u000a220 g egg *u000a	\N	\N	\N	\N
+194	pumpkin_pie	\N	3947 / 3947 kcal	50.254 / 50.254 g	448.081 / 448.081 g	2.340 / 2.340 g	219.317 / 219.317 g	69.204 / 69.204 g	1687.000 / 1687.000 g	1.693 / 1.693 g	0.030 / 0.030 g	204 g flour_unbleached *u000a125 g butter *u000a55 g egg *u000a8 g cream *u000a235 g sugar *u000a660 g pumpkin *u000a204 g cream *u000a196 g half_and_half *	\N	\N	\N	\N
+115	quark_dough	\N	3060 / 3060 kcal	39.750 / 39.750 g	189.250 / 189.250 g	4.080 / 4.080 g	233.750 / 233.750 g	150.250 / 150.250 g	750.000 / 750.000 g	3.325 / 3.325 g	0.053 / 0.053 g	250 g butter *u000a250 g yogurt_10%_fat *u000a250 g flour_unbleached *u000a	\N	\N	\N	\N
+192	quarkblaetterteig	\N	2601 / 2601 kcal	50.445 / 50.445 g	168.030 / 168.030 g	3.853 / 3.853 g	188.393 / 188.393 g	121.500 / 121.500 g	675.000 / 675.000 g	2.700 / 2.700 g	1.121 / 1.121 g	225 g Quark *u000a225 g flour_unbleached *u000a225 g butter *	\N	\N	\N	\N
+87	quince_spaetzli	\N	2158 / 2158 kcal	85.357 / 85.357 g	274.571 / 274.571 g	2.438 / 2.438 g	73.751 / 73.751 g	6.213 / 6.213 g	885.000 / 885.000 g	0.633 / 0.633 g	0.096 / 0.096 g	300 g flour_unbleached *u000a165 g egg *u000a50 g milk *u000a50 g water *u000a100 g quince_preserve *u000a220 g knackwurst *u000a	\N	\N	\N	\N
+66	quinoa_salad	\N	2383 / 2383 kcal	146.445 / 146.445 g	100.790 / 100.790 g	1.504 / 1.504 g	151.550 / 151.550 g	5.875 / 5.875 g	1585.000 / 1585.000 g	0.385 / 0.385 g	0.092 / 0.092 g	258 g Quinoa_cooked *u000a167 g bacon *u000a150 g lettuce *u000a0 g Onion *u000a110 g eggs *u000a308 g tomato *u000a0 g feta *u000a0 g radicchio *u000a0 g salad *u000a0 g gruyere *u000a242 g cucumber *u000a116 g avocado *u000a187 g mozzarella *u000a47 g parmesan *u000a	\N	\N	\N	\N
+117	ramequin	\N	2228 / 2228 kcal	130.279 / 130.279 g	115.078 / 115.078 g	1.594 / 1.594 g	132.064 / 132.064 g	7.949 / 7.949 g	1398.000 / 1398.000 g	0.690 / 0.690 g	0.093 / 0.093 g	150 g gruyere *u000a230 g ham *u000a203 g paisano_bread *u000a365 g tomato *u000a150 g eggs *u000a150 g milk *u000a150 g cream *	\N	\N	\N	\N
+99	ricotta_latkes	\N	1136 / 1136 kcal	72.148 / 72.148 g	78.580 / 78.580 g	1.832 / 1.832 g	56.579 / 56.579 g	3.409 / 3.409 g	620.000 / 620.000 g	0.385 / 0.385 g	0.116 / 0.116 g	425 g ricotta *u000a110 g eggs *u000a85 g flour_unbleached *u000a	\N	\N	\N	\N
+149	rindfleisch_mit_paprika	\N	1953 / 1953 kcal	167.516 / 167.516 g	48.579 / 48.579 g	1.302 / 1.302 g	117.443 / 117.443 g	0.123 / 0.123 g	1500.000 / 1500.000 g	0.000 / 0.000 g	0.112 / 0.112 g	145 g lima_beans *u000a154 g red_peppers *u000a122 g onions *u000a579 g beef *u000a500 g bouillon *u000a	\N	\N	\N	\N
+201	rye_bread	\N	2740 / 2740 kcal	84.619 / 84.619 g	443.841 / 443.841 g	2.181 / 2.181 g	79.709 / 79.709 g	7.787 / 7.787 g	1256.000 / 1256.000 g	12.027 / 12.027 g	0.078 / 0.078 g	248 g flour_unbleached *u000a100 g flour_rye *u000a150 g flour_whole_wheat *u000a14 g yeast *u000a12 g salt *u000a6 g sugar *u000a531 g water *u000a8 g wheat_bran *u000a75 g walnuts *u000a22 g olive_oil *u000a90 g raisins *	\N	\N	\N	\N
+133	rye_unbleached_bread	\N	1823 / 1823 kcal	60.641 / 60.641 g	350.625 / 350.625 g	1.849 / 1.849 g	15.030 / 15.030 g	0.000 / 0.000 g	986.000 / 986.000 g	0.000 / 0.000 g	0.062 / 0.062 g	309 g flour_unbleached *u000a425 g water *u000a21 g steel_cut_oats *u000a31 g oat_bran *u000a200 g rye_flour *	\N	\N	\N	\N
+84	Rye_whole_wheat_bread	\N	1630 / 1630 kcal	0.000 / 0.000 g	325.273 / 325.273 g	1.809 / 1.809 g	10.423 / 10.423 g	0.000 / 0.000 g	901.000 / 901.000 g	0.000 / 0.000 g	0.008 / 0.008 g	141 g rye_flour *u000a100 g flour_whole_wheat *u000a260 g flour_unbleached *u000a400 g water *	\N	\N	\N	\N
+67	ryebread	\N	2239 / 2239 kcal	0.000 / 0.000 g	415.353 / 415.353 g	1.961 / 1.961 g	28.119 / 28.119 g	0.210 / 0.210 g	1142.000 / 1142.000 g	12.007 / 12.007 g	4.660 / 4.660 g	681 g rye_flour *u000a70 g whole wheat flour *u000a21 g oat_bran *u000a38 g oat_steel_cut *u000a320 g water *u000a12 g salt *	\N	\N	\N	\N
+159	safran_risotto	\N	985 / 985 kcal	56.331 / 56.331 g	85.913 / 85.913 g	0.706 / 0.706 g	46.706 / 46.706 g	0.033 / 0.033 g	1395.000 / 1395.000 g	0.000 / 0.000 g	0.040 / 0.040 g	127 g onions *u000a300 g risotto *u000a68 g parmesan *u000a900 g bouillon *u000a	\N	\N	\N	\N
+204	safran_risotto1	\N	348 / 348 kcal	14.574 / 14.574 g	43.047 / 43.047 g	0.645 / 0.645 g	12.896 / 12.896 g	0.023 / 0.023 g	539.000 / 539.000 g	0.000 / 0.000 g	0.027 / 0.027 g	89 g onion *u000a150 g risotto *u000a300 g bouillon *u000a	\N	\N	\N	\N
+199	safran_spaetzli	\N	1413 / 1413 kcal	60.227 / 60.227 g	226.431 / 226.431 g	1.976 / 1.976 g	23.606 / 23.606 g	6.789 / 6.789 g	715.000 / 715.000 g	0.660 / 0.660 g	0.084 / 0.084 g	300 g flour_unbleached *u000a75 g milk *u000a75 g water *u000a165 g eggs *u000a100 g onions *u000a0 g bacon *u000a0 g gruyere *	\N	\N	\N	\N
+219	salad_ak	\N	2447 / 2447 kcal	188.665 / 188.665 g	227.974 / 227.974 g	1.023 / 1.023 g	84.037 / 84.037 g	9.512 / 9.512 g	2392.000 / 2392.000 g	0.609 / 0.609 g	0.091 / 0.091 g	0 g knackwurst *u000a0 g mozzarella *u000a0 g gruyere *u000a0 g goat_cheese *u000a423 g chicken_breast *u000a202 g tomatou000a396 g lima_beans *u000a0 g bacon *u000a200 g lettuce *u000a165 g egg *u000a609 g cucumber *u000a202 g avocado *u000a292 g oranges *u000a104 g raisins *u000au000au000au000au000a	\N	\N	\N	\N
+83	salad_dressing_regular	\N	474 / 474 kcal	7.310 / 7.310 g	19.394 / 19.394 g	1.927 / 1.927 g	40.415 / 40.415 g	0.000 / 0.000 g	246.000 / 246.000 g	0.000 / 0.000 g	0.030 / 0.030 g	35 g sunflower_oil *u000a53 g vinegar_mango *u000a61 g bouillon *u000a12 g mustard_thomy *u000a85 g yogurt_nancy *u000a	\N	\N	\N	\N
+88	salad_green	\N	304 / 304 kcal	22.032 / 22.032 g	5.748 / 5.748 g	1.265 / 1.265 g	21.780 / 21.780 g	0.000 / 0.000 g	240.000 / 240.000 g	0.000 / 0.000 g	0.092 / 0.092 g	120 g salad *u000a120 g mozzarella *	\N	\N	\N	\N
+33	Scrambled Eggs	\N	256 / 256 kcal	20.76 / 20.76 g	1.27 / 1.27 g	1.40 / 1.40 g	16.40 / 16.40 g	5.11 / 5.11 g	183.00 / 183.00 g	0.58 / 0.58 g	0.23 / 0.23 g	165 g Eggs *u000a18 g Water *	\N	\N	\N	1
+109	sellery_soup	\N	1470 / 1470 kcal	34.468 / 34.468 g	73.268 / 73.268 g	0.654 / 0.654 g	116.725 / 116.725 g	9.282 / 9.282 g	2248.000 / 2248.000 g	0.204 / 0.204 g	0.015 / 0.015 g	17 g butter *u000a170 g onion *u000a206 g apple *u000a515 g sellery_root *u000a140 g sausage_170 *u000a1000 g bouillon *u000a200 g cream *	\N	\N	\N	\N
+214	soufflee_grand_marnier	\N	2546 / 2546 kcal	30.205 / 30.205 g	175.813 / 175.813 g	3.171 / 3.171 g	192.806 / 192.806 g	10.888 / 10.888 g	803.000 / 803.000 g	0.000 / 0.000 g	0.038 / 0.038 g	114 g egg_yolk *u000a150 g sugar *u000a75 g orange_juice *u000a464 g cream *	\N	\N	\N	\N
+113	spaghetti_carbonara	\N	2329 / 2329 kcal	141.069 / 141.069 g	232.842 / 232.842 g	3.235 / 3.235 g	89.321 / 89.321 g	4.649 / 4.649 g	720.000 / 720.000 g	0.525 / 0.525 g	0.196 / 0.196 g	105 g bacon *u000a80 g ham *u000a310 g spaghetti *u000a75 g parmesan *u000a150 g eggs *u000au000a	\N	\N	\N	\N
+35	Spaghettikuerbis	\N	1586 / 1586 kcal	51.55 / 51.55 g	71.94 / 71.94 g	1.40 / 1.40 g	125.28 / 125.28 g	18.40 / 18.40 g	1130.00 / 1130.00 g	0.47 / 0.47 g	0.18 / 0.18 g	680 g Spaghettisquash *u000a30 g Butter *u000a20 g Flour unbleached *u000a100 g Milk *u000a150 g Cream *u000a150 g Raclette *	wildeisen computer	\N	\N	1
+61	rice_salad	\N	794 / 794 kcal	55.770 / 55.770 g	32.569 / 32.569 g	0.643 / 0.643 g	48.753 / 48.753 g	3.171 / 3.171 g	1235.000 / 1235.000 g	0.357 / 0.357 g	0.045 / 0.045 g	156 g wild rice_cookedu000a225 g tomato *u000a0 g avocado *u000a0 g gruyere *u000a0 g mozzarella *u000a200 g salad *u000a337 g cucumber *u000a102  g eggs *u000a125 g celery *u000a40 g onions *u000a206 g mozzarella *	\N	\N	\N	1
+59	ricottakuechlein	\N	618 / 618 kcal	40.02 / 40.02 g	39.05 / 39.05 g	1.79 / 1.79 g	32.17 / 32.17 g	1.70 / 1.70 g	345.00 / 345.00 g	0.19 / 0.19 g	0.08 / 0.08 g	250 g ricotta *u000a55 g egg *u000a40 g flour unbleached *u000au000a	wildeisen veg p 214	\N	\N	1
+31	Risotto_Kuechlein	\N	1177 / 1177 kcal	57.45 / 57.45 g	126.33 / 126.33 g	1.06 / 1.06 g	36.24 / 36.24 g	3.41 / 3.41 g	1110.00 / 1110.00 g	0.39 / 0.39 g	0.15 / 0.15 g	50 g Shallots *u000a600 g Bouillon *u000a250 g Risotto dryu000a150 g White wine *u000a50 g Parmesan *u000a110 g Eggs *u000a150 g Bread crumbs *				1
+195	spanakopita	\N	2299 / 2299 kcal	103.909 / 103.909 g	167.668 / 167.668 g	2.408 / 2.408 g	128.275 / 128.275 g	5.124 / 5.124 g	955.000 / 955.000 g	0.000 / 0.000 g	0.109 / 0.109 g	384 g spinach *u000a235 g phyllo_dough *u000a138 g bacon *u000a9 g pepper *u000a0 g eggs *u000a34 g olive_oil *u000a155 g feta *	\N	\N	\N	\N
+105	spelt_bread	\N	1849 / 1849 kcal	55.270 / 55.270 g	366.740 / 366.740 g	1.827 / 1.827 g	15.020 / 15.020 g	0.100 / 0.100 g	1012.000 / 1012.000 g	12.030 / 12.030 g	0.066 / 0.066 g	230 g flour_unbleached *u000a270 g spelt_flour *u000a12 g salt *u000a400 g water *u000a100 g raisin *	\N	\N	\N	\N
+42	spinach with bacon	\N	478 / 478 kcal	33.61 / 33.61 g	9.18 / 9.18 g	1.54 / 1.54 g	32.47 / 32.47 g	0.12 / 0.12 g	311.00 / 311.00 g	0.00 / 0.00 g	0.14 / 0.14 g	76 g bacon *u000a65 g onion *u000a170 g spinach *u000a137 g tomatoesu000a	\N	\N	\N	\N
+96	spinach_and_bacon	\N	1362 / 1362 kcal	97.873 / 97.873 g	14.921 / 14.921 g	1.846 / 1.846 g	97.061 / 97.061 g	0.299 / 0.299 g	738.000 / 738.000 g	0.000 / 0.000 g	0.133 / 0.133 g	228 g bacon *u000a450 g spinach *u000a60 g onions *u000a	\N	\N	\N	\N
+143	spinach_cannelloni	\N	1766 / 1766 kcal	109.664 / 109.664 g	134.568 / 134.568 g	1.147 / 1.147 g	85.510 / 85.510 g	15.211 / 15.211 g	1539.000 / 1539.000 g	0.853 / 0.853 g	0.071 / 0.071 g	487 g spinach *u000a55 g eggs *u000a160 g ricotta *u000a600 g milk *u000a107 g gruyere *u000a130 g pasta *u000a	\N	\N	\N	\N
+171	spinach_ham_pie	\N	2152 / 2152 kcal	82.808 / 82.808 g	155.400 / 155.400 g	1.811 / 1.811 g	50.190 / 50.190 g	3.758 / 3.758 g	1188.000 / 1188.000 g	0.385 / 0.385 g	0.070 / 0.070 g	348 g pie_dough1 *u000a500 g spinach *u000a130 g onion *u000a110 g eggs *u000a100 g gruyere *	\N	\N	\N	\N
+217	spinach_pie	\N	2717 / 2717 kcal	134.051 / 134.051 g	170.428 / 170.428 g	2.043 / 2.043 g	158.425 / 158.425 g	3.768 / 3.768 g	1330.000 / 1330.000 g	0.385 / 0.385 g	0.101 / 0.101 g	206 g bacon *u000a144 g onion *u000a160 g creme_fraiche *u000a200 g flour_unbleached *u000a510 g spinach *u000a110 g eggs *u000au000a	\N	\N	\N	\N
+154	spinach_polenta	\N	1078 / 1078 kcal	62.154 / 62.154 g	85.028 / 85.028 g	1.046 / 1.046 g	51.893 / 51.893 g	4.614 / 4.614 g	1031.000 / 1031.000 g	0.220 / 0.220 g	0.060 / 0.060 g	340 g spinach *u000a100 g polenta *u000a200 g milk *u000a200 g bouillon *u000a101 g ham *u000a52 g mascarpone *u000a38 g parmesan *	\N	\N	\N	\N
+68	spinachballs	\N	767 / 767 kcal	53.66 / 53.66 g	62.15 / 62.15 g	1.27 / 1.27 g	30.66 / 30.66 g	3.64 / 3.64 g	605.00 / 605.00 g	0.39 / 0.39 g	0.45 / 0.45 g	370 g spinach *u000a110 g eggs *u000a50 g parmesan *u000a75 g bread crumbs *	\N	\N	\N	\N
+104	squash_mashed_potato	\N	1118 / 1118 kcal	17.750 / 17.750 g	175.800 / 175.800 g	0.956 / 0.956 g	36.500 / 36.500 g	15.335 / 15.335 g	1170.000 / 1170.000 g	0.295 / 0.295 g	0.036 / 0.036 g	750 g potato *u000a350 g butternut_squash *u000a20 g butter *u000a50 g milk *	\N	\N	\N	\N
+142	strawberry_mascarpone	\N	2280 / 2280 kcal	24.174 / 24.174 g	88.220 / 88.220 g	2.077 / 2.077 g	211.282 / 211.282 g	0.000 / 0.000 g	1098.000 / 1098.000 g	0.000 / 0.000 g	0.022 / 0.022 g	372 g strawberry *u000a260 g raspberry *u000a443 g mascarpone *u000a17 g sugar *u000a6 g water *	\N	\N	\N	\N
+116	strawberry_mousse	\N	2145 / 2145 kcal	38.794 / 38.794 g	210.166 / 210.166 g	1.761 / 1.761 g	128.488 / 128.488 g	6.818 / 6.818 g	1218.000 / 1218.000 g	0.770 / 0.770 g	0.032 / 0.032 g	540 g strawberry *u000a158 g sugar *u000a220 g eggs *u000a300 g cream *u000a72 g leibnitz_cookies	\N	\N	\N	\N
+202	sweet_potato_soup	\N	1102 / 1102 kcal	32.812 / 32.812 g	144.514 / 144.514 g	0.740 / 0.740 g	38.672 / 38.672 g	0.514 / 0.514 g	1488.000 / 1488.000 g	0.000 / 0.000 g	0.022 / 0.022 g	73 g onions *u000a318 g sweet_potato *u000a330 g apple_cider *u000a84 g apple *u000a400 g bouillon *u000a180 g sausage_170 *u000a103 g potato *	\N	\N	\N	\N
+41	sweetpotatosouflee	\N	1198 / 1198 kcal	53.85 / 53.85 g	64.23 / 64.23 g	2.09 / 2.09 g	78.85 / 78.85 g	5.11 / 5.11 g	572.00 / 572.00 g	0.58 / 0.58 g	0.23 / 0.23 g	200 g Sweet potato *u000a100 g Cream *u000a80 g gruyere *u000a27 g bread crumbs *u000a165 g eggs *	wildeisen	\N	\N	1
+224	test	\N	278 / 278 kcal	4.904 / 4.904 g	54.244 / 54.244 g	3.274 / 3.274 g	4.463 / 4.463 g	0.022 / 0.022 g	85.000 / 85.000 g	0.000 / 0.000 g	0.058 / 0.058 g	50 g sugar *u000a10 g bacon *u000a5 g celleryu000a5 g ham *u000a20 g banana *	\N	\N	\N	\N
+121	tiroler_cake	\N	5678 / 5678 kcal	126.879 / 126.879 g	435.540 / 435.540 g	4.443 / 4.443 g	366.699 / 366.699 g	88.425 / 88.425 g	1278.000 / 1278.000 g	2.523 / 2.523 g	0.099 / 0.099 g	130 g butter *u000a280 g sugar *u000a275 g egg *u000a223 g chocolate_dark *u000a120 g flour_unbleached *u000a250 g almond *u000a	\N	\N	\N	\N
+100	Tomato_curry	\N	1045 / 1045 kcal	63.722 / 63.722 g	55.081 / 55.081 g	0.840 / 0.840 g	63.566 / 63.566 g	0.246 / 0.246 g	1245.000 / 1245.000 g	0.000 / 0.000 g	0.051 / 0.051 g	740 g tomatos *u000a145 g bacon *u000a200 g onions *u000a10 g ginger *u000a150 g bouillon *u000a	\N	\N	\N	\N
+107	tomato_vanilla_salad	\N	970 / 970 kcal	51.528 / 51.528 g	27.334 / 27.334 g	1.256 / 1.256 g	75.523 / 75.523 g	3.063 / 3.063 g	772.000 / 772.000 g	0.000 / 0.000 g	0.067 / 0.067 g	489 g tomato *u000a50 g walnuts *u000a233 g mozzarella *	\N	\N	\N	\N
+64	tomatopie	\N	4559 / 4559 kcal	148.114 / 148.114 g	282.010 / 282.010 g	2.010 / 2.010 g	319.926 / 319.926 g	67.525 / 67.525 g	2268.000 / 2268.000 g	6.000 / 6.000 g	0.065 / 0.065 g	1263 g tomato *u000a500 g puff_pastry *u000a80 g prosciutto *u000a400 g goat_cheese *u000a25 g olive_oil *u000au000a	\N	\N	\N	\N
+91	Tsatsiki	\N	314 / 314 kcal	12.797 / 12.797 g	17.834 / 17.834 g	0.822 / 0.822 g	20.031 / 20.031 g	0.000 / 0.000 g	382.000 / 382.000 g	0.000 / 0.000 g	0.034 / 0.034 g	67 g sour_cream_nancy *u000a138 g yogurt_nancy *u000a177 g cucumber *u000a	\N	\N	\N	\N
+122	vegetble_spaetzli	\N	3439 / 3439 kcal	127.117 / 127.117 g	363.243 / 363.243 g	2.122 / 2.122 g	134.813 / 134.813 g	5.508 / 5.508 g	1621.000 / 1621.000 g	0.613 / 0.613 g	0.078 / 0.078 g	250 g gruyere *u000a583 g spaetzli *u000a165 g leek *u000a228 g carrots *u000a220 g zucchini *u000a175 g eggs *u000a0 g eggs *u000a	\N	\N	\N	\N
+46	tomato_sauce	\N	185 / 185 kcal	8.185 / 8.185 g	41.041 / 41.041 g	0.361 / 0.361 g	1.266 / 1.266 g	0.034 / 0.034 g	512.000 / 512.000 g	0.000 / 0.000 g	0.016 / 0.016 g	95 g onion *u000a10 g garlic *u000a407  g canned_tomato *u000a	\N	\N	\N	1
+44	vegetarian_cannelloni	\N	1468 / 1468 kcal	75.32 / 75.32 g	163.00 / 163.00 g	0.99 / 0.99 g	57.24 / 57.24 g	17.63 / 17.63 g	1488.00 / 1488.00 g	0.88 / 0.88 g	0.40 / 0.40 g	140 g leek *u000a100 g selleryu000a86 g carrots *u000a92 g cabbage *u000a800 g milk *u000a250 g ricotta *u000a120 g cannelloni *u000a	\N	\N	\N	1
+27	Vegetarian_Canneloni1	\N	2027 / 2027 kcal	95.802 / 95.802 g	108.538 / 108.538 g	1.962 / 1.962 g	134.185 / 134.185 g	2.233 / 2.233 g	1033.000 / 1033.000 g	0.110 / 0.110 g	0.093 / 0.093 g	100 g Cannelloni *u000a0 g Sellery rootu000a90 g Carrot *u000a0 g Cabbage *u000a112 g Parmesan *u000a100 g Milk *u000a250 g Ricotta *u000a181 g zucchini *u000a200 g cream *u000au000a	\N	\N	\N	1
+197	white_bean_stew	\N	1040 / 1040 kcal	50.824 / 50.824 g	71.002 / 71.002 g	0.813 / 0.813 g	58.169 / 58.169 g	0.000 / 0.000 g	1280.000 / 1280.000 g	0.000 / 0.000 g	0.040 / 0.040 g	375 g white_beans_cooked *u000a172 g leek *u000a140 g celery *u000a76 g bell_pepper *u000a217 g aussteller *u000a300 g bouillon *u000au000a	\N	\N	\N	\N
+108	wurstsalat	\N	2110 / 2110 kcal	121.613 / 121.613 g	27.329 / 27.329 g	1.427 / 1.427 g	164.909 / 164.909 g	5.193 / 5.193 g	1479.000 / 1479.000 g	0.585 / 0.585 g	0.082 / 0.082 g	438 g aussteller *u000a143 g gruyere *u000a67 g onion *u000a304 g tomatos *u000a0 g salad *u000a167 g eggs *u000a360 g cucumber *u000a	\N	\N	\N	\N
+85	yogurt_nancy_apple	\N	2259 / 2259 kcal	66.390 / 66.390 g	41.730 / 41.730 g	3.227 / 3.227 g	209.430 / 209.430 g	18.378 / 18.378 g	700.000 / 700.000 g	0.000 / 0.000 g	0.095 / 0.095 g	100 g yogurt_nancy *u000a200 g yogurt_nancy *u000a300 g walnut *u000a100  g water *	\N	\N	\N	\N
+34	Zopf	\N	2492 / 2492 kcal	74.580 / 74.580 g	374.620 / 374.620 g	2.522 / 2.522 g	71.400 / 71.400 g	41.640 / 41.640 g	988.000 / 988.000 g	9.182 / 9.182 g	0.075 / 0.075 g	500 g Flour_unbleached *u000a0 g egg *u000a60 g Butter *u000a420 g Milk *u000a8 g Salt *u000a				1
+38	Zucchini Soup	\N	764 / 764 kcal	33.770 / 33.770 g	106.525 / 106.525 g	0.355 / 0.355 g	24.510 / 24.510 g	0.039 / 0.039 g	2150.000 / 2150.000 g	0.000 / 0.000 g	0.016 / 0.016 g	800 g Zucchini *u000a800 g Bouillon *u000a300 g sweet_potato *u000a0 g cream *u000a100 g Sausage_190 *u000a150 g onion *	\N	\N	\N	1
+164	zucchini_cannelloni	\N	2066 / 2066 kcal	70.545 / 70.545 g	150.986 / 150.986 g	1.766 / 1.766 g	117.285 / 117.285 g	0.000 / 0.000 g	1170.000 / 1170.000 g	0.000 / 0.000 g	0.060 / 0.060 g	269 g zucchini *u000a240 g tomato *u000a150 g boursin *u000a160 g cannelloni *u000a128 g bouillon *u000a157 g philadelphia_cheese *u000a66 g parmesan *	\N	\N	\N	\N
+148	zucchini_crostini	\N	622 / 622 kcal	23.417 / 23.417 g	17.506 / 17.506 g	1.413 / 1.413 g	52.123 / 52.123 g	0.010 / 0.010 g	440.000 / 440.000 g	0.000 / 0.000 g	0.053 / 0.053 g	167 g zucchini *u000a40 g onion *u000a158 g ricotta *u000a75 g mascarpone *	\N	\N	\N	\N
+39	Aspargus_Soup	\N	490 / 490 kcal	13.81 / 13.81 g	47.29 / 47.29 g	0.46 / 0.46 g	25.81 / 25.81 g	0.86 / 0.86 g	1068.00 / 1068.00 g	0.00 / 0.00 g	0.47 / 0.47 g	331 g Aspargus_green *u000a187 g Potato *u000a500 g Bouillon *u000a50 g Cream *	\N	\N	\N	1
+26	couscous_salad	\N	1466 / 1466 kcal	91.311 / 91.311 g	44.882 / 44.882 g	1.181 / 1.181 g	99.092 / 99.092 g	5.131 / 5.131 g	1241.000 / 1241.000 g	0.385 / 0.385 g	0.074 / 0.074 g	100 g Couscous *u000a200 g bouillon *u000a0 g ham *u000a0 g Butter *u000a54 g Salad *u000a0 g Endive *u000a0 g Gruyere *u000a177 g Cucumber *u000a174 g Tomatos *u000a0 g Ham *u000a120 g Mozzarella *u000a110 g Eggs *u000a126 g bacon *u000a81 g avocado *u000a99 g celery *	\N	\N	\N	1
+48	irish_stew	\N	3450 / 3450 kcal	215.823 / 215.823 g	131.775 / 131.775 g	1.199 / 1.199 g	219.115 / 219.115 g	1.997 / 1.997 g	2877.000 / 2877.000 g	0.000 / 0.000 g	0.075 / 0.075 g	238 g lamb_leg *u000a634 g lamb_chop *u000a280 g carrots *u000a208 g celery *u000a114 g leek *u000a201 g onion *u000a800 g bouillon *u000a402 g potatoes *u000a	\N	\N	\N	\N
+69	millet_soup	\N	1125 / 1125 kcal	57.14 / 57.14 g	112.56 / 112.56 g	0.64 / 0.64 g	75.22 / 75.22 g	0.06 / 0.06 g	1750.00 / 1750.00 g	0.00 / 0.00 g	0.11 / 0.11 g	1000 g bouillon *u000a110 g leek *u000a164 g carrot *u000a114 g sellery root *u000a273 g polish_sausage *u000a89 g millet_dry *u000a	\N	\N	\N	\N
+32	Quesadilla_filling	\N	1780 / 1780 kcal	128.290 / 128.290 g	17.440 / 17.440 g	2.539 / 2.539 g	124.480 / 124.480 g	0.026 / 0.026 g	701.000 / 701.000 g	0.000 / 0.000 g	0.183 / 0.183 g	0 g zucchini *u000a100 g onion *u000a50 g Creme_fraiche *u000a200 g gruyere *u000a0 g ham *u000a0 g ricotta *u000a350 g chorizo *u000a	\N	\N	\N	1
+28	Rasberry_Tart	\N	3623 / 3623 kcal	58.6 / 58.6 g	464 / 464 g	2.8 / 2.8 g	174.4 / 174.4 g	0 / 0 g	1312 / 1312 g	0 / 0 g	0 / 0 g	430 g Puff pastry *u000a41 g Leibniz cookies *u000a165 g Eggwhite *u000a175 g Sugar *u000a501 g Raspberry *	Wildeisen Vegetarischu000apage 300u000a	\N	\N	1
+30	Spinat_Gnudi	\N	1765 / 1765 kcal	110.774 / 110.774 g	126.546 / 126.546 g	1.234 / 1.234 g	88.112 / 88.112 g	9.246 / 9.246 g	1430.000 / 1430.000 g	0.193 / 0.193 g	0.077 / 0.077 g	500 g Ricotta *u000a600 g Spinach *u000a55 g Egg *u000a75 g Egg yolk *u000a200 g Spelt_flour *u000a0 g parmesan *u000a	wildeisen vegetarisch p166	\N	\N	1
+56	Whole_Wheat_Bread	\N	1946 / 1946 kcal	72.420 / 72.420 g	403.020 / 403.020 g	2.025 / 2.025 g	9.525 / 9.525 g	0.000 / 0.000 g	961.000 / 961.000 g	0.000 / 0.000 g	0.075 / 0.075 g	300 g flour_whole_wheat *u000a261 g Flour_unbleached *u000a0 g oat branu000a0 g steel cut_oatsu000a400 g water *	\N	\N	\N	1
+37	Beet_salad	\N	1825 / 1825 kcal	76.103 / 76.103 g	227.419 / 227.419 g	0.997 / 0.997 g	42.247 / 42.247 g	0.029 / 0.029 g	1830.000 / 1830.000 g	0.000 / 0.000 g	0.042 / 0.042 g	905 g Beets *u000a300 g wild_rice_cooked * *u000a0 g Lentils redu000a0 g Walnuts *u000a0 g moth_beans *u000a215 g mozzarella *u000a110 g onions *	\N	\N	\N	1
+\.
+
+
+--
+-- Name: ingredients Ingredients_pkey; Type: CONSTRAINT; Schema: public; Owner: klein
+--
+
+ALTER TABLE ONLY public.ingredients
+    ADD CONSTRAINT "Ingredients_pkey" PRIMARY KEY (name);
+
+
+--
+-- Name: recipes Recipes_pkey; Type: CONSTRAINT; Schema: public; Owner: klein
+--
+
+ALTER TABLE ONLY public.recipes
+    ADD CONSTRAINT "Recipes_pkey" PRIMARY KEY (name);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

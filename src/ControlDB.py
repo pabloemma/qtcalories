@@ -143,6 +143,12 @@ class MyMissingIngredientDialog(QDialog,Ui_missing_ingredient_dialog):
         super().__init__()
         self.setupUi(self)
 
+    #def accept(self):
+    #    """overwrite the accept function"""
+    #    #print("custom func")
+    #   super().accept()
+
+
 class ContrlDB(QMainWindow):
 
     def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None):
@@ -447,12 +453,18 @@ class ContrlDB(QMainWindow):
         """ form if ingredient is missing"""
         self.MMI1 = MyMissingIngredientDialog()
         self.MMI1.IngredLine.setText(self.missing_ingredient)
-        #self.MMI1.EditIngButton.clicked.connect(self.show_ingred_form)
+        self.MMI1.EditButton.clicked.connect(self.show_ingred_form)
         #self.MMI1.CloseButton.clicked.connect(self.Cancel(self.MMI1))
 
  
         self.MMI1.move(100,50)
-        self.MMI1.exec()
+        t = self.MMI1.exec()
+        
+        #if t == QDialog.Accepted:
+        #    self.show_ingred_form()
+        #    #self.MMI1.close()
+
+
         self.MMI1.show()
 
         return
@@ -460,6 +472,8 @@ class ContrlDB(QMainWindow):
     
     
     def show_ingred_form(self):
+        # destrory dialog give action back
+        self.MMI1.destroy()
         window.CreateIngredientsForm1()
 
 
