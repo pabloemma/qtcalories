@@ -272,20 +272,20 @@ class MainWindow(QMainWindow):
     def ViewTable(self,table):
         self.MyDB.ViewTable(table)        
 
- 
-app = QApplication(sys.argv) 
-window = MainWindow(Title = "GridLayout")
+if __name__ == '__main__':
+    app = QApplication(sys.argv) 
+    window = MainWindow(Title = "GridLayout")
 #window.SetSize(800,500)
 #window.SetPosition(100,500)
 
-window.setStyleSheet("background-color: white;")
+    window.setStyleSheet("background-color: white;")
 #window.CreateCalendar()
 
 
 
-window.show()
-window.ConnectDataBase()
-window.ShowTables()
-window.ViewTable('Recipes')
+    window.show()
+    window.ConnectDataBase()
+    window.ShowTables()
+    window.ViewTable('Recipes')
 # now run the app
-app.exec()
+    app.exec()

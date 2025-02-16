@@ -31,7 +31,7 @@ class MyConfig():
        
         
         # Open config file
-        print('Directory Name:     ', os.path.dirname(config_file))
+        #print('Directory Name:     ', os.path.dirname(config_file))
        
 
         if os.path.exists(config_file) :
@@ -68,6 +68,12 @@ class MyConfig():
         #decode cryptofile
         self.cryptofile = self.conf_dir+cryptofile
 
+        if os.path.exists(self.cryptofile):
+                with open(self.cryptofile, 'r') as file:
+                    password = file.read().rstrip()
+                    self.db_pwd = password
+
+
         self.db_user = jsondict["Control"]["db_user"]
         self.db_name = jsondict["Control"]["db_name"]
         #currently only QPSQL is supported
@@ -76,6 +82,9 @@ class MyConfig():
             #test if first key is working
  
         self.conf_dir = jsondict[mysystem]['conf_dir']
+
+        self.ingredients_suppress_columns = jsondict["graphics"]["ingredients_suppress_columns"]
+        self.recipes_suppress_columns = jsondict["graphics"]["recipes_suppress_columns"]
 
    
         #Possible loglevels

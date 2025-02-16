@@ -1,0 +1,370 @@
+2025-02-15T07:24:30.362613-0700 - __main__-   __init__ -189- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T07:24:30.363323-0700 - __main__-   __init__ -191- INFO    -  This is version 0.5
+2025-02-15T07:24:30.363411-0700 - __main__-   __init__ -192- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T07:24:31.491901-0700 - __main__-   ConnectDataBase -213- INFO    - connection succsessful
+2025-02-15T07:24:31.492227-0700 - __main__-   ConnectDataBase -217- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T07:24:40.435181-0700 - __main__-   create_new_recipe -507- INFO    - new recipe name test
+2025-02-15T07:24:49.982569-0700 - __main__-   save_recipe -646- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T07:24:49.984564-0700 - __main__-   create_pandas_frame -522- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T07:24:49.989678-0700 - __main__-   do_sql -774- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T07:24:49.991323-0700 - __main__-   create_pandas_frame -569- INFO    - this ingredient biff is missing 
+2025-02-15T07:55:57.875612-0700 - __main__-   __init__ -188- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T07:55:57.876104-0700 - __main__-   __init__ -190- INFO    -  This is version 0.5
+2025-02-15T07:55:57.876234-0700 - __main__-   __init__ -191- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T07:55:57.956819-0700 - __main__-   ConnectDataBase -212- INFO    - connection succsessful
+2025-02-15T07:55:57.957115-0700 - __main__-   ConnectDataBase -216- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T07:56:02.893814-0700 - __main__-   create_new_recipe -520- INFO    - new recipe name test
+2025-02-15T07:56:12.882009-0700 - __main__-   save_recipe -659- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T07:56:12.882354-0700 - __main__-   create_pandas_frame -535- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T07:56:12.884882-0700 - __main__-   do_sql -787- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T07:56:12.886953-0700 - __main__-   create_pandas_frame -582- INFO    - this ingredient biff is missing 
+2025-02-15T07:57:53.695312-0700 - __main__-   __init__ -188- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T07:57:53.696264-0700 - __main__-   __init__ -190- INFO    -  This is version 0.5
+2025-02-15T07:57:53.696443-0700 - __main__-   __init__ -191- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T07:57:53.785786-0700 - __main__-   ConnectDataBase -212- INFO    - connection succsessful
+2025-02-15T07:57:53.786141-0700 - __main__-   ConnectDataBase -216- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T07:58:00.065813-0700 - __main__-   create_new_recipe -520- INFO    - new recipe name test
+2025-02-15T07:58:10.595814-0700 - __main__-   save_recipe -659- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T07:58:10.596551-0700 - __main__-   create_pandas_frame -535- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T07:58:10.599791-0700 - __main__-   do_sql -787- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T07:58:10.601341-0700 - __main__-   create_pandas_frame -582- INFO    - this ingredient biff is missing 
+2025-02-15T08:00:06.804114-0700 - __main__-   __init__ -188- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:00:06.804634-0700 - __main__-   __init__ -190- INFO    -  This is version 0.5
+2025-02-15T08:00:06.804727-0700 - __main__-   __init__ -191- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:00:06.882148-0700 - __main__-   ConnectDataBase -212- INFO    - connection succsessful
+2025-02-15T08:00:06.882452-0700 - __main__-   ConnectDataBase -216- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:00:12.741885-0700 - __main__-   create_new_recipe -520- INFO    - new recipe name test
+2025-02-15T08:00:23.065634-0700 - __main__-   save_recipe -659- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:00:23.067624-0700 - __main__-   create_pandas_frame -535- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:00:23.070679-0700 - __main__-   do_sql -787- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:00:23.072530-0700 - __main__-   create_pandas_frame -582- INFO    - this ingredient biff is missing 
+2025-02-15T08:16:23.873767-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:16:23.874177-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:16:23.874261-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:16:23.955149-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:16:23.955504-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:16:29.349158-0700 - __main__-   create_new_recipe -526- INFO    - new recipe name test
+2025-02-15T08:16:39.201948-0700 - __main__-   save_recipe -665- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:16:39.203956-0700 - __main__-   create_pandas_frame -541- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:16:39.207018-0700 - __main__-   do_sql -793- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:16:39.208879-0700 - __main__-   create_pandas_frame -588- INFO    - this ingredient biff is missing 
+2025-02-15T08:20:00.588120-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:20:00.588597-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:20:00.588772-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:20:00.663724-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:20:00.664048-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:20:06.180733-0700 - __main__-   create_new_recipe -531- INFO    - new recipe name test
+2025-02-15T08:20:17.108232-0700 - __main__-   save_recipe -670- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:20:17.108962-0700 - __main__-   create_pandas_frame -546- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:20:17.111679-0700 - __main__-   do_sql -798- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:20:17.114219-0700 - __main__-   create_pandas_frame -593- INFO    - this ingredient biff is missing 
+2025-02-15T08:22:51.994373-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:22:51.994715-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:22:51.994799-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:22:52.054731-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:22:52.055142-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:22:56.709296-0700 - __main__-   create_new_recipe -531- INFO    - new recipe name test
+2025-02-15T08:23:07.424054-0700 - __main__-   save_recipe -670- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:23:07.424707-0700 - __main__-   create_pandas_frame -546- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:23:07.428006-0700 - __main__-   do_sql -798- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:23:07.429221-0700 - __main__-   create_pandas_frame -593- INFO    - this ingredient biff is missing 
+2025-02-15T08:25:30.057912-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:25:30.058427-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:25:30.058609-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:25:30.137374-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:25:30.137710-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:25:35.752415-0700 - __main__-   create_new_recipe -531- INFO    - new recipe name test
+2025-02-15T08:25:47.068176-0700 - __main__-   save_recipe -670- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:25:47.068805-0700 - __main__-   create_pandas_frame -546- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:25:47.071486-0700 - __main__-   do_sql -798- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:25:47.074060-0700 - __main__-   create_pandas_frame -593- INFO    - this ingredient biff is missing 
+2025-02-15T08:26:52.040209-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:26:52.040474-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:26:52.040558-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:26:52.099879-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:26:52.100259-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:27:02.848778-0700 - __main__-   create_new_recipe -532- INFO    - new recipe name test
+2025-02-15T08:27:13.723848-0700 - __main__-   save_recipe -671- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:27:13.724277-0700 - __main__-   create_pandas_frame -547- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:27:13.726141-0700 - __main__-   do_sql -799- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:27:13.726919-0700 - __main__-   create_pandas_frame -594- INFO    - this ingredient biff is missing 
+2025-02-15T08:28:00.375133-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:28:00.375454-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:28:00.375541-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:28:00.433583-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:28:00.433877-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:28:08.785885-0700 - __main__-   create_new_recipe -532- INFO    - new recipe name test
+2025-02-15T08:28:21.724369-0700 - __main__-   save_recipe -671- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:28:21.725902-0700 - __main__-   create_pandas_frame -547- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:28:21.728058-0700 - __main__-   do_sql -799- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:28:21.729052-0700 - __main__-   create_pandas_frame -594- INFO    - this ingredient biff is missing 
+2025-02-15T08:30:52.378912-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:30:52.379382-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:30:52.379471-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:30:52.467114-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:30:52.467459-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:30:58.145759-0700 - __main__-   create_new_recipe -532- INFO    - new recipe name test
+2025-02-15T08:31:09.099807-0700 - __main__-   save_recipe -671- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:31:09.100506-0700 - __main__-   create_pandas_frame -547- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:31:09.103186-0700 - __main__-   do_sql -799- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:31:09.105961-0700 - __main__-   create_pandas_frame -594- INFO    - this ingredient biff is missing 
+2025-02-15T08:36:14.243837-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:36:14.244295-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:36:14.244482-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:36:14.324734-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:36:14.325125-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:36:51.234740-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:36:51.234996-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:36:51.235078-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:36:51.305461-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:36:51.305837-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:37:00.163000-0700 - __main__-   create_new_recipe -532- INFO    - new recipe name test
+2025-02-15T08:37:11.166865-0700 - __main__-   save_recipe -671- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:37:11.167556-0700 - __main__-   create_pandas_frame -547- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:37:11.170351-0700 - __main__-   do_sql -799- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:37:11.171506-0700 - __main__-   create_pandas_frame -594- INFO    - this ingredient biff is missing 
+2025-02-15T08:38:41.346558-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T08:38:41.346899-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T08:38:41.346984-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T08:38:41.407019-0700 - __main__-   ConnectDataBase -218- INFO    - connection succsessful
+2025-02-15T08:38:41.407361-0700 - __main__-   ConnectDataBase -222- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T08:38:47.672466-0700 - __main__-   create_new_recipe -533- INFO    - new recipe name test
+2025-02-15T08:38:57.929426-0700 - __main__-   save_recipe -672- INFO    - ingredients [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] 
+2025-02-15T08:38:57.930094-0700 - __main__-   create_pandas_frame -548- INFO    -  name test and record [['100', 'g', 'biff'], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' '], ['0', 'g', ' ']] for recipes
+2025-02-15T08:38:57.932784-0700 - __main__-   do_sql -800- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'biff';
+2025-02-15T08:38:57.933834-0700 - __main__-   create_pandas_frame -595- INFO    - this ingredient biff is missing 
+2025-02-15T10:59:25.110484-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T10:59:25.110945-0700 - __main__-   __init__ -196- INFO    -  This is version 0.5
+2025-02-15T10:59:25.111031-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T10:59:25.195100-0700 - __main__-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-15T10:59:25.195478-0700 - __main__-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-15T10:59:56.921733-0700 - __main__-   create_new_recipe -545- INFO    - new recipe name raspberry_tart
+2025-02-15T11:01:30.918914-0700 - __main__-   save_recipe -684- INFO    - ingredients [['190', 'g', 'sugar'], ['150', 'g', 'almond'], ['40', 'g', 'flour_unbleached'], ['600', 'g', 'raspberry'], ['600', 'g', 'cream']] 
+2025-02-15T11:01:30.921093-0700 - __main__-   create_pandas_frame -560- INFO    -  name raspberry_tart and record [['190', 'g', 'sugar'], ['150', 'g', 'almond'], ['40', 'g', 'flour_unbleached'], ['600', 'g', 'raspberry'], ['600', 'g', 'cream']] for recipes
+2025-02-15T11:01:30.925289-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'sugar';
+2025-02-15T11:01:30.927873-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'almond';
+2025-02-15T11:01:30.928914-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'flour_unbleached';
+2025-02-15T11:01:30.930411-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'raspberry';
+2025-02-15T11:01:30.931492-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE 'cream';
+2025-02-15T11:01:30.933875-0700 - __main__-   do_sql -812- INFO    - query in do_sql SELECT id from recipes ;
+2025-02-15T11:01:30.938658-0700 - __main__-   do_sql -812- INFO    - query in do_sql INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES (227,'raspberry_tart',2.58,0.04,0.21,0.18,'190 g sugar 150 g almond 40 g flour_unbleached 600 g raspberry 600 g cream');
+2025-02-15T15:58:05.603192-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-15T15:58:05.603703-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-15T15:58:05.603799-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-15T15:58:06.968345-0700 - __main__-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-15T15:58:06.968701-0700 - __main__-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-16T08:30:43.368270-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:30:43.368775-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:30:43.368870-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:30:46.695353-0700 - __main__-   ConnectDataBase -228- ERROR    - connection failed, exciting
+2025-02-16T08:33:14.459829-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:33:14.460273-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:33:14.460386-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:33:19.494571-0700 - __main__-   ConnectDataBase -228- ERROR    - connection failed, exciting
+2025-02-16T08:33:33.042829-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:33:33.043101-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:33:33.043188-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:33:37.698392-0700 - __main__-   ConnectDataBase -228- ERROR    - connection failed, exciting
+2025-02-16T08:33:55.007604-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:33:55.008197-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:33:55.008348-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:33:55.109137-0700 - __main__-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-16T08:33:55.109450-0700 - __main__-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-16T08:40:02.245889-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:40:02.246411-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:40:02.246579-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:40:02.334118-0700 - __main__-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-16T08:40:02.334437-0700 - __main__-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-16T08:40:43.517650-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:40:43.518283-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:40:43.518418-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:41:19.690901-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:41:19.691173-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:41:19.691256-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:43:31.461111-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T08:43:31.461624-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T08:43:31.461728-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T08:43:31.614383-0700 - __main__-   ConnectDataBase -228- ERROR    - database problem connection to server at "192.168.2.164", port 5432 failed: FATAL:  no pg_hba.conf entry for host "192.168.2.100", user "klein", database "recipe_ak", SSL encryption
+connection to server at "192.168.2.164", port 5432 failed: FATAL:  no pg_hba.conf entry for host "192.168.2.100", user "klein", database "recipe_ak", no encryption
+QPSQL: Unable to connect
+2025-02-16T08:43:31.614618-0700 - __main__-   ConnectDataBase -229- ERROR    - connection failed, exciting
+2025-02-16T10:36:28.514404-0700 - __main__-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T10:36:28.514924-0700 - __main__-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T10:36:28.515085-0700 - __main__-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T10:36:28.799070-0700 - __main__-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-16T10:36:28.799411-0700 - __main__-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection

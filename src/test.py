@@ -1,84 +1,57 @@
-import sys
-from missing_ingredient import Ui_MissingIngredient
+from PySide6.QtWidgets import QApplication, QMainWindow, QMenu, QPushButton
+from PySide6.QtGui import QAction, QIcon
 
-import pandas as PD # to pack the recipe information into a pandas dataframe
-
-
-from PySide6.QtCore import (QSize, Qt ,QRect,
-QCoreApplication,Slot,Signal,QAbstractListModel,QAbstractTableModel,QMetaObject,QModelIndex)
-from PySide6.QtGui import QAction,QDoubleValidator,QFont
-from PySide6.QtWidgets import QWidget 
-from PySide6.QtUiTools import QUiLoader
-
-from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel,QSqlQueryModel,QSqlQuery
-
-from PySide6.QtWidgets import (
-QApplication,
-    QCheckBox,
-    QComboBox,
-    QDateEdit,
-    QDateTimeEdit,
-    QDial,
-    QDoubleSpinBox,
-    QFileDialog,
-    QFontComboBox,
-    QFormLayout,
-    QHBoxLayout,
-    QLabel,
-    QLCDNumber,
-    QLineEdit,
-    QListView,
-    QMainWindow,
-    QProgressBar,
-    QPushButton,
-    QRadioButton,
-    QSlider,
-    QSpinBox,
-    QStatusBar,
-    QTimeEdit,
-    QTableView,
-    QMenuBar,
-    QVBoxLayout,
-    QAbstractItemView,
-    QGridLayout,
-    QTextEdit
-    
-)
-
-
-class MyMissIngWindow(QMainWindow,Ui_MissingIngredient):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
 
+        self.setWindowTitle("QAction Example")
 
-class test((QMainWindow)):
-    def __init__(self):
-        super().__init__()
+        # Create a menu bar
+        menu_bar = self.menuBar()
+
+        # Create a "File" menu
+        file_menu = menu_bar.addMenu("File")
+
+        # Create a "New" action
+        new_action = QAction(QIcon.fromTheme("document-new"), "New", self)
+        new_action.setShortcut("Ctrl+N")
+        new_action.setStatusTip("Create a new document")
+        new_action.triggered.connect(self.new_document)
+        file_menu.addAction(new_action)
+
  
-    def MyMissingIngredients(self):
-        """ form if ingredient is missing"""
-        self.MMI = MyMissIngWindow()
-        self.MMI.move(10,50)
-        self.MMI.show()
-        self.MMI.IngredLine.setText('shit')
-        #self.MMI.EditIngButton.clicked.connect(self.show_ingred_form())
-        #self.MMI.CloseButton.clicked.connect(self.Cancel(self.MMI))
+       # Create a "Quit" action
+        quitt_action = QAction("MyQuit", self)
+        quitt_action.setShortcut("Ctrl+Q")
+        quitt_action.setStatusTip("Quit the application")
+        quitt_action.triggered.connect(self.quit_app)
+        file_menu.addAction(quitt_action)
+
+               # Create an "Open" action
+        open_action = QAction(QIcon.fromTheme("document-open"), "Open", self)
+        open_action.setShortcut("Ctrl+O")
+        open_action.setStatusTip("Open an existing document")
+        open_action.triggered.connect(self.open_document)
+        file_menu.addAction(open_action)
 
 
-app = QApplication(sys.argv)
+        # Add a button to trigger an action
+        button = QPushButton("Trigger New Action", self)
+        button.clicked.connect(new_action.trigger)
+        self.setCentralWidget(button)
 
-window = test()
-window.MyMissingIngredients()
-#window.SetSize(800,500)
-#window.move(10,50)
+    def new_document(self):
+        print("New document created")
 
-window.setStyleSheet("background-color: white;")
-#window.CreateCalendar()
+    def open_document(self):
+        print("Open document")
 
+    def quit_app(self):
+        self.close()
 
-
-#window.show()
-
-# now run the app
-app.exec()
+if __name__ == "__main__":
+    app = QApplication([])
+    window = MainWindow()
+    window.show()
+    app.exec()

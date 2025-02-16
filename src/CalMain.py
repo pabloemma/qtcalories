@@ -101,7 +101,7 @@ class CalMain(QMainWindow):
  
         return
 
-
+ 
 
 
     def list_recipes(self):

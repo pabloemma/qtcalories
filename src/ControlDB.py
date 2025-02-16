@@ -163,8 +163,8 @@ class ContrlDB(QMainWindow):
                 with open(temp, 'r') as file:
                     password = file.read().rstrip()
                     self.db_pwd = password
-            else:
-                self.db_pwd = db_pwd
+        else:
+            self.db_pwd = db_pwd
 
 
         self.SetupLogger()
@@ -232,7 +232,7 @@ class ContrlDB(QMainWindow):
     def SetupLogger(self):
 
 
-        logger.remove(0)
+        #logger.remove(0)
         #now we add color to the terminal output
         logger.add(sys.stdout,
                 colorize = True,format="<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>" ,
@@ -1013,15 +1013,16 @@ class ContrlDB(QMainWindow):
         return
     
 
-app = QApplication(sys.argv) 
+if __name__ == '__main__':    
+    app = QApplication(sys.argv) 
 
-Title=None
-db_name='recipe_ak'
-db_user='klein'
-db_system='QPSQL'
-db_pwd = None
+    Title=None
+    db_name='recipe_ak'
+    db_user='klein'
+    db_system='QPSQL'
+    db_pwd = None
 
-suppress_columns = ['Sugar',
+    suppress_columns = ['Sugar',
                     'Portions',
                     'Description',
                     'Saturated_fat',
@@ -1032,27 +1033,27 @@ suppress_columns = ['Sugar',
                     'Time',
                     'Images',
                     'vegetarian']
-columnwidth = [40,200,200,200,200,200]
+    columnwidth = [40,200,200,200,200,200]
 
-window = ContrlDB(Title = "ControlDB",
+    window = ContrlDB(Title = "ControlDB",
                   db_name=db_name,
                   db_user=db_user,
                   db_system=db_system)
 #window.SetSize(800,500)
 #window.SetPosition(100,500)
 
-window.setStyleSheet("background-color: white;")
+    window.setStyleSheet("background-color: white;")
 #window.CreateCalendar()
 
 
 
 #window.show()
-window.ConnectDataBase()
-window.ShowTables()
-window.ViewTable('recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
+    window.ConnectDataBase()
+    window.ShowTables()
+    window.ViewTable('recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
 
-window.MyRecipes_new()
+    window.MyRecipes_new()
 #window.CreateIngredientsForm1()
 
 # now run the app
-app.exec()
+    app.exec()
