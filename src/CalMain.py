@@ -60,6 +60,13 @@ class CalMain(QMainWindow):
         new_action.triggered.connect(self.list_recipes)
         file_menu.addAction(new_action)
 
+       # Create a "List Ingredients" action
+        new_action = QAction( "List Ingredients", self)
+        new_action.setShortcut("Ctrl+I")
+        new_action.setStatusTip("list Ingredients")
+        new_action.triggered.connect(self.list_ingredients)
+        file_menu.addAction(new_action)
+
 
 
     def SetupConfig(self):
@@ -109,6 +116,10 @@ class CalMain(QMainWindow):
         columnwidth = [40,200,200,200,200,200]
         self.CDB.ViewTable('recipes',suppress_columns=self.CM.recipes_suppress_columns,columnwidth=columnwidth)
 
+    def list_ingredients(self):
+        """list all the recipes"""
+        columnwidth = [200,100,100,100,100,100]
+        self.CDB.ViewTable('ingredients',suppress_columns=self.CM.ingredients_suppress_columns,columnwidth=columnwidth)
 
 
  
