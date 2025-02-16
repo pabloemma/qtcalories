@@ -208,11 +208,11 @@ class ContrlDB(QMainWindow):
 
         #instantiate the connection
         self.mycal_db  = QSqlDatabase.addDatabase(self.db_system)
-        self.mycal_db.setHostName("localhost")
+        self.mycal_db.setHostName("192.168.2.164")
         self.mycal_db.setDatabaseName(self.db_name)
         self.mycal_db.setUserName(self.db_user)
         self.mycal_db.setPassword(self.db_pwd)
-        
+
 
  #       self.mycal_db.setPassword(self.CM.pwd)
 
@@ -225,6 +225,7 @@ class ContrlDB(QMainWindow):
             logger.info(' database connection name %s' % self.connection_name)
             #self.ShowTables()
         else:
+            logger.error('database problem %s' % self.mycal_db.lastError().text())
             logger.error('connection failed, exciting')
             sys.exit(0)
 
