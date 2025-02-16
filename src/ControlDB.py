@@ -282,7 +282,8 @@ class ContrlDB(QMainWindow):
 
     def ViewTable(self,table,suppress_columns=[],editmode=True,columnwidth=[],Title = None, showTable = True):
         self.table_view = QTableView()
-        
+        self.table_view.setSortingEnabled(True)
+        #self.table_view.sortByColumn(2,Qt.AscendingOrder)
 
         self.model = QSqlTableModel(db = self.mycal_db) 
 
@@ -307,7 +308,7 @@ class ContrlDB(QMainWindow):
         for k in range(0,len(columnwidth)):
             self.table_view.setColumnWidth(k, columnwidth[k])
  
-        self.setMinimumSize(QSize(300, 300)) 
+        self.setMinimumSize(QSize(600, 300)) 
         
         self.setCentralWidget(self.table_view)
         
@@ -1048,7 +1049,8 @@ window.setStyleSheet("background-color: white;")
 #window.show()
 window.ConnectDataBase()
 window.ShowTables()
-#window.ViewTable('Recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
+window.ViewTable('recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
+
 window.MyRecipes_new()
 #window.CreateIngredientsForm1()
 

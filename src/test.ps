@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0
-%%Title: Recipe1.py
+%%Title: config_mycal.py
 %%For: Andi Klein
 %%Creator: a2ps version 4.15.5
-%%CreationDate: Wed Feb 12 15:23:32 2025
+%%CreationDate: Sun Feb 16 10:42:45 2025
 %%BoundingBox: 24 24 588 767
 %%DocumentData: Clean7Bit
 %%Orientation: Landscape
-%%Pages: 4
+%%Pages: 3
 %%PageOrder: Ascend
 %%DocumentMedia: Letter 612 791 0 () ()
 %%DocumentNeededResources: font Courier
@@ -754,106 +754,142 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1) # (# -*- coding: utf-8 -*-) c n
-(2) # () N
-(3) # (################################################################################) N
-(4) # (## Form generated from reading UI file 'Recipe1.ui') N
-(5) # (##) N
-(6) # (## Created by: Qt User Interface Compiler version 6.7.2) N
-(7) # (##) N
-(8) # (## WARNING! All changes made in this file will be lost when recompiling UI file!) N
-(9) # (################################################################################) N
-(10) # () N
-(11) # () S
-(from) K
-( PySide6.QtCore ) p
+(1) # (""") p
+(Class to configure the test_speed program) str n
+(2) # (Using json \(sigh\)) S
+(""") p n
+(3) # () N
+(4) # () N
+(5) # () S
 (import) K
-( \(QCoreApplication, QDate, QDateTime, QLocale,) p n
-(12) # (    QMetaObject, QObject, QPoint, QRect,) N
-(13) # (    QSize, QTime, QUrl, Qt\)) N
-(14) # () S
-(from) K
-( PySide6.QtGui ) p
+( json) p n
+(6) # () S
 (import) K
-( \(QBrush, QColor, QConicalGradient, QCursor,) p n
-(15) # (    QFont, QFontDatabase, QGradient, QIcon,) N
-(16) # (    QImage, QKeySequence, QLinearGradient, QPainter,) N
-(17) # (    QPalette, QPixmap, QRadialGradient, QTransform\)) N
-(18) # () S
-(from) K
-( PySide6.QtWidgets ) p
+( os) p n
+(7) # () S
 (import) K
-( \(QAbstractItemView, QApplication, QComboBox, QHeaderView,) p n
-(19) # (    QLabel, QLineEdit, QMainWindow, QMenuBar,) N
-(20) # (    QPushButton, QSizePolicy, QStatusBar, QTableView,) N
-(21) # (    QWidget\)) N
-(22) # () N
-(23) # () S
+( sys) p n
+(8) # () S
+(import) K
+( platform) p n
+(9) # () S
+(import) K
+( socket) p n
+(10) # () S
+(import) K
+( inspect) p n
+(11) # () N
+(12) # () S
 (class) K
-( Ui_MainWindow\(object\):) p n
-(24) # (    ) S
+( color:) p n
+(13) # (   PURPLE = ') S
+(\\033[95m) str
+(') p n
+(14) # (   CYAN = ') S
+(\\033[96m) str
+(') p n
+(15) # (   DARKCYAN = ') S
+(\\033[36m) str
+(') p n
+(16) # (   BLUE = ') S
+(\\033[94m) str
+(') p n
+(17) # (   GREEN = ') S
+(\\033[92m) str
+(') p n
+(18) # (   YELLOW = ') S
+(\\033[93m) str
+(') p n
+(19) # (   RED = ') S
+(\\033[91m) str
+(') p n
+(20) # (   BOLD = ') S
+(\\033[1m) str
+(') p n
+(21) # (   UNDERLINE = ') S
+(\\033[4m) str
+(') p n
+(22) # (   END = ') S
+(\\033[0m) str
+(') p n
+(23) # () N
+(24) # () N
+(25) # () S
+(class) K
+( MyConfig\(\):) p n
+(26) # () N
+(27) # (    ) S
 (def) K
-( setupUi\(self, MainWindow\):) p n
-(25) # (        ) S
+( __init__\(self,config_file\):) p n
+(28) # (        """) S
+( config_file contains all the infor for calory program) str
+(""") p n
+(29) # () N
+(30) # ( ) N
+(31) # (       ) N
+(32) # (        ) N
+(33) # (        ) S
+(# Open config file) c n
+(34) # () S
+(        ) p
+(print) K
+(\(') p
+(Directory Name:     ) str
+(', os.path.dirname\(config_file\)\)) p n
+(35) # (       ) N
+(36) # () N
+(37) # (        ) S
 (if) K
-( ) p
-(not) K
-( MainWindow.objectName\(\):) p n
-(26) # (            MainWindow.setObjectName\(u") S
-(MainWindow) str
-("\)) p n
-(27) # (        MainWindow.resize\(800, 600\)) N
-(28) # (        self.centralwidget = QWidget\(MainWindow\)) N
-(29) # (        self.centralwidget.setObjectName\(u") S
-(centralwidget) str
-("\)) p n
-(30) # (        self.SaveRecipe = QPushButton\(self.centralwidget\)) N
-(31) # (        self.SaveRecipe.setObjectName\(u") S
-(SaveRecipe) str
-("\)) p n
-(32) # (        self.SaveRecipe.setGeometry\(QRect\(320, 410, 181, 32\)\)) N
-(33) # (        self.NewRecipeButton = QPushButton\(self.centralwidget\)) N
-(34) # (        self.NewRecipeButton.setObjectName\(u") S
-(NewRecipeButton) str
-("\)) p n
-(35) # (        self.NewRecipeButton.setGeometry\(QRect\(10, 280, 100, 41\)\)) N
-(36) # (        font = QFont\(\)) N
-(37) # (        font.setFamilies\([u") S
-(Calibri) str
-("]\)) p n
-(38) # (        font.setPointSize\(16\)) N
-(39) # (        font.setBold\(True\)) N
-(40) # (        self.NewRecipeButton.setFont\(font\)) N
-(41) # (        self.RecipeListCombo = QComboBox\(self.centralwidget\)) N
-(42) # (        self.RecipeListCombo.setObjectName\(u") S
-(RecipeListCombo) str
-("\)) p n
-(43) # (        self.RecipeListCombo.setGeometry\(QRect\(530, 410, 171, 32\)\)) N
-(44) # (        self.RecipeListCombo.setEditable\(True\)) N
-(45) # (        self.RecipeListCombo.setMaxVisibleItems\(20\)) N
-(46) # (        self.CalLab = QLabel\(self.centralwidget\)) N
-(47) # (        self.CalLab.setObjectName\(u") S
-(CalLab) str
-("\)) p n
-(48) # (        self.CalLab.setGeometry\(QRect\(30, 60, 131, 31\)\)) N
-(49) # (        font1 = QFont\(\)) N
-(50) # (        font1.setPointSize\(15\)) N
-(51) # (        font1.setBold\(True\)) N
-(52) # (        self.CalLab.setFont\(font1\)) N
-(53) # (        self.cal_line = QLineEdit\(self.centralwidget\)) N
-(54) # (        self.cal_line.setObjectName\(u") S
-(cal_line) str
-("\)) p n
-(55) # (        self.cal_line.setGeometry\(QRect\(180, 60, 113, 31\)\)) N
-(56) # (        self.Protlab = QLabel\(self.centralwidget\)) N
-(57) # (        self.Protlab.setObjectName\(u") S
-(Protlab) str
-("\)) p n
-(Recipe1.py) (Page 1/4) (Feb 12, 2025 15:18) title
+( os.path.exists\(config_file\) :) p n
+(38) # (            self.ReadJson\(config_file\)) N
+(39) # (        ) S
+(else) K
+(:) p n
+(40) # (            ) S
+(print) K
+(\(") p
+( Config file does not exist, exiting     ) str
+(", config_file\)) p n
+(41) # (            sys.exit\(0\)) N
+(42) # () N
+(43) # (    ) S
+(def) K
+( ReadJson\(self,file_path\):) p n
+(44) # () N
+(45) # (        ) S
+(print) K
+(\(") p
+(reading config file ) str
+(", file_path\)    ) p n
+(46) # (        with open\(file_path, ") S
+(r) str
+("\) as f:) p n
+(47) # (            myconf = json.load\(f\)) N
+(48) # () N
+(49) # (            self.DecodeVariables\(myconf\)) N
+(50) # () N
+(51) # (    ) S
+(def) K
+( DecodeVariables\(self,jsondict\):) p n
+(52) # (        """) S
+(decodes the json dictionary in to variables) str
+(""") p n
+(53) # () N
+(54) # (        ) S
+(#bold face begin and end) c n
+(55) # () S
+(        bfb = ') p
+(\\033[1m) str
+(') p n
+(56) # (        bfe = ') S
+(\\033[0m) str
+(') p n
+(57) # (        TX = color) N
+(config_mycal.py) (Page 1/3) (Feb 03, 2025 7:39) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(Recipe1.py) (1/4) (Wednesday February 12, 2025) footer
+(config_mycal.py) (1/3) (Sunday February 16, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -869,90 +905,184 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(58) # (        self.Protlab.setGeometry\(QRect\(30, 110, 121, 31\)\)) p n
-(59) # (        self.Protlab.setFont\(font1\)) N
-(60) # (        self.prot_line = QLineEdit\(self.centralwidget\)) N
-(61) # (        self.prot_line.setObjectName\(u") S
-(prot_line) str
-("\)) p n
-(62) # (        self.prot_line.setGeometry\(QRect\(180, 110, 113, 31\)\)) N
-(63) # (        self.CancelButton = QPushButton\(self.centralwidget\)) N
-(64) # (        self.CancelButton.setObjectName\(u") S
-(CancelButton) str
-("\)) p n
-(65) # (        self.CancelButton.setGeometry\(QRect\(390, 470, 231, 61\)\)) N
-(66) # (        font2 = QFont\(\)) N
-(67) # (        font2.setPointSize\(18\)) N
-(68) # (        font2.setBold\(True\)) N
-(69) # (        font2.setItalic\(True\)) N
-(70) # (        self.CancelButton.setFont\(font2\)) N
-(71) # (        self.CancelButton.setAutoFillBackground\(False\)) N
-(72) # (        self.CancelButton.setStyleSheet\(u") S
-(background-color: rgb\(255, 79, 69\);) str
-("\)) p n
-(73) # (        self.IngredientsLabel = QLabel\(self.centralwidget\)) N
-(74) # (        self.IngredientsLabel.setObjectName\(u") S
-(IngredientsLabel) str
-("\)) p n
-(75) # (        self.IngredientsLabel.setGeometry\(QRect\(407, 19, 211, 31\)\)) N
-(76) # (        font3 = QFont\(\)) N
-(77) # (        font3.setPointSize\(23\)) N
-(78) # (        self.IngredientsLabel.setFont\(font3\)) N
-(79) # (        self.IngredientsLabel.setAlignment\(Qt.AlignmentFlag.AlignCenter\)) N
-(80) # (        self.RecipeTableView = QTableView\(self.centralwidget\)) N
-(81) # (        self.RecipeTableView.setObjectName\(u") S
-(RecipeTableView) str
-("\)) p n
-(82) # (        self.RecipeTableView.setGeometry\(QRect\(320, 60, 391, 341\)\)) N
-(83) # (        self.RecipeTableView.setEditTriggers\(QAbstractItemView.EditTrigger.AllEditTriggers\)) N
-(84) # (        self.AddRowButton = QPushButton\(self.centralwidget\)) N
-(85) # (        self.AddRowButton.setObjectName\(u") S
-(AddRowButton) str
-("\)) p n
-(86) # (        self.AddRowButton.setGeometry\(QRect\(320, 440, 371, 32\)\)) N
-(87) # (        palette = QPalette\(\)) N
-(88) # (        brush = QBrush\(QColor\(240, 57, 49, 255\)\)) N
-(89) # (        brush.setStyle\(Qt.SolidPattern\)) N
-(90) # (        palette.setBrush\(QPalette.Active, QPalette.Button, brush\)) N
-(91) # (        palette.setBrush\(QPalette.Inactive, QPalette.Button, brush\)) N
-(92) # (        palette.setBrush\(QPalette.Disabled, QPalette.Button, brush\)) N
-(93) # (        self.AddRowButton.setPalette\(palette\)) N
-(94) # (        font4 = QFont\(\)) N
-(95) # (        font4.setPointSize\(21\)) N
-(96) # (        font4.setBold\(False\)) N
-(97) # (        self.AddRowButton.setFont\(font4\)) N
-(98) # (        self.NewRecipeName = QLineEdit\(self.centralwidget\)) N
-(99) # (        self.NewRecipeName.setObjectName\(u") S
-(NewRecipeName) str
-("\)) p n
-(100) # (        self.NewRecipeName.setGeometry\(QRect\(10, 320, 301, 21\)\)) N
-(101) # (        font5 = QFont\(\)) N
-(102) # (        font5.setFamilies\([u") S
-(Calibri) str
-("]\)) p n
-(103) # (        font5.setPointSize\(15\)) N
-(104) # (        self.NewRecipeName.setFont\(font5\)) N
-(105) # (        self.FatLab = QLabel\(self.centralwidget\)) N
-(106) # (        self.FatLab.setObjectName\(u") S
-(FatLab) str
-("\)) p n
-(107) # (        self.FatLab.setGeometry\(QRect\(30, 160, 131, 31\)\)) N
-(108) # (        self.FatLab.setFont\(font1\)) N
-(109) # (        self.fat_line = QLineEdit\(self.centralwidget\)) N
-(110) # (        self.fat_line.setObjectName\(u") S
-(fat_line) str
-("\)) p n
-(111) # (        self.fat_line.setGeometry\(QRect\(180, 160, 113, 31\)\)) N
-(112) # (        self.fat_line.setFont\(font1\)) N
-(113) # (        self.CarbLab = QLabel\(self.centralwidget\)) N
-(114) # (        self.CarbLab.setObjectName\(u") S
-(CarbLab) str
-("\)) p n
-(Recipe1.py) (Page 2/4) (Feb 12, 2025 15:18) title
+(58) # (        ) p
+(#these are depending on the operating system) c n
+(59) # () S
+(        mysystem = platform.system\(\)) p n
+(60) # (        self.srcdir = jsondict[mysystem][') S
+(srcdir) str
+(']) p n
+(61) # (        self.datadir = jsondict[mysystem][') S
+(datadir) str
+(']) p n
+(62) # (        self.logdir = jsondict[mysystem][') S
+(logdir) str
+(']) p n
+(63) # (        self.doc_dir =jsondict[mysystem][') S
+(doc_dir) str
+(']) p n
+(64) # (        self.conf_dir = jsondict[mysystem][') S
+(conf_dir) str
+(']) p n
+(65) # () N
+(66) # (        self.debug = jsondict[") S
+(Control) str
+("][") p
+(debug) str
+("]) p n
+(67) # (        cryptofile = jsondict[") S
+(Control) str
+("][") p
+(cryptofile) str
+("]) p n
+(68) # (        ) S
+(#decode cryptofile) c n
+(69) # () S
+(        self.cryptofile = self.conf_dir+cryptofile) p n
+(70) # () N
+(71) # (        self.db_user = jsondict[") S
+(Control) str
+("][") p
+(db_user) str
+("]) p n
+(72) # (        self.db_name = jsondict[") S
+(Control) str
+("][") p
+(db_name) str
+("]) p n
+(73) # (        ) S
+(#currently only QPSQL is supported) c n
+(74) # () S
+(        self.db_system = jsondict[") p
+(Control) str
+("][") p
+(db_system) str
+("]) p n
+(75) # (        ) S
+(# the next two vaiables are only used if we run in "both" mode) c n
+(76) # () S
+(            ) p
+(#test if first key is working) c n
+(77) # () S
+( ) p n
+(78) # (        self.conf_dir = jsondict[mysystem][') S
+(conf_dir) str
+(']) p n
+(79) # () N
+(80) # (   ) N
+(81) # (        ) S
+(#Possible loglevels) c n
+(82) # () S
+(        ) p
+(# DEBUG) c n
+(83) # () S
+(        ) p
+(# INFO) c n
+(84) # () S
+(        ) p
+(# WARNING) c n
+(85) # () S
+(        ) p
+(# ERROR) c n
+(86) # () S
+(        ) p
+(# CRITICAL) c n
+(87) # () S
+(        ) p n
+(88) # (        ) S
+(#Output choices) c n
+(89) # () S
+(        ) p
+(# screen) c n
+(90) # () S
+(        ) p
+(# outfile) c n
+(91) # () S
+(        ) p
+(# both) c n
+(92) # () N
+(93) # () S
+(        ) p
+(if) K
+( ") p
+(loglevel) str
+(" ) p
+(in) K
+( jsondict[") p
+(logging) str
+("].keys\(\) :) p n
+(94) # (            self.log_level = jsondict[") S
+(logging) str
+("][") p
+(loglevel) str
+("] ) p n
+(95) # (        ) S
+(else) K
+(:) p n
+(96) # (            self.log_level = ") S
+(INFO) str
+(") p n
+(97) # () N
+(98) # (        ) N
+(99) # (        self.log_output = jsondict[") S
+(logging) str
+("][") p
+(output) str
+("] ) p n
+(100) # ( ) N
+(101) # (        ) S
+(if) K
+( ") p
+(log_conf_file) str
+(" ) p
+(in) K
+( jsondict[") p
+(logging) str
+("].keys\(\) :) p n
+(102) # (            self.log_conf_file = self.conf_dir+jsondict[") S
+(logging) str
+("][") p
+(log_conf_file) str
+("] ) p n
+(103) # (        ) S
+(else) K
+(:) p n
+(104) # (            frame = inspect.currentframe\(\)) N
+(105) # (            prefix = TX.BOLD +TX.RED+') S
+(|) str
+('+frame.f_code.co_name+') p
+(>) str
+('+') p
+(no logger config file) str
+('+TX.END) p n
+(106) # (            ) S
+(print) K
+(\(prefix\)) p n
+(107) # (            sys.exit\(0\)) N
+(108) # (             ) N
+(109) # (        ) S
+(#here we get the logging varaibles:) c n
+(110) # () S
+(                ) p n
+(111) # () N
+(112) # (        ) S
+(print) K
+(\(') p
+(\\n\\n ***************** configuration**************\\n) str
+('\)) p n
+(113) # (        ) S
+(print) K
+(\(') p
+( We are running on platform ) str
+(' , mysystem, ') p
+(\\n) str
+('\)) p n
+(114) # () N
+(config_mycal.py) (Page 2/3) (Feb 03, 2025 7:39) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(Recipe1.py) (2/4) (Wednesday February 12, 2025) footer
+(config_mycal.py) (2/3) (Sunday February 16, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -968,209 +1098,67 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(115) # (        self.CarbLab.setGeometry\(QRect\(30, 210, 121, 21\)\)) p n
-(116) # (        self.CarbLab.setFont\(font1\)) N
-(117) # (        self.carb_line = QLineEdit\(self.centralwidget\)) N
-(118) # (        self.carb_line.setObjectName\(u") S
-(carb_line) str
-("\)) p n
-(119) # (        self.carb_line.setGeometry\(QRect\(180, 210, 113, 31\)\)) N
-(120) # (        self.carb_line.setFont\(font1\)) N
-(121) # (        self.CloseButton = QPushButton\(self.centralwidget\)) N
-(122) # (        self.CloseButton.setObjectName\(u") S
-(CloseButton) str
-("\)) p n
-(123) # (        self.CloseButton.setGeometry\(QRect\(10, 400, 191, 121\)\)) N
-(124) # (        palette1 = QPalette\(\)) N
-(125) # (        brush1 = QBrush\(QColor\(243, 243, 243, 217\)\)) N
-(126) # (        brush1.setStyle\(Qt.SolidPattern\)) N
-(127) # (        palette1.setBrush\(QPalette.Active, QPalette.WindowText, brush1\)) N
-(128) # (        brush2 = QBrush\(QColor\(48, 68, 255, 255\)\)) N
-(129) # (        brush2.setStyle\(Qt.SolidPattern\)) N
-(130) # (        palette1.setBrush\(QPalette.Active, QPalette.Button, brush2\)) N
-(131) # (        palette1.setBrush\(QPalette.Active, QPalette.Base, brush2\)) N
-(132) # (        palette1.setBrush\(QPalette.Active, QPalette.Window, brush2\)) N
-(133) # (        palette1.setBrush\(QPalette.Inactive, QPalette.WindowText, brush1\)) N
-(134) # (        palette1.setBrush\(QPalette.Inactive, QPalette.Button, brush2\)) N
-(135) # (        palette1.setBrush\(QPalette.Inactive, QPalette.Base, brush2\)) N
-(136) # (        palette1.setBrush\(QPalette.Inactive, QPalette.Window, brush2\)) N
-(137) # (        palette1.setBrush\(QPalette.Disabled, QPalette.Button, brush2\)) N
-(138) # (        palette1.setBrush\(QPalette.Disabled, QPalette.Base, brush2\)) N
-(139) # (        palette1.setBrush\(QPalette.Disabled, QPalette.Window, brush2\)) N
-(140) # (        self.CloseButton.setPalette\(palette1\)) N
-(141) # (        font6 = QFont\(\)) N
-(142) # (        font6.setPointSize\(20\)) N
-(143) # (        font6.setBold\(True\)) N
-(144) # (        font6.setItalic\(True\)) N
-(145) # (        self.CloseButton.setFont\(font6\)) N
-(146) # (        self.CloseButton.setStyleSheet\(u") S
-(background-color: rgb\(48, 68, 255\);) str
-("\)) p n
-(147) # (        self.titlab = QLabel\(self.centralwidget\)) N
-(148) # (        self.titlab.setObjectName\(u") S
-(titlab) str
-("\)) p n
-(149) # (        self.titlab.setGeometry\(QRect\(37, 10, 251, 20\)\)) N
-(150) # (        self.lineEdit = QLineEdit\(self.centralwidget\)) N
-(151) # (        self.lineEdit.setObjectName\(u") S
-(lineEdit) str
-("\)) p n
-(152) # (        self.lineEdit.setGeometry\(QRect\(290, 10, 61, 21\)\)) N
-(153) # (        MainWindow.setCentralWidget\(self.centralwidget\)) N
-(154) # (        self.menubar = QMenuBar\(MainWindow\)) N
-(155) # (        self.menubar.setObjectName\(u") S
-(menubar) str
-("\)) p n
-(156) # (        self.menubar.setGeometry\(QRect\(0, 0, 800, 37\)\)) N
-(157) # (        MainWindow.setMenuBar\(self.menubar\)) N
-(158) # (        self.statusbar = QStatusBar\(MainWindow\)) N
-(159) # (        self.statusbar.setObjectName\(u") S
-(statusbar) str
-("\)) p n
-(160) # (        MainWindow.setStatusBar\(self.statusbar\)) N
-(161) # () N
-(162) # (        self.retranslateUi\(MainWindow\)) N
-(163) # () N
-(164) # (        QMetaObject.connectSlotsByName\(MainWindow\)) N
-(165) # (    ) S
-(# setupUi) c n
-(166) # () N
-(167) # () S
-(    ) p
-(def) K
-( retranslateUi\(self, MainWindow\):) p n
-(168) # (        MainWindow.setWindowTitle\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(MainWindow) str
-(", None\)\)) p n
-(169) # () S
-(#if QT_CONFIG\(tooltip\)) c n
-(170) # () S
-(        self.SaveRecipe.setToolTip\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(Don't forget to hit return) str
-(", None\)\)) p n
-(171) # () S
-(#endif // QT_CONFIG\(tooltip\)) c n
-(Recipe1.py) (Page 3/4) (Feb 12, 2025 15:18) title
+(115) # (        ) p
+(print) K
+(\(') p
+(Sourcedir            ) str
+(',self.srcdir\)) p n
+(116) # (        ) S
+(print) K
+(\(') p
+(Datadir              ) str
+(',self.datadir\)) p n
+(117) # ( ) N
+(118) # (        ) S
+(print) K
+(\(') p
+(***************************** end of configuration***************\\n\\n) str
+('\)) p n
+(119) # () N
+(120) # () N
+(121) # () N
+(122) # () N
+(123) # () N
+(124) # () S
+(if) K
+( __name__ == ') p
+(__main__) str
+(':) p n
+(125) # (    mysystem = platform.system\(\)) N
+(126) # () N
+(127) # (    ) S
+(if) K
+( mysystem == ') p
+(Darwin) str
+(':) p n
+(128) # (        conf_dir = ') S
+(/Users/klein/git/qt_exercises/config/) str
+(') p n
+(129) # (    ) S
+(elif) K
+( mysystem == ') p
+(Linux) str
+(':) p n
+(130) # (        conf_dir = ') S
+(/home/klein/git/qt_exercises/config/) str
+(') p n
+(131) # (    ) S
+(else) K
+(:) p n
+(132) # (        ) S
+(print) K
+(\(') p
+( Thios os is not supported %s) str
+(' % mysystem\)) p n
+(133) # (    config_file = conf_dir + ') S
+(config_mycal.json) str
+(') p n
+(134) # (    MyC = MyConfig\(config_file\)) N
+(config_mycal.py) (Page 3/3) (Feb 03, 2025 7:39) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(Recipe1.py) (3/4) (Wednesday February 12, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (4) 4
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(172) # (        self.SaveRecipe.setText\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(Save Recipes) str
-(", None\)\)) p n
-(173) # (        self.NewRecipeButton.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(New Recipe) str
-(", None\)\)) p n
-(174) # (        self.CalLab.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Calories per gram) str
-(", None\)\)) p n
-(175) # (        self.Protlab.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Protein per gram) str
-(", None\)\)) p n
-(176) # () S
-(#if QT_CONFIG\(whatsthis\)) c n
-(177) # () S
-(        self.CancelButton.setWhatsThis\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(<html><head/><body><p>Cancel the current recipe</p></body></html>) str
-() p n
-0 T (", None\)\)) N
-(178) # () S
-(#endif // QT_CONFIG\(whatsthis\)) c n
-(179) # () S
-(        self.CancelButton.setText\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(Cancel) str
-(", None\)\)) p n
-(180) # (        self.IngredientsLabel.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Ingredients) str
-(", None\)\)) p n
-(181) # () S
-(#if QT_CONFIG\(tooltip\)) c n
-(182) # () S
-(        self.AddRowButton.setToolTip\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(Add row to table) str
-(", None\)\)) p n
-(183) # () S
-(#endif // QT_CONFIG\(tooltip\)) c n
-(184) # () S
-(        self.AddRowButton.setText\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(AddRow) str
-(", None\)\)) p n
-(185) # () S
-(#if QT_CONFIG\(tooltip\)) c n
-(186) # () S
-(        self.NewRecipeName.setToolTip\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(Name of new recipe) str
-(", None\)\)) p n
-(187) # () S
-(#endif // QT_CONFIG\(tooltip\)) c n
-(188) # () S
-(        self.FatLab.setText\(QCoreApplication.translate\(") p
-(MainWindow) str
-(", u") p
-(Fat per gram) str
-(", None\)\)) p n
-(189) # (        self.CarbLab.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Carbs per gram) str
-(", None\)\)) p n
-(190) # (        self.CloseButton.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Close Window) str
-(", None\)\)) p n
-(191) # (        self.titlab.setText\(QCoreApplication.translate\(") S
-(MainWindow) str
-(", u") p
-(Calory Program by Andi Klein -- version) str
-(", None\)\)) p n
-(192) # (    ) S
-(# retranslateUi) c n
-(193) # () N
-(Recipe1.py) (Page 4/4) (Feb 12, 2025 15:18) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(Recipe1.py) (4/4) (Wednesday February 12, 2025) footer
+(config_mycal.py) (3/3) (Sunday February 16, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
