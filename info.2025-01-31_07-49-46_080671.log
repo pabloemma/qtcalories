@@ -1,9 +1,0 @@
-2025-01-31T07:49:46.079066-0700 - __main__-   ConnectDataBase -177- INFO    - connection succsessful
-2025-01-31T07:49:46.080834-0700 - __main__-   ConnectDataBase -181- INFO    -  database connection name qt_sql_default_connection
-2025-01-31T07:59:27.612387-0700 - __main__-   ConnectDataBase -188- ERROR    - connection failed, exciting
-2025-01-31T08:49:33.812042-0700 - __main__-   ConnectDataBase -188- ERROR    - connection failed, exciting
-2025-01-31T08:56:36.795881-0700 - __main__-   ConnectDataBase -188- ERROR    - connection failed, exciting
-2025-01-31T12:40:31.998149-0700 - __main__-   ConnectDataBase -188- ERROR    - connection failed, exciting
-2025-01-31T12:58:52.426004-0700 - __main__-   ConnectDataBase -189- ERROR    - connection failed, exciting
-2025-01-31T17:32:59.163730-0700 - __main__-   ConnectDataBase -189- ERROR    - connection failed, exciting
-2025-01-31T17:33:18.588946-0700 - __main__-   ConnectDataBase -189- ERROR    - connection failed, exciting
