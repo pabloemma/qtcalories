@@ -684,3 +684,57 @@
 2025-02-17T09:35:26.912843-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
 2025-02-17T09:35:26.915046-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
 2025-02-17T09:35:26.915046-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-17T10:02:42.717625-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-17T10:02:42.717625-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-17T10:02:42.718630-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-17T10:02:42.718630-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-17T10:02:42.718879-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-17T10:02:42.718879-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-17T10:02:43.173736-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-17T10:02:43.173736-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-17T10:02:43.175533-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-17T10:02:43.175533-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-17T10:02:52.149222-0700 - __main__-   SetupConfig -112- INFO    - config file /Users/klein/git/qt_exercises/config/config_mycal.json
+2025-02-17T10:02:52.149222-0700 - __main__-   SetupConfig -112- INFO    - config file /Users/klein/git/qt_exercises/config/config_mycal.json
+2025-02-17T10:02:59.487177-0700 - __main__-   SetupConfig -112- INFO    - config file /Users/klein/git/qt_exercises/config/config_mycal.json
+2025-02-17T10:02:59.487177-0700 - __main__-   SetupConfig -112- INFO    - config file /Users/klein/git/qt_exercises/config/config_mycal.json
+2025-02-17T10:06:01.311731-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-17T10:06:01.311731-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-17T10:06:01.312326-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-17T10:06:01.312326-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-17T10:06:01.312469-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-17T10:06:01.312469-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-17T10:06:01.735898-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-17T10:06:01.735898-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-17T10:06:01.736648-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-17T10:06:01.736648-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-17T10:06:09.422945-0700 - __main__-   SetupConfig -112- INFO    - config file 
+2025-02-17T10:06:09.422945-0700 - __main__-   SetupConfig -112- INFO    - config file 

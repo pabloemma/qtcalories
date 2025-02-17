@@ -24,7 +24,7 @@ basedir = os.path.dirname(__file__)
 
 
 class CalMain(QMainWindow):
-    def __init__(self):
+    def __init__(self,config_file = None):
         super().__init__()
 
         self.setWindowTitle("Calory Control")
@@ -32,8 +32,51 @@ class CalMain(QMainWindow):
         self.setCentralWidget(myLabel)
         self.show()
 
+        self.config_file = config_file
+
+        #setup menu
+        menu = self.menuBar()
+
+        file_menu = menu.addMenu("&Action")
+
+        # Create a "List Recipes" action
+        list_action = QAction( "List Recipes", self)
+        list_action.setShortcut("Ctrl+L")
+        list_action.setStatusTip("list recipes")
+        list_action.triggered.connect(self.list_recipes)
+        file_menu.addAction(list_action)
+
+       # Create a "List Ingredients" action
+        list_i_action = QAction( "List Ingredients", self)
+        list_i_action.setShortcut("Ctrl+I")
+        list_i_action.setStatusTip("list Ingredients")
+        list_i_action.triggered.connect(self.list_ingredients)
+        file_menu.addAction(list_i_action)
+
+        # Create a " Recipe control" action
+        recipe_action = QAction( " Recipes", self)
+        recipe_action.setShortcut("Ctrl+R")
+        recipe_action.setStatusTip("control recipes")
+        recipe_action.triggered.connect(self.control_recipes)
+        file_menu.addAction(recipe_action)
+
+       # Create a " add ingredients" action
+        ingredients_action = QAction( " Add Ingredients", self)
+        ingredients_action.setShortcut("Ctrl+A")
+        ingredients_action.setStatusTip("add ingredients")
+        ingredients_action.triggered.connect(self.add_ingredients)
+        file_menu.addAction(ingredients_action)
+
+   # Create a " config" action
+        config_action = QAction( " Config File", self)
+        config_action.setShortcut("Ctrl+F")
+        config_action.setStatusTip("change config file")
+        config_action.triggered.connect(self.SetupConfig)
+        file_menu.addAction(config_action)
+
 
         #instantiate configuration
+        
         self.SetupConfig()
 
         self.SetupLogger()
@@ -53,37 +96,7 @@ class CalMain(QMainWindow):
         #connect to database
         self.CDB.ConnectDataBase()
   
-        menu = self.menuBar()
 
-        file_menu = menu.addMenu("&Action")
-
-        # Create a "List Recipes" action
-        new_action = QAction( "List Recipes", self)
-        new_action.setShortcut("Ctrl+L")
-        new_action.setStatusTip("list recipes")
-        new_action.triggered.connect(self.list_recipes)
-        file_menu.addAction(new_action)
-
-       # Create a "List Ingredients" action
-        new_action = QAction( "List Ingredients", self)
-        new_action.setShortcut("Ctrl+I")
-        new_action.setStatusTip("list Ingredients")
-        new_action.triggered.connect(self.list_ingredients)
-        file_menu.addAction(new_action)
-
-        # Create a " Recipe control" action
-        new_action = QAction( " Recipes", self)
-        new_action.setShortcut("Ctrl+R")
-        new_action.setStatusTip("control recipes")
-        new_action.triggered.connect(self.control_recipes)
-        file_menu.addAction(new_action)
-
-       # Create a " add ingredients" action
-        new_action = QAction( " Add Ingredients", self)
-        new_action.setShortcut("Ctrl+A")
-        new_action.setStatusTip("add ingredients")
-        new_action.triggered.connect(self.add_ingredients)
-        file_menu.addAction(new_action)
 
 
     def SetupConfig(self):
@@ -91,15 +104,20 @@ class CalMain(QMainWindow):
 
         # get the config filename
         # here we do a filedialog
-        fileName , filter = QFileDialog.getOpenFileName(self,
-        self.tr("Open Config file"), "~", self.tr("*.json"))
-        print(fileName)
+        if(self.config_file == None or not os.path.isfile(self.config_file)):
+            self.config_file , filter = QFileDialog.getOpenFileName(self,
+                                self.tr("Open Config file"), "~", self.tr("*.json"))
+           
+            
+        logger.info("config file %s" % self.config_file)
 
 
  
-        self.CM = CM.MyConfig(fileName)
+        self.CM = CM.MyConfig(self.config_file)
         self.log_level = self.CM.log_level
         self.log_output = self.CM.log_output
+        #reset self.config_file, so we can change it through the menu
+        self.config_file = None
 
  
     def SetupLogger(self):
@@ -156,6 +174,7 @@ class CalMain(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication([])
-    window = CalMain()
+    config_file = '/Users/klein/git/qt_exercises/config/config_mycal.json'
+    window = CalMain(config_file = config_file )
     window.show()
     app.exec()
