@@ -67,6 +67,19 @@ class CalMain(QMainWindow):
         new_action.triggered.connect(self.list_ingredients)
         file_menu.addAction(new_action)
 
+        # Create a " Recipe control" action
+        new_action = QAction( " Recipes", self)
+        new_action.setShortcut("Ctrl+R")
+        new_action.setStatusTip("control recipes")
+        new_action.triggered.connect(self.control_recipes)
+        file_menu.addAction(new_action)
+
+       # Create a " add ingredients" action
+        new_action = QAction( " Add Ingredients", self)
+        new_action.setShortcut("Ctrl+A")
+        new_action.setStatusTip("add ingredients")
+        new_action.triggered.connect(self.add_ingredients)
+        file_menu.addAction(new_action)
 
 
     def SetupConfig(self):
@@ -121,7 +134,12 @@ class CalMain(QMainWindow):
         columnwidth = [200,100,100,100,100,100]
         self.CDB.ViewTable('ingredients',suppress_columns=self.CM.ingredients_suppress_columns,columnwidth=columnwidth)
 
+    def control_recipes(self):
+        self.CDB.MyRecipes_new()
 
+    def add_ingredients(self):
+        #self.CDB.CreateIngredientsForm1()
+        print("not implemented yet")
  
     def quit_app(self):
         print("closing down")

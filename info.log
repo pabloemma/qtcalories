@@ -586,3 +586,53 @@
 2025-02-16T16:48:08.890384-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
 2025-02-16T16:48:08.891071-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
 2025-02-16T16:48:08.891071-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-16T16:58:40.119901-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T16:58:40.119901-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T16:58:40.120609-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T16:58:40.120609-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T16:58:40.120749-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T16:58:40.120749-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T16:58:40.596039-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-16T16:58:40.596039-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-16T16:58:40.596397-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-16T16:58:40.596397-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-16T16:58:52.994348-0700 - ControlDB-   getSelectedRecipe -795- INFO    - You have selected beet-barlye recipe
+2025-02-16T16:58:52.994348-0700 - ControlDB-   getSelectedRecipe -795- INFO    - You have selected beet-barlye recipe
+2025-02-16T17:01:57.484706-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T17:01:57.484706-0700 - ControlDB-   __init__ -194- INFO    - ******************************************************************************************************** 
+
+
+
+2025-02-16T17:01:57.485457-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T17:01:57.485457-0700 - ControlDB-   __init__ -196- INFO    -  This is version 1.0
+2025-02-16T17:01:57.485590-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T17:01:57.485590-0700 - ControlDB-   __init__ -197- INFO    - 
+
+
+***************************************************************************************************** 
+
+2025-02-16T17:01:57.805923-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-16T17:01:57.805923-0700 - ControlDB-   ConnectDataBase -221- INFO    - connection succsessful
+2025-02-16T17:01:57.806734-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
+2025-02-16T17:01:57.806734-0700 - ControlDB-   ConnectDataBase -225- INFO    -  database connection name qt_sql_default_connection
