@@ -17,11 +17,16 @@ from PySide6.QtWidgets import (QApplication,
                                QLabel,
                                 QMainWindow, 
                                 QMenu,
-                                QPushButton)
+                                QPushButton,
+                                QVBoxLayout,
+                                QWidget)
 from PySide6.QtGui import QAction, QIcon
-
+from PySide6.QtUiTools import QUiLoader
 basedir = os.path.dirname(__file__)
 
+
+loader = QUiLoader()
+basedir = os.path.dirname(__file__)
 
 class CalMain(QMainWindow):
     def __init__(self,config_file = None):
@@ -29,7 +34,19 @@ class CalMain(QMainWindow):
 
         self.setWindowTitle("Calory Control")
         myLabel = QLabel("calory program vs 1.0")
-        self.setCentralWidget(myLabel)
+        myCloseButton = QPushButton("Close")
+        myCloseButton.clicked.connect(self.close_app)
+        layout= QVBoxLayout()
+        layout.addWidget(myLabel)
+        layout.addWidget(myCloseButton)
+
+
+        widget = QWidget()
+        widget.setLayout(layout)
+
+ 
+
+        self.setCentralWidget(widget)
         self.show()
 
         self.config_file = config_file
@@ -66,6 +83,14 @@ class CalMain(QMainWindow):
         ingredients_action.setStatusTip("add ingredients")
         ingredients_action.triggered.connect(self.add_ingredients)
         file_menu.addAction(ingredients_action)
+
+   # Create a " calculate portion" action
+        portion_action = QAction( " Calculate Portion Calories", self)
+        portion_action.setShortcut("Ctrl+P")
+        portion_action.setStatusTip("calculate calories of portion")
+        portion_action.triggered.connect(self.calculate_portion)
+        file_menu.addAction(portion_action)
+
 
    # Create a " config" action
         config_action = QAction( " Config File", self)
@@ -162,15 +187,20 @@ class CalMain(QMainWindow):
     def add_ingredients(self):
         self.CDB.CreateIngredientsForm1()
         
-    def quit_app(self):
-        print("closing down")
+    def close_app(self):
+        logger.info("closing down")
         self.close()
 
-    def print_app(self):
-        print("shit")
+    def calculate_portion(self):
 
-    def new_document(self):
-        print("more shit")
+
+        self.ui = loader.load(os.path.join(basedir, "CalculatePortion.ui"), None) 
+        self.ui.setWindowTitle("MainWindow Title")
+        self.ui.show()
+
+
+        pass
+
 
 if __name__ == "__main__":
     app = QApplication([])

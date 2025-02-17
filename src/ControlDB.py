@@ -961,6 +961,23 @@ class ContrlDB(QMainWindow):
         window.setGeometry(myposit[0],myposit[1],mysize[0],mysize[1])
         return
  
+    def calculate_portion_calory(self,myrecipe=None,myportion=0.):
+        """ this calucaltes the calories of a portion for  given recipe, 
+        where the portion size is given in grams."""
+
+        # sql statement: SELECT enegry FROM recipes WHERE NAME = 'raspberry_tart';
+        sql = 'SELECT energy FROM recipes WHERE NAME = \'' +myrecipe +'\';'
+        query = self.do_sql(sql)
+        while query.next():
+
+            cal_per_gram = ((query.value(0)))
+        portion_calory = float(cal_per_gram)*myportion
+        logger.info("your total calories are %.1f " % portion_calory)
+        return portion_calory
+
+
+
+
 
 ##########################################################################
     # section for signals and slots
@@ -1050,9 +1067,10 @@ if __name__ == '__main__':
 #window.show()
     window.ConnectDataBase()
     window.ShowTables()
-    window.ViewTable('recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
+    window.calculate_portion_calory(myrecipe = 'raspberry_tart',myportion=200.)
+    #window.ViewTable('recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
 
-    window.MyRecipes_new()
+   # window.MyRecipes_new()
 #window.CreateIngredientsForm1()
 
 # now run the app
