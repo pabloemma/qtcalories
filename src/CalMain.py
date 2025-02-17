@@ -194,10 +194,7 @@ class CalMain(QMainWindow):
     def calculate_portion(self):
 
 
-        self.ui = loader.load(os.path.join(basedir, "CalculatePortion.ui"), None) 
-        self.ui.setWindowTitle("MainWindow Title")
-        self.ui.show()
-
+    
 
         pass
 
