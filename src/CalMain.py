@@ -14,6 +14,7 @@ from loguru import logger
 
 from PySide6.QtWidgets import (QApplication,
                                QFileDialog, 
+                               QLabel,
                                 QMainWindow, 
                                 QMenu,
                                 QPushButton)
@@ -27,6 +28,9 @@ class CalMain(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Calory Control")
+        myLabel = QLabel("calory program vs 1.0")
+        self.setCentralWidget(myLabel)
+        self.show()
 
 
         #instantiate configuration
@@ -138,9 +142,8 @@ class CalMain(QMainWindow):
         self.CDB.MyRecipes_new()
 
     def add_ingredients(self):
-        #self.CDB.CreateIngredientsForm1()
-        print("not implemented yet")
- 
+        self.CDB.CreateIngredientsForm1()
+        
     def quit_app(self):
         print("closing down")
         self.close()

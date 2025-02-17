@@ -166,7 +166,7 @@ class ContrlDB(QMainWindow):
         else:
             self.db_pwd = db_pwd
 
-
+        self.init_variables()
         self.SetupLogger()
         #self.CreateIngredientsForm()
         self.ingredients_suppress_columns = ['Sugar',
