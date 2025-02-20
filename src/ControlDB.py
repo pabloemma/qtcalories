@@ -16,7 +16,7 @@ import pandas as PD # to pack the recipe information into a pandas dataframe
 from PySide6.QtCore import (QSize, Qt ,QRect,
 QCoreApplication,Slot,Signal,QAbstractListModel,QAbstractTableModel,QMetaObject,QModelIndex)
 from PySide6.QtGui import QAction,QDoubleValidator,QFont
-from PySide6.QtWidgets import QWidget 
+
 from PySide6.QtUiTools import QUiLoader
 
 from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel,QSqlQueryModel,QSqlQuery
@@ -39,6 +39,7 @@ QApplication,
     QLineEdit,
     QListView,
     QMainWindow,
+    QWidget,
     QProgressBar,
     QPushButton,
     QRadioButton,
@@ -201,6 +202,7 @@ class ContrlDB(QMainWindow):
         """ initialize some variable to None"""
 
         self.missing_ingredient = None
+        self.new_recipe_name = None
     
     def ConnectDataBase(self):
         ''' establish contact to database'''
@@ -487,7 +489,8 @@ class ContrlDB(QMainWindow):
         except:
             logger.debug("nothing to detsroy")
 
-        window.CreateIngredientsForm1()
+ #       window.CreateIngredientsForm1()
+        self.CreateIngredientsForm1()
 
 
 
@@ -1067,10 +1070,10 @@ if __name__ == '__main__':
 #window.show()
     window.ConnectDataBase()
     window.ShowTables()
-    window.calculate_portion_calory(myrecipe = 'raspberry_tart',myportion=200.)
+    #window.calculate_portion_calory(myrecipe = 'raspberry_tart',myportion=200.)
     #window.ViewTable('recipes',suppress_columns=suppress_columns,columnwidth=columnwidth)
 
-   # window.MyRecipes_new()
+    window.MyRecipes_new()
 #window.CreateIngredientsForm1()
 
 # now run the app

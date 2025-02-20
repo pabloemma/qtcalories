@@ -28,6 +28,9 @@ basedir = os.path.dirname(__file__)
 loader = QUiLoader()
 basedir = os.path.dirname(__file__)
 
+
+
+
 class CalMain(QMainWindow):
     def __init__(self,config_file = None):
         super().__init__()

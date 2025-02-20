@@ -225,8 +225,9 @@ I create now vs 0.3 where the interface is a tableview. Tableview is working, ne
 \item Possibly use US govt nutrition database. https://fdc.nal.usda.gov/
 \item Clean up the code with consistent name scheme.
 \item ingredient names plural and singular. set all to singular
-\item Currently it looks like the UPDATE actually deletes the record. This might have to do with my do\_sql changes. Need backup of psql table. actually it does not delete it but also not update it. again this might be my do\_sql.
-
+\item Currently it looks like the UPDATE actually deletes the record. This might have to do with my do\_sql changes. 
+Need backup of psql table. actually it does not delete it but also not update it. again this might be my do\_sql.
+\item When you add to existing recipe, it bombs on line AttributeError: 'ContrlDB' object has no attribute new\_recipe\_name
 \end{itemize}
 
 \section{Design of Calculation}
