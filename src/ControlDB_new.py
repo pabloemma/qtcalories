@@ -10,7 +10,9 @@ from Recipe1 import Ui_MainWindow
 
 from missing_ingredient import Ui_MissingIngredient
 from missing_ingredient_dialog import Ui_missing_ingredient_dialog
+from pick_swiss_ingreds import Ui_Dialog
 import pandas as PD # to pack the recipe information into a pandas dataframe
+from IngredientTable import IngredientTable
 
 
 from PySide6.QtCore import (QSize, Qt ,QRect,
@@ -150,6 +152,11 @@ class MyMissingIngredientDialog(QDialog,Ui_missing_ingredient_dialog):
     #   super().accept()
 
 
+
+
+
+
+
 class ContrlDB_new(QMainWindow):
 
     def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None):
@@ -196,6 +203,11 @@ class ContrlDB_new(QMainWindow):
 
         logger.info(' This is version %s' % self.version)
         logger.info('\n\n\n***************************************************************************************************** \n')
+
+        #instantiate the IngredientTable
+        table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv'
+    
+        self.InTa  = IngredientTable(table_name=table_name)
 
 
     def  init_variables(self):
@@ -416,8 +428,11 @@ class ContrlDB_new(QMainWindow):
         if(table == "ingredients"):
                 
             self.ViewTable(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False)
-        else:
+        elif(table == "recipes"):
             self.ViewTable(table = table,suppress_columns=self.recipe_suppress_columns)
+        else:
+             self.ViewTable(table = table)
+           
 
         self.model = QSqlQueryModel()
         self.table_view.setModel(self.model)
@@ -446,19 +461,6 @@ class ContrlDB_new(QMainWindow):
         return
  
     
-    def MyMissingIngredients_old(self):
-        """ form if ingredient is missing"""
-        self.MMI1 = MyMissIngWindow1()
-        self.MMI1.IngredLine.setText(self.missing_ingredient)
-        self.MMI1.EditIngButton.clicked.connect(self.show_ingred_form)
-        self.MMI1.CloseButton.clicked.connect(self.Cancel(self.MMI1))
-
- 
-        self.MMI1.move(100,50)
- 
-        self.MMI1.show()
-
-        return
 
     def MyMissingIngredients(self):
         """ form if ingredient is missing"""
@@ -487,7 +489,7 @@ class ContrlDB_new(QMainWindow):
         try:
             self.MMI1.destroy()
         except:
-            logger.debug("nothing to detsroy")
+            logger.debug("nothing to destroy")
 
  #       window.CreateIngredientsForm1()
         self.CreateIngredientsForm1()
@@ -1040,7 +1042,12 @@ if __name__ == '__main__':
     db_name='recipe_ak'
     db_user='klein'
     db_system='QPSQL'
-    db_pwd = None
+
+    with open('/Users/klein/git/qt_exercises/config/pw.txt', 'r') as file:
+                    db_pwd = file.read().rstrip()
+                    
+
+
 
     suppress_columns = ['Sugar',
                     'Portions',

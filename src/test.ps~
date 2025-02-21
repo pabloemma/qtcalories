@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0
-%%Title: MyCal.py
+%%Title: config_mycal.py
 %%For: Andi Klein
 %%Creator: a2ps version 4.15.5
-%%CreationDate: Sun Feb 16 10:42:23 2025
+%%CreationDate: Sun Feb 16 10:42:45 2025
 %%BoundingBox: 24 24 588 767
 %%DocumentData: Clean7Bit
 %%Orientation: Landscape
-%%Pages: 6
+%%Pages: 3
 %%PageOrder: Ascend
 %%DocumentMedia: Letter 612 791 0 () ()
 %%DocumentNeededResources: font Courier
@@ -754,118 +754,142 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1) # (# Program to calculate calories and other information for ) c n
-(2) # (# recipes. ) N
-(3) # () S
-(import) K
-( sys) p n
-(4) # () S
-(import) K
-( os) p n
+(1) # (""") p
+(Class to configure the test_speed program) str n
+(2) # (Using json \(sigh\)) S
+(""") p n
+(3) # () N
+(4) # () N
 (5) # () S
 (import) K
-( platform) p n
+( json) p n
 (6) # () S
-(from) K
-( loguru ) p
 (import) K
-( logger) p n
-(7) # () N
-(8) # () N
+( os) p n
+(7) # () S
+(import) K
+( sys) p n
+(8) # () S
+(import) K
+( platform) p n
 (9) # () S
 (import) K
-( config_mycal) p n
+( socket) p n
 (10) # () S
 (import) K
-( ControlDB) p n
+( inspect) p n
 (11) # () N
-(12) # () N
-(13) # () S
-(from) K
-( PySide6.QtCore ) p
-(import) K
-( QSize, Qt ,QCoreApplication) p n
-(14) # () S
-(from) K
-( PySide6.QtGui ) p
-(import) K
-( QAction) p n
-(15) # () S
-(from) K
-( PySide6.QtWidgets ) p
-(import) K
-( QVBoxLayout , QGridLayout ) p n
-(16) # () S
-(from) K
-( PySide6.QtWidgets ) p
-(import) K
-( QWidget ) p n
-(17) # () S
-(from) K
-( PySide6.QtSql ) p
-(import) K
-( QSqlDatabase , QSql,QSqlTableModel) p n
-(18) # () N
-(19) # () N
-(20) # () N
-(21) # () N
-(22) # () S
-(from) K
-( PySide6.QtWidgets ) p
-(import) K
-( \() p n
-(23) # (QApplication,) N
-(24) # (    QCheckBox,) N
-(25) # (    QComboBox,) N
-(26) # (    QDateEdit,) N
-(27) # (    QDateTimeEdit,) N
-(28) # (    QDial,) N
-(29) # (    QDoubleSpinBox,) N
-(30) # (    QFileDialog,) N
-(31) # (    QFontComboBox,) N
-(32) # (    QLabel,) N
-(33) # (    QLCDNumber,) N
-(34) # (    QLineEdit,) N
-(35) # (    QMainWindow,) N
-(36) # (    QProgressBar,) N
-(37) # (    QPushButton,) N
-(38) # (    QRadioButton,) N
-(39) # (    QSlider,) N
-(40) # (    QSpinBox,) N
-(41) # (    QTimeEdit,) N
-(42) # (    QTableView,) N
-(43) # (    QMenuBar,) N
-(44) # (\)) N
-(45) # () N
-(46) # () N
-(47) # () S
+(12) # () S
 (class) K
-( MainWindow\(QMainWindow\):) p n
-(48) # (    ) S
+( color:) p n
+(13) # (   PURPLE = ') S
+(\\033[95m) str
+(') p n
+(14) # (   CYAN = ') S
+(\\033[96m) str
+(') p n
+(15) # (   DARKCYAN = ') S
+(\\033[36m) str
+(') p n
+(16) # (   BLUE = ') S
+(\\033[94m) str
+(') p n
+(17) # (   GREEN = ') S
+(\\033[92m) str
+(') p n
+(18) # (   YELLOW = ') S
+(\\033[93m) str
+(') p n
+(19) # (   RED = ') S
+(\\033[91m) str
+(') p n
+(20) # (   BOLD = ') S
+(\\033[1m) str
+(') p n
+(21) # (   UNDERLINE = ') S
+(\\033[4m) str
+(') p n
+(22) # (   END = ') S
+(\\033[0m) str
+(') p n
+(23) # () N
+(24) # () N
+(25) # () S
+(class) K
+( MyConfig\(\):) p n
+(26) # () N
+(27) # (    ) S
 (def) K
-( __init__\(self, Title =  None , pos_x = 100 , pos_y = 500, size_x = 800 , size_y = 600\):) p n
-(49) # (        super\(\).__init__\(\)  ) S
-(# this will the allow to use this as a Subclass) c n
+( __init__\(self,config_file\):) p n
+(28) # (        """) S
+( config_file contains all the infor for calory program) str
+(""") p n
+(29) # () N
+(30) # ( ) N
+(31) # (       ) N
+(32) # (        ) N
+(33) # (        ) S
+(# Open config file) c n
+(34) # () S
+(        ) p
+(print) K
+(\(') p
+(Directory Name:     ) str
+(', os.path.dirname\(config_file\)\)) p n
+(35) # (       ) N
+(36) # () N
+(37) # (        ) S
+(if) K
+( os.path.exists\(config_file\) :) p n
+(38) # (            self.ReadJson\(config_file\)) N
+(39) # (        ) S
+(else) K
+(:) p n
+(40) # (            ) S
+(print) K
+(\(") p
+( Config file does not exist, exiting     ) str
+(", config_file\)) p n
+(41) # (            sys.exit\(0\)) N
+(42) # () N
+(43) # (    ) S
+(def) K
+( ReadJson\(self,file_path\):) p n
+(44) # () N
+(45) # (        ) S
+(print) K
+(\(") p
+(reading config file ) str
+(", file_path\)    ) p n
+(46) # (        with open\(file_path, ") S
+(r) str
+("\) as f:) p n
+(47) # (            myconf = json.load\(f\)) N
+(48) # () N
+(49) # (            self.DecodeVariables\(myconf\)) N
 (50) # () N
-(51) # () S
-(        ) p
-(#with self and using QMainWindow, we can now acces everything through self) c n
-(52) # () S
-(        ) p
-(# first we give it the Title) c n
+(51) # (    ) S
+(def) K
+( DecodeVariables\(self,jsondict\):) p n
+(52) # (        """) S
+(decodes the json dictionary in to variables) str
+(""") p n
 (53) # () N
-(54) # () N
+(54) # (        ) S
+(#bold face begin and end) c n
 (55) # () S
-(        ) p
-(# Read in the configuration) c n
-(56) # () S
-(        self.SetupConfig\(\)) p n
-(57) # ( ) N
-(MyCal.py) (Page 1/6) (Feb 03, 2025 11:45) title
+(        bfb = ') p
+(\\033[1m) str
+(') p n
+(56) # (        bfe = ') S
+(\\033[0m) str
+(') p n
+(57) # (        TX = color) N
+(config_mycal.py) (Page 1/3) (Feb 03, 2025 7:39) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(MyCal.py) (1/6) (Sunday February 16, 2025) footer
+(config_mycal.py) (1/3) (Sunday February 16, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -881,104 +905,184 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(58) # () p n
-(59) # (        ) S
-(# some constants for json file) c n
-(60) # () S
-( ) p n
-(61) # () N
-(62) # (        ) S
-(# the logging system) c n
-(63) # () S
-(        self.SetupLogger\(\)) p n
-(64) # (        self.log_level = self.CM.log_level) N
+(58) # (        ) p
+(#these are depending on the operating system) c n
+(59) # () S
+(        mysystem = platform.system\(\)) p n
+(60) # (        self.srcdir = jsondict[mysystem][') S
+(srcdir) str
+(']) p n
+(61) # (        self.datadir = jsondict[mysystem][') S
+(datadir) str
+(']) p n
+(62) # (        self.logdir = jsondict[mysystem][') S
+(logdir) str
+(']) p n
+(63) # (        self.doc_dir =jsondict[mysystem][') S
+(doc_dir) str
+(']) p n
+(64) # (        self.conf_dir = jsondict[mysystem][') S
+(conf_dir) str
+(']) p n
 (65) # () N
-(66) # () N
-(67) # (        ) S
-(# first get the password) c n
-(68) # () S
-( ) p
-(#       self.GetPwd\(\)) c n
-(69) # () N
-(70) # () S
-(        ) p
-(# connect to database) c n
-(71) # () S
-(        self.ConnectDataBase\(\)) p n
-(72) # ( ) N
+(66) # (        self.debug = jsondict[") S
+(Control) str
+("][") p
+(debug) str
+("]) p n
+(67) # (        cryptofile = jsondict[") S
+(Control) str
+("][") p
+(cryptofile) str
+("]) p n
+(68) # (        ) S
+(#decode cryptofile) c n
+(69) # () S
+(        self.cryptofile = self.conf_dir+cryptofile) p n
+(70) # () N
+(71) # (        self.db_user = jsondict[") S
+(Control) str
+("][") p
+(db_user) str
+("]) p n
+(72) # (        self.db_name = jsondict[") S
+(Control) str
+("][") p
+(db_name) str
+("]) p n
 (73) # (        ) S
-(if) K
-( Title != None:) p n
-(74) # (            self.setWindowTitle\(Title\)) N
+(#currently only QPSQL is supported) c n
+(74) # () S
+(        self.db_system = jsondict[") p
+(Control) str
+("][") p
+(db_system) str
+("]) p n
 (75) # (        ) S
+(# the next two vaiables are only used if we run in "both" mode) c n
+(76) # () S
+(            ) p
+(#test if first key is working) c n
+(77) # () S
+( ) p n
+(78) # (        self.conf_dir = jsondict[mysystem][') S
+(conf_dir) str
+(']) p n
+(79) # () N
+(80) # (   ) N
+(81) # (        ) S
+(#Possible loglevels) c n
+(82) # () S
+(        ) p
+(# DEBUG) c n
+(83) # () S
+(        ) p
+(# INFO) c n
+(84) # () S
+(        ) p
+(# WARNING) c n
+(85) # () S
+(        ) p
+(# ERROR) c n
+(86) # () S
+(        ) p
+(# CRITICAL) c n
+(87) # () S
+(        ) p n
+(88) # (        ) S
+(#Output choices) c n
+(89) # () S
+(        ) p
+(# screen) c n
+(90) # () S
+(        ) p
+(# outfile) c n
+(91) # () S
+(        ) p
+(# both) c n
+(92) # () N
+(93) # () S
+(        ) p
+(if) K
+( ") p
+(loglevel) str
+(" ) p
+(in) K
+( jsondict[") p
+(logging) str
+("].keys\(\) :) p n
+(94) # (            self.log_level = jsondict[") S
+(logging) str
+("][") p
+(loglevel) str
+("] ) p n
+(95) # (        ) S
 (else) K
 (:) p n
-(76) # (            self.setWindowTitle\(") S
-(QMainWindow) str
-("\)) p n
-(77) # () N
-(78) # (       ) N
-(79) # (        ) S
-(# now we set up geometry) c n
-(80) # () S
-(        self.SetSize\(size_x,size_y\)) p n
-(81) # (        self.SetPosition\(pos_x , pos_y\)) N
-(82) # () N
-(83) # () N
-(84) # (        self.AddMyMenu\(\)) N
-(85) # () N
-(86) # (        ) S
-(# now do the layout) c n
-(87) # () S
-(        self.MyLayout\(\)) p n
-(88) # () N
-(89) # (    ) S
-(def) K
-( MyLayout\(self\):) p n
-(90) # (        ''') S
-(Here I do the layout of the window) str
-(''') p n
-(91) # () N
-(92) # (        ) S
-(# here we create a button widget in the mddle of the mainwindow.) c n
-(93) # () S
-(        mylayout = QGridLayout\(\)) p n
-(94) # (        mylayout.addWidget\(QDoubleSpinBox\(\),0,1\)) N
-(95) # (        mylayout.addWidget\(QComboBox\(\),0,0\)) N
-(96) # (        mylayout.addWidget\(QDial\(\),1,0\)) N
-(97) # (        mylayout.addWidget\(QDateTimeEdit\(\),1,1\)) N
-(98) # () N
-(99) # (        ) S
-(# connect to widget) c n
-(100) # () S
-(        mywidget = QWidget\(\)) p n
-(101) # (        mywidget.setLayout\(mylayout\)) N
-(102) # (        self.setCentralWidget\(mywidget\)) N
-(103) # () N
-(104) # () N
-(105) # (    ) S
-(def) K
-( SetPosition\(self,pos_x,pos_y\):) p n
-(106) # (        self.move\(pos_x,pos_y\)) N
-(107) # () N
-(108) # (    ) S
-(def) K
-( SetSize\(self,size_x,size_y\):) p n
+(96) # (            self.log_level = ") S
+(INFO) str
+(") p n
+(97) # () N
+(98) # (        ) N
+(99) # (        self.log_output = jsondict[") S
+(logging) str
+("][") p
+(output) str
+("] ) p n
+(100) # ( ) N
+(101) # (        ) S
+(if) K
+( ") p
+(log_conf_file) str
+(" ) p
+(in) K
+( jsondict[") p
+(logging) str
+("].keys\(\) :) p n
+(102) # (            self.log_conf_file = self.conf_dir+jsondict[") S
+(logging) str
+("][") p
+(log_conf_file) str
+("] ) p n
+(103) # (        ) S
+(else) K
+(:) p n
+(104) # (            frame = inspect.currentframe\(\)) N
+(105) # (            prefix = TX.BOLD +TX.RED+') S
+(|) str
+('+frame.f_code.co_name+') p
+(>) str
+('+') p
+(no logger config file) str
+('+TX.END) p n
+(106) # (            ) S
+(print) K
+(\(prefix\)) p n
+(107) # (            sys.exit\(0\)) N
+(108) # (             ) N
 (109) # (        ) S
-(#self.setBaseSize\(size_x,size_y\) only works on QWidget) c n
+(#here we get the logging varaibles:) c n
 (110) # () S
-(        self.resize\(size_x,size_y\)) p n
+(                ) p n
 (111) # () N
-(112) # () N
-(113) # (       ) N
-(114) # (    ) S
-(def) K
-( AddMyMenu\(self\):   ) p n
-(MyCal.py) (Page 2/6) (Feb 03, 2025 11:45) title
+(112) # (        ) S
+(print) K
+(\(') p
+(\\n\\n ***************** configuration**************\\n) str
+('\)) p n
+(113) # (        ) S
+(print) K
+(\(') p
+( We are running on platform ) str
+(' , mysystem, ') p
+(\\n) str
+('\)) p n
+(114) # () N
+(config_mycal.py) (Page 2/3) (Feb 03, 2025 7:39) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(MyCal.py) (2/6) (Sunday February 16, 2025) footer
+(config_mycal.py) (2/3) (Sunday February 16, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -994,413 +1098,67 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(115) # (        ''') p
-(Now we add a menu) str
-(''') p n
+(115) # (        ) p
+(print) K
+(\(') p
+(Sourcedir            ) str
+(',self.srcdir\)) p n
 (116) # (        ) S
-(#menubar = QMenuBar\(None\)) c n
-(117) # () S
-(        menubar = self.menuBar\(\)) p n
-(118) # ( ) N
-(119) # (        file_menu = menubar.addMenu\(") S
-(File) str
-("\)) p n
-(120) # (        db_menu = menubar.addMenu\(") S
-(Database) str
-("\)) p n
+(print) K
+(\(') p
+(Datadir              ) str
+(',self.datadir\)) p n
+(117) # ( ) N
+(118) # (        ) S
+(print) K
+(\(') p
+(***************************** end of configuration***************\\n\\n) str
+('\)) p n
+(119) # () N
+(120) # () N
 (121) # () N
-(122) # (        ) S
-(# database handling:) c n
-(123) # () S
-(         ) p
-(#No menu will show without an action defined) c n
+(122) # () N
+(123) # () N
 (124) # () S
-(        ) p
-(#Also Quit does not show up since this is already in the intrinsic Python menu.) c n
-(125) # () S
-(        ) p
-(# Same for exit) c n
-(126) # () N
-(127) # () S
-(    ) p
-(# here come a few actions, which will be called from the button qwidget) c n
-(128) # () S
-(    ) p
-(# When you press a button, it will trigger one or everal events through slots) c n
-(129) # () S
-(    ) p
-(# one thing which is important to note ist that one click on a button can have many different meanings) c n
-(130) # () S
-(    ) p
-(# DON"T FORGET TO PUT, self IN QACTION) c n
-(131) # () N
-(132) # () S
-(        ) p
-(#here we define the actions: File open section) c n
-(133) # () S
-(        file_action = QAction\(") p
-(Open) str
-(", self\)) p n
-(134) # (        file_action.setStatusTip\(") S
-(Opens a file) str
-("\)) p n
-(135) # (        file_action.triggered.connect\(self.OpenFile\)) N
-(136) # (        file_menu.addAction\(file_action\)) N
-(137) # () N
-(138) # (     ) N
-(139) # (        ) S
-(#file_menu.addAction\("Quit"\)) c n
-(140) # () S
-(   ) p n
-(141) # (    ) N
-(142) # (    ) N
-(143) # () N
-(144) # (        ) S
-(#saving the file) c n
-(145) # () S
-(        save_action = QAction\(") p
-(Save) str
-(", self\)) p n
-(146) # (        save_action.setShortcut\(") S
-(CMD+S) str
-("\)) p n
-(147) # (        save_action.setStatusTip\(') S
-(save File) str
-('\)) p n
-(148) # (        save_action.triggered.connect\(self.SaveFile\)) N
-(149) # (        file_menu.addAction\(save_action\)) N
-(150) # () N
-(151) # (        db_action_1 = QAction\(") S
-(List Table) str
-(",self\)) p n
-(152) # (        db_action_1.setStatusTip\(') S
-(List database tables) str
-('\)) p n
-(153) # (        db_action_1.triggered.connect\(self.ShowTables\)) N
-(154) # (        db_menu.addAction\(db_action_1\)) N
-(155) # (        db_action_2 = QAction\(") S
-(save) str
-(",self\)) p n
-(156) # (        db_action_2.setStatusTip\(') S
-(List database tables) str
-('\)) p n
-(157) # (        db_action_2.triggered.connect\(self.ShowTables\)) N
-(158) # (        db_menu.addAction\(db_action_2\)) N
-(159) # () N
-(160) # () N
-(161) # (        file_menu.addAction\(") S
-(MyExit) str
-("\)) p n
-(162) # (        file_menu.addAction\(") S
-(None) str
-("\)) p n
-(163) # (        ) N
-(164) # () N
-(165) # () N
-(166) # (    ) S
-(def) K
-( ConnectDataBase\(self\):) p n
-(167) # (        """) S
-(establish contact to database class) str
-(""") p n
-(168) # (        self.MyDB = ControlDB.ContrlDB\(db_user = self.CM.db_user,) N
-(169) # (                    db_pwd = self.GetPwd\(\),) N
-(170) # (                    db_name = self.CM.db_name,) N
-(171) # (                    db_system =self.CM.db_system\)) N
-(MyCal.py) (Page 3/6) (Feb 03, 2025 11:45) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(MyCal.py) (3/6) (Sunday February 16, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (4) 4
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(172) # (        self.MyDB.ConnectDataBase\(\)) p n
-(173) # () N
-(174) # () N
-(175) # () N
-(176) # () N
-(177) # (    ) S
-(def) K
-( GetPwd\(self\):) p n
-(178) # (        temp = self.CM.cryptofile) N
-(179) # (        ) S
 (if) K
-( os.path.exists\(temp\):) p n
-(180) # (            with open\(temp, ') S
-(r) str
-('\) as file:) p n
-(181) # (                self.password = password = file.read\(\).rstrip\(\)) N
-(182) # (                ) S
-(return) K
-( password) p n
-(183) # () N
-(184) # () N
-(185) # (        ) S
-(else) K
-(:) p n
-(186) # (            logger.error\(') S
-(crytopfile not found, exciting) str
-('\)   ) p n
-(187) # (            sys.exit\(0\)) N
-(188) # (        ) N
-(189) # (   ) N
-(190) # () N
-(191) # (    ) S
-(def) K
-( OpenFile\(self\):) p n
-(192) # (        ''') S
-( Open file dialog) str
-(''') p n
-(193) # () N
-(194) # (        self.FileName = QFileDialog.getOpenFileName\(self\)) N
-(195) # () N
-(196) # (    ) S
-(def) K
-( SaveFile\(self\):) p n
-(197) # (        name = QFileDialog.getSaveFileName\(self,') S
-(Save File) str
-('\)) p n
-(198) # (        myfile = open\(name,') S
-(w) str
-('\)) p n
-(199) # (        text = self.textEdit.toPlainText\(\)) N
-(200) # (        myfile.write\(text\)) N
-(201) # (        myfile.close\(\)) N
-(202) # () N
-(203) # () N
-(204) # () N
-(205) # () N
-(206) # ( ) N
-(207) # (    ) S
-(def) K
-( SetupConfig\(self\):) p n
-(208) # (        mysystem = platform.system\(\)) N
-(209) # () N
-(210) # (        ) S
+( __name__ == ') p
+(__main__) str
+(':) p n
+(125) # (    mysystem = platform.system\(\)) N
+(126) # () N
+(127) # (    ) S
 (if) K
 ( mysystem == ') p
 (Darwin) str
 (':) p n
-(211) # (            conf_dir = ') S
+(128) # (        conf_dir = ') S
 (/Users/klein/git/qt_exercises/config/) str
 (') p n
-(212) # (        ) S
+(129) # (    ) S
 (elif) K
 ( mysystem == ') p
 (Linux) str
 (':) p n
-(213) # (            conf_dir = ') S
+(130) # (        conf_dir = ') S
 (/home/klein/git/qt_exercises/config/) str
 (') p n
-(214) # (        ) S
+(131) # (    ) S
 (else) K
 (:) p n
-(215) # (            ) S
+(132) # (        ) S
 (print) K
 (\(') p
-( This os is not supported %s) str
+( Thios os is not supported %s) str
 (' % mysystem\)) p n
-(216) # (            sys.exit\(0\)) N
-(217) # (        config_file = conf_dir + ') S
+(133) # (    config_file = conf_dir + ') S
 (config_mycal.json) str
 (') p n
-(218) # () N
-(219) # (        self.CM = CM = config_mycal.MyConfig\(config_file\)) N
-(220) # (        self.log_level = CM.log_level) N
-(221) # (        self.log_output = CM.log_output) N
-(222) # () N
-(223) # (        ) N
-(224) # () N
-(225) # () N
-(226) # () N
-(227) # () N
-(228) # (    ) S
-(def) K
-( SetupLogger\(self\):) p n
-(MyCal.py) (Page 4/6) (Feb 03, 2025 11:45) title
+(134) # (    MyC = MyConfig\(config_file\)) N
+(config_mycal.py) (Page 3/3) (Feb 03, 2025 7:39) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(MyCal.py) (4/6) (Sunday February 16, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (5) 5
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(229) # () p n
-(230) # () N
-(231) # (        logger.remove\(0\)) N
-(232) # (        ) S
-(#now we add color to the terminal output) c n
-(233) # () S
-(        logger.add\(sys.stdout,) p n
-(234) # (                colorize = True,format=") S
-(<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>) str
-(" ,) p n
-(235) # (                level = self.log_level\)) N
-(236) # () N
-(237) # () N
-(238) # () N
-(239) # (        fmt =  ") S
-({time} - {name}-   {function} -{line}- {level}    - {message}) str
-(") p n
-(240) # (        logger.add\(self.log_output, format = fmt , level = self.log_level,rotation=") S
-(1 day) str
-("\)) p n
-(241) # () N
-(242) # () N
-(243) # (        ) S
-(# set the colors of the different levels) c n
-(244) # () S
-(        logger.level\(") p
-(INFO) str
-(",color =') p
-(<black>) str
-('\)) p n
-(245) # (        logger.level\(") S
-(WARNING) str
-(",color=') p
-(<green>) str
-('\)) p n
-(246) # (        logger.level\(") S
-(ERROR) str
-(",color=') p
-(<red>) str
-('\)) p n
-(247) # (        logger.level\(") S
-(DEBUG) str
-(",color = ') p
-(<blue>) str
-('\)) p n
-(248) # ( ) N
-(249) # (        ) S
-(return) K n
-(250) # () S
-(    ) p n
-(251) # (    ) S
-(def) K
-( ShowTables\(self\):) p n
-(252) # (        self.MyDB.ShowTables\(\)) N
-(253) # () N
-(254) # (    ) S
-(def) K
-( ShowTablesOld\(self\):) p n
-(255) # (        ''') S
-(prints all the tables in the databe) str
-(''') p n
-(256) # (        self.table_list = self.mycal_db.tables\(type=QSql.Tables\)) N
-(257) # (        ) S
-(for) K
-( k ) p
-(in) K
-( range\(0,len\(self.table_list\)\):) p n
-(258) # (            ) S
-(print) K
-(\(self.table_list[k]\)) p n
-(259) # () N
-(260) # (        ) S
-(#Create list box) c n
-(261) # () S
-(        self.mybox = QComboBox\(\)) p n
-(262) # (        ) S
-(#Insert at index 0 the whole list) c n
-(263) # () S
-(        self.mybox.insertItems\(0,self.table_list\)) p n
-(264) # (        ) S
-(# create independent window) c n
-(265) # () S
-(       ) p n
-(266) # (        self.setCentralWidget\(self.mybox\)) N
-(267) # () N
-(268) # () N
-(269) # (        ) S
-(return) K n
-(270) # () N
-(271) # () S
-(                       ) p n
-(272) # (    ) S
-(def) K
-( ViewTable\(self,table\):) p n
-(273) # (        self.MyDB.ViewTable\(table\)        ) N
-(274) # () N
-(275) # ( ) N
-(276) # (app = QApplication\(sys.argv\) ) N
-(277) # (window = MainWindow\(Title = ") S
-(GridLayout) str
-("\)) p n
-(278) # () S
-(#window.SetSize\(800,500\)) c n
-(279) # (#window.SetPosition\(100,500\)) N
-(280) # () N
-(281) # () S
-(window.setStyleSheet\(") p
-(background-color: white;) str
-("\)) p n
-(282) # () S
-(#window.CreateCalendar\(\)) c n
-(283) # () N
-(284) # () N
-(285) # () N
-(MyCal.py) (Page 5/6) (Feb 03, 2025 11:45) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(MyCal.py) (5/6) (Sunday February 16, 2025) footer
-end % of iso1dict
-pagesave restore
-showpage
-%%Page: (6) 6
-%%BeginPageSetup
-/pagesave save def
-sh 0 translate 90 rotate
-%%EndPageSetup
-iso1dict begin
-gsave
-llx lly 12 add translate
-/v 0 store
-/x0 x v get 3.780000 add sx cw mul add store
-/y0 y v get bfs th add sub store
-x0 y0 moveto
-(286) # (window.show\(\)) p n
-(287) # (window.ConnectDataBase\(\)) N
-(288) # (window.ShowTables\(\)) N
-(289) # (window.ViewTable\(') S
-(Recipes) str
-('\)) p n
-(290) # () S
-(# now run the app) c n
-(291) # () S
-(app.) p
-(exec) K
-(\(\)) p
-(MyCal.py) (Page 6/6) (Feb 03, 2025 11:45) title
-border
-grestore
-(Printed by Andi Klein) rhead
-(MyCal.py) (6/6) (Sunday February 16, 2025) footer
+(config_mycal.py) (3/3) (Sunday February 16, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage

@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0
-%%Title: config_mycal.py
+%%Title: IngredientTable.py
 %%For: Andi Klein
 %%Creator: a2ps version 4.15.5
-%%CreationDate: Sun Feb 16 10:42:45 2025
+%%CreationDate: Fri Feb 21 08:17:43 2025
 %%BoundingBox: 24 24 588 767
 %%DocumentData: Clean7Bit
 %%Orientation: Landscape
-%%Pages: 3
+%%Pages: 5
 %%PageOrder: Ascend
 %%DocumentMedia: Letter 612 791 0 () ()
 %%DocumentNeededResources: font Courier
@@ -754,142 +754,116 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1) # (""") p
-(Class to configure the test_speed program) str n
-(2) # (Using json \(sigh\)) S
-(""") p n
-(3) # () N
+(1) # (# IngedientTable deals with the swiss food nutrition info) c n
+(2) # (# the first iteration is english) N
+(3) # (#It uses pandas and will eventaully be called from ControDB) N
 (4) # () N
 (5) # () S
 (import) K
-( json) p n
+( csv) p n
 (6) # () S
+(from) K
+( io ) p
 (import) K
-( os) p n
-(7) # () S
-(import) K
-( sys) p n
+( StringIO) p n
+(7) # () N
 (8) # () S
+(from) K
+( sqlalchemy ) p
 (import) K
-( platform) p n
+( create_engine, MetaData) p n
 (9) # () S
 (import) K
-( socket) p n
+( psycopg2 ) p n
 (10) # () S
 (import) K
-( inspect) p n
-(11) # () N
+( pandas as pd) p n
+(11) # () S
+(import) K
+( numpy as np) p n
 (12) # () S
-(class) K
-( color:) p n
-(13) # (   PURPLE = ') S
-(\\033[95m) str
-(') p n
-(14) # (   CYAN = ') S
-(\\033[96m) str
-(') p n
-(15) # (   DARKCYAN = ') S
-(\\033[36m) str
-(') p n
-(16) # (   BLUE = ') S
-(\\033[94m) str
-(') p n
-(17) # (   GREEN = ') S
-(\\033[92m) str
-(') p n
-(18) # (   YELLOW = ') S
-(\\033[93m) str
-(') p n
-(19) # (   RED = ') S
-(\\033[91m) str
-(') p n
-(20) # (   BOLD = ') S
-(\\033[1m) str
-(') p n
-(21) # (   UNDERLINE = ') S
-(\\033[4m) str
-(') p n
-(22) # (   END = ') S
-(\\033[0m) str
-(') p n
+(import) K
+( os) p n
+(13) # () S
+(import) K
+( sys) p n
+(14) # () S
+(from) K
+( loguru ) p
+(import) K
+( logger) p n
+(15) # () N
+(16) # () S
+(from) K
+( pick_swiss_ingreds ) p
+(import) K
+( Ui_Dialog) p n
+(17) # () N
+(18) # () S
+(from) K
+( PySide6.QtCore ) p
+(import) K
+( \(QSize, Qt ,QRect,) p n
+(19) # (QCoreApplication,Slot,Signal,QAbstractListModel,QAbstractTableModel,QMetaObject,QModelIndex\)) N
+(20) # () S
+(from) K
+( PySide6.QtGui ) p
+(import) K
+( QAction,QDoubleValidator,QFont) p n
+(21) # () N
+(22) # () S
+(from) K
+( PySide6.QtUiTools ) p
+(import) K
+( QUiLoader) p n
 (23) # () N
-(24) # () N
-(25) # () S
-(class) K
-( MyConfig\(\):) p n
-(26) # () N
-(27) # (    ) S
-(def) K
-( __init__\(self,config_file\):) p n
-(28) # (        """) S
-( config_file contains all the infor for calory program) str
-(""") p n
-(29) # () N
-(30) # ( ) N
-(31) # (       ) N
-(32) # (        ) N
-(33) # (        ) S
-(# Open config file) c n
-(34) # () S
-(        ) p
-(print) K
-(\(') p
-(Directory Name:     ) str
-(', os.path.dirname\(config_file\)\)) p n
-(35) # (       ) N
-(36) # () N
-(37) # (        ) S
-(if) K
-( os.path.exists\(config_file\) :) p n
-(38) # (            self.ReadJson\(config_file\)) N
-(39) # (        ) S
-(else) K
-(:) p n
-(40) # (            ) S
-(print) K
-(\(") p
-( Config file does not exist, exiting     ) str
-(", config_file\)) p n
-(41) # (            sys.exit\(0\)) N
-(42) # () N
-(43) # (    ) S
-(def) K
-( ReadJson\(self,file_path\):) p n
-(44) # () N
-(45) # (        ) S
-(print) K
-(\(") p
-(reading config file ) str
-(", file_path\)    ) p n
-(46) # (        with open\(file_path, ") S
-(r) str
-("\) as f:) p n
-(47) # (            myconf = json.load\(f\)) N
-(48) # () N
-(49) # (            self.DecodeVariables\(myconf\)) N
-(50) # () N
-(51) # (    ) S
-(def) K
-( DecodeVariables\(self,jsondict\):) p n
-(52) # (        """) S
-(decodes the json dictionary in to variables) str
-(""") p n
-(53) # () N
-(54) # (        ) S
-(#bold face begin and end) c n
-(55) # () S
-(        bfb = ') p
-(\\033[1m) str
-(') p n
-(56) # (        bfe = ') S
-(\\033[0m) str
-(') p n
-(57) # (        TX = color) N
-(config_mycal.py) (Page 1/3) (Feb 03, 2025 7:39) title
+(24) # () S
+(from) K
+( PySide6.QtSql ) p
+(import) K
+( QSqlDatabase , QSql,QSqlTableModel,QSqlQueryModel,QSqlQuery) p n
+(25) # () N
+(26) # () S
+(from) K
+( PySide6.QtWidgets ) p
+(import) K
+( \() p n
+(27) # (QApplication,) N
+(28) # (    QCheckBox,) N
+(29) # (    QComboBox,) N
+(30) # (    QDateEdit,) N
+(31) # (    QDateTimeEdit,) N
+(32) # (    QDial,) N
+(33) # (    QDialog,) N
+(34) # (    QDoubleSpinBox,) N
+(35) # (    QFileDialog,) N
+(36) # (    QFontComboBox,) N
+(37) # (    QFormLayout,) N
+(38) # (    QHBoxLayout,) N
+(39) # (    QLabel,) N
+(40) # (    QLCDNumber,) N
+(41) # (    QLineEdit,) N
+(42) # (    QListView,) N
+(43) # (    QMainWindow,) N
+(44) # (    QWidget,) N
+(45) # (    QProgressBar,) N
+(46) # (    QPushButton,) N
+(47) # (    QRadioButton,) N
+(48) # (    QSlider,) N
+(49) # (    QSpinBox,) N
+(50) # (    QStatusBar,) N
+(51) # (    QTimeEdit,) N
+(52) # (    QTableView,) N
+(53) # (    QMenuBar,) N
+(54) # (    QVBoxLayout,) N
+(55) # (    QAbstractItemView,) N
+(56) # (    QGridLayout,) N
+(57) # (    QTextEdit) N
+(IngredientTable.py) (Page 1/5) (Feb 21, 2025 7:45) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(config_mycal.py) (1/3) (Sunday February 16, 2025) footer
+(IngredientTable.py) (1/5) (Friday February 21, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -905,184 +879,108 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(58) # (        ) p
-(#these are depending on the operating system) c n
-(59) # () S
-(        mysystem = platform.system\(\)) p n
-(60) # (        self.srcdir = jsondict[mysystem][') S
-(srcdir) str
-(']) p n
-(61) # (        self.datadir = jsondict[mysystem][') S
-(datadir) str
-(']) p n
-(62) # (        self.logdir = jsondict[mysystem][') S
-(logdir) str
-(']) p n
-(63) # (        self.doc_dir =jsondict[mysystem][') S
-(doc_dir) str
-(']) p n
-(64) # (        self.conf_dir = jsondict[mysystem][') S
-(conf_dir) str
-(']) p n
+(58) # () p n
+(59) # (\)) N
+(60) # () N
+(61) # () S
+(class) K
+( IngredDialog\(QDialog,Ui_Dialog\):) p n
+(62) # (    ) S
+(def) K
+( __init__\(self\):) p n
+(63) # (        super\(\).__init__\(\)) N
+(64) # (        self.setupUi\(self\)) N
 (65) # () N
-(66) # (        self.debug = jsondict[") S
-(Control) str
-("][") p
-(debug) str
-("]) p n
-(67) # (        cryptofile = jsondict[") S
-(Control) str
-("][") p
-(cryptofile) str
-("]) p n
-(68) # (        ) S
-(#decode cryptofile) c n
-(69) # () S
-(        self.cryptofile = self.conf_dir+cryptofile) p n
-(70) # () N
-(71) # (        self.db_user = jsondict[") S
-(Control) str
-("][") p
-(db_user) str
-("]) p n
-(72) # (        self.db_name = jsondict[") S
-(Control) str
-("][") p
-(db_name) str
-("]) p n
-(73) # (        ) S
-(#currently only QPSQL is supported) c n
-(74) # () S
-(        self.db_system = jsondict[") p
-(Control) str
-("][") p
-(db_system) str
-("]) p n
-(75) # (        ) S
-(# the next two vaiables are only used if we run in "both" mode) c n
-(76) # () S
-(            ) p
-(#test if first key is working) c n
-(77) # () S
-( ) p n
-(78) # (        self.conf_dir = jsondict[mysystem][') S
-(conf_dir) str
-(']) p n
+(66) # () N
+(67) # () N
+(68) # () S
+(# here we setup the model) c n
+(69) # () N
+(70) # () S
+(class) K
+( IngredModel\(QAbstractTableModel\):) p n
+(71) # (    ) S
+(def) K
+( __init__\(self, ingredients\):) p n
+(72) # (        super\(\).__init__\(\)) N
+(73) # (        self.ingredients = ingredients) N
+(74) # () N
+(75) # (    ) S
+(def) K
+( data\(self, index, role\):) p n
+(76) # (        ) S
+(if) K
+( role == Qt.DisplayRole:) p n
+(77) # (            value = self.ingredients.iloc[index.row\(\), index.column\(\)]) N
+(78) # (            ) S
+(return) K
+( str\(value\)) p n
 (79) # () N
-(80) # (   ) N
+(80) # (    ) S
+(def) K
+( rowCount\(self, index\):) p n
 (81) # (        ) S
-(#Possible loglevels) c n
-(82) # () S
-(        ) p
-(# DEBUG) c n
-(83) # () S
-(        ) p
-(# INFO) c n
-(84) # () S
-(        ) p
-(# WARNING) c n
-(85) # () S
-(        ) p
-(# ERROR) c n
-(86) # () S
-(        ) p
-(# CRITICAL) c n
-(87) # () S
-(        ) p n
-(88) # (        ) S
-(#Output choices) c n
-(89) # () S
-(        ) p
-(# screen) c n
-(90) # () S
-(        ) p
-(# outfile) c n
-(91) # () S
-(        ) p
-(# both) c n
-(92) # () N
-(93) # () S
-(        ) p
+(return) K
+( self.ingredients.shape[0]) p n
+(82) # () N
+(83) # (    ) S
+(def) K
+( columnCount\(self, index\):) p n
+(84) # (        ) S
+(return) K
+( self.ingredients.shape[1]) p n
+(85) # () N
+(86) # (    ) S
+(def) K
+( headerData\(self, section, orientation, role\):) p n
+(87) # (        ) S
 (if) K
-( ") p
-(loglevel) str
-(" ) p
-(in) K
-( jsondict[") p
-(logging) str
-("].keys\(\) :) p n
-(94) # (            self.log_level = jsondict[") S
-(logging) str
-("][") p
-(loglevel) str
-("] ) p n
-(95) # (        ) S
-(else) K
-(:) p n
-(96) # (            self.log_level = ") S
-(INFO) str
-(") p n
-(97) # () N
-(98) # (        ) N
-(99) # (        self.log_output = jsondict[") S
-(logging) str
-("][") p
-(output) str
-("] ) p n
-(100) # ( ) N
-(101) # (        ) S
+( role == Qt.DisplayRole:) p n
+(88) # (            ) S
 (if) K
-( ") p
-(log_conf_file) str
-(" ) p
-(in) K
-( jsondict[") p
-(logging) str
-("].keys\(\) :) p n
-(102) # (            self.log_conf_file = self.conf_dir+jsondict[") S
-(logging) str
-("][") p
-(log_conf_file) str
-("] ) p n
-(103) # (        ) S
-(else) K
-(:) p n
-(104) # (            frame = inspect.currentframe\(\)) N
-(105) # (            prefix = TX.BOLD +TX.RED+') S
-(|) str
-('+frame.f_code.co_name+') p
-(>) str
-('+') p
-(no logger config file) str
-('+TX.END) p n
-(106) # (            ) S
-(print) K
-(\(prefix\)) p n
-(107) # (            sys.exit\(0\)) N
-(108) # (             ) N
-(109) # (        ) S
-(#here we get the logging varaibles:) c n
-(110) # () S
-(                ) p n
-(111) # () N
-(112) # (        ) S
-(print) K
-(\(') p
-(\\n\\n ***************** configuration**************\\n) str
-('\)) p n
-(113) # (        ) S
-(print) K
-(\(') p
-( We are running on platform ) str
-(' , mysystem, ') p
-(\\n) str
-('\)) p n
-(114) # () N
-(config_mycal.py) (Page 2/3) (Feb 03, 2025 7:39) title
+( orientation == Qt.Horizontal:) p n
+(89) # (                ) S
+(return) K
+( str\(self.ingredients.columns[section]\)) p n
+(90) # () N
+(91) # (            ) S
+(if) K
+( orientation == Qt.Vertical:) p n
+(92) # (                ) S
+(return) K
+( str\(self.ingredients.index[section]\)) p n
+(93) # () N
+(94) # () N
+(95) # () N
+(96) # () N
+(97) # () S
+(class) K
+( IngredientTable\(QMainWindow\):) p n
+(98) # (    ) S
+(def) K
+( __init__\(self,table_name = None\):) p n
+(99) # (        super\(\).__init__\(\)) N
+(100) # () N
+(101) # (        self.setup_logger\(\)) N
+(102) # () N
+(103) # (        self.read_table\(table_name\)) N
+(104) # () N
+(105) # () N
+(106) # (        self.INTview = QTableView\(\)) N
+(107) # () N
+(108) # (        ingredients = self.df) N
+(109) # (        ) N
+(110) # () N
+(111) # (        self.IngredModel = IngredModel\(ingredients\)) N
+(112) # (        self.INTview.setModel\(self.IngredModel\)) N
+(113) # () N
+(114) # (        ) S
+(#if I click on a cell go to connect) c n
+(IngredientTable.py) (Page 2/5) (Feb 21, 2025 7:45) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(config_mycal.py) (2/3) (Sunday February 16, 2025) footer
+(IngredientTable.py) (2/5) (Friday February 21, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1098,67 +996,348 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(115) # (        ) p
-(print) K
-(\(') p
-(Sourcedir            ) str
-(',self.srcdir\)) p n
-(116) # (        ) S
-(print) K
-(\(') p
-(Datadir              ) str
-(',self.datadir\)) p n
-(117) # ( ) N
-(118) # (        ) S
-(print) K
-(\(') p
-(***************************** end of configuration***************\\n\\n) str
-('\)) p n
+(115) # (        self.INTview.clicked.connect\(self.print_cell\)) p n
+(116) # () N
+(117) # (        ) S
+(#Set geometry of table_view) c n
+(118) # () S
+(        self.mod_table_display\(\)) p n
 (119) # () N
-(120) # () N
-(121) # () N
+(120) # (        self.setCentralWidget\(self.INTview\)) N
+(121) # (        self.setGeometry\(20, 20, 1200, 400\)) N
 (122) # () N
-(123) # () N
-(124) # () S
+(123) # (    ) N
+(124) # () N
+(125) # (    ) S
+(def) K
+( find_pattern\(self,word=None\):) p n
+(126) # (        """) S
+(this routine goes through the names in the database) str n
+(127) # (        and returns a list of values which will then go into a combo_box dialog to choose from) N
+(128) # (        the names are in cloumn 0) N
+(129) # (        returns the list of matches together with how many times it found a match) N
+(130) # (        count =1 for exactly one match.) N
+(131) # (        ) S
+(""") p n
+(132) # (        self.pattern_count=0 ) S
+(# how many times the pattern was found) c n
+(133) # () N
+(134) # () S
+(        self.myPatternFound = []) p n
+(135) # (        temp = self.df[') S
+(name) str
+('].to_list\(\)) p n
+(136) # (        ) S
+(# we check for the first three characters case insensitive) c n
+(137) # () S
+(        ) p
+(for) K
+( k ) p
+(in) K
+( range\(len\(temp\)\):) p n
+(138) # (            needle = ") S
+(TEST) str
+(") p n
+(139) # (            ) S
 (if) K
-( __name__ == ') p
-(__main__) str
-(':) p n
-(125) # (    mysystem = platform.system\(\)) N
-(126) # () N
-(127) # (    ) S
-(if) K
-( mysystem == ') p
-(Darwin) str
-(':) p n
-(128) # (        conf_dir = ') S
-(/Users/klein/git/qt_exercises/config/) str
-(') p n
-(129) # (    ) S
-(elif) K
-( mysystem == ') p
-(Linux) str
-(':) p n
-(130) # (        conf_dir = ') S
-(/home/klein/git/qt_exercises/config/) str
-(') p n
-(131) # (    ) S
-(else) K
-(:) p n
-(132) # (        ) S
-(print) K
-(\(') p
-( Thios os is not supported %s) str
-(' % mysystem\)) p n
-(133) # (    config_file = conf_dir + ') S
-(config_mycal.json) str
-(') p n
-(134) # (    MyC = MyConfig\(config_file\)) N
-(config_mycal.py) (Page 3/3) (Feb 03, 2025 7:39) title
+( word[0:4].casefold\(\) ) p
+(in) K
+( temp[k][0:4].casefold\(\):) p n
+(140) # (                self.myPatternFound.append\(temp[k]\)) N
+(141) # (                self.pattern_count = self.pattern_count +1) N
+(142) # (        ) N
+(143) # (        ) S
+(return) K
+(  ) p n
+(144) # () N
+(145) # () N
+(146) # (    ) S
+(def) K
+( get_ingredient\(self\):) p n
+(147) # () N
+(148) # (        self.GI = IngredDialog\(\)) N
+(149) # () N
+(150) # (        ) S
+(#populate the values) c n
+(151) # () S
+(        ) p n
+(152) # (        self.GI.comboPick.insertItems\(0,self.myPatternFound\)) N
+(153) # () N
+(154) # ( ) S
+(#       self.GI.comboPick.textHighlighted.connect\(self.print_selection\)) c n
+(155) # () S
+(        self.GI.comboPick.currentTextChanged.connect\(self.get_ingred_selection\)) p n
+(156) # () N
+(157) # (        self.GI.show\(\)) N
+(158) # (        ) S
+(return) K n
+(159) # () S
+(    ) p n
+(160) # (    ) S
+(def) K
+( get_ingred_selection\(self,s\):) p n
+(161) # () N
+(162) # (        self.selected_ingredient = s) N
+(163) # (        logger.debug\(") S
+(you selected %s) str
+(" % self.selected_ingredient\)) p n
+(164) # () N
+(165) # () N
+(166) # (    ) N
+(167) # ( ) N
+(168) # () N
+(169) # () N
+(170) # () N
+(171) # () N
+(IngredientTable.py) (Page 3/5) (Feb 21, 2025 7:45) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(config_mycal.py) (3/3) (Sunday February 16, 2025) footer
+(IngredientTable.py) (3/5) (Friday February 21, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (4) 4
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(172) # (             ) p n
+(173) # () N
+(174) # () N
+(175) # (    ) S
+(def) K
+( mod_table_display\(self\):) p n
+(176) # (        """) S
+(modify how the table looks) str
+(""") p n
+(177) # (        self.INTview.resizeColumnsToContents\(\)) N
+(178) # () N
+(179) # (    ) S
+(def) K
+( print_cell\(self,index\):) p n
+(180) # () N
+(181) # (        ) S
+(#all data communication happes through self.IngredModel.ingredients) c n
+(182) # () S
+(        row = index.row\(\)) p n
+(183) # (        column = index.column\(\)) N
+(184) # (        data = index.data\(\)) N
+(185) # () N
+(186) # (        logger.debug\(") S
+(you selected %s ) str
+(" %self.IngredModel.ingredients.iloc[index.row\(\), index.column\(\)]\)) p n
+(187) # () N
+(188) # (    ) S
+(def) K
+( read_table\(self,table = None\):) p n
+(189) # (        """) S
+(reads the csv ingredients file) str
+(""") p n
+(190) # () N
+(191) # (        self.df = pd.read_csv\(table\)) N
+(192) # () N
+(193) # () N
+(194) # () N
+(195) # (    ) S
+(def) K
+( setup_logger\(self\):) p n
+(196) # ( ) N
+(197) # (        ) S
+(#logger.remove\(0\)) c n
+(198) # () S
+(        ) p
+(#now we add color to the terminal output) c n
+(199) # () S
+(        logger.add\(sys.stdout,) p n
+(200) # (                colorize = True,format=") S
+(<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>) str
+(" ,) p n
+(201) # (                level = ") S
+(DEBUG) str
+("\)) p n
+(202) # () N
+(203) # () N
+(204) # () N
+(205) # (        fmt =  ") S
+({time} - {name}-   {function} -{line}- {level}    - {message}) str
+(") p n
+(206) # (        logger.add\(') S
+(info.log) str
+(', format = fmt , level = ') p
+(INFO) str
+(',rotation=") p
+(1 day) str
+("\)) p n
+(207) # () N
+(208) # () N
+(209) # (        ) S
+(# set the colors of the different levels) c n
+(210) # () S
+(        logger.level\(") p
+(INFO) str
+(",color =') p
+(<black>) str
+('\)) p n
+(211) # (        logger.level\(") S
+(WARNING) str
+(",color=') p
+(<green>) str
+('\)) p n
+(212) # (        logger.level\(") S
+(ERROR) str
+(",color=') p
+(<red>) str
+('\)) p n
+(213) # (        logger.level\(") S
+(DEBUG) str
+(",color = ') p
+(<blue>) str
+('\)) p n
+(214) # ( ) N
+(215) # (        ) S
+(return) K n
+(216) # () N
+(217) # () S
+(    ) p
+(def) K
+( do_sql_table\(self\):) p n
+(218) # (        conn_string = ') S
+(postgresql://klein:xxxx@192.168.2.164:5432/recipe_ak) str
+(') p n
+(219) # (        engine = create_engine\(conn_string\)) N
+(220) # (        conn = engine.connect\(\)) N
+(221) # (        self.df.to_sql\(') S
+(swiss_food) str
+(', con=conn, if_exists= ") p
+(replace) str
+(" , index = False\)) p n
+(222) # () N
+(223) # (        conn = psycopg2.connect\(conn_string ) N
+(224) # (                        \)) N
+(225) # (        conn.autocommit = True) N
+(226) # (        cursor = conn.cursor\(\) ) N
+(227) # (  ) N
+(228) # (        sql1 = ''') S
+(select * from swiss_food;) str
+(''') p n
+(IngredientTable.py) (Page 4/5) (Feb 21, 2025 7:45) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(IngredientTable.py) (4/5) (Friday February 21, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (5) 5
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(229) # (        cursor.execute\(sql1\) ) p n
+(230) # (        ) S
+(for) K
+( i ) p
+(in) K
+( cursor.fetchall\(\): ) p n
+(231) # (            ) S
+(print) K
+(\(i\) ) p n
+(232) # (  ) N
+(233) # (        ) S
+(# conn.commit\(\) ) c n
+(234) # () S
+(        conn.close\(\) ) p n
+(235) # () N
+(236) # () N
+(237) # (    ) S
+(def) K
+( psql_insert_copy\(table, conn, keys, data_iter\):) p n
+(238) # (    ) S
+(# gets a DBAPI connection that can provide a cursor) c n
+(239) # () S
+(        dbapi_conn = conn.connection) p n
+(240) # (        with dbapi_conn.cursor\(\) as cur:) N
+(241) # (            s_buf = StringIO\(\)) N
+(242) # (            writer = csv.writer\(s_buf\)) N
+(243) # (            writer.writerows\(data_iter\)) N
+(244) # (            s_buf.seek\(0\)) N
+(245) # () N
+(246) # (            columns = ') S
+(, ) str
+('.join\(') p
+("{}") str
+('.format\(k\) ) p
+(for) K
+( k ) p
+(in) K
+( keys\)) p n
+(247) # (            ) S
+(if) K
+( table.schema:) p n
+(248) # (                table_name = ') S
+({}.{}) str
+('.format\(table.schema, table.name\)) p n
+(249) # (            ) S
+(else) K
+(:) p n
+(250) # (                table_name = table.name) N
+(251) # () N
+(252) # (            sql = ') S
+(COPY {} \({}\) FROM STDIN WITH CSV) str
+('.format\() p n
+(253) # (                table_name, columns\)) N
+(254) # (            cur.copy_expert\(sql=sql, file=s_buf\)) N
+(255) # () N
+(256) # () N
+(257) # () N
+(258) # () S
+(if) K
+( __name__ == ') p
+(__main__) str
+(': ) p n
+(259) # () N
+(260) # (    app = QApplication\(sys.argv\)) N
+(261) # () N
+(262) # () N
+(263) # () N
+(264) # () N
+(265) # () N
+(266) # (    table_name = ') S
+(/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv) str
+(') p n
+(267) # (    ) N
+(268) # (    InTa  = IngredientTable\(table_name=table_name\)) N
+(269) # (    InTa.do_sql_table\(\)) N
+(270) # (    InTa.find_pattern\(word=') S
+(Almond) str
+('\)) p n
+(271) # (    InTa.get_ingredient\(\)) N
+(272) # (    InTa.show\(\)) N
+(273) # () N
+(274) # () N
+(275) # (    app.) S
+(exec) K
+(\(\)) p
+(IngredientTable.py) (Page 5/5) (Feb 21, 2025 7:45) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(IngredientTable.py) (5/5) (Friday February 21, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage

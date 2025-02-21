@@ -161,7 +161,8 @@ class IngredientTable(QMainWindow):
 
         self.selected_ingredient = s
         logger.debug("you selected %s" % self.selected_ingredient)
-
+        
+        return
 
     
  
@@ -215,6 +216,7 @@ class IngredientTable(QMainWindow):
         return
 
     def do_sql_table(self):
+        """dont forget to put  for xxxx"""
         conn_string = 'postgresql://klein:xxxx@192.168.2.164:5432/recipe_ak'
         engine = create_engine(conn_string)
         conn = engine.connect()

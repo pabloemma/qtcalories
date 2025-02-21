@@ -80,7 +80,7 @@ class MyConfig():
         self.db_system = jsondict["Control"]["db_system"]
         # the next two vaiables are only used if we run in "both" mode
             #test if first key is working
- 
+        self.ingred_table = jsondict["Control"]["ingred_table"] #choices are currently ingredients or swiss_food
         self.conf_dir = jsondict[mysystem]['conf_dir']
 
         self.ingredients_suppress_columns = jsondict["graphics"]["ingredients_suppress_columns"]

@@ -21,7 +21,8 @@
         "cryptofile" : "pw.txt",
         "db_name" :"recipe_ak",
         "db_user" :"klein",
-        "db_system" : "QPSQL"
+        "db_system" : "QPSQL",
+        "ingred_table" : "swiss_food"
      },
 
      "logging" : {

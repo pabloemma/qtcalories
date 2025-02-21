@@ -5,7 +5,7 @@
 
 
 import config_mycal as CM       # get the configuration classs
-import ControlDB as CDB         # get the ControlDB
+import ControlDB_new as CDB         # get the ControlDB
 
 import os
 import sys
@@ -110,7 +110,7 @@ class CalMain(QMainWindow):
         self.SetupLogger()
 
         # now instantiate the heart of the calory
-        self.CDB = CDB.ContrlDB("My Calories",
+        self.CDB = CDB.ContrlDB_new("My Calories",
                                 db_name=self.CM.db_name,
                                 db_user = self.CM.db_user,
                                  db_system = self.CM.db_system ,
@@ -120,6 +120,8 @@ class CalMain(QMainWindow):
 
 
         self.log_level = self.CM.log_level
+        self.ingred_table = self.CM.ingred_table
+        
 
         #connect to database
         self.CDB.ConnectDataBase()
@@ -182,7 +184,7 @@ class CalMain(QMainWindow):
     def list_ingredients(self):
         """list all the recipes"""
         columnwidth = [200,100,100,100,100,100]
-        self.CDB.ViewTable('ingredients',suppress_columns=self.CM.ingredients_suppress_columns,columnwidth=columnwidth)
+        self.CDB.ViewTable(self.ingred_table,suppress_columns=self.CM.ingredients_suppress_columns,columnwidth=columnwidth)
 
     def control_recipes(self):
         self.CDB.MyRecipes_new()
