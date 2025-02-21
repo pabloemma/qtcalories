@@ -84,6 +84,7 @@ class MyConfig():
         self.conf_dir = jsondict[mysystem]['conf_dir']
 
         self.ingredients_suppress_columns = jsondict["graphics"]["ingredients_suppress_columns"]
+        self.swiss_food_suppress_columns = jsondict["graphics"]["swiss_food_suppress_columns"]
         self.recipes_suppress_columns = jsondict["graphics"]["recipes_suppress_columns"]
 
    

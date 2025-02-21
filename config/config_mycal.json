@@ -32,6 +32,7 @@
         },
     "graphics": {
         "ingredients_suppress_columns" : ["sugar","sortion_size","saturated","fiber","salt","sodium","product_source","portion_size"],
+        "swiss_food_suppress_columns" : ["sugar","salt"],
         "recipes_suppress_columns" : ["sugar","portions","description","saturated_fat","fiber","salt","sodium","ingredients","time","images","vegetarian"]
 
     }

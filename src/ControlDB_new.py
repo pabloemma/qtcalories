@@ -5,7 +5,7 @@ import platform
 from loguru import logger
 
 import numpy as np #for pyinstaller
-import config_mycal
+import config_mycal as CM
 from Recipe1 import Ui_MainWindow
 
 from missing_ingredient import Ui_MissingIngredient
@@ -177,28 +177,13 @@ class ContrlDB_new(QMainWindow):
         self.init_variables()
         self.SetupLogger()
         #self.CreateIngredientsForm()
-        self.ingredients_suppress_columns = ['Sugar',
-                    'Portion_size',
-                    'Saturated',
-                    'Fiber',
-                    'Salt',
-                    'Sodium',
-                    'Product_source'
-                    ]
+        self.SetupConfig()
+        self.ingredients_suppress_columns = self.CM.ingredients_suppress_columns 
             
-        self.recipe_suppress_columns = ['Sugar',
-                    'Portions',
-                    'Description',
-                    'Saturated_fat',
-                    'Fiber',
-                    'Salt',
-                    'Sodium',
-                    'Ingredients',
-                    'Time',
-                    'Images',
-                    'vegetarian']
+        self.recipe_suppress_columns = self.CM.recipe_suppress_columns
+        self.swiss_food_suppress_columns = self.CM.swiss_food_suppress_columns
 
-        self.version = '1.0'
+        self.version = '2.0'
         logger.info('******************************************************************************************************** \n\n\n')
 
         logger.info(' This is version %s' % self.version)
@@ -208,6 +193,23 @@ class ContrlDB_new(QMainWindow):
         table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv'
     
         self.InTa  = IngredientTable(table_name=table_name)
+
+    def SetupConfig(self):
+
+        # get the config filename
+        # here we do a filedialog
+        if(self.config_file == None or not os.path.isfile(self.config_file)):
+            self.config_file , filter = QFileDialog.getOpenFileName(self,
+                                self.tr("Open Config file"), "~", self.tr("*.json"))
+           
+            
+        logger.info("config file %s" % self.config_file)
+
+
+ 
+        self.CM = CM.MyConfig(self.config_file)
+        self.log_level = self.CM.log_level
+        self.log_output = self.CM.log_output
 
 
     def  init_variables(self):
@@ -430,8 +432,11 @@ class ContrlDB_new(QMainWindow):
             self.ViewTable(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False)
         elif(table == "recipes"):
             self.ViewTable(table = table,suppress_columns=self.recipe_suppress_columns)
+        elif(table =="swiss_food"):
+             self.ViewTable(table = table,suppress_columns=self.swiss_food_suppress_columns)
         else:
-             self.ViewTable(table = table)
+            logger.error("no table given")
+            sys.exit(0)
            
 
         self.model = QSqlQueryModel()
