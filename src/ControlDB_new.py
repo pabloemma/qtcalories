@@ -20,7 +20,7 @@ from PySide6.QtGui import QAction,QDoubleValidator,QFont
 from PySide6.QtUiTools import QUiLoader
 
 from PySide6.QtSql import QSqlDatabase , QSql,QSqlTableModel,QSqlQueryModel,QSqlQuery
-
+ 
 from PySide6.QtWidgets import (
 QApplication,
     QCheckBox,
