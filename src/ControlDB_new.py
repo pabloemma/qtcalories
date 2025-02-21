@@ -150,7 +150,7 @@ class MyMissingIngredientDialog(QDialog,Ui_missing_ingredient_dialog):
     #   super().accept()
 
 
-class ContrlDB(QMainWindow):
+class ContrlDB_new(QMainWindow):
 
     def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None):
         super().__init__()
@@ -1055,7 +1055,7 @@ if __name__ == '__main__':
                     'vegetarian']
     columnwidth = [40,200,200,200,200,200]
 
-    window = ContrlDB(Title = "ControlDB",
+    window = ContrlDB_new(Title = "ControlDB",
                   db_name=db_name,
                   db_user=db_user,
                   db_system=db_system)

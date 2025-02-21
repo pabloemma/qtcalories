@@ -2,7 +2,11 @@
 # the first iteration is english
 #It uses pandas and will eventaully be called from ControDB
 
+import csv
+from io import StringIO
 
+from sqlalchemy import create_engine, MetaData
+import psycopg2 
 import pandas as pd
 import numpy as np
 import os
@@ -210,8 +214,45 @@ class IngredientTable(QMainWindow):
  
         return
 
+    def do_sql_table(self):
+        conn_string = 'postgresql://klein:xxxx@192.168.2.164:5432/recipe_ak'
+        engine = create_engine(conn_string)
+        conn = engine.connect()
+        self.df.to_sql('swiss_food', con=conn, if_exists= "replace" , index = False)
 
-        
+        conn = psycopg2.connect(conn_string 
+                        )
+        conn.autocommit = True
+        cursor = conn.cursor() 
+  
+        sql1 = '''select * from swiss_food;'''
+        cursor.execute(sql1) 
+        for i in cursor.fetchall(): 
+            print(i) 
+  
+        # conn.commit() 
+        conn.close() 
+
+
+    def psql_insert_copy(table, conn, keys, data_iter):
+    # gets a DBAPI connection that can provide a cursor
+        dbapi_conn = conn.connection
+        with dbapi_conn.cursor() as cur:
+            s_buf = StringIO()
+            writer = csv.writer(s_buf)
+            writer.writerows(data_iter)
+            s_buf.seek(0)
+
+            columns = ', '.join('"{}"'.format(k) for k in keys)
+            if table.schema:
+                table_name = '{}.{}'.format(table.schema, table.name)
+            else:
+                table_name = table.name
+
+            sql = 'COPY {} ({}) FROM STDIN WITH CSV'.format(
+                table_name, columns)
+            cur.copy_expert(sql=sql, file=s_buf)
+
 
 
 if __name__ == '__main__': 
@@ -225,6 +266,7 @@ if __name__ == '__main__':
     table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv'
     
     InTa  = IngredientTable(table_name=table_name)
+    InTa.do_sql_table()
     InTa.find_pattern(word='Almond')
     InTa.get_ingredient()
     InTa.show()
