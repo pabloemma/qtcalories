@@ -95,18 +95,28 @@ class IngredModel(QAbstractTableModel):
 
 
 class IngredientTable(QMainWindow):
-    def __init__(self,table_name = None):
+    def __init__(self,table_name = None,ingredients = None):
         super().__init__()
 
         self.setup_logger()
 
-        self.read_table(table_name)
 
 
+        db_file = '/Users/klein/git/wt_exercises/nutition_databases/swiss_food.csv'
         self.INTview = QTableView()
-
-        ingredients = self.df
+        if(table_name == None):
+            self.read_table(db_file)
+            ingredients = self.df
         
+        else:
+            #new to get the da and put it into pandas   
+                conn_string = 'postgresql://klein:?Pa!blo?solveig@192.168.2.164:5432/recipe_ak'
+                engine = create_engine(conn_string)
+                conn = engine.connect()
+                sql = "SELECT * FROM "+table_name+";"
+                ingredients = self.df= pd.read_sql_query(sql, conn)
+                print(self.df)
+
 
         self.IngredModel = IngredModel(ingredients)
         self.INTview.setModel(self.IngredModel)
@@ -120,7 +130,8 @@ class IngredientTable(QMainWindow):
         self.setCentralWidget(self.INTview)
         self.setGeometry(20, 20, 1200, 400)
 
-    
+    def setup(self):
+        """Only called when ingredienttable is called as standalone"""
 
     def find_pattern(self,word=None):
         """this routine goes through the names in the database
@@ -265,10 +276,10 @@ if __name__ == '__main__':
 
 
 
-    table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv'
+    table_name = 'swiss_food'
     
     InTa  = IngredientTable(table_name=table_name)
-    InTa.do_sql_table()
+ #   InTa.do_sql_table()
     InTa.find_pattern(word='Almond')
     InTa.get_ingredient()
     InTa.show()

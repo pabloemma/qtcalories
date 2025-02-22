@@ -114,7 +114,8 @@ class CalMain(QMainWindow):
                                 db_name=self.CM.db_name,
                                 db_user = self.CM.db_user,
                                  db_system = self.CM.db_system ,
-                                 db_pwd = self.CM.db_pwd
+                                 db_pwd = self.CM.db_pwd,
+                                 config_file = self.config_file
                                  )
 
 

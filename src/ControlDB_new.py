@@ -6,6 +6,8 @@ from loguru import logger
 
 import numpy as np #for pyinstaller
 import config_mycal as CM
+import IngredientTable as INTA
+
 from Recipe1 import Ui_MainWindow
 
 from missing_ingredient import Ui_MissingIngredient
@@ -159,11 +161,12 @@ class MyMissingIngredientDialog(QDialog,Ui_missing_ingredient_dialog):
 
 class ContrlDB_new(QMainWindow):
 
-    def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None):
+    def __init__(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None,config_file = None):
         super().__init__()
         self.db_name = db_name
         self.db_user = db_user
         self.db_system = db_system
+        self.config_file = config_file
         if db_pwd == None:
         
             temp = '/Users/klein/git/qt_exercises/config/pw.txt'
@@ -180,7 +183,7 @@ class ContrlDB_new(QMainWindow):
         self.SetupConfig()
         self.ingredients_suppress_columns = self.CM.ingredients_suppress_columns 
             
-        self.recipe_suppress_columns = self.CM.recipe_suppress_columns
+        self.recipes_suppress_columns = self.CM.recipes_suppress_columns
         self.swiss_food_suppress_columns = self.CM.swiss_food_suppress_columns
 
         self.version = '2.0'
@@ -191,8 +194,12 @@ class ContrlDB_new(QMainWindow):
 
         #instantiate the IngredientTable
         table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv'
-    
-        self.InTa  = IngredientTable(table_name=table_name)
+        #if we are using the swiss_food table we need to get the IngredienTable class
+        self.swiss_food = False
+        if(self.CM.ingred_table == "swiss_food"):
+            self.swiss_food = True
+            logger.warning("nned work, pass the table")
+            self.InTa  = IngredientTable(table_name=self.CM.ingred_table,ingredients = None)
 
     def SetupConfig(self):
 
@@ -431,7 +438,7 @@ class ContrlDB_new(QMainWindow):
                 
             self.ViewTable(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False)
         elif(table == "recipes"):
-            self.ViewTable(table = table,suppress_columns=self.recipe_suppress_columns)
+            self.ViewTable(table = table,suppress_columns=self.recipes_suppress_columns)
         elif(table =="swiss_food"):
              self.ViewTable(table = table,suppress_columns=self.swiss_food_suppress_columns)
         else:
@@ -469,21 +476,27 @@ class ContrlDB_new(QMainWindow):
 
     def MyMissingIngredients(self):
         """ form if ingredient is missing"""
-        self.MMI1 = MyMissingIngredientDialog()
-        self.MMI1.IngredLine.setText(self.missing_ingredient)
-        self.MMI1.EditButton.clicked.connect(self.show_ingred_form)
+        if(not self.swiss_food):
+        
+            self.MMI1 = MyMissingIngredientDialog()
+            self.MMI1.IngredLine.setText(self.missing_ingredient)
+            self.MMI1.EditButton.clicked.connect(self.show_ingred_form)
         #self.MMI1.CloseButton.clicked.connect(self.Cancel(self.MMI1))
 
  
-        self.MMI1.move(100,50)
-        t = self.MMI1.exec()
+            self.MMI1.move(100,50)
+            t = self.MMI1.exec()
         
         #if t == QDialog.Accepted:
         #    self.show_ingred_form()
         #    #self.MMI1.close()
 
 
-        self.MMI1.show()
+            self.MMI1.show()
+        else:
+            self.InTa.find_pattern(self.missing_ingredient[0:5])
+            self.InTa.get_ingredient()
+            self.InTa.get_ingred_selection()
 
         return
 
@@ -1017,15 +1030,16 @@ class ContrlDB_new(QMainWindow):
 
         #now we need to add the values to the ingredients table
         # first load table
-        table_name = 'ingredients'
-        self.ViewTable(table_name,suppress_columns=self.ingredients_suppress_columns)
+
+        
+        self.ViewTable(self.CM.ingred_table,suppress_columns=self.ingredients_suppress_columns)
         self.model = QSqlQueryModel()
         self.table_view.setModel(self.model)
         #next we check we don't have an entry yet
 
         
         #sql = "SELECT name from ingredients WHERE ingredients.name LIKE 'Almond%' ; "
-        sql = 'SELECT name from ingredients WHERE ingredients.name LIKE '"+Ing_name+"' ; '
+        sql = 'SELECT name from ingredients WHERE '+self.CM.ingred_table+'.name LIKE '"+Ing_name+"' ; '
         query = QSqlQuery(sql,db=self.mycal_db)
         
         self.model.setQuery(query)
@@ -1036,7 +1050,7 @@ class ContrlDB_new(QMainWindow):
         # Now we need to add this ingredient to the table
 
         self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]
-        self.InsertRecord(table = table_name)
+        self.InsertRecord(table = self.CM.ingred_table)
         return
     
 
@@ -1047,6 +1061,7 @@ if __name__ == '__main__':
     db_name='recipe_ak'
     db_user='klein'
     db_system='QPSQL'
+    config_file = '/Users/klein/git/qt_exercises/config/config_mycal.json'
 
     with open('/Users/klein/git/qt_exercises/config/pw.txt', 'r') as file:
                     db_pwd = file.read().rstrip()
