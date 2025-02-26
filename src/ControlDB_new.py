@@ -124,6 +124,11 @@ class RecipeModel(QAbstractTableModel):
     def setData(self, index, value, role ):
         if role == Qt.ItemDataRole.EditRole:
             self.recipes[index.row()][index.column()] = value
+
+            #here we stor the index of the field which has been clicked.
+            self.clicked_row = index.row()
+            self.clicked_column = index.column()
+    
             return True
         return False
     def flags(self, index):
@@ -361,6 +366,8 @@ class ContrlDB_new(QMainWindow):
         #fill with ingredients if called from missing ingredients
         if(  self.missing_ingredient != None or self.missing_ingredient != ''):
             self.name_label      = QLineEdit(self.missing_ingredient)
+            # find position in table where missing ingredient
+
         else:
             self.name_label        =QLineEdit()
         self.name_label.setStyleSheet("background-color: rgb(3, 252, 227)")
@@ -426,7 +433,7 @@ class ContrlDB_new(QMainWindow):
  
 
     def InsertRecord(self,table = None):
-        """ this inserts a record into the cosen table
+        """ this inserts a record into the chosen table
         I will use the query function to do this.
         The record contains the info to be added
         record=[name,energy,fat,carbohydrate,protein]
@@ -496,7 +503,18 @@ class ContrlDB_new(QMainWindow):
         else:
             self.InTa.find_pattern(self.missing_ingredient[0:5])
             self.InTa.get_ingredient()
-            self.InTa.get_ingred_selection()
+            #self.InTa.get_ingred_selection()
+            # here we put the misssing ingredient back into the form
+            self.RecipeModel.recipes[self.stor_row][self.stor_column] = self.InTa.ingredient_name
+            self.InTa_name = self.InTa.ingredient_name
+            self.InTa_energy = self.InTa.energy
+            self.InTa_carbohydrate = self.InTa.carbohydrate
+            self.InTa_protein = self.InTa.protein
+            self.InTa_fiber = self.InTa.fiber
+            self.InTa_sugar = self.InTa.sugar
+            self.InTa_salt  =   self.InTa.salt
+            self.InTa_fat = self.InTa.fat
+
 
         return
 
@@ -631,6 +649,10 @@ class ContrlDB_new(QMainWindow):
             if( not query.first()):
                 logger.info('this ingredient %s is missing '%self.panda_ingredients[k][2])
                 self.missing_ingredient = self.panda_ingredients[k][2]
+                # here we stor the index of the missing ingredient:
+                self.stor_row = self.RecipeModel.clicked_row = k
+                self.stor_column = self.RecipeModel.clicked_column = 2
+
                 self.MyMissingIngredients()
             else:
                 #fill variables
@@ -723,7 +745,7 @@ class ContrlDB_new(QMainWindow):
 
             self.update_record('recipes','ingredients',record,rec_name)
 
-        self.new_recipe_name = None  # reset recipe name
+        #self.new_recipe_name = None  # reset recipe name
         #here we call create_pandas_frame tframe for CalculateCalories start producing the 
  
         #remove window
@@ -838,6 +860,7 @@ class ContrlDB_new(QMainWindow):
         model.setQuery(query)
         if query.lastError().isValid():
             logger.error(f"Query error: {query.lastError().text()}")
+            # if this is a inserty error try replace.
  
         
 
@@ -1015,11 +1038,19 @@ class ContrlDB_new(QMainWindow):
 
     def SaveIngredients(self):
         """saving the ingredients"""
-        Ing_name    = self.name_label.text()
-        Ing_calory  = float(self.calory_label.text())
-        Ing_carb    = float(self.carb_label.text())       
-        Ing_fat     = float(self.fat_label.text())
-        Ing_prot    = float(self.prot_label.text())
+        if( not self.swiss_foods):
+            Ing_name    = self.name_label.text()
+            Ing_calory  = float(self.calory_label.text())
+            Ing_carb    = float(self.carb_label.text())       
+            Ing_fat     = float(self.fat_label.text())
+            Ing_prot    = float(self.prot_label.text())
+        else:
+            Ing_name    = self.InTa_name
+            Ing_calory  = self.InTa_energy
+            Ing_carb    = self.InTa_carbohydrate     
+            Ing_fat     = self.InTa_fat
+            Ing_prot    = self.InTa_protein
+           
 
         #  this is the record we got from the form input
 

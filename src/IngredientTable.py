@@ -157,21 +157,38 @@ class IngredientTable(QMainWindow):
     def get_ingredient(self):
 
         self.GI = IngredDialog()
-
+        self.GI.setModal(True)
+ 
         #populate the values
         
         self.GI.comboPick.insertItems(0,self.myPatternFound)
 
  #       self.GI.comboPick.textHighlighted.connect(self.print_selection)
         self.GI.comboPick.currentTextChanged.connect(self.get_ingred_selection)
-
-        self.GI.show()
+        self.GI.move(800,10)
+ #       self.GI.setModal(True)
+        #self.GI.show()
+        self.GI.exec()
         return
     
     def get_ingred_selection(self,s):
 
         self.selected_ingredient = s
         logger.debug("you selected %s" % self.selected_ingredient)
+
+        # get the values from the df
+        myindex = self.df.loc[self.df['name'] == s].index[0]
+        myvalues = self.df.iloc[myindex].to_list()
+        self.ingredient_name = myvalues[0]
+        self.energy = myvalues[1]
+        self.fat = myvalues[2]
+        self.carbohydrate = myvalues[3]
+        self.sugar = myvalues[4]
+        self.fiber = myvalues[5]
+        self.protein = myvalues[6]
+        self.salt = myvalues[7]
+
+
         
         return
 
