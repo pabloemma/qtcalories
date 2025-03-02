@@ -227,7 +227,9 @@ I create now vs 0.3 where the interface is a tableview. Tableview is working, ne
 \item ingredient names plural and singular. set all to singular
 \item Currently it looks like the UPDATE actually deletes the record. This might have to do with my do\_sql changes. 
 Need backup of psql table. actually it does not delete it but also not update it. again this might be my do\_sql.
-\item When you add to existing recipe, it bombs on line AttributeError: 'ContrlDB' object has no attribute new\_recipe\_name
+
+\item Creating new recipe takes the old food database, editing an existing one takes the new. At least in the menu version. Check if this is also the case with controldb\_new. yes it is in controldb.
+
 \end{itemize}
 
 \section{Design of Calculation}

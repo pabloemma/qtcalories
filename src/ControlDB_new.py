@@ -198,7 +198,7 @@ class ContrlDB_new(QMainWindow):
         logger.info('\n\n\n***************************************************************************************************** \n')
 
         #instantiate the IngredientTable
-        table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv'
+        #table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv'
         #if we are using the swiss_food table we need to get the IngredienTable class
         self.swiss_food = False
         if(self.CM.ingred_table == "swiss_food"):
@@ -466,16 +466,23 @@ class ContrlDB_new(QMainWindow):
         #                                                               self.record[3],
         #                                                               self.record[4]);
         temp = "'"+self.record[0]+"'"
-        sql = 'INSERT INTO '+table+' (name,energy,carbohydrate,fat,protein) VALUES ('+temp+','+str(self.record[1])+','+str(self.record[2])+','+str(self.record[3])+','+str(self.record[4])+');'
-        #print(sql)
-
-        #query = QSqlQuery(sql,db=self.mycal_db)
         
-        #self.model.setQuery(query)
-        self.do_sql(sql)
-        logger.info(' inserted record %s into table  %s' % (self.record[0],table))
+        # check if entry exists. if yes modify table otherwise insert
+        sql = ' select exists (select true from '+table+' where name='+temp+');'
+
+        response = self.do_sql(sql).exec()
+        if( not response):
+            sql = 'INSERT INTO '+table+' (name,energy,carbohydrate,fat,protein) VALUES ('+temp+','+str(self.record[1])+','+str(self.record[2])+','+str(self.record[3])+','+str(self.record[4])+');'
+       
+
+        
+            self.do_sql(sql)
+            logger.info(' inserted record %s into table  %s' % (self.record[0],table))
  
- 
+        else:
+            print("not pmplemetde")
+            self.update_record('recipes','ingredients',self.myrecord,self.record[0])
+
 
         return
  
@@ -634,7 +641,8 @@ class ContrlDB_new(QMainWindow):
         self.panda_ingredients= temp_buf
 
         for k in range(len(self.panda_ingredients)):
-            sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \'' + self.panda_ingredients[k][2] +'\';'
+            sql ='SELECT energy,protein,carbohydrate,fat FROM '+self.CM.ingred_table+' where name ILIKE \'' + self.panda_ingredients[k][2] +'\';'
+            #sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \'' + self.panda_ingredients[k][2] +'\';'
             logger.debug('the query string %s ' % sql)
  
             query = self.do_sql(sql)
@@ -727,7 +735,7 @@ class ContrlDB_new(QMainWindow):
 
     def save_recipe(self):
         """gets called from clicking the save button"""
-        record = self.RecipeModel.StoreValue()
+        self.myrecord = record = self.RecipeModel.StoreValue()
         logger.info("ingredients %s "% record)
         #create original string
         record = self.pack_record(record)
@@ -775,24 +783,25 @@ class ContrlDB_new(QMainWindow):
 
         b= new_recipe_id+',\''+record[0]+'\','+record[1]+','+record[2]+','+record[3]+','+record[4]+',\''+record[5]+'\''
 
+        # check if entry exists. if yes modify table otherwise insert
+        sql = ' select exists (select true from recipes where name= \''+record[0]+'\');'
 
-        sql = 'INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES ('+b+');'
-        logger.debug("insert recipe %s" % sql)
-        #finally exceute the sql
-        self.do_sql(sql)
+        response = self.do_sql(sql).exec()
+
+        if(not response):
+            sql = 'INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES ('+b+');'
+            logger.debug("insert recipe %s" % sql)
+            #finally exceute the sql
+            self.do_sql(sql)
+        else:
+            self.update_record('recipes','ingredients',self.myrecord,record[0])
+
         return
         
        
 
 
-        #self.new_recipe_record=(self.new_recipe_name,string_cal,string_prot,string_carb,string_fat,self.pack_record(self.panda_ingredients))
 
-        # the sql statements should be
-        # sql = INSERT INTO table1(name,energy,protein,carbohydrate,fat,ingredients) VALUES (row_name,record[0],record[1],record[2]record[3],record[4]);
-        logger.debug(" insert statement %s % sql")
-        self.do_sql(sql)
-
-        return
 
 
     def update_record(self,table,column_name,record,row_name):

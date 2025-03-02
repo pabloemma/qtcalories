@@ -163,7 +163,7 @@ class IngredientTable(QMainWindow):
         
         self.GI.comboPick.insertItems(0,self.myPatternFound)
 
- #       self.GI.comboPick.textHighlighted.connect(self.print_selection)
+        self.GI.comboPick.textHighlighted.connect(self.get_ingred_selection)
         self.GI.comboPick.currentTextChanged.connect(self.get_ingred_selection)
         self.GI.move(800,10)
  #       self.GI.setModal(True)
