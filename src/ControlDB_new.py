@@ -470,8 +470,8 @@ class ContrlDB_new(QMainWindow):
         # check if entry exists. if yes modify table otherwise insert
         sql = ' select exists (select true from '+table+' where name='+temp+');'
 
-        response = self.do_sql(sql).exec()
-        if( not response):
+        response = self.do_sql(sql)
+        if( response.next() != True):
             sql = 'INSERT INTO '+table+' (name,energy,carbohydrate,fat,protein) VALUES ('+temp+','+str(self.record[1])+','+str(self.record[2])+','+str(self.record[3])+','+str(self.record[4])+');'
        
 
@@ -480,8 +480,8 @@ class ContrlDB_new(QMainWindow):
             logger.info(' inserted record %s into table  %s' % (self.record[0],table))
  
         else:
-            print("not pmplemetde")
-            self.update_record('recipes','ingredients',self.myrecord,self.record[0])
+            record = self.pack_record(self.myrecord)
+            self.update_record('recipes','ingredients',record,self.rec_name)
 
 
         return
@@ -743,12 +743,12 @@ class ContrlDB_new(QMainWindow):
 
         #check if this is a new recipe or an updated one
         if self.new_recipe_name != None:
-            rec_name=self.new_recipe_name
+            self.rec_name = rec_name =self.new_recipe_name
             self.create_pandas_frame(name=rec_name)
  
             self.insert_record()
         else: 
-            rec_name = self.selected_recipe
+            self.rec_name = rec_name = self.selected_recipe
             self.create_pandas_frame(name=rec_name)
 
             self.update_record('recipes','ingredients',record,rec_name)
@@ -786,15 +786,17 @@ class ContrlDB_new(QMainWindow):
         # check if entry exists. if yes modify table otherwise insert
         sql = ' select exists (select true from recipes where name= \''+record[0]+'\');'
 
-        response = self.do_sql(sql).exec()
-
-        if(not response):
+        response = self.do_sql(sql)
+        #print(response.next())
+        if( response.next() != True):
             sql = 'INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES ('+b+');'
             logger.debug("insert recipe %s" % sql)
             #finally exceute the sql
             self.do_sql(sql)
         else:
-            self.update_record('recipes','ingredients',self.myrecord,record[0])
+            record = self.pack_record(self.myrecord)
+
+            self.update_record('recipes','ingredients',record,self.rec_name)
 
         return
         
