@@ -148,7 +148,7 @@ class CalMain(QMainWindow):
         self.log_level = self.CM.log_level
         self.log_output = self.CM.log_output
         #reset self.config_file, so we can change it through the menu
-        self.config_file = None
+        #self.config_file = None
 
  
     def SetupLogger(self):

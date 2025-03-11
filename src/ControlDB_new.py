@@ -911,7 +911,11 @@ class ContrlDB_new(QMainWindow):
             temp_new = temp_newvalue.split(' ')
             for k in range(0,len(temp_new),3):
                 if(temp_new[k] != '0'): # deal with the empty entries
-                    temp_new1.append([temp_new[k],temp_new[k+1],temp_new[k+2]])
+                    try:
+                        temp_new1.append([temp_new[k],temp_new[k+1],temp_new[k+2]])
+                    except:
+                        logger.error('error in ingredient list at position %i ' %k)
+                        break
             self.recipe_ingredients = temp_new1
             return
 
