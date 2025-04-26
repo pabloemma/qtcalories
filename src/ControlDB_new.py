@@ -230,13 +230,21 @@ class ContrlDB_new(QMainWindow):
         self.missing_ingredient = None
         self.new_recipe_name = None
     
-    def ConnectDataBase(self):
+    def ConnectDataBase(self,temp_db = None,db_name=None,db_user=None,db_pwd =None):
         ''' establish contact to database'''
-
+        if(temp_db != None):
+            self.CM.db_address = temp_db
+        if(db_name != None):
+            self.CM.db_name = db_name
+        if(db_user != None):
+            self.CM.db_user = db_user
+        if(temp_db != None):
+            self.CM.db_pwd = db_pwd
+        
 
         #instantiate the connection
         self.mycal_db  = QSqlDatabase.addDatabase(self.db_system)
-        self.mycal_db.setHostName("192.168.2.164")
+        self.mycal_db.setHostName(self.CM.db_address)
         self.mycal_db.setDatabaseName(self.db_name)
         self.mycal_db.setUserName(self.db_user)
         self.mycal_db.setPassword(self.db_pwd)
@@ -480,8 +488,9 @@ class ContrlDB_new(QMainWindow):
             logger.info(' inserted record %s into table  %s' % (self.record[0],table))
  
         else:
-            record = self.pack_record(self.myrecord)
-            self.update_record('recipes','ingredients',record,self.rec_name)
+            #record = self.pack_record(self.myrecord)
+            record = self.pack_record(self.record)
+            self.update_record('recipes','ingredients',record,self.record[0])
 
 
         return
@@ -794,6 +803,7 @@ class ContrlDB_new(QMainWindow):
             #finally exceute the sql
             self.do_sql(sql)
         else:
+            #record = self.pack_record(self.myrecord)
             record = self.pack_record(self.myrecord)
 
             self.update_record('recipes','ingredients',record,self.rec_name)
@@ -823,9 +833,23 @@ class ContrlDB_new(QMainWindow):
         c=''
         #self.panda_ingredients are the correct list for creating the panda frame
         self.panda_ingredients = a =record
-        for k in range(len(a)):
-            if(a[k][0]==''): break
-            b.append(a[k][0]+' '+a[k][1]+' '+a[k][2]+' ')
+
+
+
+
+        #b=a[0]
+        print(len(a))
+        if(self.is_nested_list(a)): # determine if nested list
+            for k in range(len(a)):
+                print(a[k][0])
+                if(str(a[k][0])==''): break
+                b.append(str(a[k][0])+' '+str(a[k][1])+' '+str(a[k][2])+' ')
+        else:
+             for k in range(len(a)):
+
+                if(str(a[k])==''): break
+                b.append(str(a[k])+' ')
+
 
         for k in range(0,len(b)):
             c = c+ b[k]
@@ -834,6 +858,10 @@ class ContrlDB_new(QMainWindow):
         d = c[0:len(c)-1]
         return(d)
 
+    def is_nested_list(self,data):
+        """helps with pack record, deals with ingredient record not a nested list"""
+        return any(isinstance(i,list)for i in data)
+    
 
     def getSelectedText(self,s):
         self.selected_text = s
@@ -1055,7 +1083,7 @@ class ContrlDB_new(QMainWindow):
 
     def SaveIngredients(self):
         """saving the ingredients"""
-        if( not self.swiss_foods):
+        if( not self.swiss_food):
             Ing_name    = self.name_label.text()
             Ing_calory  = float(self.calory_label.text())
             Ing_carb    = float(self.carb_label.text())       

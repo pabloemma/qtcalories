@@ -22,6 +22,7 @@
         "db_name" :"recipe_ak",
         "db_user" :"klein",
         "db_system" : "QPSQL",
+        "db_address":"192.168.2.230",
         "ingred_table" : "ingredients"
      },
 

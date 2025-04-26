@@ -215,18 +215,14 @@ I create now vs 0.3 where the interface is a tableview. Tableview is working, ne
 
 \section{Current issues}
 \begin{itemize}
-\item The unpacking of a ingredienst list with the new stored value only gives the first entry. Needs to be solved first. fixed
-\item finish new recipe setup, current problem is it does not strip the empty records at the end.
-\item menu
-\item Populate the textfield in the form like cal\/gram etc
-\item Create the calorie calculator
-\item Make sure entries in table get checked for upper and lower characters
 \item Test for existence in ingredients database. Handle the case where it does not exist.
-\item Possibly use US govt nutrition database. https://fdc.nal.usda.gov/
 \item Clean up the code with consistent name scheme.
-\item ingredient names plural and singular. set all to singular
 \item Currently it looks like the UPDATE actually deletes the record. This might have to do with my do\_sql changes. 
 Need backup of psql table. actually it does not delete it but also not update it. again this might be my do\_sql.
+
+\item need to reconnect database
+\item copy of database on mac
+\item delet receipes
 
 
 

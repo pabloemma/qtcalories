@@ -102,6 +102,11 @@ class CalMain(QMainWindow):
         config_action.triggered.connect(self.SetupConfig)
         file_menu.addAction(config_action)
 
+   # Create a " connect db" action
+        db_action = QAction( " Connect Database", self)
+        db_action.setStatusTip("connect database ")
+        db_action.triggered.connect(self.connect_db)
+        file_menu.addAction(db_action)
 
         #instantiate configuration
         
@@ -198,9 +203,11 @@ class CalMain(QMainWindow):
         self.close()
 
     def calculate_portion(self):
+        pass
 
-
+    def connect_db(self):
     
+        
 
         pass
 

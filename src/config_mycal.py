@@ -76,6 +76,7 @@ class MyConfig():
 
         self.db_user = jsondict["Control"]["db_user"]
         self.db_name = jsondict["Control"]["db_name"]
+        self.db_address = jsondict["Control"]["db_address"]
         #currently only QPSQL is supported
         self.db_system = jsondict["Control"]["db_system"]
         # the next two vaiables are only used if we run in "both" mode
