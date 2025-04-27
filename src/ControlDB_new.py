@@ -479,7 +479,10 @@ class ContrlDB_new(QMainWindow):
         sql = ' select exists (select true from '+table+' where name='+temp+');'
 
         response = self.do_sql(sql)
-        if( response.next() != True):
+        temp1=response.next()
+        print(temp1)
+        print(type(temp1))
+        if( temp1):
             sql = 'INSERT INTO '+table+' (name,energy,carbohydrate,fat,protein) VALUES ('+temp+','+str(self.record[1])+','+str(self.record[2])+','+str(self.record[3])+','+str(self.record[4])+');'
        
 
