@@ -451,7 +451,7 @@ class ContrlDB_new(QMainWindow):
         #Create table view
         if(table == "ingredients"):
                 
-            self.ViewTable(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False)
+            self.ViewTable(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= True)
         elif(table == "recipes"):
             self.ViewTable(table = table,suppress_columns=self.recipes_suppress_columns)
         elif(table =="swiss_food"):
@@ -800,8 +800,10 @@ class ContrlDB_new(QMainWindow):
         sql = ' select exists (select true from recipes where name= \''+record[0]+'\');'
 
         response = self.do_sql(sql)
-        #print(response.next())
-        if( response.next() != True):
+        print(sql)
+        print(response.result())
+        print (response.first())
+        if response.next() != True:
             sql = 'INSERT INTO recipes (id,name,energy,protein,carbohydrate,fat,ingredients) VALUES ('+b+');'
             logger.debug("insert recipe %s" % sql)
             #finally exceute the sql
@@ -845,7 +847,7 @@ class ContrlDB_new(QMainWindow):
         print(len(a))
         if(self.is_nested_list(a)): # determine if nested list
             for k in range(len(a)):
-                print(a[k][0])
+                #print(a[k][0])
                 if(str(a[k][0])==''): break
                 b.append(str(a[k][0])+' '+str(a[k][1])+' '+str(a[k][2])+' ')
         else:
@@ -898,6 +900,13 @@ class ContrlDB_new(QMainWindow):
     def do_sql(self,sql):
         """executes a sql statement"""
         query = QSqlQuery(sql,db=self.mycal_db)
+        #query = QSqlQuery(db=self.mycal_db)
+        #query.exec(sql)
+        #print(query.result())
+        #self.query_response = query.exec()
+
+        #query = QSqlQuery(sql,db=self.mycal_db)
+           
         model = QSqlQueryModel()
         logger.info("query in do_sql %s" % sql)
         model.setQuery(query)
@@ -905,8 +914,7 @@ class ContrlDB_new(QMainWindow):
             logger.error(f"Query error: {query.lastError().text()}")
             # if this is a inserty error try replace.
  
-        
-
+       
         return query
 
 
