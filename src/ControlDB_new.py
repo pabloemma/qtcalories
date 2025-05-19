@@ -913,6 +913,7 @@ class ContrlDB_new(QMainWindow):
         if query.lastError().isValid():
             logger.error(f"Query error: {query.lastError().text()}")
             # if this is a inserty error try replace.
+            # try update instead
  
        
         return query
