@@ -7,13 +7,16 @@
 import config_mycal as CM       # get the configuration classs
 import ControlDB_new as CDB         # get the ControlDB
 
+from database_connect import Ui_db_dialog
+
 import os
 import sys
 import platform
 from loguru import logger
 
 from PySide6.QtWidgets import (QApplication,
-                               QFileDialog, 
+                               QFileDialog,
+                               QDialog, 
                                QLabel,
                                 QMainWindow, 
                                 QMenu,
@@ -28,6 +31,11 @@ basedir = os.path.dirname(__file__)
 loader = QUiLoader()
 basedir = os.path.dirname(__file__)
 
+
+class database_dialog(QDialog,Ui_db_dialog):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
 
 
 
@@ -206,11 +214,64 @@ class CalMain(QMainWindow):
         pass
 
     def connect_db(self):
+        print(self.CM.db_name,self.CM.db_user,self.CM.db_system,self,self.CM.db_pwd,self.config_file,self.CM.db_address)
+
+        # here we populate the database table
+        self.DBD = database_dialog()  #instantiate the databse dialog
+        # now populate the fields with the current values
+        self.DBD.user_edit.setText(self.CM.db_user)
+        #self.DBD.user_edit.returnPressed.connect(self.db_user_name_changed)
+        self.DBD.user_edit.textChanged.connect(self.db_user_name_changed)
+        self.DBD.name_edit.setText(self.CM.db_name)
+        self.DBD.name_edit.textChanged.connect(self.db_db_name_changed)
+        self.DBD.system_edit.setText(self.CM.db_system)
+        self.DBD.system_edit.textChanged.connect(self.db_system_changed)
+
+        self.DBD.adress_edit.setText(self.CM.db_address)
+        self.DBD.adress_edit.textChanged.connect(self.db_adress_changed)
+
+        self.DBD.password_edit.setText(self.CM.db_pwd)
+        self.DBD.password_edit.textChanged.connect(self.db_pwd_changed)
+
+        self.DBD.buttonBox.accepted.connect(self.db_dialog_accept)
+        self.DBD.buttonBox.rejected.connect(self.db_dialog_reject)
+
+        self.DBD.exec()  # now display the dialog (it is modal, so nothing else will have control)
+        return
     
-        
+    def db_dialog_accept(self):
+        self.CM.db_user = self.DBD.user_edit.text()
+        self.CM.db_name = self.DBD.name_edit.text()
+        self.CM.db_system = self.DBD.system_edit.text()
+        self.CM.db_address = self.DBD.adress_edit.text()
+        self.CM.db_pwd = self.DBD.password_edit.text()
 
-        pass
+        #self.connect_db()
+        return
 
+    def db_dialog_reject(self):
+        self.DBD.close()
+        return
+
+    def db_user_name_changed(self):
+        self.CM.db_user = self.DBD.user_edit.text()
+        return
+    
+    def db_db_name_changed(self):
+        self.CM.db_name = self.DBD.name_edit.text()
+        return
+    
+    def db_system_changed(self):
+        self.CM.db_system = self.DBD.system_edit.text()
+        return
+    
+    def db_adress_changed(self):
+        self.CM.db_address = self.DBD.adress_edit.text()
+        return
+    
+    def db_pwd_changed(self):
+        self.CM.db_pwd = self.DBD.password_edit.text()  
+        return
 
 if __name__ == "__main__":
     app = QApplication([])
