@@ -211,10 +211,14 @@ class CalMain(QMainWindow):
         self.close()
 
     def calculate_portion(self):
+
+        myrecipe1 = 'salad_ak'
+        myportion1 = 100.
+        self.CDB.calculate_portion_calory(myrecipe1,myportion1)
+
         pass
 
     def connect_db(self):
-        print(self.CM.db_name,self.CM.db_user,self.CM.db_system,self,self.CM.db_pwd,self.config_file,self.CM.db_address)
 
         # here we populate the database table
         self.DBD = database_dialog()  #instantiate the databse dialog
@@ -237,6 +241,8 @@ class CalMain(QMainWindow):
         self.DBD.buttonBox.rejected.connect(self.db_dialog_reject)
 
         self.DBD.exec()  # now display the dialog (it is modal, so nothing else will have control)
+
+
         return
     
     def db_dialog_accept(self):
@@ -245,8 +251,19 @@ class CalMain(QMainWindow):
         self.CM.db_system = self.DBD.system_edit.text()
         self.CM.db_address = self.DBD.adress_edit.text()
         self.CM.db_pwd = self.DBD.password_edit.text()
+    
+    
+        self.CDB = CDB.ContrlDB_new("My Calories",
+                                db_name=self.CM.db_name,
+                                db_user = self.CM.db_user,
+                                 db_system = self.CM.db_system ,
+                                 db_pwd = self.CM.db_pwd,
+                                 config_file = self.config_file
+                                 )
+        self.CDB.ConnectDataBase()
 
-        #self.connect_db()
+
+
         return
 
     def db_dialog_reject(self):

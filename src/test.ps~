@@ -2,11 +2,11 @@
 %%Title: ControlDB_new.py
 %%For: Andi Klein
 %%Creator: a2ps version 4.15.5
-%%CreationDate: Sun Feb 23 15:00:01 2025
+%%CreationDate: Sun Mar  2 11:52:05 2025
 %%BoundingBox: 24 24 588 767
 %%DocumentData: Clean7Bit
 %%Orientation: Landscape
-%%Pages: 20
+%%Pages: 21
 %%PageOrder: Ascend
 %%DocumentMedia: Letter 612 791 0 () ()
 %%DocumentNeededResources: font Courier
@@ -893,11 +893,11 @@ x0 y0 moveto
 (55) # (    QMenuBar,) N
 (56) # (    QVBoxLayout,) N
 (57) # (    QAbstractItemView,) N
-(ControlDB_new.py) (Page 1/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 1/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (1/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (1/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1044,11 +1044,11 @@ x0 y0 moveto
 (114) # (            ) S
 (return) K
 ( self.header_labels[section]) p n
-(ControlDB_new.py) (Page 2/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 2/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (2/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (2/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1090,39 +1090,37 @@ x0 y0 moveto
 (if) K
 ( role == Qt.ItemDataRole.EditRole:) p n
 (126) # (            self.recipes[index.row\(\)][index.column\(\)] = value) N
-(127) # (            ) S
+(127) # () N
+(128) # (            ) S
+(#here we stor the index of the field which has been clicked.) c n
+(129) # () S
+(            self.clicked_row = index.row\(\)) p n
+(130) # (            self.clicked_column = index.column\(\)) N
+(131) # (    ) N
+(132) # (            ) S
 (return) K
 ( True) p n
-(128) # (        ) S
-(return) K
-( False) p n
-(129) # (    ) S
-(def) K
-( flags\(self, index\):) p n
-(130) # (        ) S
-(return) K
-( Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsEditable) p n
-(131) # () N
-(132) # (    ) S
-(def) K
-( StoreValue\(self\):) p n
 (133) # (        ) S
 (return) K
-( self.recipes) p n
-(134) # () N
-(135) # () N
-(136) # () S
-(class) K
-( MyRecipeWindow\(QMainWindow,Ui_MainWindow\):) p n
+( False) p n
+(134) # (    ) S
+(def) K
+( flags\(self, index\):) p n
+(135) # (        ) S
+(return) K
+( Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsEditable) p n
+(136) # () N
 (137) # (    ) S
 (def) K
-( __init__\(self\):) p n
-(138) # (        super\(\).__init__\(\)) N
-(139) # (        self.setupUi\(self\)) N
+( StoreValue\(self\):) p n
+(138) # (        ) S
+(return) K
+( self.recipes) p n
+(139) # () N
 (140) # () N
 (141) # () S
 (class) K
-( MyMissIngWindow1\(QMainWindow,Ui_MissingIngredient\):) p n
+( MyRecipeWindow\(QMainWindow,Ui_MainWindow\):) p n
 (142) # (    ) S
 (def) K
 ( __init__\(self\):) p n
@@ -1131,52 +1129,54 @@ x0 y0 moveto
 (145) # () N
 (146) # () S
 (class) K
-( MyMissingIngredientDialog\(QDialog,Ui_missing_ingredient_dialog\):) p n
+( MyMissIngWindow1\(QMainWindow,Ui_MissingIngredient\):) p n
 (147) # (    ) S
 (def) K
 ( __init__\(self\):) p n
 (148) # (        super\(\).__init__\(\)) N
 (149) # (        self.setupUi\(self\)) N
 (150) # () N
-(151) # (    ) S
+(151) # () S
+(class) K
+( MyMissingIngredientDialog\(QDialog,Ui_missing_ingredient_dialog\):) p n
+(152) # (    ) S
+(def) K
+( __init__\(self\):) p n
+(153) # (        super\(\).__init__\(\)) N
+(154) # (        self.setupUi\(self\)) N
+(155) # () N
+(156) # (    ) S
 (#def accept\(self\):) c n
-(152) # () S
+(157) # () S
 (    ) p
 (#    """overwrite the accept function""") c n
-(153) # () S
+(158) # () S
 (    ) p
 (#    #print\("custom func"\)) c n
-(154) # () S
+(159) # () S
 (    ) p
 (#   super\(\).accept\(\)) c n
-(155) # () N
-(156) # () N
-(157) # () N
-(158) # () N
-(159) # () N
 (160) # () N
 (161) # () N
-(162) # () S
+(162) # () N
+(163) # () N
+(164) # () N
+(165) # () N
+(166) # () N
+(167) # () S
 (class) K
 ( ContrlDB_new\(QMainWindow\):) p n
-(163) # () N
-(164) # (    ) S
+(168) # () N
+(169) # (    ) S
 (def) K
 ( __init__\(self,Title=None,db_name=None,db_user=None,db_system=None,db_pwd = None,config_file = None\):) p n
-(165) # (        super\(\).__init__\(\)) N
-(166) # (        self.db_name = db_name) N
-(167) # (        self.db_user = db_user) N
-(168) # (        self.db_system = db_system) N
-(169) # (        self.config_file = config_file) N
-(170) # (        ) S
-(if) K
-( db_pwd == None:) p n
-(171) # (        ) N
-(ControlDB_new.py) (Page 3/20) (Feb 23, 2025 13:05) title
+(170) # (        super\(\).__init__\(\)) N
+(171) # (        self.db_name = db_name) N
+(ControlDB_new.py) (Page 3/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (3/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (3/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1192,78 +1192,85 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(172) # (            temp = ') p
+(172) # (        self.db_user = db_user) p n
+(173) # (        self.db_system = db_system) N
+(174) # (        self.config_file = config_file) N
+(175) # (        ) S
+(if) K
+( db_pwd == None:) p n
+(176) # (        ) N
+(177) # (            temp = ') S
 (/Users/klein/git/qt_exercises/config/pw.txt) str
 (') p n
-(173) # (            ) S
+(178) # (            ) S
 (if) K
 ( os.path.exists\(temp\):) p n
-(174) # (                with open\(temp, ') S
+(179) # (                with open\(temp, ') S
 (r) str
 ('\) as file:) p n
-(175) # (                    password = file.read\(\).rstrip\(\)) N
-(176) # (                    self.db_pwd = password) N
-(177) # (        ) S
+(180) # (                    password = file.read\(\).rstrip\(\)) N
+(181) # (                    self.db_pwd = password) N
+(182) # (        ) S
 (else) K
 (:) p n
-(178) # (            self.db_pwd = db_pwd) N
-(179) # () N
-(180) # (        self.init_variables\(\)) N
-(181) # (        self.SetupLogger\(\)) N
-(182) # (        ) S
+(183) # (            self.db_pwd = db_pwd) N
+(184) # () N
+(185) # (        self.init_variables\(\)) N
+(186) # (        self.SetupLogger\(\)) N
+(187) # (        ) S
 (#self.CreateIngredientsForm\(\)) c n
-(183) # () S
+(188) # () S
 (        self.SetupConfig\(\)) p n
-(184) # (        self.ingredients_suppress_columns = self.CM.ingredients_suppress_columns ) N
-(185) # (            ) N
-(186) # (        self.recipes_suppress_columns = self.CM.recipes_suppress_columns) N
-(187) # (        self.swiss_food_suppress_columns = self.CM.swiss_food_suppress_columns) N
-(188) # () N
-(189) # (        self.version = ') S
+(189) # (        self.ingredients_suppress_columns = self.CM.ingredients_suppress_columns ) N
+(190) # (            ) N
+(191) # (        self.recipes_suppress_columns = self.CM.recipes_suppress_columns) N
+(192) # (        self.swiss_food_suppress_columns = self.CM.swiss_food_suppress_columns) N
+(193) # () N
+(194) # (        self.version = ') S
 (2.0) str
 (') p n
-(190) # (        logger.info\(') S
+(195) # (        logger.info\(') S
 (******************************************************************************************************** \\n\\n\\n) str
 ('\)) p n
-(191) # () N
-(192) # (        logger.info\(') S
+(196) # () N
+(197) # (        logger.info\(') S
 ( This is version %s) str
 (' % self.version\)) p n
-(193) # (        logger.info\(') S
+(198) # (        logger.info\(') S
 (\\n\\n\\n***************************************************************************************************** \\n) str
 ('\)) p n
-(194) # () N
-(195) # (        ) S
+(199) # () N
+(200) # (        ) S
 (#instantiate the IngredientTable) c n
-(196) # () S
-(        table_name = ') p
-(/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv) str
-(') p n
-(197) # (        ) S
+(201) # () S
+(        ) p
+(#table_name = '/Users/klein/git/qt_exercises/nutrition_databases/swiss_food.csv') c n
+(202) # () S
+(        ) p
 (#if we are using the swiss_food table we need to get the IngredienTable class) c n
-(198) # () S
+(203) # () S
 (        self.swiss_food = False) p n
-(199) # (        ) S
+(204) # (        ) S
 (if) K
 (\(self.CM.ingred_table == ") p
 (swiss_food) str
 ("\):) p n
-(200) # (            self.swiss_food = True) N
-(201) # (            logger.warning\(") S
+(205) # (            self.swiss_food = True) N
+(206) # (            logger.warning\(") S
 (nned work, pass the table) str
 ("\)) p n
-(202) # (            self.InTa  = IngredientTable\(table_name=self.CM.ingred_table,ingredients = None\)) N
-(203) # () N
-(204) # (    ) S
+(207) # (            self.InTa  = IngredientTable\(table_name=self.CM.ingred_table,ingredients = None\)) N
+(208) # () N
+(209) # (    ) S
 (def) K
 ( SetupConfig\(self\):) p n
-(205) # () N
-(206) # (        ) S
+(210) # () N
+(211) # (        ) S
 (# get the config filename) c n
-(207) # () S
+(212) # () S
 (        ) p
 (# here we do a filedialog) c n
-(208) # () S
+(213) # () S
 (        ) p
 (if) K
 (\(self.config_file == None ) p
@@ -1271,45 +1278,38 @@ x0 y0 moveto
 ( ) p
 (not) K
 ( os.path.isfile\(self.config_file\)\):) p n
-(209) # (            self.config_file , filter = QFileDialog.getOpenFileName\(self,) N
-(210) # (                                self.tr\(") S
+(214) # (            self.config_file , filter = QFileDialog.getOpenFileName\(self,) N
+(215) # (                                self.tr\(") S
 (Open Config file) str
 ("\), ") p
 (~) str
 (", self.tr\(") p
 (*.json) str
 ("\)\)) p n
-(211) # (           ) N
-(212) # (            ) N
-(213) # (        logger.info\(") S
+(216) # (           ) N
+(217) # (            ) N
+(218) # (        logger.info\(") S
 (config file %s) str
 (" % self.config_file\)) p n
-(214) # () N
-(215) # () N
-(216) # ( ) N
-(217) # (        self.CM = CM.MyConfig\(self.config_file\)) N
-(218) # (        self.log_level = self.CM.log_level) N
-(219) # (        self.log_output = self.CM.log_output) N
+(219) # () N
 (220) # () N
-(221) # () N
-(222) # (    ) S
+(221) # ( ) N
+(222) # (        self.CM = CM.MyConfig\(self.config_file\)) N
+(223) # (        self.log_level = self.CM.log_level) N
+(224) # (        self.log_output = self.CM.log_output) N
+(225) # () N
+(226) # () N
+(227) # (    ) S
 (def) K
 (  init_variables\(self\):) p n
-(223) # (        """) S
+(228) # (        """) S
 ( initialize some variable to None) str
 (""") p n
-(224) # () N
-(225) # (        self.missing_ingredient = None) N
-(226) # (        self.new_recipe_name = None) N
-(227) # (    ) N
-(228) # (    ) S
-(def) K
-( ConnectDataBase\(self\):) p n
-(ControlDB_new.py) (Page 4/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 4/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (4/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (4/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1325,142 +1325,136 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(229) # (        ''') p
+(229) # () p n
+(230) # (        self.missing_ingredient = None) N
+(231) # (        self.new_recipe_name = None) N
+(232) # (    ) N
+(233) # (    ) S
+(def) K
+( ConnectDataBase\(self\):) p n
+(234) # (        ''') S
 ( establish contact to database) str
 (''') p n
-(230) # () N
-(231) # () N
-(232) # (        ) S
+(235) # () N
+(236) # () N
+(237) # (        ) S
 (#instantiate the connection) c n
-(233) # () S
+(238) # () S
 (        self.mycal_db  = QSqlDatabase.addDatabase\(self.db_system\)) p n
-(234) # (        self.mycal_db.setHostName\(") S
+(239) # (        self.mycal_db.setHostName\(") S
 (192.168.2.164) str
 ("\)) p n
-(235) # (        self.mycal_db.setDatabaseName\(self.db_name\)) N
-(236) # (        self.mycal_db.setUserName\(self.db_user\)) N
-(237) # (        self.mycal_db.setPassword\(self.db_pwd\)) N
-(238) # () N
-(239) # () N
-(240) # ( ) S
+(240) # (        self.mycal_db.setDatabaseName\(self.db_name\)) N
+(241) # (        self.mycal_db.setUserName\(self.db_user\)) N
+(242) # (        self.mycal_db.setPassword\(self.db_pwd\)) N
+(243) # () N
+(244) # () N
+(245) # ( ) S
 (#       self.mycal_db.setPassword\(self.CM.pwd\)) c n
-(241) # () N
-(242) # () S
+(246) # () N
+(247) # () S
 (        result = self.mycal_db.open\(\)) p n
-(243) # (        ) S
+(248) # (        ) S
 (if) K
 (\(result\):) p n
-(244) # (            logger.info\(') S
+(249) # (            logger.info\(') S
 (connection succsessful) str
 ('\)) p n
-(245) # (            ) S
+(250) # (            ) S
 (# here we get the connection name) c n
-(246) # () S
+(251) # () S
 (            ) p
 (# will be needed when we want to close the connection) c n
-(247) # () S
+(252) # () S
 (            self.connection_name = self.mycal_db.connectionName\(\)) p n
-(248) # (            logger.info\(') S
+(253) # (            logger.info\(') S
 ( database connection name %s) str
 (' % self.connection_name\)) p n
-(249) # (            ) S
+(254) # (            ) S
 (#self.ShowTables\(\)) c n
-(250) # () S
+(255) # () S
 (        ) p
 (else) K
 (:) p n
-(251) # (            logger.error\(') S
+(256) # (            logger.error\(') S
 (database problem %s) str
 (' % self.mycal_db.lastError\(\).text\(\)\)) p n
-(252) # (            logger.error\(') S
+(257) # (            logger.error\(') S
 (connection failed, exciting) str
 ('\)) p n
-(253) # (            sys.exit\(0\)) N
-(254) # () N
-(255) # (    ) S
+(258) # (            sys.exit\(0\)) N
+(259) # () N
+(260) # (    ) S
 (def) K
 ( SetupLogger\(self\):) p n
-(256) # () N
-(257) # () N
-(258) # (        ) S
+(261) # () N
+(262) # () N
+(263) # (        ) S
 (#logger.remove\(0\)) c n
-(259) # () S
+(264) # () S
 (        ) p
 (#now we add color to the terminal output) c n
-(260) # () S
+(265) # () S
 (        logger.add\(sys.stdout,) p n
-(261) # (                colorize = True,format=") S
+(266) # (                colorize = True,format=") S
 (<green>{time}</green>    {function}   {line}    {level}     <level>{message}</level>) str
 (" ,) p n
-(262) # (                level = ") S
+(267) # (                level = ") S
 (DEBUG) str
 ("\)) p n
-(263) # () N
-(264) # () N
-(265) # () N
-(266) # (        fmt =  ") S
+(268) # () N
+(269) # () N
+(270) # () N
+(271) # (        fmt =  ") S
 ({time} - {name}-   {function} -{line}- {level}    - {message}) str
 (") p n
-(267) # (        logger.add\(') S
+(272) # (        logger.add\(') S
 (info.log) str
 (', format = fmt , level = ') p
 (INFO) str
 (',rotation=") p
 (1 day) str
 ("\)) p n
-(268) # () N
-(269) # () N
-(270) # (        ) S
+(273) # () N
+(274) # () N
+(275) # (        ) S
 (# set the colors of the different levels) c n
-(271) # () S
+(276) # () S
 (        logger.level\(") p
 (INFO) str
 (",color =') p
 (<black>) str
 ('\)) p n
-(272) # (        logger.level\(") S
+(277) # (        logger.level\(") S
 (WARNING) str
 (",color=') p
 (<green>) str
 ('\)) p n
-(273) # (        logger.level\(") S
+(278) # (        logger.level\(") S
 (ERROR) str
 (",color=') p
 (<red>) str
 ('\)) p n
-(274) # (        logger.level\(") S
+(279) # (        logger.level\(") S
 (DEBUG) str
 (",color = ') p
 (<blue>) str
 ('\)) p n
-(275) # ( ) N
-(276) # (        ) S
+(280) # ( ) N
+(281) # (        ) S
 (return) K n
-(277) # () N
-(278) # () N
-(279) # () N
-(280) # () S
+(282) # () N
+(283) # () N
+(284) # () N
+(285) # () S
 (    ) p
 (def) K
 ( ShowTables\(self\):) p n
-(281) # (        ''') S
-(prints all the tables in the databe) str
-(''') p n
-(282) # (        self.table_list = self.mycal_db.tables\(type=QSql.Tables\)) N
-(283) # (        ) S
-(for) K
-( k ) p
-(in) K
-( range\(0,len\(self.table_list\)\):) p n
-(284) # (            ) S
-(print) K
-(\(self.table_list[k]\)) p n
-(285) # () N
-(ControlDB_new.py) (Page 5/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 5/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (5/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (5/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1476,111 +1470,116 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(286) # (        ) p
-(#Create list box) c n
-(287) # () S
-(        self.mybox = QComboBox\(\)) p n
+(286) # (        ''') p
+(prints all the tables in the databe) str
+(''') p n
+(287) # (        self.table_list = self.mycal_db.tables\(type=QSql.Tables\)) N
 (288) # (        ) S
-(#Insert at index 0 the whole list) c n
-(289) # () S
-(        self.mybox.insertItems\(0,self.table_list\)) p n
+(for) K
+( k ) p
+(in) K
+( range\(0,len\(self.table_list\)\):) p n
+(289) # (            ) S
+(print) K
+(\(self.table_list[k]\)) p n
 (290) # () N
 (291) # (        ) S
-(# Now sort them alphabetically) c n
+(#Create list box) c n
 (292) # () S
-(        self.sort_mybox\(\)) p n
-(293) # () N
-(294) # (        ) S
-(# create independent window) c n
-(295) # () S
-(       ) p n
+(        self.mybox = QComboBox\(\)) p n
+(293) # (        ) S
+(#Insert at index 0 the whole list) c n
+(294) # () S
+(        self.mybox.insertItems\(0,self.table_list\)) p n
+(295) # () N
 (296) # (        ) S
-(#self.setCentralWidget\(self.mybox\)) c n
-(297) # () N
+(# Now sort them alphabetically) c n
+(297) # () S
+(        self.sort_mybox\(\)) p n
 (298) # () N
-(299) # () S
+(299) # (        ) S
+(# create independent window) c n
+(300) # () S
+(       ) p n
+(301) # (        ) S
+(#self.setCentralWidget\(self.mybox\)) c n
+(302) # () N
+(303) # () N
+(304) # () S
 (        ) p
 (return) K n
-(300) # () S
+(305) # () S
 (    ) p
 (def) K
 ( sort_mybox\(self\):) p n
-(301) # (        items = [self.mybox.itemText\(i\) ) S
+(306) # (        items = [self.mybox.itemText\(i\) ) S
 (for) K
 ( i ) p
 (in) K
 ( range\(self.mybox.count\(\)\)]) p n
-(302) # (        items.sort\(\)) N
-(303) # (        self.mybox.clear\(\)) N
-(304) # (        self.mybox.addItems\(items\)) N
-(305) # () N
-(306) # (    ) S
+(307) # (        items.sort\(\)) N
+(308) # (        self.mybox.clear\(\)) N
+(309) # (        self.mybox.addItems\(items\)) N
+(310) # () N
+(311) # (    ) S
 (def) K
 ( ViewTable\(self,table,suppress_columns=[],editmode=True,columnwidth=[],Title = None, showTable = True\):) p n
-(307) # (        self.table_view = QTableView\(\)) N
-(308) # (        self.table_view.setSortingEnabled\(True\)) N
-(309) # (        ) S
+(312) # (        self.table_view = QTableView\(\)) N
+(313) # (        self.table_view.setSortingEnabled\(True\)) N
+(314) # (        ) S
 (#self.table_view.sortByColumn\(2,Qt.AscendingOrder\)) c n
-(310) # () N
-(311) # () S
+(315) # () N
+(316) # () S
 (        self.model = QSqlTableModel\(db = self.mycal_db\) ) p n
-(312) # () N
-(313) # ( ) N
-(314) # () N
-(315) # (        self.table_view.setModel\(self.model\)) N
-(316) # (        ) S
+(317) # () N
+(318) # ( ) N
+(319) # () N
+(320) # (        self.table_view.setModel\(self.model\)) N
+(321) # (        ) S
 (#prevent editing) c n
-(317) # () S
+(322) # () S
 (        ) p
 (if) K
 (\() p
 (not) K
 ( editmode\):) p n
-(318) # (            self.table_view.setEditTriggers\(QAbstractItemView.NoEditTriggers\)) N
-(319) # () N
-(320) # (        self.model.setTable\(table\)) N
-(321) # () N
-(322) # (        ) S
+(323) # (            self.table_view.setEditTriggers\(QAbstractItemView.NoEditTriggers\)) N
+(324) # () N
+(325) # (        self.model.setTable\(table\)) N
+(326) # () N
+(327) # (        ) S
 (# get rid of columns) c n
-(323) # () S
+(328) # () S
 (        columns_to_remove = suppress_columns) p n
-(324) # (        ) S
+(329) # (        ) S
 (for) K
 ( cn ) p
 (in) K
 ( columns_to_remove:) p n
-(325) # (            idx = self.model.fieldIndex\(cn\) ) N
-(326) # (            self.model.removeColumns\(idx, 1\)) N
-(327) # () N
-(328) # () N
-(329) # (        self.model.select\(\)) N
-(330) # (        ) S
+(330) # (            idx = self.model.fieldIndex\(cn\) ) N
+(331) # (            self.model.removeColumns\(idx, 1\)) N
+(332) # () N
+(333) # () N
+(334) # (        self.model.select\(\)) N
+(335) # (        ) S
 (# change column width) c n
-(331) # () S
+(336) # () S
 (        ) p
 (for) K
 ( k ) p
 (in) K
 ( range\(0,len\(columnwidth\)\):) p n
-(332) # (            self.table_view.setColumnWidth\(k, columnwidth[k]\)) N
-(333) # ( ) N
-(334) # (        self.setMinimumSize\(QSize\(600, 300\)\) ) N
-(335) # (        ) N
-(336) # (        self.setCentralWidget\(self.table_view\)) N
-(337) # (        ) N
-(338) # (        self.SetPosition\(10,10\)) N
-(339) # (        ) S
-(if) K
-(\(showTable\):) p n
-(340) # (            self.show\(\)) N
-(341) # (        ) S
-(#self.setCentralWidget\(table\)) c n
-(342) # () N
-(ControlDB_new.py) (Page 6/20) (Feb 23, 2025 13:05) title
+(337) # (            self.table_view.setColumnWidth\(k, columnwidth[k]\)) N
+(338) # ( ) N
+(339) # (        self.setMinimumSize\(QSize\(600, 300\)\) ) N
+(340) # (        ) N
+(341) # (        self.setCentralWidget\(self.table_view\)) N
+(342) # (        ) N
+(ControlDB_new.py) (Page 6/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (6/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (6/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1596,124 +1595,122 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(343) # () p n
-(344) # (    ) S
+(343) # (        self.SetPosition\(10,10\)) p n
+(344) # (        ) S
+(if) K
+(\(showTable\):) p n
+(345) # (            self.show\(\)) N
+(346) # (        ) S
+(#self.setCentralWidget\(table\)) c n
+(347) # () N
+(348) # () N
+(349) # () S
+(    ) p
 (def) K
 ( SetPosition\(self,pos_x,pos_y\):) p n
-(345) # (        self.move\(pos_x,pos_y\)) N
-(346) # () N
-(347) # (    ) S
+(350) # (        self.move\(pos_x,pos_y\)) N
+(351) # () N
+(352) # (    ) S
 (def) K
 ( CreateIngredientsForm1\(self\):) p n
-(348) # (        """) S
+(353) # (        """) S
 (uses the form layout) str
 (""") p n
-(349) # (    ) N
-(350) # (       ) S
+(354) # (    ) N
+(355) # (       ) S
 (#always use self so window wll be persistent) c n
-(351) # () S
+(356) # () S
 (        self.Inform = NewWindow\(Title = ") p
 (Add New Ingredient) str
 ("\)) p n
-(352) # (        self.Inform.setStyleSheet\(") S
+(357) # (        self.Inform.setStyleSheet\(") S
 (background-color: yellow;) str
 ("\)) p n
-(353) # (     ) N
-(354) # (        ) S
+(358) # (     ) N
+(359) # (        ) S
 (# setup geometry) c n
-(355) # () S
+(360) # () S
 (        mysize=[400,300]) p n
-(356) # (        myposit = [800,100]) N
-(357) # (    ) N
-(358) # (        self.SizeWindow\(self.Inform,myposit,mysize\)) N
-(359) # () N
-(360) # (        ) S
+(361) # (        myposit = [800,100]) N
+(362) # (    ) N
+(363) # (        self.SizeWindow\(self.Inform,myposit,mysize\)) N
+(364) # () N
+(365) # (        ) S
 (# Create widgets) c n
-(361) # () S
+(366) # () S
 (        ) p
 (#fill with ingredients if called from missing ingredients) c n
-(362) # () S
+(367) # () S
 (        ) p
 (if) K
 (\(  self.missing_ingredient != None ) p
 (or) K
 ( self.missing_ingredient != ''\):) p n
-(363) # (            self.name_label      = QLineEdit\(self.missing_ingredient\)) N
-(364) # (        ) S
+(368) # (            self.name_label      = QLineEdit\(self.missing_ingredient\)) N
+(369) # (            ) S
+(# find position in table where missing ingredient) c n
+(370) # () N
+(371) # () S
+(        ) p
 (else) K
 (:) p n
-(365) # (            self.name_label        =QLineEdit\(\)) N
-(366) # (        self.name_label.setStyleSheet\(") S
+(372) # (            self.name_label        =QLineEdit\(\)) N
+(373) # (        self.name_label.setStyleSheet\(") S
 (background-color: rgb\(3, 252, 227\)) str
 ("\)) p n
-(367) # (        ) S
+(374) # (        ) S
 (# force valid entr) c n
-(368) # () S
+(375) # () S
 (        double_validator = QDoubleValidator\(0, 500.0, 2\)) p n
-(369) # ( ) N
-(370) # (        self.calory_label    = QLineEdit\(\)) N
-(371) # (        self.calory_label.setStyleSheet\(") S
+(376) # ( ) N
+(377) # (        self.calory_label    = QLineEdit\(\)) N
+(378) # (        self.calory_label.setStyleSheet\(") S
 (background-color: white) str
 ("\)) p n
-(372) # (        self.calory_label.setValidator\(double_validator\)) N
-(373) # (        ) N
-(374) # (        self.carb_label      = QLineEdit\(\)) N
-(375) # (        self.carb_label.setStyleSheet\(") S
+(379) # (        self.calory_label.setValidator\(double_validator\)) N
+(380) # (        ) N
+(381) # (        self.carb_label      = QLineEdit\(\)) N
+(382) # (        self.carb_label.setStyleSheet\(") S
 (background-color: white) str
 ("\)) p n
-(376) # (        self.carb_label.setValidator\(double_validator\)) N
-(377) # (        self.fat_label       = QLineEdit\(\)) N
-(378) # (        self.fat_label.setStyleSheet\(") S
+(383) # (        self.carb_label.setValidator\(double_validator\)) N
+(384) # (        self.fat_label       = QLineEdit\(\)) N
+(385) # (        self.fat_label.setStyleSheet\(") S
 (background-color: white) str
 ("\)) p n
-(379) # (        self.fat_label.setValidator\(double_validator\)) N
-(380) # (        self.prot_label      = QLineEdit\(\) ) N
-(381) # (        self.prot_label.setStyleSheet\(") S
+(386) # (        self.fat_label.setValidator\(double_validator\)) N
+(387) # (        self.prot_label      = QLineEdit\(\) ) N
+(388) # (        self.prot_label.setStyleSheet\(") S
 (background-color: white) str
 ("\)) p n
-(382) # (        self.prot_label.setValidator\(double_validator\)) N
-(383) # ( ) N
-(384) # (        SaveButton = QPushButton\(") S
+(389) # (        self.prot_label.setValidator\(double_validator\)) N
+(390) # ( ) N
+(391) # (        SaveButton = QPushButton\(") S
 (Save) str
 ("\)) p n
-(385) # (        SaveButton.setStyleSheet\(") S
+(392) # (        SaveButton.setStyleSheet\(") S
 (background-color: white) str
 ("\)) p n
-(386) # (        CancelButton = QPushButton\(") S
+(393) # (        CancelButton = QPushButton\(") S
 (Cancel) str
 ("\)) p n
-(387) # (        CancelButton.setStyleSheet\(") S
+(394) # (        CancelButton.setStyleSheet\(") S
 (background-color: red) str
 ("\)) p n
-(388) # () N
-(389) # ( ) N
-(390) # (        ) S
+(395) # () N
+(396) # ( ) N
+(397) # (        ) S
 (# Create layout) c n
-(391) # () S
+(398) # () S
 (        form_layout = QFormLayout\(\)) p n
-(392) # (        form_layout.addRow\(") S
+(399) # (        form_layout.addRow\(") S
 (Name:) str
 (", self.name_label\)) p n
-(393) # (        form_layout.addRow\(") S
-(Calories/100g) str
-(", self.calory_label\)) p n
-(394) # (        form_layout.addRow\(") S
-(Fat) str
-(", self.fat_label\)) p n
-(395) # (        form_layout.addRow\(") S
-(Carbohydrates) str
-(", self.carb_label\)) p n
-(396) # (        form_layout.addRow\(") S
-(Protein) str
-(", self.prot_label\)) p n
-(397) # (        form_layout.addRow\(SaveButton\)) N
-(398) # (        form_layout.addRow\(CancelButton\)) N
-(399) # () N
-(ControlDB_new.py) (Page 7/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 7/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (7/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (7/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1729,113 +1726,112 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(400) # (        mylayout = QVBoxLayout\(\)) p n
-(401) # (        mylayout.addLayout\(form_layout\)) N
-(402) # (        self.setLayout\(mylayout\)) N
-(403) # () N
-(404) # (        ) S
+(400) # (        form_layout.addRow\(") p
+(Calories/100g) str
+(", self.calory_label\)) p n
+(401) # (        form_layout.addRow\(") S
+(Fat) str
+(", self.fat_label\)) p n
+(402) # (        form_layout.addRow\(") S
+(Carbohydrates) str
+(", self.carb_label\)) p n
+(403) # (        form_layout.addRow\(") S
+(Protein) str
+(", self.prot_label\)) p n
+(404) # (        form_layout.addRow\(SaveButton\)) N
+(405) # (        form_layout.addRow\(CancelButton\)) N
+(406) # () N
+(407) # (        mylayout = QVBoxLayout\(\)) N
+(408) # (        mylayout.addLayout\(form_layout\)) N
+(409) # (        self.setLayout\(mylayout\)) N
+(410) # () N
+(411) # (        ) S
 (# Connect submit button) c n
-(405) # () S
+(412) # () S
 (        SaveButton.clicked.connect\(self.SaveIngredients\)) p n
-(406) # (        CancelButton.clicked.connect\() S
+(413) # (        CancelButton.clicked.connect\() S
 (lambda) K
 ( : self.Cancel\(self.Inform\)\)) p n
-(407) # () N
-(408) # (        widget = QWidget\(\)) N
-(409) # (        widget.setLayout\(mylayout\)) N
-(410) # (         ) N
-(411) # () N
-(412) # () N
-(413) # () N
 (414) # () N
-(415) # (        self.Inform.setCentralWidget\(widget\)) N
-(416) # () N
-(417) # (        ) S
+(415) # (        widget = QWidget\(\)) N
+(416) # (        widget.setLayout\(mylayout\)) N
+(417) # (         ) N
+(418) # () N
+(419) # () N
+(420) # () N
+(421) # () N
+(422) # (        self.Inform.setCentralWidget\(widget\)) N
+(423) # () N
+(424) # (        ) S
 (#for label in MyLabel:) c n
-(418) # () S
+(425) # () S
 (        ) p
 (#    widget = QWidget\(\)) c n
-(419) # () S
+(426) # () S
 (        ) p
 (#    widget.setLayout\(layout\)) c n
-(420) # () S
+(427) # () S
 (        ) p
 (#self.setCentralWidget\(widget\)) c n
-(421) # () N
-(422) # () N
-(423) # () S
+(428) # () N
+(429) # () N
+(430) # () S
 (        ) p
 (# create the form) c n
-(424) # () N
-(425) # () S
+(431) # () N
+(432) # () S
 (        self.Inform.show\(\)) p n
-(426) # ( ) N
-(427) # () N
-(428) # (    ) S
+(433) # ( ) N
+(434) # () N
+(435) # (    ) S
 (def) K
 ( InsertRecord\(self,table = None\):) p n
-(429) # (        """) S
-( this inserts a record into the cosen table) str n
-(430) # (        I will use the query function to do this.) N
-(431) # (        The record contains the info to be added) N
-(432) # (        record=[name,energy,fat,carbohydrate,protein]) N
-(433) # (        ) N
-(434) # (        This is the same for ingredients and receipes) S
+(436) # (        """) S
+( this inserts a record into the chosen table) str n
+(437) # (        I will use the query function to do this.) N
+(438) # (        The record contains the info to be added) N
+(439) # (        record=[name,energy,fat,carbohydrate,protein]) N
+(440) # (        ) N
+(441) # (        This is the same for ingredients and receipes) S
 (""") p n
-(435) # () N
-(436) # (        ) S
+(442) # () N
+(443) # (        ) S
 (#Create table view) c n
-(437) # () S
+(444) # () S
 (        ) p
 (if) K
 (\(table == ") p
 (ingredients) str
 ("\):) p n
-(438) # (                ) N
-(439) # (            self.ViewTable\(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False\)) N
-(440) # (        ) S
+(445) # (                ) N
+(446) # (            self.ViewTable\(table = table,suppress_columns=self.ingredients_suppress_columns,showTable= False\)) N
+(447) # (        ) S
 (elif) K
 (\(table == ") p
 (recipes) str
 ("\):) p n
-(441) # (            self.ViewTable\(table = table,suppress_columns=self.recipes_suppress_columns\)) N
-(442) # (        ) S
+(448) # (            self.ViewTable\(table = table,suppress_columns=self.recipes_suppress_columns\)) N
+(449) # (        ) S
 (elif) K
 (\(table ==") p
 (swiss_food) str
 ("\):) p n
-(443) # (             self.ViewTable\(table = table,suppress_columns=self.swiss_food_suppress_columns\)) N
-(444) # (        ) S
+(450) # (             self.ViewTable\(table = table,suppress_columns=self.swiss_food_suppress_columns\)) N
+(451) # (        ) S
 (else) K
 (:) p n
-(445) # (            logger.error\(") S
+(452) # (            logger.error\(") S
 (no table given) str
 ("\)) p n
-(446) # (            sys.exit\(0\)) N
-(447) # (           ) N
-(448) # () N
-(449) # (        self.model = QSqlQueryModel\(\)) N
-(450) # (        self.table_view.setModel\(self.model\)) N
-(451) # (        ) S
-(#next we check we don't have an entry yet) c n
-(452) # () N
-(453) # () S
-(        ) p
-(#Form the sql INSERT statement) c n
-(454) # () S
-(        ) p
-(#       self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]) c n
-(455) # () S
-(        ) p
-(#INSERT INTO products \(product_no, name, price\) VALUES \(1, 'Cheese', 9.99\);) c n
-(456) # () S
-(        ) p
-(#INSERT INTO table \(name,energy,carbohydrate,fat,protein\) VALUES \(self.record[0],) c n
-(ControlDB_new.py) (Page 8/20) (Feb 23, 2025 13:05) title
+(453) # (            sys.exit\(0\)) N
+(454) # (           ) N
+(455) # () N
+(456) # (        self.model = QSqlQueryModel\(\)) N
+(ControlDB_new.py) (Page 8/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (8/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (8/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1851,24 +1847,41 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(457) # (        ) p
-(#                                                               self.record[1],   ) c n
-(458) # () S
-(        ) p
-(#                                                               self.record[2],) c n
-(459) # () S
-(        ) p
-(#                                                               self.record[3],) c n
+(457) # (        self.table_view.setModel\(self.model\)) p n
+(458) # (        ) S
+(#next we check we don't have an entry yet) c n
+(459) # () N
 (460) # () S
 (        ) p
-(#                                                               self.record[4]\);) c n
+(#Form the sql INSERT statement) c n
 (461) # () S
+(        ) p
+(#       self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]) c n
+(462) # () S
+(        ) p
+(#INSERT INTO products \(product_no, name, price\) VALUES \(1, 'Cheese', 9.99\);) c n
+(463) # () S
+(        ) p
+(#INSERT INTO table \(name,energy,carbohydrate,fat,protein\) VALUES \(self.record[0],) c n
+(464) # () S
+(        ) p
+(#                                                               self.record[1],   ) c n
+(465) # () S
+(        ) p
+(#                                                               self.record[2],) c n
+(466) # () S
+(        ) p
+(#                                                               self.record[3],) c n
+(467) # () S
+(        ) p
+(#                                                               self.record[4]\);) c n
+(468) # () S
 (        temp = ") p
 (') str
 ("+self.record[0]+") p
 (') str
 (") p n
-(462) # (        sql = ') S
+(469) # (        sql = ') S
 (INSERT INTO ) str
 ('+table+') p
 ( \(name,energy,carbohydrate,fat,protein\) VALUES \() str
@@ -1884,95 +1897,88 @@ x0 y0 moveto
 ('+str\(self.record[4]\)+') p
 (\);) str
 (') p n
-(463) # (        ) S
+(470) # (        ) S
 (#print\(sql\)) c n
-(464) # () N
-(465) # () S
+(471) # () N
+(472) # () S
 (        ) p
 (#query = QSqlQuery\(sql,db=self.mycal_db\)) c n
-(466) # () S
+(473) # () S
 (        ) p n
-(467) # (        ) S
+(474) # (        ) S
 (#self.model.setQuery\(query\)) c n
-(468) # () S
+(475) # () S
 (        self.do_sql\(sql\)) p n
-(469) # (        logger.info\(') S
+(476) # (        logger.info\(') S
 ( inserted record %s into table  %s) str
 (' % \(self.record[0],table\)\)) p n
-(470) # ( ) N
-(471) # ( ) N
-(472) # () N
-(473) # (        ) S
+(477) # ( ) N
+(478) # ( ) N
+(479) # () N
+(480) # (        ) S
 (return) K n
-(474) # () S
+(481) # () S
 ( ) p n
-(475) # (    ) N
-(476) # () N
-(477) # (    ) S
+(482) # (    ) N
+(483) # () N
+(484) # (    ) S
 (def) K
 ( MyMissingIngredients\(self\):) p n
-(478) # (        """) S
+(485) # (        """) S
 ( form if ingredient is missing) str
 (""") p n
-(479) # (        ) S
+(486) # (        ) S
 (if) K
 (\() p
 (not) K
 ( self.swiss_food\):) p n
-(480) # (        ) N
-(481) # (            self.MMI1 = MyMissingIngredientDialog\(\)) N
-(482) # (            self.MMI1.IngredLine.setText\(self.missing_ingredient\)) N
-(483) # (            self.MMI1.EditButton.clicked.connect\(self.show_ingred_form\)) N
-(484) # (        ) S
+(487) # (        ) N
+(488) # (            self.MMI1 = MyMissingIngredientDialog\(\)) N
+(489) # (            self.MMI1.IngredLine.setText\(self.missing_ingredient\)) N
+(490) # (            self.MMI1.EditButton.clicked.connect\(self.show_ingred_form\)) N
+(491) # (        ) S
 (#self.MMI1.CloseButton.clicked.connect\(self.Cancel\(self.MMI1\)\)) c n
-(485) # () N
-(486) # () S
+(492) # () N
+(493) # () S
 ( ) p n
-(487) # (            self.MMI1.move\(100,50\)) N
-(488) # (            t = self.MMI1.) S
+(494) # (            self.MMI1.move\(100,50\)) N
+(495) # (            t = self.MMI1.) S
 (exec) K
 (\(\)) p n
-(489) # (        ) N
-(490) # (        ) S
+(496) # (        ) N
+(497) # (        ) S
 (#if t == QDialog.Accepted:) c n
-(491) # () S
+(498) # () S
 (        ) p
 (#    self.show_ingred_form\(\)) c n
-(492) # () S
+(499) # () S
 (        ) p
 (#    #self.MMI1.close\(\)) c n
-(493) # () N
-(494) # () N
-(495) # () S
+(500) # () N
+(501) # () N
+(502) # () S
 (            self.MMI1.show\(\)) p n
-(496) # (        ) S
+(503) # (        ) S
 (else) K
 (:) p n
-(497) # (            self.InTa.find_pattern\(self.missing_ingredient[0:5]\)) N
-(498) # (            self.InTa.get_ingredient\(\)) N
-(499) # (            ) S
+(504) # (            self.InTa.find_pattern\(self.missing_ingredient[0:5]\)) N
+(505) # (            self.InTa.get_ingredient\(\)) N
+(506) # (            ) S
 (#self.InTa.get_ingred_selection\(\)) c n
-(500) # () S
-(            self.InTa_name = self.InTa.ingredient_name) p n
-(501) # (            self.InTa_energy = self.InTa.energy) N
-(502) # (            self.InTa_carbohydrate = self.InTa.carbohydrate) N
-(503) # (            self.InTa_protein = self.InTa.protein) N
-(504) # (            self.InTa_fiber = self.InTa.fiber) N
-(505) # (            self.InTa_sugar = self.InTa.sugar) N
-(506) # (            self.InTa_salt  =   self.InTa.salt) N
-(507) # (            self.InTa_fat = self.InTa.fat) N
-(508) # () N
-(509) # () N
-(510) # (        ) S
-(return) K n
-(511) # () N
-(512) # () S
-(    ) p n
-(ControlDB_new.py) (Page 9/20) (Feb 23, 2025 13:05) title
+(507) # () S
+(            ) p
+(# here we put the misssing ingredient back into the form) c n
+(508) # () S
+(            self.RecipeModel.recipes[self.stor_row][self.stor_column] = self.InTa.ingredient_name) p n
+(509) # (            self.InTa_name = self.InTa.ingredient_name) N
+(510) # (            self.InTa_energy = self.InTa.energy) N
+(511) # (            self.InTa_carbohydrate = self.InTa.carbohydrate) N
+(512) # (            self.InTa_protein = self.InTa.protein) N
+(ControlDB_new.py) (Page 9/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (9/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (9/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -1988,116 +1994,110 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(513) # (    ) p n
-(514) # (    ) S
+(513) # (            self.InTa_fiber = self.InTa.fiber) p n
+(514) # (            self.InTa_sugar = self.InTa.sugar) N
+(515) # (            self.InTa_salt  =   self.InTa.salt) N
+(516) # (            self.InTa_fat = self.InTa.fat) N
+(517) # () N
+(518) # () N
+(519) # (        ) S
+(return) K n
+(520) # () N
+(521) # () S
+(    ) p n
+(522) # (    ) N
+(523) # (    ) S
 (def) K
 ( show_ingred_form\(self\):) p n
-(515) # (        ) S
+(524) # (        ) S
 (# destrory dialog give action back) c n
-(516) # () S
+(525) # () S
 (        ) p
 (try) K
 (:) p n
-(517) # (            self.MMI1.destroy\(\)) N
-(518) # (        ) S
+(526) # (            self.MMI1.destroy\(\)) N
+(527) # (        ) S
 (except) K
 (:) p n
-(519) # (            logger.debug\(") S
+(528) # (            logger.debug\(") S
 (nothing to destroy) str
 ("\)) p n
-(520) # () N
-(521) # ( ) S
+(529) # () N
+(530) # ( ) S
 (#       window.CreateIngredientsForm1\(\)) c n
-(522) # () S
+(531) # () S
 (        self.CreateIngredientsForm1\(\)) p n
-(523) # () N
-(524) # () N
-(525) # () N
-(526) # (    ) S
+(532) # () N
+(533) # () N
+(534) # () N
+(535) # (    ) S
 (def) K
 ( MyRecipes_new\(self\):) p n
-(527) # (        """) S
+(536) # (        """) S
 (using the QTdesigner) str
 (""") p n
-(528) # (        self.MRD = MyRecipeWindow\(\)) N
-(529) # (        self.MRD.show\(\)) N
-(530) # () N
-(531) # (        ) S
+(537) # (        self.MRD = MyRecipeWindow\(\)) N
+(538) # (        self.MRD.show\(\)) N
+(539) # () N
+(540) # (        ) S
 (# Load the model) c n
-(532) # () S
+(541) # () S
 (        ) p
 (#self.header_labels = header_labels = ["weight", "unit","ingredient"]) c n
-(533) # () N
-(534) # () S
+(542) # () N
+(543) # () S
 (        self.RecipeModel = RecipeModel\(\)) p n
-(535) # (        self.MRD.RecipeTableView.setModel\(self.RecipeModel\)) N
-(536) # () N
-(537) # (        ) S
+(544) # (        self.MRD.RecipeTableView.setModel\(self.RecipeModel\)) N
+(545) # () N
+(546) # (        ) S
 (# now working self.RecipeModel.setEditStrategy\(QSqlTableModel.setEditStrategy.OnFieldChange\)) c n
-(538) # () N
-(539) # () S
+(547) # () N
+(548) # () S
 (        ) p
 (#label the columns) c n
-(540) # () S
+(549) # () S
 (        header = self.MRD.RecipeTableView.horizontalHeader\(\)) p n
-(541) # (         ) N
-(542) # () N
-(543) # (        ) S
+(550) # (         ) N
+(551) # () N
+(552) # (        ) S
 (#poulate the combo box) c n
-(544) # () S
+(553) # () S
 (        self.MRD.RecipeListCombo.setObjectName\(u") p
 (RecipeListCombo) str
 ("\)) p n
-(545) # (        self.MRD.RecipeListCombo.addItems\(self.GetRecipeList\(\)\)) N
-(546) # () N
-(547) # () N
-(548) # (        ) S
-(#here we define the actions) c n
-(549) # () S
-(        self.MRD.RecipeListCombo.currentTextChanged.connect\(self.getSelectedRecipe\)) p n
-(550) # () N
-(551) # (        self.MRD.RecipeTableView.clicked.connect\(self.on_item_click\)) N
-(552) # () N
-(553) # (        ) S
-(# save button) c n
-(554) # () S
-(        self.MRD.SaveRecipe.clicked.connect\(self.save_recipe\)) p n
+(554) # (        self.MRD.RecipeListCombo.addItems\(self.GetRecipeList\(\)\)) N
 (555) # () N
-(556) # (        ) S
+(556) # () N
+(557) # (        ) S
+(#here we define the actions) c n
+(558) # () S
+(        self.MRD.RecipeListCombo.currentTextChanged.connect\(self.getSelectedRecipe\)) p n
+(559) # () N
+(560) # (        self.MRD.RecipeTableView.clicked.connect\(self.on_item_click\)) N
+(561) # () N
+(562) # (        ) S
+(# save button) c n
+(563) # () S
+(        self.MRD.SaveRecipe.clicked.connect\(self.save_recipe\)) p n
+(564) # () N
+(565) # (        ) S
 (#cancel button) c n
-(557) # () S
+(566) # () S
 (        self.MRD.CancelButton.clicked.connect\() p
 (lambda) K
 ( : self.Cancel\(self.MRD\)\)) p n
-(558) # (        ) N
-(559) # (        ) S
+(567) # (        ) N
+(568) # (        ) S
 (#close button ) c n
-(560) # () S
+(569) # () S
 (        self.MRD.CloseButton.clicked.connect\() p
 (lambda) K
 ( : self.Cancel\(self.MRD\)\)) p n
-(561) # () N
-(562) # (        ) S
-(#add row button) c n
-(563) # () S
-(        self.MRD.AddRowButton.clicked.connect\(self.add_row\)) p n
-(564) # (       ) N
-(565) # (       ) S
-(#new recipe button) c n
-(566) # () S
-(        ) p
-(#self.MRD.NewRecipeButton.clicked.connect\(self.create_new_recipe\) ) c n
-(567) # () N
-(568) # () S
-(        ) p
-(#if line has change) c n
-(569) # () S
-(        self.MRD.NewRecipeName.returnPressed.connect\(self.create_new_recipe\)   ) p n
-(ControlDB_new.py) (Page 10/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 10/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (10/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (10/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -2113,37 +2113,54 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(570) # (        ) p
-(#self.MRD.NewRecipeName.textChanged.connect\(self.create_new_recipe\)   ) c n
-(571) # () N
+(570) # () p n
+(571) # (        ) S
+(#add row button) c n
 (572) # () S
+(        self.MRD.AddRowButton.clicked.connect\(self.add_row\)) p n
+(573) # (       ) N
+(574) # (       ) S
+(#new recipe button) c n
+(575) # () S
 (        ) p
-(# here we fill first label) c n
-(573) # () S
-(        self.MRD.version_line.setText\(self.version\)) p n
-(574) # () N
-(575) # (    ) S
-(def) K
-( create_new_recipe\(self\):) p n
-(576) # (        """) S
-(creates new recipe) str
-(""") p n
-(577) # (        ) S
-(#first get name) c n
+(#self.MRD.NewRecipeButton.clicked.connect\(self.create_new_recipe\) ) c n
+(576) # () N
+(577) # () S
+(        ) p
+(#if line has change) c n
 (578) # () S
-(        self.new_recipe_name = self.MRD.NewRecipeName.text\(\)) p n
-(579) # (        logger.info\(") S
-(new recipe name %s) str
-(" % self.new_recipe_name\)) p n
-(580) # (        ) S
-(#let's create a default starter table) c n
+(        self.MRD.NewRecipeName.returnPressed.connect\(self.create_new_recipe\)   ) p n
+(579) # (        ) S
+(#self.MRD.NewRecipeName.textChanged.connect\(self.create_new_recipe\)   ) c n
+(580) # () N
 (581) # () S
 (        ) p
-(#first create the data list for the model) c n
+(# here we fill first label) c n
 (582) # () S
-(        self.RecipeModel.recipes = []) p n
+(        self.MRD.version_line.setText\(self.version\)) p n
 (583) # () N
-(584) # (        self.recipe_ingredients=[[') S
+(584) # (    ) S
+(def) K
+( create_new_recipe\(self\):) p n
+(585) # (        """) S
+(creates new recipe) str
+(""") p n
+(586) # (        ) S
+(#first get name) c n
+(587) # () S
+(        self.new_recipe_name = self.MRD.NewRecipeName.text\(\)) p n
+(588) # (        logger.info\(") S
+(new recipe name %s) str
+(" % self.new_recipe_name\)) p n
+(589) # (        ) S
+(#let's create a default starter table) c n
+(590) # () S
+(        ) p
+(#first create the data list for the model) c n
+(591) # () S
+(        self.RecipeModel.recipes = []) p n
+(592) # () N
+(593) # (        self.recipe_ingredients=[[') S
 (0) str
 (',') p
 (g) str
@@ -2174,99 +2191,78 @@ x0 y0 moveto
 (',') p
 ( ) str
 (']]) p n
-(585) # (        self.DisplayRecipeList\(\)) N
-(586) # (        self.RecipeModel.layoutChanged.emit\(\)) N
-(587) # () N
-(588) # () N
-(589) # (        ) S
+(594) # (        self.DisplayRecipeList\(\)) N
+(595) # (        self.RecipeModel.layoutChanged.emit\(\)) N
+(596) # () N
+(597) # () N
+(598) # (        ) S
 (return) K n
-(590) # () N
-(591) # () S
+(599) # () N
+(600) # () S
 (    ) p
 (def) K
 ( create_pandas_frame\(self,name=None\):) p n
-(592) # (        """) S
+(601) # (        """) S
 (This routine creates the pandas frames which then get passed to CalculateCalories class) str
 (""") p n
-(593) # (        ) S
+(602) # (        ) S
 (#collect the information) c n
-(594) # () S
+(603) # () S
 (        logger.info\(") p
 ( name %s and record %s for recipes) str
 (" % \(name,self.panda_ingredients\)\)) p n
-(595) # (        ) N
-(596) # (        ) S
+(604) # (        ) N
+(605) # (        ) S
 (# now we need to get the different quantities for each ingredient) c n
-(597) # () S
+(606) # () S
 (        ) p
 (# at the same time we need to check if the ingredient is in the list available) c n
-(598) # () S
+(607) # () S
 (        ) p
 (#if not we have to deal with this) c n
-(599) # () S
+(608) # () S
 (        number_column = 4) p n
-(600) # (        energy,protein,carbohydrate,fat = range\(number_column\) ) S
+(609) # (        energy,protein,carbohydrate,fat = range\(number_column\) ) S
 (# for referencing the query values) c n
-(601) # () N
-(602) # () S
+(610) # () N
+(611) # () S
 (        logger.debug\(') p
 (recipes ingredient : %s) str
 (' % self.RecipeModel.recipes\)) p n
-(603) # () N
-(604) # (        ) S
+(612) # () N
+(613) # (        ) S
 (#example sql statement:) c n
-(605) # () S
+(614) # () S
 (        ) p
 (# SELECT energy,protein,carbohydrate,fat FROM ingredients where name = 'Butter';) c n
-(606) # () S
+(615) # () S
 ( ) p n
-(607) # ( ) N
-(608) # (        energy_v,protein_v,carbohydrate_v,fat_v =\([] ) S
+(616) # ( ) N
+(617) # (        energy_v,protein_v,carbohydrate_v,fat_v =\([] ) S
 (for) K
 ( i ) p
 (in) K
 ( range\(number_column\)\)) p n
-(609) # (        ) S
-(print) K
-(\(self.RecipeModel.recipes\)) p n
-(610) # ( ) N
-(611) # (        ) S
-(# loop over all ingredients) c n
-(612) # () S
-(        Total_calories_per_gm = 0. ) p
-(# cacluated calories/g) c n
-(613) # () S
-(        Total_protein_per_gm = 0.) p n
-(614) # (        Total_fat_per_gm = 0.) N
-(615) # (        Total_carbs_per_gram = 0.) N
-(616) # (        temp_weight = 0.) N
-(617) # (        Total_weight = 0.) N
 (618) # (        ) S
 (print) K
-(\(self.panda_ingredients\)) p n
-(619) # (        ) S
-(#remove empty rows) c n
-(620) # () S
-(        temp_buf=[]) p n
-(621) # (        ) S
-(for) K
-( k ) p
-(in) K
-( range\(len\(self.panda_ingredients\)\):) p n
-(622) # (            ) S
-(if) K
-( self.panda_ingredients[k][2] != ') p
-( ) str
-(':) p n
-(623) # (                temp_buf.append\(self.panda_ingredients[k]\)) N
-(624) # (        ) N
-(625) # (        self.panda_ingredients= temp_buf) N
-(626) # () N
-(ControlDB_new.py) (Page 11/20) (Feb 23, 2025 13:05) title
+(\(self.RecipeModel.recipes\)) p n
+(619) # ( ) N
+(620) # (        ) S
+(# loop over all ingredients) c n
+(621) # () S
+(        Total_calories_per_gm = 0. ) p
+(# cacluated calories/g) c n
+(622) # () S
+(        Total_protein_per_gm = 0.) p n
+(623) # (        Total_fat_per_gm = 0.) N
+(624) # (        Total_carbs_per_gram = 0.) N
+(625) # (        temp_weight = 0.) N
+(626) # (        Total_weight = 0.) N
+(ControlDB_new.py) (Page 11/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (11/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (11/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -2283,132 +2279,131 @@ llx lly 12 add translate
 /y0 y v get bfs th add sub store
 x0 y0 moveto
 (627) # (        ) p
+(print) K
+(\(self.panda_ingredients\)) p n
+(628) # (        ) S
+(#remove empty rows) c n
+(629) # () S
+(        temp_buf=[]) p n
+(630) # (        ) S
 (for) K
 ( k ) p
 (in) K
 ( range\(len\(self.panda_ingredients\)\):) p n
-(628) # (            sql =') S
-(SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \\') str
+(631) # (            ) S
+(if) K
+( self.panda_ingredients[k][2] != ') p
+( ) str
+(':) p n
+(632) # (                temp_buf.append\(self.panda_ingredients[k]\)) N
+(633) # (        ) N
+(634) # (        self.panda_ingredients= temp_buf) N
+(635) # () N
+(636) # (        ) S
+(for) K
+( k ) p
+(in) K
+( range\(len\(self.panda_ingredients\)\):) p n
+(637) # (            sql =') S
+(SELECT energy,protein,carbohydrate,fat FROM ) str
+('+self.CM.ingred_table+') p
+( where name ILIKE \\') str
 (' + self.panda_ingredients[k][2] +') p
 (\\';) str
 (') p n
-(629) # (            logger.debug\(') S
+(638) # (            ) S
+(#sql ='SELECT energy,protein,carbohydrate,fat FROM ingredients where name ILIKE \\'' + self.panda_ingredients[k][2] +'\\') c n
+0 T (;') N
+(639) # () S
+(            logger.debug\(') p
 (the query string %s ) str
 (' % sql\)) p n
-(630) # ( ) N
-(631) # (            query = self.do_sql\(sql\)) N
-(632) # (        ) N
-(633) # (            logger.debug\(') S
+(640) # ( ) N
+(641) # (            query = self.do_sql\(sql\)) N
+(642) # (        ) N
+(643) # (            logger.debug\(') S
 (value of query.first %s ) str
 (' % query.first\(\)\)) p n
-(634) # (            ) S
+(644) # (            ) S
 (while) K
 ( query.next\(\):) p n
-(635) # () N
-(636) # (                temp_value = \(\(query.value\(0\)\)\)) N
-(637) # () N
-(638) # (        ) S
+(645) # () N
+(646) # (                temp_value = \(\(query.value\(0\)\)\)) N
+(647) # () N
+(648) # (        ) S
 (#model = QSqlQueryModel\(\)) c n
-(639) # () S
+(649) # () S
 ( ) p n
-(640) # (            ) S
+(650) # (            ) S
 (if) K
 (\( ) p
 (not) K
 ( query.first\(\)\):) p n
-(641) # (                logger.info\(') S
+(651) # (                logger.info\(') S
 (this ingredient %s is missing ) str
 ('%self.panda_ingredients[k][2]\)) p n
-(642) # (                self.missing_ingredient = self.panda_ingredients[k][2]) N
-(643) # (                self.MyMissingIngredients\(\)) N
-(644) # (            ) S
+(652) # (                self.missing_ingredient = self.panda_ingredients[k][2]) N
+(653) # (                ) S
+(# here we stor the index of the missing ingredient:) c n
+(654) # () S
+(                self.stor_row = self.RecipeModel.clicked_row = k) p n
+(655) # (                self.stor_column = self.RecipeModel.clicked_column = 2) N
+(656) # () N
+(657) # (                self.MyMissingIngredients\(\)) N
+(658) # (            ) S
 (else) K
 (:) p n
-(645) # (                ) S
-(#fill variables) c n
-(646) # () S
-(                energy_v.append\(float\(query.value\(energy\)\)\)) p n
-(647) # (                protein_v.append\(float\(query.value\(protein\)\)\)) N
-(648) # (                carbohydrate_v.append\(float\(query.value\(carbohydrate\)\)\)) N
-(649) # (                fat_v.append\(float\(query.value\(fat\)\)\)) N
-(650) # (                temp_weight = float\(self.RecipeModel.recipes[k][0]\)/100.  ) S
-(# all is normalized to per 100 g) c n
-(651) # () N
-(652) # () S
-(                Total_calories_per_gm   = Total_calories_per_gm+temp_weight*energy_v[k]) p n
-(653) # (                Total_protein_per_gm    = Total_protein_per_gm + temp_weight*protein_v[k]) N
-(654) # (                Total_fat_per_gm        = Total_fat_per_gm + temp_weight*fat_v[k]) N
-(655) # (                Total_carbs_per_gram    = Total_carbs_per_gram +  temp_weight*carbohydrate_v[k]) N
-(656) # () N
-(657) # (                Total_weight = Total_weight+temp_weight*100.) N
-(658) # () N
 (659) # (                ) S
+(#fill variables) c n
+(660) # () S
+(                energy_v.append\(float\(query.value\(energy\)\)\)) p n
+(661) # (                protein_v.append\(float\(query.value\(protein\)\)\)) N
+(662) # (                carbohydrate_v.append\(float\(query.value\(carbohydrate\)\)\)) N
+(663) # (                fat_v.append\(float\(query.value\(fat\)\)\)) N
+(664) # (                temp_weight = float\(self.RecipeModel.recipes[k][0]\)/100.  ) S
+(# all is normalized to per 100 g) c n
+(665) # () N
+(666) # () S
+(                Total_calories_per_gm   = Total_calories_per_gm+temp_weight*energy_v[k]) p n
+(667) # (                Total_protein_per_gm    = Total_protein_per_gm + temp_weight*protein_v[k]) N
+(668) # (                Total_fat_per_gm        = Total_fat_per_gm + temp_weight*fat_v[k]) N
+(669) # (                Total_carbs_per_gram    = Total_carbs_per_gram +  temp_weight*carbohydrate_v[k]) N
+(670) # () N
+(671) # (                Total_weight = Total_weight+temp_weight*100.) N
+(672) # () N
+(673) # (                ) S
 (print) K
 (\(self.RecipeModel.recipes[k][0],') p
 (     ) str
 (', Total_calories_per_gm\)) p n
-(660) # (                logger.debug\(') S
+(674) # (                logger.debug\(') S
 (ingredient : %s) str
 (' % self.panda_ingredients[k][2]\)) p n
-(661) # (                logger.debug\(') S
+(675) # (                logger.debug\(') S
 (energy : %f) str
 (' % energy_v[k]\)) p n
-(662) # (                logger.debug\(') S
+(676) # (                logger.debug\(') S
 (protein : %f) str
 (' % protein_v[k]\)) p n
-(663) # (                logger.debug\(') S
+(677) # (                logger.debug\(') S
 (carbohydrate : %f) str
 (' % carbohydrate_v[k]\)) p n
-(664) # (                logger.debug\(') S
+(678) # (                logger.debug\(') S
 (fat : %f) str
 (' % fat_v[k]\)) p n
-(665) # (        ) S
+(679) # (        ) S
 (if) K
 (\(Total_weight == 0.\):) p n
-(666) # (            ) S
+(680) # (            ) S
 (return) K n
-(667) # () S
+(681) # () S
 (        temp_cal    = Total_calories_per_gm/Total_weight) p n
-(668) # (        temp_fat    = Total_fat_per_gm/Total_weight) N
-(669) # (        temp_prot   = Total_protein_per_gm/Total_weight) N
-(670) # (        temp_carb   = Total_carbs_per_gram/Total_weight) N
-(671) # (        logger.debug\(') S
-(total calories per gram : %f) str
-(' % temp_cal\)) p n
-(672) # (        logger.debug\(') S
-(total carbs per gram : %f) str
-(' % temp_carb\)) p n
-(673) # (        logger.debug\(') S
-(total protein per gram : %f) str
-(' % temp_prot\)) p n
-(674) # (        logger.debug\(') S
-(total fat per gram : %f) str
-(' % temp_fat\)) p n
-(675) # () N
-(676) # (        ) S
-(# convert to string) c n
-(677) # () S
-(        string_cal = f") p
-({temp_cal:.2f}) str
-(") p n
-(678) # (        string_fat = f") S
-({temp_fat:.2f}) str
-(") p n
-(679) # (        string_prot = f") S
-({temp_prot:.2f}) str
-(") p n
-(680) # (        string_carb = f") S
-({temp_carb:.2f}) str
-(") p n
-(681) # () N
-(682) # () N
-(683) # (        ) S
-(#Update the values on the form) c n
-(ControlDB_new.py) (Page 12/20) (Feb 23, 2025 13:05) title
+(682) # (        temp_fat    = Total_fat_per_gm/Total_weight) N
+(ControlDB_new.py) (Page 12/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (12/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (12/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -2424,115 +2419,122 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(684) # (        self.MRD.cal_line.setText\(string_cal\)) p n
-(685) # (        self.MRD.fat_line.setText\(string_fat\)) N
-(686) # (        self.MRD.prot_line.setText\(string_prot\)) N
-(687) # (        self.MRD.carb_line.setText\(string_carb\)) N
-(688) # () N
-(689) # (        ) S
-(# put values onto form) c n
-(690) # () N
-(691) # () N
-(692) # () S
-(       ) p n
-(693) # (        self.new_recipe_record=\(self.new_recipe_name,string_cal,string_prot,string_carb,string_fat,self.pack_record\(self.panda_ingr) N
-0 T (edients\)\)) N
-(694) # (        ) S
-(return) K n
+(683) # (        temp_prot   = Total_protein_per_gm/Total_weight) p n
+(684) # (        temp_carb   = Total_carbs_per_gram/Total_weight) N
+(685) # (        logger.debug\(') S
+(total calories per gram : %f) str
+(' % temp_cal\)) p n
+(686) # (        logger.debug\(') S
+(total carbs per gram : %f) str
+(' % temp_carb\)) p n
+(687) # (        logger.debug\(') S
+(total protein per gram : %f) str
+(' % temp_prot\)) p n
+(688) # (        logger.debug\(') S
+(total fat per gram : %f) str
+(' % temp_fat\)) p n
+(689) # () N
+(690) # (        ) S
+(# convert to string) c n
+(691) # () S
+(        string_cal = f") p
+({temp_cal:.2f}) str
+(") p n
+(692) # (        string_fat = f") S
+({temp_fat:.2f}) str
+(") p n
+(693) # (        string_prot = f") S
+({temp_prot:.2f}) str
+(") p n
+(694) # (        string_carb = f") S
+({temp_carb:.2f}) str
+(") p n
 (695) # () N
-(696) # () S
+(696) # () N
+(697) # (        ) S
+(#Update the values on the form) c n
+(698) # () S
+(        self.MRD.cal_line.setText\(string_cal\)) p n
+(699) # (        self.MRD.fat_line.setText\(string_fat\)) N
+(700) # (        self.MRD.prot_line.setText\(string_prot\)) N
+(701) # (        self.MRD.carb_line.setText\(string_carb\)) N
+(702) # () N
+(703) # (        ) S
+(# put values onto form) c n
+(704) # () N
+(705) # () N
+(706) # () S
+(       ) p n
+(707) # (        self.new_recipe_record=\(self.new_recipe_name,string_cal,string_prot,string_carb,string_fat,self.pack_record\(self.panda_ingr) N
+0 T (edients\)\)) N
+(708) # (        ) S
+(return) K n
+(709) # () N
+(710) # () S
 (    ) p
 (def) K
 ( add_row\(self\):) p n
-(697) # (        """) S
+(711) # (        """) S
 ( adds row to reipe table) str
 (""") p n
-(698) # (        row_position = self.RecipeModel.rowCount\(\)) N
-(699) # (        self.RecipeModel.insertRows\(row_position\)) N
-(700) # () N
-(701) # (        ) S
+(712) # (        row_position = self.RecipeModel.rowCount\(\)) N
+(713) # (        self.RecipeModel.insertRows\(row_position\)) N
+(714) # () N
+(715) # (        ) S
 (return) K n
-(702) # () N
-(703) # () S
+(716) # () N
+(717) # () S
 (    ) p
 (def) K
 ( on_item_click\(self, index\):) p n
-(704) # () N
-(705) # (        ) S
+(718) # () N
+(719) # (        ) S
 (#columns and rows start from 0) c n
-(706) # () S
+(720) # () S
 (        item_text = index.data\(\)) p n
-(707) # (        item_row = index.row\(\)) N
-(708) # (        item_column = index.column\(\)) N
-(709) # (        ) S
+(721) # (        item_row = index.row\(\)) N
+(722) # (        item_column = index.column\(\)) N
+(723) # (        ) S
 (return) K n
-(710) # () S
+(724) # () S
 (        ) p n
-(711) # () N
-(712) # (        ) S
+(725) # () N
+(726) # (        ) S
 (#print\(f"Clicked item: {item_text}"\)) c n
-(713) # () S
+(727) # () S
 (        ) p
 (#print\(index.row\(\)\)) c n
-(714) # () N
-(715) # () S
+(728) # () N
+(729) # () S
 (    ) p
 (def) K
 ( save_recipe\(self\):) p n
-(716) # (        """) S
+(730) # (        """) S
 (gets called from clicking the save button) str
 (""") p n
-(717) # (        record = self.RecipeModel.StoreValue\(\)) N
-(718) # (        logger.info\(") S
+(731) # (        record = self.RecipeModel.StoreValue\(\)) N
+(732) # (        logger.info\(") S
 (ingredients %s ) str
 ("% record\)) p n
-(719) # (        ) S
+(733) # (        ) S
 (#create original string) c n
-(720) # () S
+(734) # () S
 (        record = self.pack_record\(record\)) p n
-(721) # (       ) S
+(735) # (       ) S
 (# Now update the record) c n
-(722) # () N
-(723) # () S
+(736) # () N
+(737) # () S
 (        ) p
 (#check if this is a new recipe or an updated one) c n
-(724) # () S
+(738) # () S
 (        ) p
 (if) K
 ( self.new_recipe_name != None:) p n
-(725) # (            rec_name=self.new_recipe_name) N
-(726) # (            self.create_pandas_frame\(name=rec_name\)) N
-(727) # ( ) N
-(728) # (            self.insert_record\(\)) N
-(729) # (        ) S
-(else) K
-(: ) p n
-(730) # (            rec_name = self.selected_recipe) N
-(731) # (            self.create_pandas_frame\(name=rec_name\)) N
-(732) # () N
-(733) # (            self.update_record\(') S
-(recipes) str
-(',') p
-(ingredients) str
-(',record,rec_name\)) p n
-(734) # () N
-(735) # (        ) S
-(#self.new_recipe_name = None  # reset recipe name) c n
-(736) # () S
-(        ) p
-(#here we call create_pandas_frame tframe for CalculateCalories start producing the ) c n
-(737) # () S
-( ) p n
-(738) # (        ) S
-(#remove window) c n
-(739) # () S
-(        ) p
-(#self.MRD.close\(\)) c n
-(ControlDB_new.py) (Page 13/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 13/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (13/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (13/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -2548,46 +2550,75 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(740) # ( ) p n
-(741) # () N
-(742) # (        ) S
+(739) # (            rec_name=self.new_recipe_name) p n
+(740) # (            self.create_pandas_frame\(name=rec_name\)) N
+(741) # ( ) N
+(742) # (            self.insert_record\(\)) N
+(743) # (        ) S
+(else) K
+(: ) p n
+(744) # (            rec_name = self.selected_recipe) N
+(745) # (            self.create_pandas_frame\(name=rec_name\)) N
+(746) # () N
+(747) # (            self.update_record\(') S
+(recipes) str
+(',') p
+(ingredients) str
+(',record,rec_name\)) p n
+(748) # () N
+(749) # (        ) S
+(#self.new_recipe_name = None  # reset recipe name) c n
+(750) # () S
+(        ) p
+(#here we call create_pandas_frame tframe for CalculateCalories start producing the ) c n
+(751) # () S
+( ) p n
+(752) # (        ) S
+(#remove window) c n
+(753) # () S
+(        ) p
+(#self.MRD.close\(\)) c n
+(754) # () S
+( ) p n
+(755) # () N
+(756) # (        ) S
 (return) K n
-(743) # () S
+(757) # () S
 (    ) p
 (def) K
 ( insert_record\(self\):) p n
-(744) # (        """) S
+(758) # (        """) S
 (inserts new recipe into table) str n
-(745) # (        columname is a list of all the columns) N
-(746) # (        record is a corresponding list) S
+(759) # (        columname is a list of all the columns) N
+(760) # (        record is a corresponding list) S
 (""") p n
-(747) # (        ) S
+(761) # (        ) S
 (# create sql statement) c n
-(748) # () N
-(749) # () S
+(762) # () N
+(763) # () S
 (        record =self.new_recipe_record) p n
-(750) # () N
-(751) # (        ) S
+(764) # () N
+(765) # (        ) S
 (# since ID is a non-zero number we need to find the highest number and then add one for the next reipce) c n
-(752) # () S
+(766) # () S
 (        sql =') p
 (SELECT id from recipes ;) str
 (') p n
-(753) # (        ID_number=[]) N
-(754) # (        myquery = self.do_sql\(sql\)) N
-(755) # (        ) S
+(767) # (        ID_number=[]) N
+(768) # (        myquery = self.do_sql\(sql\)) N
+(769) # (        ) S
 (while) K
 ( myquery.next\(\):) p n
-(756) # () N
-(757) # (            ID_number.append\(int\(myquery.value\(0\)\)\)) N
-(758) # (        ) S
+(770) # () N
+(771) # (            ID_number.append\(int\(myquery.value\(0\)\)\)) N
+(772) # (        ) S
 (#find the highest numer in the list) c n
-(759) # () S
+(773) # () S
 (        imax = max\(ID_number\)) p n
-(760) # (        new_recipe_id = str\(imax+1\)) N
-(761) # () N
-(762) # () N
-(763) # (        b= new_recipe_id+') S
+(774) # (        new_recipe_id = str\(imax+1\)) N
+(775) # () N
+(776) # () N
+(777) # (        b= new_recipe_id+') S
 (,\\') str
 ('+record[0]+') p
 (\\',) str
@@ -2602,79 +2633,47 @@ x0 y0 moveto
 ('+record[5]+') p
 (\\') str
 (') p n
-(764) # () N
-(765) # () N
-(766) # (        sql = ') S
+(778) # () N
+(779) # () N
+(780) # (        sql = ') S
 (INSERT INTO recipes \(id,name,energy,protein,carbohydrate,fat,ingredients\) VALUES \() str
 ('+b+') p
 (\);) str
 (') p n
-(767) # (        logger.debug\(") S
+(781) # (        logger.debug\(") S
 (insert recipe %s) str
 (" % sql\)) p n
-(768) # (        ) S
+(782) # (        ) S
 (#finally exceute the sql) c n
-(769) # () S
+(783) # () S
 (        self.do_sql\(sql\)) p n
-(770) # (        ) S
+(784) # (        ) S
 (return) K n
-(771) # () S
+(785) # () S
 (        ) p n
-(772) # (       ) N
-(773) # () N
-(774) # () N
-(775) # (        ) S
+(786) # (       ) N
+(787) # () N
+(788) # () N
+(789) # (        ) S
 (#self.new_recipe_record=\(self.new_recipe_name,string_cal,string_prot,string_carb,string_fat,self.pack_record\(self.panda_ing) c n
 0 T (redients\)\)) N
-(776) # () N
-(777) # () S
+(790) # () N
+(791) # () S
 (        ) p
 (# the sql statements should be) c n
-(778) # () S
+(792) # () S
 (        ) p
 (# sql = INSERT INTO table1\(name,energy,protein,carbohydrate,fat,ingredients\) VALUES \(row_name,record[0],record[1],record[2]) c n
 0 T (record[3],record[4]\);) N
-(779) # () S
+(793) # () S
 (        logger.debug\(") p
 ( insert statement %s % sql) str
 ("\)) p n
-(780) # (        self.do_sql\(sql\)) N
-(781) # () N
-(782) # (        ) S
-(return) K n
-(783) # () N
-(784) # () N
-(785) # () S
-(    ) p
-(def) K
-( update_record\(self,table,column_name,record,row_name\):) p n
-(786) # (        """) S
-( updates record for name in table) str n
-(787) # (        example SQL statement ) N
-(788) # (        UPDATE recipes SET ingredients = '30 g almonds 60 g dry_tomatoes 517 g tenderloin' WHERE name='basil_tenderloin';) N
-(789) # (        ) S
-(""") p n
-(790) # () N
-(791) # (        sql = ') S
-(UPDATE ) str
-('+table+') p
-( SET ) str
-('+column_name+') p
-( = \\') str
-('+record+') p
-(\\' WHERE name = \\') str
-('+row_name+') p
-(\\';) str
-(') p n
-(792) # (        self.do_sql\(sql\)) N
-(793) # () N
-(794) # (        ) S
-(return) K n
-(ControlDB_new.py) (Page 14/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 14/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (14/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (14/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -2690,29 +2689,62 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(795) # () p n
-(796) # (    ) S
+(794) # (        self.do_sql\(sql\)) p n
+(795) # () N
+(796) # (        ) S
+(return) K n
+(797) # () N
+(798) # () N
+(799) # () S
+(    ) p
+(def) K
+( update_record\(self,table,column_name,record,row_name\):) p n
+(800) # (        """) S
+( updates record for name in table) str n
+(801) # (        example SQL statement ) N
+(802) # (        UPDATE recipes SET ingredients = '30 g almonds 60 g dry_tomatoes 517 g tenderloin' WHERE name='basil_tenderloin';) N
+(803) # (        ) S
+(""") p n
+(804) # () N
+(805) # (        sql = ') S
+(UPDATE ) str
+('+table+') p
+( SET ) str
+('+column_name+') p
+( = \\') str
+('+record+') p
+(\\' WHERE name = \\') str
+('+row_name+') p
+(\\';) str
+(') p n
+(806) # (        self.do_sql\(sql\)) N
+(807) # () N
+(808) # (        ) S
+(return) K n
+(809) # () N
+(810) # () S
+(    ) p
 (def) K
 ( pack_record\(self,record\):) p n
-(797) # (        """) S
+(811) # (        """) S
 ( put record back into original form for ingredients, which is just one string) str
 (""") p n
-(798) # (        b=[]) N
-(799) # (        c='') N
-(800) # (        ) S
+(812) # (        b=[]) N
+(813) # (        c='') N
+(814) # (        ) S
 (#self.panda_ingredients are the correct list for creating the panda frame) c n
-(801) # () S
+(815) # () S
 (        self.panda_ingredients = a =record) p n
-(802) # (        ) S
+(816) # (        ) S
 (for) K
 ( k ) p
 (in) K
 ( range\(len\(a\)\):) p n
-(803) # (            ) S
+(817) # (            ) S
 (if) K
 (\(a[k][0]==''\): ) p
 (break) K n
-(804) # () S
+(818) # () S
 (            b.append\(a[k][0]+') p
 ( ) str
 ('+a[k][1]+') p
@@ -2720,98 +2752,69 @@ x0 y0 moveto
 ('+a[k][2]+') p
 ( ) str
 ('\)) p n
-(805) # () N
-(806) # (        ) S
+(819) # () N
+(820) # (        ) S
 (for) K
 ( k ) p
 (in) K
 ( range\(0,len\(b\)\):) p n
-(807) # (            c = c+ b[k]) N
-(808) # (   ) N
-(809) # (        ) S
+(821) # (            c = c+ b[k]) N
+(822) # (   ) N
+(823) # (        ) S
 (# remove last space) c n
-(810) # () S
+(824) # () S
 (        d = c[0:len\(c\)-1]) p n
-(811) # (        ) S
+(825) # (        ) S
 (return) K
 (\(d\)) p n
-(812) # () N
-(813) # () N
-(814) # (    ) S
+(826) # () N
+(827) # () N
+(828) # (    ) S
 (def) K
 ( getSelectedText\(self,s\):) p n
-(815) # (        self.selected_text = s) N
-(816) # (        logger.info\(") S
+(829) # (        self.selected_text = s) N
+(830) # (        logger.info\(") S
 (You have selected %s text) str
 (" % self.selected_text\)) p n
-(817) # (        ) S
+(831) # (        ) S
 (return) K n
-(818) # () N
-(819) # () N
-(820) # () S
+(832) # () N
+(833) # () N
+(834) # () S
 (    ) p
 (def) K
 ( getSelectedRecipe\(self,s\):) p n
-(821) # (        ) S
+(835) # (        ) S
 (#Clear Buffer of recipes) c n
-(822) # () N
-(823) # () S
+(836) # () N
+(837) # () S
 (              ) p n
-(824) # (        self.RecipeModel.recipes = []) N
-(825) # () N
-(826) # (        self.selected_recipe = s) N
-(827) # (        logger.info\(") S
+(838) # (        self.RecipeModel.recipes = []) N
+(839) # () N
+(840) # (        self.selected_recipe = s) N
+(841) # (        logger.info\(") S
 (You have selected %s recipe) str
 (" % self.selected_recipe\)) p n
-(828) # () N
-(829) # (        ) S
+(842) # () N
+(843) # (        ) S
 (# now we populate the listview) c n
-(830) # () S
+(844) # () S
 (        self.FillRecipeIngredientList\(\)) p n
-(831) # () N
-(832) # (        ) S
+(845) # () N
+(846) # (        ) S
 (# Now fill qlist) c n
-(833) # () S
+(847) # () S
 (        self.DisplayRecipeList\(\)) p n
-(834) # () N
-(835) # (        ) S
+(848) # () N
+(849) # (        ) S
 (# send signal list has been updated) c n
-(836) # () S
+(850) # () S
 (        self.RecipeModel.layoutChanged.emit\(\)) p n
-(837) # () N
-(838) # ( ) N
-(839) # () N
-(840) # (        ) S
-(return) K n
-(841) # () S
-(    ) p n
-(842) # (    ) S
-(def) K
-( do_sql\(self,sql\):) p n
-(843) # (        """) S
-(executes a sql statement) str
-(""") p n
-(844) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
-(845) # (        model = QSqlQueryModel\(\)) N
-(846) # (        logger.info\(") S
-(query in do_sql %s) str
-(" % sql\)) p n
-(847) # (        model.setQuery\(query\)) N
-(848) # (        ) S
-(if) K
-( query.lastError\(\).isValid\(\):) p n
-(849) # (            logger.error\(f") S
-(Query error: {query.lastError\(\).text\(\)}) str
-("\)) p n
-(850) # (            ) S
-(# if this is a inserty error try replace.) c n
-(851) # () S
-( ) p n
-(ControlDB_new.py) (Page 15/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 15/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (15/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (15/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -2827,134 +2830,126 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(852) # (        ) p n
+(851) # () p n
+(852) # ( ) N
 (853) # () N
 (854) # (        ) S
+(return) K n
+(855) # () S
+(    ) p n
+(856) # (    ) S
+(def) K
+( do_sql\(self,sql\):) p n
+(857) # (        """) S
+(executes a sql statement) str
+(""") p n
+(858) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(859) # (        model = QSqlQueryModel\(\)) N
+(860) # (        logger.info\(") S
+(query in do_sql %s) str
+(" % sql\)) p n
+(861) # (        model.setQuery\(query\)) N
+(862) # (        ) S
+(if) K
+( query.lastError\(\).isValid\(\):) p n
+(863) # (            logger.error\(f") S
+(Query error: {query.lastError\(\).text\(\)}) str
+("\)) p n
+(864) # (            ) S
+(# if this is a inserty error try replace.) c n
+(865) # () S
+( ) p n
+(866) # (        ) N
+(867) # () N
+(868) # (        ) S
 (return) K
 ( query) p n
-(855) # () N
-(856) # () N
-(857) # (    ) S
+(869) # () N
+(870) # () N
+(871) # (    ) S
 (def) K
 ( FillRecipeIngredientList\(self\):) p n
-(858) # (        ) S
+(872) # (        ) S
 (# here we get the ingredients from the Recipe database) c n
-(859) # () S
+(873) # () S
 (        ) p
 (# this is done with a query) c n
-(860) # () N
-(861) # () N
-(862) # () N
-(863) # () S
+(874) # () N
+(875) # () N
+(876) # () N
+(877) # () S
 (        sql =') p
 ( SELECT ingredients from recipes WHERE recipes.name LIKE \\') str
 ('+self.selected_recipe +') p
 (\\' ;) str
 (') p n
-(864) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
-(865) # (        model = QSqlQueryModel\(\)) N
-(866) # () N
-(867) # (        model.setQuery\(query\)) N
-(868) # (        ) S
+(878) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(879) # (        model = QSqlQueryModel\(\)) N
+(880) # () N
+(881) # (        model.setQuery\(query\)) N
+(882) # (        ) S
 (while) K
 ( query.next\(\):) p n
-(869) # () N
-(870) # (            temp_value = \(\(query.value\(0\)\)\)) N
-(871) # (        ) S
+(883) # () N
+(884) # (            temp_value = \(\(query.value\(0\)\)\)) N
+(885) # (        ) S
 (# now we have to work with string) c n
-(872) # () S
+(886) # () S
 (        ) p
 (# the old database still had *u000a in front of the number) c n
-(873) # () S
+(887) # () S
 (        ) p
 (# need first to strip this) c n
-(874) # () S
+(888) # () S
 (        ) p
 (#check if temp contains *u000a ) c n
-(875) # () S
+(889) # () S
 (        mask = ') p
 (u000a) str
 (') p n
-(876) # (        ) S
+(890) # (        ) S
 (if) K
 (\(mask ) p
 (in) K
 ( temp_value\):) p n
-(877) # (            temp_new = self.StripUnicode\(temp_value,mask\)) N
-(878) # (            ) S
+(891) # (            temp_new = self.StripUnicode\(temp_value,mask\)) N
+(892) # (            ) S
 (#temp_new = self.StripUnicode\(temp_new,'*'\)) c n
-(879) # () S
+(893) # () S
 (        ) p n
-(880) # () N
-(881) # (            ) N
-(882) # () N
-(883) # (        ) S
+(894) # () N
+(895) # (            ) N
+(896) # () N
+(897) # (        ) S
 (else) K
 (:) p n
-(884) # (            ) S
+(898) # (            ) S
 (#already the new entry way) c n
-(885) # () S
+(899) # () S
 (            temp_new1 = []) p n
-(886) # (            temp_new = temp_value.split\(') S
+(900) # (            temp_new = temp_value.split\(') S
 ( ) str
 ('\)) p n
-(887) # (            ) S
+(901) # (            ) S
 (for) K
 ( k ) p
 (in) K
 ( range\(0,len\(temp_new\),3\):) p n
-(888) # (                temp_new1.append\([temp_new[k],temp_new[k+1],temp_new[k+2]]\)) N
-(889) # (            self.recipe_ingredients = temp_new1) N
-(890) # (            ) S
+(902) # (                temp_new1.append\([temp_new[k],temp_new[k+1],temp_new[k+2]]\)) N
+(903) # (            self.recipe_ingredients = temp_new1) N
+(904) # (            ) S
 (return) K n
-(891) # () N
-(892) # () S
+(905) # () N
+(906) # () S
 (        ) p n
-(893) # (        delimiter = ") S
+(907) # (        delimiter = ") S
 ( g ) str
 (") p n
-(894) # (        result = temp_new.replace\(') S
-(u000a) str
-(',''\)) p n
-(895) # (        ) N
-(896) # () N
-(897) # (        result1 = self.split_and_keep\(result, delimiter\)) N
-(898) # (        ) S
-(#  strip last *) c n
-(899) # () S
-(        result11= result1[0]) p n
-(900) # (        result2 = result11[:len\(result1[0]\)-1].split\(') S
-(*) str
-('\)) p n
-(901) # (        ) S
-(# we know that a string with underscores has a max of three spaces. Any number larger than this means words with spaces.) c n
-(902) # () S
-(        ) p
-(#in other words 4 spaces means the 3rd has to be replaced with _ 5 spaces mean the 3rd and 4th) c n
-(903) # () S
-(        result3 =[]) p n
-(904) # (        ) S
-(for) K
-( a ) p
-(in) K
-( result2:) p n
-(905) # (            space_indices = []) N
-(906) # (            ) S
-(for) K
-( i, char ) p
-(in) K
-( enumerate\(a\):) p n
-(907) # (                ) S
-(if) K
-( char == ') p
-( ) str
-(':) p n
-(908) # (                    space_indices.append\(i\)) N
-(ControlDB_new.py) (Page 16/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 16/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (16/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (16/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -2970,124 +2965,134 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(909) # (    ) p n
-(910) # (            ) S
+(908) # (        result = temp_new.replace\(') p
+(u000a) str
+(',''\)) p n
+(909) # (        ) N
+(910) # () N
+(911) # (        result1 = self.split_and_keep\(result, delimiter\)) N
+(912) # (        ) S
+(#  strip last *) c n
+(913) # () S
+(        result11= result1[0]) p n
+(914) # (        result2 = result11[:len\(result1[0]\)-1].split\(') S
+(*) str
+('\)) p n
+(915) # (        ) S
+(# we know that a string with underscores has a max of three spaces. Any number larger than this means words with spaces.) c n
+(916) # () S
+(        ) p
+(#in other words 4 spaces means the 3rd has to be replaced with _ 5 spaces mean the 3rd and 4th) c n
+(917) # () S
+(        result3 =[]) p n
+(918) # (        ) S
+(for) K
+( a ) p
+(in) K
+( result2:) p n
+(919) # (            space_indices = []) N
+(920) # (            ) S
+(for) K
+( i, char ) p
+(in) K
+( enumerate\(a\):) p n
+(921) # (                ) S
+(if) K
+( char == ') p
+( ) str
+(':) p n
+(922) # (                    space_indices.append\(i\)) N
+(923) # (    ) N
+(924) # (            ) S
 (if) K
 ( len\(space_indices\) == 4:) p n
-(911) # (                na = a[:space_indices[2]] + ') S
+(925) # (                na = a[:space_indices[2]] + ') S
 (_) str
 (' + a[space_indices[2] + 1:]) p n
-(912) # (             ) N
-(913) # (                result3.append\(na\)) N
-(914) # () N
-(915) # (            ) S
+(926) # (             ) N
+(927) # (                result3.append\(na\)) N
+(928) # () N
+(929) # (            ) S
 (elif) K
 ( len\(space_indices\) == 5:) p n
-(916) # (                na = a[:space_indices[2]] + ') S
+(930) # (                na = a[:space_indices[2]] + ') S
 (_) str
 (' + a[space_indices[2]+1:space_indices[3]] + ') p
 (_) str
 (' + a[space_indices[3] + 1:]) p n
-(917) # (                result3.append\(na\)) N
-(918) # () N
-(919) # (            ) S
+(931) # (                result3.append\(na\)) N
+(932) # () N
+(933) # (            ) S
 (else) K
 (:) p n
-(920) # (                result3.append\(a\)) N
-(921) # () N
-(922) # () N
-(923) # (        recipe_string = result3) N
-(924) # (        ) S
+(934) # (                result3.append\(a\)) N
+(935) # () N
+(936) # () N
+(937) # (        recipe_string = result3) N
+(938) # (        ) S
 (#finally split every field up into 3 '10 g bean' -> [10,'g','bean]) c n
-(925) # () S
+(939) # () S
 (        result4 =[]) p n
-(926) # (        ) S
+(940) # (        ) S
 (for) K
 ( i ) p
 (in) K
 ( range\(len\(result3\)\):) p n
-(927) # (            temp = \(result3[i].split\(') S
+(941) # (            temp = \(result3[i].split\(') S
 ( ) str
 ('\)\)) p n
-(928) # (            result4.append\(temp[0:3]\)) N
-(929) # (        self.recipe_ingredients = result4) N
-(930) # (        ) S
+(942) # (            result4.append\(temp[0:3]\)) N
+(943) # (        self.recipe_ingredients = result4) N
+(944) # (        ) S
 (return) K n
-(931) # () N
-(932) # () S
+(945) # () N
+(946) # () S
 (    ) p
 (def) K
 ( DisplayRecipeList\(self\):) p n
-(933) # (        """) S
+(947) # (        """) S
 (loop through ingredient list and add) str
 (""") p n
-(934) # (        ) N
-(935) # () N
-(936) # (        ) S
+(948) # (        ) N
+(949) # () N
+(950) # (        ) S
 (for) K
 ( k ) p
 (in) K
 ( range\(len\(self.recipe_ingredients\)\):) p n
-(937) # (            ) S
+(951) # (            ) S
 (print) K
 (\(self.recipe_ingredients[k]\)) p n
-(938) # (            ) N
-(939) # (            self.RecipeModel.recipes.append\(self.recipe_ingredients[k]\)) N
-(940) # (        ) S
+(952) # (            ) N
+(953) # (            self.RecipeModel.recipes.append\(self.recipe_ingredients[k]\)) N
+(954) # (        ) S
 (return) K n
-(941) # () N
-(942) # () N
-(943) # () S
+(955) # () N
+(956) # () N
+(957) # () S
 (    ) p
 (def) K
 ( split_and_keep\(self,text, delimiter\):) p n
-(944) # (        """) S
+(958) # (        """) S
 (deals with spaces instead of underscores) str
 (""") p n
-(945) # (        result = []) N
-(946) # (        temp = "") N
-(947) # (        ) S
+(959) # (        result = []) N
+(960) # (        temp = "") N
+(961) # (        ) S
 (for) K
 ( char ) p
 (in) K
 ( text:) p n
-(948) # (            ) S
+(962) # (            ) S
 (if) K
 ( char == delimiter:) p n
-(949) # (                result.append\(temp + char\)) N
-(950) # (                temp = "") N
-(951) # (            ) S
-(else) K
-(:) p n
-(952) # (                temp += char) N
-(953) # (        ) S
-(if) K
-( temp:) p n
-(954) # (            result.append\(temp\)) N
-(955) # (        ) S
-(return) K
-( result) p n
-(956) # () N
-(957) # () N
-(958) # () N
-(959) # () N
-(960) # (    ) S
-(def) K
-( StripUnicode\(self,mystring,mask\):) p n
-(961) # (        newstring =mystring.replace\(mask,''\)) N
-(962) # (        ) S
-(return) K
-( newstring) p n
-(963) # () N
-(964) # () N
-(965) # (    ) S
-(def) K
-( GetRecipeList\(self\):) p n
-(ControlDB_new.py) (Page 17/20) (Feb 23, 2025 13:05) title
+(963) # (                result.append\(temp + char\)) N
+(964) # (                temp = "") N
+(ControlDB_new.py) (Page 17/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (17/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (17/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -3103,118 +3108,118 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(966) # (        """) p
+(965) # (            ) p
+(else) K
+(:) p n
+(966) # (                temp += char) N
+(967) # (        ) S
+(if) K
+( temp:) p n
+(968) # (            result.append\(temp\)) N
+(969) # (        ) S
+(return) K
+( result) p n
+(970) # () N
+(971) # () N
+(972) # () N
+(973) # () N
+(974) # (    ) S
+(def) K
+( StripUnicode\(self,mystring,mask\):) p n
+(975) # (        newstring =mystring.replace\(mask,''\)) N
+(976) # (        ) S
+(return) K
+( newstring) p n
+(977) # () N
+(978) # () N
+(979) # (    ) S
+(def) K
+( GetRecipeList\(self\):) p n
+(980) # (        """) S
 (sql query to get all the names of the recpies) str n
-(967) # (        will be used to popolate the recipe qlistbox) S
+(981) # (        will be used to popolate the recipe qlistbox) S
 (""") p n
-(968) # (        sql = ') S
+(982) # (        sql = ') S
 (SELECT name from recipes ; ) str
 (') p n
-(969) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
-(970) # (        model = QSqlQueryModel\(\)) N
-(971) # () N
-(972) # (        model.setQuery\(query\)) N
-(973) # (        recipe_list = []) N
-(974) # (        ) S
+(983) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(984) # (        model = QSqlQueryModel\(\)) N
+(985) # () N
+(986) # (        model.setQuery\(query\)) N
+(987) # (        recipe_list = []) N
+(988) # (        ) S
 (while) K
 ( query.next\(\):) p n
-(975) # (            recipe_list.append\(str\(query.value\(0\)\)\)) N
-(976) # ( ) N
-(977) # () N
-(978) # (        ) S
+(989) # (            recipe_list.append\(str\(query.value\(0\)\)\)) N
+(990) # ( ) N
+(991) # () N
+(992) # (        ) S
 (# now sort them alphabetically) c n
-(979) # () S
+(993) # () S
 (        items = [recipe_list[i] ) p
 (for) K
 ( i ) p
 (in) K
 ( range\(len\(recipe_list\)\)]) p n
-(980) # (        items.sort\(key=str.lower\) ) S
+(994) # (        items.sort\(key=str.lower\) ) S
 (#this way no diff between upper and lower case) c n
-(981) # () S
+(995) # () S
 ( ) p n
-(982) # (        ) S
+(996) # (        ) S
 (return) K
 ( \(items\)) p n
-(983) # () N
-(984) # () N
-(985) # () N
-(986) # () N
-(987) # () N
-(988) # (    ) S
+(997) # () N
+(998) # () N
+(999) # () N
+(1000) # () N
+(1001) # () N
+(1002) # (    ) S
 (def) K
 ( ModifyRecipe\(self\):) p n
-(989) # (        ) S
+(1003) # (        ) S
 (pass) K n
-(990) # () N
-(991) # () S
+(1004) # () N
+(1005) # () S
 (  ) p n
-(992) # (    ) S
+(1006) # (    ) S
 (def) K
 ( SizeWindow\(self,window,myposit,mysize\):) p n
-(993) # (        """) S
+(1007) # (        """) S
 (resizes the specified window ,where the parameters are two integer lists) str
 (""") p n
-(994) # (        window.setGeometry\(myposit[0],myposit[1],mysize[0],mysize[1]\)) N
-(995) # (        ) S
+(1008) # (        window.setGeometry\(myposit[0],myposit[1],mysize[0],mysize[1]\)) N
+(1009) # (        ) S
 (return) K n
-(996) # () S
+(1010) # () S
 ( ) p n
-(997) # (    ) S
+(1011) # (    ) S
 (def) K
 ( calculate_portion_calory\(self,myrecipe=None,myportion=0.\):) p n
-(998) # (        """) S
+(1012) # (        """) S
 ( this calucaltes the calories of a portion for  given recipe, ) str n
-(999) # (        where the portion size is given in grams.) S
+(1013) # (        where the portion size is given in grams.) S
 (""") p n
-(1000) # () N
-(1001) # (        ) S
+(1014) # () N
+(1015) # (        ) S
 (# sql statement: SELECT enegry FROM recipes WHERE NAME = 'raspberry_tart';) c n
-(1002) # () S
+(1016) # () S
 (        sql = ') p
 (SELECT energy FROM recipes WHERE NAME = \\') str
 (' +myrecipe +') p
 (\\';) str
 (') p n
-(1003) # (        query = self.do_sql\(sql\)) N
-(1004) # (        ) S
+(1017) # (        query = self.do_sql\(sql\)) N
+(1018) # (        ) S
 (while) K
 ( query.next\(\):) p n
-(1005) # () N
-(1006) # (            cal_per_gram = \(\(query.value\(0\)\)\)) N
-(1007) # (        portion_calory = float\(cal_per_gram\)*myportion) N
-(1008) # (        logger.info\(") S
-(your total calories are %.1f ) str
-(" % portion_calory\)) p n
-(1009) # (        ) S
-(return) K
-( portion_calory) p n
-(1010) # () N
-(1011) # () N
-(1012) # () N
-(1013) # () N
-(1014) # () N
-(1015) # () S
-(##########################################################################) c n
-(1016) # () S
-(    ) p
-(# section for signals and slots) c n
-(1017) # () N
-(1018) # () S
-(    ) p n
-(1019) # (    ) S
-(def) K
-( Cancel\(self,window\):) p n
-(1020) # (        """) S
-( closes window without anything) str
-(""") p n
-(1021) # (        window.close\(\)) N
-(1022) # (        ) N
-(ControlDB_new.py) (Page 18/20) (Feb 23, 2025 13:05) title
+(1019) # () N
+(1020) # (            cal_per_gram = \(\(query.value\(0\)\)\)) N
+(1021) # (        portion_calory = float\(cal_per_gram\)*myportion) N
+(ControlDB_new.py) (Page 18/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (18/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (18/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -3230,42 +3235,69 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1023) # ( ) p n
-(1024) # ( ) N
+(1022) # (        logger.info\(") p
+(your total calories are %.1f ) str
+(" % portion_calory\)) p n
+(1023) # (        ) S
+(return) K
+( portion_calory) p n
+(1024) # () N
 (1025) # () N
-(1026) # (    ) S
+(1026) # () N
+(1027) # () N
+(1028) # () N
+(1029) # () S
+(##########################################################################) c n
+(1030) # () S
+(    ) p
+(# section for signals and slots) c n
+(1031) # () N
+(1032) # () S
+(    ) p n
+(1033) # (    ) S
+(def) K
+( Cancel\(self,window\):) p n
+(1034) # (        """) S
+( closes window without anything) str
+(""") p n
+(1035) # (        window.close\(\)) N
+(1036) # (        ) N
+(1037) # ( ) N
+(1038) # ( ) N
+(1039) # () N
+(1040) # (    ) S
 (def) K
 ( SaveIngredients\(self\):) p n
-(1027) # (        """) S
+(1041) # (        """) S
 (saving the ingredients) str
 (""") p n
-(1028) # (        ) S
+(1042) # (        ) S
 (if) K
 (\( ) p
 (not) K
 ( self.swiss_foods\):) p n
-(1029) # (            Ing_name    = self.name_label.text\(\)) N
-(1030) # (            Ing_calory  = float\(self.calory_label.text\(\)\)) N
-(1031) # (            Ing_carb    = float\(self.carb_label.text\(\)\)       ) N
-(1032) # (            Ing_fat     = float\(self.fat_label.text\(\)\)) N
-(1033) # (            Ing_prot    = float\(self.prot_label.text\(\)\)) N
-(1034) # (        ) S
+(1043) # (            Ing_name    = self.name_label.text\(\)) N
+(1044) # (            Ing_calory  = float\(self.calory_label.text\(\)\)) N
+(1045) # (            Ing_carb    = float\(self.carb_label.text\(\)\)       ) N
+(1046) # (            Ing_fat     = float\(self.fat_label.text\(\)\)) N
+(1047) # (            Ing_prot    = float\(self.prot_label.text\(\)\)) N
+(1048) # (        ) S
 (else) K
 (:) p n
-(1035) # (            Ing_name    = self.InTa_name) N
-(1036) # (            Ing_calory  = self.InTa_energy) N
-(1037) # (            Ing_carb    = self.InTa_carbohydrate     ) N
-(1038) # (            Ing_fat     = self.InTa_fat) N
-(1039) # (            Ing_prot    = self.InTa_protein) N
-(1040) # (           ) N
-(1041) # () N
-(1042) # (        ) S
+(1049) # (            Ing_name    = self.InTa_name) N
+(1050) # (            Ing_calory  = self.InTa_energy) N
+(1051) # (            Ing_carb    = self.InTa_carbohydrate     ) N
+(1052) # (            Ing_fat     = self.InTa_fat) N
+(1053) # (            Ing_prot    = self.InTa_protein) N
+(1054) # (           ) N
+(1055) # () N
+(1056) # (        ) S
 (#  this is the record we got from the form input) c n
-(1043) # () N
-(1044) # () S
+(1057) # () N
+(1058) # () S
 (        ) p
 (#Check all fields are filled out) c n
-(1045) # () S
+(1059) # () S
 (        ) p
 (if) K
 (\(Ing_calory !="" ) p
@@ -3275,32 +3307,32 @@ x0 y0 moveto
 ( Ing_fat!=""  ) p
 (and) K
 ( Ing_prot !=""\):) p n
-(1046) # (            self.Inform.destroy\(\) ) S
+(1060) # (            self.Inform.destroy\(\) ) S
 (# destrorys the window.) c n
-(1047) # () S
+(1061) # () S
 (            ) p
 (#self.Inform.close\(\) # ) c n
-(1048) # () N
-(1049) # () S
+(1062) # () N
+(1063) # () S
 (        ) p
 (#now we need to add the values to the ingredients table) c n
-(1050) # () S
+(1064) # () S
 (        ) p
 (# first load table) c n
-(1051) # () N
-(1052) # () S
+(1065) # () N
+(1066) # () S
 (        ) p n
-(1053) # (        self.ViewTable\(self.CM.ingred_table,suppress_columns=self.ingredients_suppress_columns\)) N
-(1054) # (        self.model = QSqlQueryModel\(\)) N
-(1055) # (        self.table_view.setModel\(self.model\)) N
-(1056) # (        ) S
+(1067) # (        self.ViewTable\(self.CM.ingred_table,suppress_columns=self.ingredients_suppress_columns\)) N
+(1068) # (        self.model = QSqlQueryModel\(\)) N
+(1069) # (        self.table_view.setModel\(self.model\)) N
+(1070) # (        ) S
 (#next we check we don't have an entry yet) c n
-(1057) # () N
-(1058) # () S
+(1071) # () N
+(1072) # () S
 (        ) p n
-(1059) # (        ) S
+(1073) # (        ) S
 (#sql = "SELECT name from ingredients WHERE ingredients.name LIKE 'Almond%' ; ") c n
-(1060) # () S
+(1074) # () S
 (        sql = ') p
 (SELECT name from ingredients WHERE ) str
 ('+self.CM.ingred_table+') p
@@ -3310,46 +3342,17 @@ x0 y0 moveto
 ("') p
 ( ; ) str
 (') p n
-(1061) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
-(1062) # (        ) N
-(1063) # (        self.model.setQuery\(query\)) N
-(1064) # (        ) S
+(1075) # (        query = QSqlQuery\(sql,db=self.mycal_db\)) N
+(1076) # (        ) N
+(1077) # (        self.model.setQuery\(query\)) N
+(1078) # (        ) S
 (while) K
 ( query.next\(\):) p n
-(1065) # (            logger.error\(') S
-( entry name already exists, try again %s) str
-(' % query.value\(0\)\)) p n
-(1066) # (            self.CreateIngredientsForm1\(\)) N
-(1067) # (            ) S
-(#myvalue = query.value\(0\)) c n
-(1068) # () S
-(        ) p
-(# Now we need to add this ingredient to the table) c n
-(1069) # () N
-(1070) # () S
-(        self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]) p n
-(1071) # (        self.InsertRecord\(table = self.CM.ingred_table\)) N
-(1072) # (        ) S
-(return) K n
-(1073) # () S
-(    ) p n
-(1074) # () N
-(1075) # () S
-(if) K
-( __name__ == ') p
-(__main__) str
-(':    ) p n
-(1076) # (    app = QApplication\(sys.argv\) ) N
-(1077) # () N
-(1078) # (    Title=None) N
-(1079) # (    db_name=') S
-(recipe_ak) str
-(') p n
-(ControlDB_new.py) (Page 19/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 19/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (19/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (19/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
@@ -3365,105 +3368,153 @@ llx lly 12 add translate
 /x0 x v get 3.780000 add sx cw mul add store
 /y0 y v get bfs th add sub store
 x0 y0 moveto
-(1080) # (    db_user=') p
+(1079) # (            logger.error\(') p
+( entry name already exists, try again %s) str
+(' % query.value\(0\)\)) p n
+(1080) # (            self.CreateIngredientsForm1\(\)) N
+(1081) # (            ) S
+(#myvalue = query.value\(0\)) c n
+(1082) # () S
+(        ) p
+(# Now we need to add this ingredient to the table) c n
+(1083) # () N
+(1084) # () S
+(        self.record = [Ing_name,Ing_calory,Ing_carb,Ing_fat,Ing_prot]) p n
+(1085) # (        self.InsertRecord\(table = self.CM.ingred_table\)) N
+(1086) # (        ) S
+(return) K n
+(1087) # () S
+(    ) p n
+(1088) # () N
+(1089) # () S
+(if) K
+( __name__ == ') p
+(__main__) str
+(':    ) p n
+(1090) # (    app = QApplication\(sys.argv\) ) N
+(1091) # () N
+(1092) # (    Title=None) N
+(1093) # (    db_name=') S
+(recipe_ak) str
+(') p n
+(1094) # (    db_user=') S
 (klein) str
 (') p n
-(1081) # (    db_system=') S
+(1095) # (    db_system=') S
 (QPSQL) str
 (') p n
-(1082) # (    config_file = ') S
+(1096) # (    config_file = ') S
 (/Users/klein/git/qt_exercises/config/config_mycal.json) str
 (') p n
-(1083) # () N
-(1084) # (    with open\(') S
+(1097) # () N
+(1098) # (    with open\(') S
 (/Users/klein/git/qt_exercises/config/pw.txt) str
 (', ') p
 (r) str
 ('\) as file:) p n
-(1085) # (                    db_pwd = file.read\(\).rstrip\(\)) N
-(1086) # (                    ) N
-(1087) # () N
-(1088) # () N
-(1089) # () N
-(1090) # (    suppress_columns = [') S
+(1099) # (                    db_pwd = file.read\(\).rstrip\(\)) N
+(1100) # (                    ) N
+(1101) # () N
+(1102) # () N
+(1103) # () N
+(1104) # (    suppress_columns = [') S
 (Sugar) str
 (',) p n
-(1091) # (                    ') S
+(1105) # (                    ') S
 (Portions) str
 (',) p n
-(1092) # (                    ') S
+(1106) # (                    ') S
 (Description) str
 (',) p n
-(1093) # (                    ') S
+(1107) # (                    ') S
 (Saturated_fat) str
 (',) p n
-(1094) # (                    ') S
+(1108) # (                    ') S
 (Fiber) str
 (',) p n
-(1095) # (                    ') S
+(1109) # (                    ') S
 (Salt) str
 (',) p n
-(1096) # (                    ') S
+(1110) # (                    ') S
 (Sodium) str
 (',) p n
-(1097) # (                    ') S
+(1111) # (                    ') S
 (Ingredients) str
 (',) p n
-(1098) # (                    ') S
+(1112) # (                    ') S
 (Time) str
 (',) p n
-(1099) # (                    ') S
+(1113) # (                    ') S
 (Images) str
 (',) p n
-(1100) # (                    ') S
+(1114) # (                    ') S
 (vegetarian) str
 (']) p n
-(1101) # (    columnwidth = [40,200,200,200,200,200]) N
-(1102) # () N
-(1103) # (    window = ContrlDB_new\(Title = ") S
+(1115) # (    columnwidth = [40,200,200,200,200,200]) N
+(1116) # () N
+(1117) # (    window = ContrlDB_new\(Title = ") S
 (ControlDB) str
 (",) p n
-(1104) # (                  db_name=db_name,) N
-(1105) # (                  db_user=db_user,) N
-(1106) # (                  db_system=db_system\)) N
-(1107) # () S
+(1118) # (                  db_name=db_name,) N
+(1119) # (                  db_user=db_user,) N
+(1120) # (                  db_system=db_system\)) N
+(1121) # () S
 (#window.SetSize\(800,500\)) c n
-(1108) # (#window.SetPosition\(100,500\)) N
-(1109) # () N
-(1110) # () S
+(1122) # (#window.SetPosition\(100,500\)) N
+(1123) # () N
+(1124) # () S
 (    window.setStyleSheet\(") p
 (background-color: white;) str
 ("\)) p n
-(1111) # () S
+(1125) # () S
 (#window.CreateCalendar\(\)) c n
-(1112) # () N
-(1113) # () N
-(1114) # () N
-(1115) # (#window.show\(\)) N
-(1116) # () S
+(1126) # () N
+(1127) # () N
+(1128) # () N
+(1129) # (#window.show\(\)) N
+(1130) # () S
 (    window.ConnectDataBase\(\)) p n
-(1117) # (    window.ShowTables\(\)) N
-(1118) # (    ) S
+(1131) # (    window.ShowTables\(\)) N
+(1132) # (    ) S
 (#window.calculate_portion_calory\(myrecipe = 'raspberry_tart',myportion=200.\)) c n
-(1119) # () S
+(1133) # () S
 (    ) p
 (#window.ViewTable\('recipes',suppress_columns=suppress_columns,columnwidth=columnwidth\)) c n
-(1120) # () N
-(1121) # () S
+(1134) # () N
+(1135) # () S
 (    window.MyRecipes_new\(\)) p n
-(1122) # () S
-(#window.CreateIngredientsForm1\(\)) c n
-(1123) # () N
-(1124) # (# now run the app) N
-(1125) # () S
-(    app.) p
-(exec) K
-(\(\)) p
-(ControlDB_new.py) (Page 20/20) (Feb 23, 2025 13:05) title
+(ControlDB_new.py) (Page 20/21) (Mar 02, 2025 11:49) title
 border
 grestore
 (Printed by Andi Klein) rhead
-(ControlDB_new.py) (20/20) (Sunday February 23, 2025) footer
+(ControlDB_new.py) (20/21) (Sunday March 02, 2025) footer
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (21) 21
+%%BeginPageSetup
+/pagesave save def
+sh 0 translate 90 rotate
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 3.780000 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(1136) # (#window.CreateIngredientsForm1\(\)) c n
+(1137) # () N
+(1138) # (# now run the app) N
+(1139) # () S
+(    app.) p
+(exec) K
+(\(\)) p
+(ControlDB_new.py) (Page 21/21) (Mar 02, 2025 11:49) title
+border
+grestore
+(Printed by Andi Klein) rhead
+(ControlDB_new.py) (21/21) (Sunday March 02, 2025) footer
 end % of iso1dict
 pagesave restore
 showpage
